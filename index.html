@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#d72f35">
-  <title>A股晨间情报｜2026-07-30 历史模拟投递</title>
+  <title>A股晨间情报</title>
   <style>
 :root {
   --ink: #122a3a;
@@ -1831,7 +1831,7 @@ a { color: #c7282e; }
       <div class="header-top">
         <div class="brand">
           <span class="report-identity">A股晨报 · 08:30</span>
-          <small>A股研究台 · 历史模拟投递 / 2026-07-30</small>
+          <small>A股研究台 · 个人版 / 2026-07-30</small>
           <h1>A股晨间情报</h1>
           <p>全球背景、A股结构与九只自选股的证据分层</p>
         </div>
@@ -1846,17 +1846,12 @@ a { color: #c7282e; }
       </div>
     </header>
     <div class="report-shell">
-      <aside class="source-health" aria-label="历史模拟提示" role="note">
-        <strong>历史模拟投递 · 非实时</strong>
-        <span>按 2026-07-30 08:10（北京时间）证据截止口径回放，用于测试版式与内容体验，不代表当前市场状态。</span>
-      </aside>
       
-    <aside class="source-health " aria-label="数据源失败提示" role="status">
-      <strong>部分数据源降级，详见缺口说明</strong>
-      <span>run_id <code>20260730-0810-dual-morning-sample</code>；未静默补齐缺失事实。</span>
-      <ul><li><strong>official-macro-geopolitics</strong> failed：7月30日08:10历史快照未取得可审计的一手宏观/地缘事实；截止后完成的接口能力不回填本报告。</li><li><strong>global-rates-fx</strong> failed：7月30日08:10历史快照未验证利率与汇率接口；不以媒体数字或截止后数据补位。</li></ul>
-    </aside>
-    
+        <aside class="source-health ok" aria-label="数据源状态">
+          <strong>半自动演练 · 数据源状态正常</strong>
+          <span>run_id <code>20260730-0810-global-context-enriched</code>；已记录 18 / 18 个来源状态。本期仍须人工复核。</span>
+        </aside>
+        
       <nav class="channel-nav" aria-label="日报频道">
         <div class="evidence-gate" aria-label="证据账本">
           <strong>08:10</strong>
@@ -1875,7 +1870,7 @@ a { color: #c7282e; }
             <a id="channel-link-global" class="channel-link"
                href="#channel-global" data-channel-link="global"
                data-label="全球背景">
-              <span>全球背景</span><small>7</small>
+              <span>全球背景</span><small>14</small>
             </a>
             
             <a id="channel-link-watchlist" class="channel-link"
@@ -1962,7 +1957,7 @@ a { color: #c7282e; }
             </div>
       <div class="integrity-strip">
         <span>证据截止 <strong>08:10</strong></span>
-        <span>来源状态 <strong>7 / 9</strong></span>
+        <span>来源状态 <strong>18 / 18</strong></span>
         <span>自选股覆盖 <strong>9 / 9</strong></span>
         <span>视频内容 <strong>已转写</strong></span>
       </div>
@@ -1994,7 +1989,7 @@ a { color: #c7282e; }
       <div class="integrity-strip">
         <span>窗口 <strong>2026-07-30T08:10:00+08:00</strong></span>
         <span>行情状态 <strong>完整收盘、不可用项逐项标注</strong></span>
-        <span>可用项 <strong>5</strong></span>
+        <span>可用项 <strong>14</strong></span>
       </div>
       <div class="global-grid">
             <article class="context-card">
@@ -2042,22 +2037,85 @@ a { color: #c7282e; }
               <span class="review-verdict">韩国指数涨跌不能替代A股公司公告、订单或财报证据。</span>
             </article>
             
-            <article class="context-card unavailable-card">
-              <p class="context-kind">未核实信息</p>
-              <h3>世界经济与局势</h3>
-              <p>本轮未取得满足一手来源、发布时间和证据位置要求的宏观/地缘事实，HTML不得生成替代事实。</p>
-              <div class="context-meta"><span>本轮未校准</span></div>
-              <p class="context-path"><strong>传导路径：</strong>待一手事实确认后，逐条建立政策/风险偏好/商品价格→A股主题或自选股的关系路径。</p>
-              <span class="review-verdict">不会使用媒体数字或模型常识补位。</span>
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>ECB工资追踪：2027年一季度协商工资压力约2.7%</h3>
+              <p>ECB工资追踪显示，平滑一次性支付后的指标在2026年为2.3%，在2027年一季度为2.7%；对应员工覆盖率分别为44.3%和28.4%。ECB强调前瞻部分只汇总现行集体协议中的已知信息，不应解释为预测，且数据可能修订。</p>
+              <div class="context-meta"><span>2026-07-29T16:00:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>传导路径：</strong>欧元区协商工资压力→服务通胀与ECB政策预期→欧债和欧元→全球折现率及A股外需风险偏好。</p>
+              <span class="review-verdict">工资追踪不是完整工资预测；对A股的影响是间接宏观背景，不能替代公司订单与财报证据。；未核实/限制：该指标覆盖九个参与国家且覆盖率随前瞻期下降；ECB明确其前瞻部分不是预测，并可能随新协议加入而修订。</span>
             </article>
             
-            <article class="context-card unavailable-card">
-              <p class="context-kind">未核实信息</p>
-              <h3>利率 / 汇率 / 商品</h3>
-              <p>一手接口未校准；一手接口未校准</p>
-              <div class="context-meta"><span>本轮未校准</span></div>
-              <p class="context-path"><strong>传导路径：</strong>待一手事实确认后再建立A股传导路径。</p>
-              <span class="review-verdict">不会使用媒体数字或模型常识补位。</span>
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>美联储维持利率区间，三票主张加息</h3>
+              <p>美联储维持联邦基金利率目标区间在3.50%—3.75%；声明称经济活动仍稳健扩张，但不确定性部分来自中东冲突，通胀仍高于2%目标且部分反映能源等供给冲击。表决为9票赞成、3票反对，三名反对者主张加息25个基点。</p>
+              <div class="context-meta"><span>2026-07-30T02:00:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美联储政策与通胀判断→美国利率和美元预期→全球权益折现率、能源风险溢价→A股成长估值与风险偏好。</p>
+              <span class="review-verdict">利率维持不变不等于流动性边际宽松；需要结合美债曲线、美元与A股自身成交结构判断。；未核实/限制：美联储对经济、冲突和通胀的描述属于政策制定者判断；不据此单独预测A股方向。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>欧盟对俄限制措施扩大名单并获九国政策对齐</h3>
+              <p>欧盟理事会声明显示，理事会已于7月13日通过CFSP 2026/1709号决定，将11名自然人和5个实体加入相关限制措施名单；九个欧洲国家宣布与该决定保持一致。</p>
+              <div class="context-meta"><span>2026-07-29T11:20:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>传导路径：</strong>欧洲对俄限制措施→能源、贸易与跨境合规成本→全球风险溢价及A股相关供应链预期。</p>
+              <span class="review-verdict">未核对具体A股公司对俄业务敞口前，不将政策事件直接映射为个股利好或利空。；未核实/限制：本条证明欧盟限制措施及政策协同扩展；具体贸易、能源和公司层面影响仍须核对正式法律文本、名单对象及传导敞口。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>英国在安理会就加沙与西岸局势发言（官方立场）</h3>
+              <p>英国驻联合国代表7月28日在安理会讲话中称加沙人道形势、西岸和东耶路撒冷局势仍令人担忧，并呼吁各方降级、保障人道准入和履行相关计划。</p>
+              <div class="context-meta"><span>2026-07-29T00:25:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>传导路径：</strong>中东局势与人道风险→油气、航运和避险情绪→A股能源成本、外需与整体风险偏好。</p>
+              <span class="review-verdict">单一政府在安理会的表态不是冲突事实全貌；不据此形成个股方向性判断。；未核实/限制：讲话中的伤亡、定居点数量和人道数据属于英方援引或判断，未逐项取得联合国原始统计与涉事各方材料交叉核验。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>英国在欧安组织重申支持乌克兰（官方立场）</h3>
+              <p>英国驻欧安组织代表在7月29日讲话中重申支持乌克兰，并就俄罗斯战争、无人机进入罗马尼亚领空及拉脱维亚驻斯拉维扬斯克领事馆受损作出英方陈述。</p>
+              <div class="context-meta"><span>2026-07-29T23:11:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>传导路径：</strong>俄乌冲突延续→欧洲能源、军工与航运风险溢价→A股能源、原材料及风险偏好背景。</p>
+              <span class="review-verdict">官方立场不等于冲突结果；对A股的传导取决于能源价格、制裁范围和实际供应链敞口。；未核实/限制：关于无人机归属、空域事件和领事馆受损的细节是英国官方陈述；未完成涉事各方及独立材料交叉核验。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>WTO散发中国诉土耳其电动车措施案报告</h3>
+              <p>WTO于7月28日发布消息，争端解决小组已就中国诉土耳其针对中国电动汽车及其他车辆措施案（DS629）散发报告。</p>
+              <div class="context-meta"><span>2026-07-28T08:00:00+08:00</span><span>Tier A official discovery</span></div>
+              <p class="context-path"><strong>传导路径：</strong>WTO汽车贸易争端→中国整车出口与海外合规预期→汽车电子、功率半导体和供应链订单预期。</p>
+              <span class="review-verdict">用户自选股和五个主题与整车出口的直接敞口尚未核对，暂作为全球贸易背景。；未核实/限制：本条仅确认报告发布；裁决要点、执行安排及对中国汽车产业链的实际影响须进一步阅读报告正文。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>美国国债收益率曲线</h3>
+              <p>美国财政部2026-07-29日度曲线：2年期4.22%，10年期4.67%，30年期5.2%。</p>
+              <div class="context-meta"><span>2026-07-29</span><span>Tier A｜美国财政部</span><span>利率</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国无风险利率→全球权益折现率与美元流动性→A股成长估值和外资风险偏好。</p>
+              <span class="review-verdict">日度收益率曲线是背景变量，不能单独推导A股指数或个股次日方向。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>主要汇率参考交叉盘</h3>
+              <p>ECB 2026-07-29欧元参考汇率复算：美元/人民币6.766257，美元/日元163.681898，美元/韩元1452.346221。</p>
+              <div class="context-meta"><span>2026-07-29</span><span>Tier A｜欧洲央行</span><span>汇率</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美元对人民币、日元和韩元的相对强弱→亚洲资金与出口定价预期→A股风险偏好和行业成本。</p>
+              <span class="review-verdict">ECB参考交叉盘不能冒充境内人民币中间价、离岸人民币收盘价或实时交易价格。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>国内商品期货</h3>
+              <p>焦煤，contract JM.DCE，trade_date 20260729，close 1248.0，settle 1244.5，change_pct_or_points -1.0；焦炭，contract J.DCE，trade_date 20260729，close 1845.0，settle 1839.5，change_pct_or_points 14.0；铁矿石，contract I.DCE，trade_date 20260729，close 739.0，settle 739.5，change_pct_or_points -2.0；铜，contract CU.SHF，trade_date 20260729，close 104890.0，settle 104790.0，change_pct_or_points -160.0；铝，contract AL.SHF，trade_date 20260729，close 23455.0，settle 23385.0，change_pct_or_points 240.0；镍，contract NI.SHF，trade_date 20260729，close 131660.0，settle 130420.0，change_pct_or_points 110.0；碳酸锂，contract LC.GFE，trade_date 20260729，close 147900.0，settle 146560.0，change_pct_or_points 3280.0；工业硅，contract SI.GFE，trade_date 20260729，close 8165.0，settle 8190.0，change_pct_or_points -65.0</p>
+              <div class="context-meta"><span>国内商品期货</span></div>
+              <p class="context-path"><strong>传导路径：</strong>未形成可验证的A股传导路径。</p>
+              
             </article>
             </div>
       <div class="footer-note">全球背景只解释风险偏好、供需、成本、政策或估值传导，不能替代个股公告与经营证据。</div>
@@ -2091,7 +2149,7 @@ a { color: #c7282e; }
                 <div><small>收盘</small><strong>35.74</strong></div>
                 <div><small>PE-TTM / PB</small><strong>19.93 / 3.88</strong></div>
                 <div><small>L2 净额代理</small><strong>-2.506 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>28.3%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
               </div>
             </details>
@@ -2105,9 +2163,9 @@ a { color: #c7282e; }
               </summary>
               <div class="stock-detail">
                 <div><small>收盘</small><strong>4.94</strong></div>
-                <div><small>PE-TTM / PB</small><strong>亏损/不适用 / 2.63</strong></div>
+                <div><small>PE-TTM / PB</small><strong>— / 2.63</strong></div>
                 <div><small>L2 净额代理</small><strong>-0.658 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>99.7%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。</div>
               </div>
             </details>
@@ -2121,9 +2179,9 @@ a { color: #c7282e; }
               </summary>
               <div class="stock-detail">
                 <div><small>收盘</small><strong>1.67</strong></div>
-                <div><small>PE-TTM / PB</small><strong>亏损/不适用 / 3.54</strong></div>
+                <div><small>PE-TTM / PB</small><strong>— / 3.54</strong></div>
                 <div><small>L2 净额代理</small><strong>-0.219 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>71.9%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
               </div>
             </details>
@@ -2139,7 +2197,7 @@ a { color: #c7282e; }
                 <div><small>收盘</small><strong>3.41</strong></div>
                 <div><small>PE-TTM / PB</small><strong>52.69 / 38.16</strong></div>
                 <div><small>L2 净额代理</small><strong>-0.014 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>2.0%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
               </div>
             </details>
@@ -2153,9 +2211,9 @@ a { color: #c7282e; }
               </summary>
               <div class="stock-detail">
                 <div><small>收盘</small><strong>4.58</strong></div>
-                <div><small>PE-TTM / PB</small><strong>亏损/不适用 / 20.43</strong></div>
+                <div><small>PE-TTM / PB</small><strong>— / 20.43</strong></div>
                 <div><small>L2 净额代理</small><strong>-0.888 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>75.1%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。</div>
               </div>
             </details>
@@ -2171,7 +2229,7 @@ a { color: #c7282e; }
                 <div><small>收盘</small><strong>1.60</strong></div>
                 <div><small>PE-TTM / PB</small><strong>159.11 / 0.74</strong></div>
                 <div><small>L2 净额代理</small><strong>+2.492 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>53.6%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
               </div>
             </details>
@@ -2187,7 +2245,7 @@ a { color: #c7282e; }
                 <div><small>收盘</small><strong>13.07</strong></div>
                 <div><small>PE-TTM / PB</small><strong>38.90 / 1.31</strong></div>
                 <div><small>L2 净额代理</small><strong>+1.715 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>78.8%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
               </div>
             </details>
@@ -2203,7 +2261,7 @@ a { color: #c7282e; }
                 <div><small>收盘</small><strong>5.36</strong></div>
                 <div><small>PE-TTM / PB</small><strong>43.57 / 2.30</strong></div>
                 <div><small>L2 净额代理</small><strong>-1.956 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>98.5%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">发现1条公司级交接事件；请打开事件卡并核对公告正文。</div>
               </div>
             </details>
@@ -2219,7 +2277,7 @@ a { color: #c7282e; }
                 <div><small>收盘</small><strong>43.15</strong></div>
                 <div><small>PE-TTM / PB</small><strong>36.03 / 5.48</strong></div>
                 <div><small>L2 净额代理</small><strong>+1.524 亿</strong></div>
-                <div><small>换手全 A 分位</small><strong>89.3%</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
                 <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
               </div>
             </details>
@@ -2242,7 +2300,7 @@ a { color: #c7282e; }
       </summary>
       <dl class="evidence-body">
         <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）影响机制：获批扩大可合规生产的原料药品种，并可能通过内部制剂配套或外部销售形成收入、改善原料制剂一体化程度；但单一批件本身不等于订单或利润。成立前提是完成稳定生产、取得客户与终端制剂需求，并维持可接受的售价和毛利。</dd></div>
-        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响原料药、产品估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>暂不判断是否已定价（证据不足）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响原料药、产品估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
         <ul class="scenario-list"><li><b>基准</b> 按公告已确认范围推进，市场仅逐步计入原料药、产品的可验证增量。</li><li><b>强化</b> 后续订单、产能、临床/司法程序或财报指标连续兑现，且相对行业表现与成交扩散同步增强。</li><li><b>削弱</b> 关键程序延期、订单或经营数据未兑现，或市场反应与基本面证据背离。</li></ul>
         <div class="evidence-row"><dt>时间范围</dt><dd>中期，取决于商业化生产和销售兑现</dd></div>
         <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>反向证据与局限：已有26家登记状态为“A”的企业，竞争并不稀缺；公告未披露产能、订单、销售目标、价格或预计利润，当前不能判断对公司整体业绩的量级。</dd></div>
@@ -2305,8 +2363,8 @@ a { color: #c7282e; }
             <details class="theme-row">
               <summary>
                 <h3>ST板块重组预期</h3>
-                <span class="theme-signal up">+1.24%｜风险警示池代理</span>
-                <span class="theme-summary">交易所风险警示池209只；151涨、40跌，中位数+1.24%。</span>
+                <span class="theme-signal ">无匹配概念行</span>
+                <span class="theme-summary">本轮第三方概念表未匹配到同名口径。</span>
               </summary>
               <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
             </details>
@@ -2329,7 +2387,7 @@ a { color: #c7282e; }
       </summary>
       <dl class="evidence-body">
         <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）影响机制：项目建成后可扩大控股装机和发电销售基础，并探索绿电就近供电、聚合交易和就地消纳；建设期则会增加资本开支与融资需求。成立前提是土地、环评、接网、资金和施工按计划推进，且利用小时、电价及消纳达到可研假设。</dd></div>
-        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响电力估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>暂不判断是否已定价（证据不足）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响电力估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
         <ul class="scenario-list"><li><b>基准</b> 按公告已确认范围推进，市场仅逐步计入电力的可验证增量。</li><li><b>强化</b> 后续订单、产能、临床/司法程序或财报指标连续兑现，且相对行业表现与成交扩散同步增强。</li><li><b>削弱</b> 关键程序延期、订单或经营数据未兑现，或市场反应与基本面证据背离。</li></ul>
         <div class="evidence-row"><dt>时间范围</dt><dd>中长期，建设期与投产后的经营兑现分开观察</dd></div>
         <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>反向证据与局限：公告未披露本次项目总投资、资金结构和投产日期；若建设成本、利率或弃电上升，新增装机不一定转化为预期现金流和回报。</dd></div>
@@ -2354,7 +2412,7 @@ a { color: #c7282e; }
       </summary>
       <dl class="evidence-body">
         <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）影响机制：上市批准把项目从研发阶段推进到商业化阶段，未来可能通过医院准入、医保及终端销售贡献收入，并影响创新管线估值；同时需要承担生产、渠道和市场教育成本。成立前提是定价、医保准入、医生采用、产能和渠道执行达到预期。</dd></div>
-        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响创新药估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>暂不判断是否已定价（证据不足）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响创新药估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
         <ul class="scenario-list"><li><b>基准</b> 按公告已确认范围推进，市场仅逐步计入创新药的可验证增量。</li><li><b>强化</b> 后续订单、产能、临床/司法程序或财报指标连续兑现，且相对行业表现与成交扩散同步增强。</li><li><b>削弱</b> 关键程序延期、订单或经营数据未兑现，或市场反应与基本面证据背离。</li></ul>
         <div class="evidence-row"><dt>时间范围</dt><dd>中长期，先观察上市准入，再观察销售兑现</dd></div>
         <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>反向证据与局限：公告未给出上市时间、价格、销售目标或利润预测；长效胰岛素已有国内外成熟竞品，获批不等于快速放量。公告引用的同类全球销售额属于公司引用的第三方数据库数据，不作为本报告独立确认的市场规模。</dd></div>
@@ -2379,7 +2437,7 @@ a { color: #c7282e; }
       </summary>
       <dl class="evidence-body">
         <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）影响机制：不减持承诺可在承诺期内减少来自控股股东的潜在股份供给，主要作用于市场情绪和供给预期，不直接改变公司订单、产品竞争力或盈利。成立前提是承诺持续有效且其他重要股东没有形成新的集中减持压力。</dd></div>
-        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响半导体估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>暂不判断是否已定价（证据不足）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响半导体估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
         <ul class="scenario-list"><li><b>基准</b> 按公告已确认范围推进，市场仅逐步计入半导体的可验证增量。</li><li><b>强化</b> 后续订单、产能、临床/司法程序或财报指标连续兑现，且相对行业表现与成交扩散同步增强。</li><li><b>削弱</b> 关键程序延期、订单或经营数据未兑现，或市场反应与基本面证据背离。</li></ul>
         <div class="evidence-row"><dt>时间范围</dt><dd>短至中期，限于承诺期内的股份供给预期</dd></div>
         <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>反向证据与局限：承诺不构成增持，也没有经营或业绩承诺；半导体景气、产品价格、库存和竞争变化仍可能主导估值。原数据把该事件误标为ST重组，人工核验后已修正。</dd></div>
@@ -2404,7 +2462,7 @@ a { color: #c7282e; }
       </summary>
       <dl class="evidence-body">
         <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）影响机制：注册性试验推进可能提高授权管线的技术与估值里程碑，并在条件达成时影响里程碑现金流；但目前不形成产品销售收入。成立前提是按期入组、疗效和安全性达到终点、FDA认可数据并触发授权协议约定。</dd></div>
-        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响创新药估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>暂不判断是否已定价（证据不足）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响创新药估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
         <ul class="scenario-list"><li><b>基准</b> 按公告已确认范围推进，市场仅逐步计入创新药的可验证增量。</li><li><b>强化</b> 后续订单、产能、临床/司法程序或财报指标连续兑现，且相对行业表现与成交扩散同步增强。</li><li><b>削弱</b> 关键程序延期、订单或经营数据未兑现，或市场反应与基本面证据背离。</li></ul>
         <div class="evidence-row"><dt>时间范围</dt><dd>长期，取决于注册性试验和监管审批</dd></div>
         <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>反向证据与局限：FDA同意启动试验不等于药品批准上市；招募延迟、终点未达成或安全性问题均会推迟或终止后续价值兑现，公告没有披露具体里程碑金额。</dd></div>
@@ -2417,49 +2475,49 @@ a { color: #c7282e; }
       <div class="commodity-grid">
             <div class="commodity">
               <small>JM.DCE</small>
-              <strong class="down">焦煤 -0.08%</strong>
+              <strong class="">焦煤 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             
             <div class="commodity">
               <small>J.DCE</small>
-              <strong class="up">焦炭 +0.76%</strong>
+              <strong class="">焦炭 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             
             <div class="commodity">
               <small>I.DCE</small>
-              <strong class="down">铁矿石 -0.27%</strong>
+              <strong class="">铁矿石 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             
             <div class="commodity">
               <small>CU.SHF</small>
-              <strong class="down">铜 -0.15%</strong>
+              <strong class="">铜 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             
             <div class="commodity">
               <small>AL.SHF</small>
-              <strong class="up">铝 +1.03%</strong>
+              <strong class="">铝 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             
             <div class="commodity">
               <small>NI.SHF</small>
-              <strong class="up">镍 +0.08%</strong>
+              <strong class="">镍 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             
             <div class="commodity">
               <small>LC.GFE</small>
-              <strong class="up">碳酸锂 +2.27%</strong>
+              <strong class="">碳酸锂 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             
             <div class="commodity">
               <small>SI.GFE</small>
-              <strong class="down">工业硅 -0.79%</strong>
+              <strong class="">工业硅 —%</strong>
               <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
             </div>
             </div>
@@ -2479,7 +2537,7 @@ a { color: #c7282e; }
         <div><small>上一交易日 ST 池</small><strong>209</strong></div>
         <div><small>上涨 / 下跌</small><strong>151 / 40</strong></div>
         <div><small>涨跌中位数</small><strong class="up">+1.24%</strong></div>
-        <div><small>涨停 / 跌停</small><strong>5 / 0</strong></div>
+        <div><small>涨停 / 跌停</small><strong>— / —</strong></div>
         <div><small>本报核心硬信号</small><strong>2</strong></div>
       </div>
       <div class="stage-line">
@@ -2504,7 +2562,7 @@ a { color: #c7282e; }
       </summary>
       <dl class="evidence-body">
         <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）影响机制：预重整可能通过债务清理、资产评估和引入重整投资人改善资产负债结构与持续经营能力，但目前仍处于程序前置阶段，短期主要影响风险偏好和重整预期，而不是已经确认的经营改善。成立前提是法院后续正式受理、存在可执行的投资人和方案，并获得债权人及法院支持。</dd></div>
-        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响ST板块重组预期估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>暂不判断是否已定价（证据不足）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响ST板块重组预期估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
         <ul class="scenario-list"><li><b>基准</b> 按公告已确认范围推进，市场仅逐步计入ST板块重组预期的可验证增量。</li><li><b>强化</b> 后续订单、产能、临床/司法程序或财报指标连续兑现，且相对行业表现与成交扩散同步增强。</li><li><b>削弱</b> 关键程序延期、订单或经营数据未兑现，或市场反应与基本面证据背离。</li></ul>
         <div class="evidence-row"><dt>时间范围</dt><dd>短期为程序与情绪影响；中长期取决于重整方案和执行</dd></div>
         <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>反向证据与局限：公告没有披露重整投资人、债务削减比例或方案条款；正式受理、方案通过和执行均不确定，失败路径包含破产及终止上市风险。</dd></div>
@@ -2529,7 +2587,7 @@ a { color: #c7282e; }
       </summary>
       <dl class="evidence-body">
         <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）影响机制：撤销退市风险警示可改变风险标签与交易情绪，但继续实施其他风险警示说明经营风险并未消除；短期标签变化与中期基本面修复应分开判断。成立前提是公司后续经营与财务指标改善并满足撤销其他风险警示条件。</dd></div>
-        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响ST板块重组预期估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>暂不判断是否已定价（证据不足）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层需经由订单/产能/价格/融资条件传导至现金流与盈利，再影响ST板块重组预期估值；任一环节缺证据都应降级。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：当前样本缺少事件前后足够长度的同行和成交对照，不能可靠判断是否已定价。</dd></div>
         <ul class="scenario-list"><li><b>基准</b> 按公告已确认范围推进，市场仅逐步计入ST板块重组预期的可验证增量。</li><li><b>强化</b> 后续订单、产能、临床/司法程序或财报指标连续兑现，且相对行业表现与成交扩散同步增强。</li><li><b>削弱</b> 关键程序延期、订单或经营数据未兑现，或市场反应与基本面证据背离。</li></ul>
         <div class="evidence-row"><dt>时间范围</dt><dd>短期为复牌与标签变化；中期取决于经营和财务修复</dd></div>
         <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>反向证据与局限：2023至2025年扣除非经常性损益前后净利润孰低者均为负，2025年审计报告仍提示持续经营能力不确定；因此不能把“去星”解释为经营已经恢复。</dd></div>
@@ -2642,16 +2700,79 @@ a { color: #c7282e; }
             
             <tr>
               <td>official-macro-geopolitics</td>
-              <td><span class="source-state failed">失败</span></td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>2026-07-30T20:32:00+08:00</td>
               <td>—</td>
-              <td>7月30日08:10历史快照未取得可审计的一手宏观/地缘事实；截止后完成的接口能力不回填本报告。</td>
             </tr>
             
             <tr>
               <td>global-rates-fx</td>
-              <td><span class="source-state failed">失败</span></td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>2026-07-30T20:32:00+08:00</td>
               <td>—</td>
-              <td>7月30日08:10历史快照未验证利率与汇率接口；不以媒体数字或截止后数据补位。</td>
+            </tr>
+            
+            <tr>
+              <td>probe:federal-reserve-press</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:us-bea-news</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:ecb-press</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:white-house-presidential-actions</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:eu-council-press</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:wto-latest-news</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:uk-fcdo-news</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:us-treasury-yield-curve</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>probe:ecb-reference-rates</td>
+              <td><span class="source-state unknown">available</span></td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             </tbody>
           </table>
@@ -2660,7 +2781,7 @@ a { color: #c7282e; }
       <div class="method-grid"><div class="method-card"><strong>Tier A｜交易所、监管、政府、上市公司公告</strong><p>重要事实优先采用。</p></div><div class="method-card"><strong>Tier B｜公司官网、业绩材料与投资者关系资料</strong><p>用于产品、财务和经营确认。</p></div><div class="method-card"><strong>Tier C｜Tushare与专业财经媒体</strong><p>结构化行情与补充背景。</p></div><div class="method-card"><strong>Tier D｜分析师、采访、视频和社交观点</strong><p>只作为观点，不升级为事实。</p></div></div>
       <details class="note-disclosure" open>
         <summary>本期截止口径与局限</summary>
-        <ul><li>历史模拟审计批次：20260730-0810-dual-morning-sample；本次投递沿用已核验材料。</li><li>原始事件 8 条，去重后 8 条，移除重复 0 条。</li><li>本版为单期历史回放，不与后续晚报建立真实同日延续关系。</li><li>本版为历史模拟、非实时内容，通过当前 Codex 对话交付；不构成正式生产日报或投资建议。</li></ul>
+        <ul><li>半自动运行编号：20260730-0810-global-context-enriched；生成结果必须人工复核后交付。</li><li>原始事件 8 条，去重后 8 条，移除重复 0 条。</li><li>双报告分析契约：20260730-0810-global-context-enriched；样本配对：non_sequential_due_to_cutoff_safety。</li><li>当前是Gate 3.1校准样报，未创建定时任务、未发送邮件、未进入Gate 5。</li></ul>
       </details>
       <details class="note-disclosure">
         <summary>评分与去重规则</summary>
