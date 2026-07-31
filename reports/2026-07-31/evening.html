@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#d72f35">
-  <title>A鑲℃敹鐩樻櫄鎶?/title>
+  <title>A股收盘晚报</title>
   <style>
 :root {
   --ink: #122a3a;
@@ -295,8 +295,8 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   list-style: none;
 }
 .stock-row > summary::-webkit-details-marker { display: none; }
-.stock-row > summary::after { content: "锛?; color: var(--signal); font-size: 17px; }
-.stock-row[open] > summary::after { content: "锛?; }
+.stock-row > summary::after { content: "＋"; color: var(--signal); font-size: 17px; }
+.stock-row[open] > summary::after { content: "－"; }
 .stock-name strong { display: block; font-size: 14px; }
 .stock-name small { color: #7a8c94; font: 500 10px/1.2 "Cascadia Mono", Consolas, monospace; }
 .stock-pct { font: 700 14px/1 "Cascadia Mono", Consolas, monospace; }
@@ -327,8 +327,8 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   list-style: none;
 }
 .theme-row > summary::-webkit-details-marker { display: none; }
-.theme-row > summary::after { content: "锛?; color: var(--signal); }
-.theme-row[open] > summary::after { content: "锛?; }
+.theme-row > summary::after { content: "＋"; color: var(--signal); }
+.theme-row[open] > summary::after { content: "－"; }
 .theme-row h3 { margin: 0; font-size: 14px; }
 .theme-signal { font: 700 12px/1.2 "Cascadia Mono", Consolas, monospace; }
 .theme-summary { color: var(--ink-soft); font-size: 12px; }
@@ -357,14 +357,14 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 }
 .event-disclosure > summary::-webkit-details-marker { display: none; }
 .event-disclosure > summary::after {
-  content: "锛?;
+  content: "＋";
   position: absolute;
   top: 17px;
   right: 4px;
   color: var(--signal);
   font-size: 20px;
 }
-.event-disclosure[open] > summary::after { content: "锛?; }
+.event-disclosure[open] > summary::after { content: "－"; }
 .event-meta { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; color: var(--ink-soft); font-size: 10px; }
 .tier { padding: 2px 6px; color: var(--signal); background: var(--signal-soft); font-weight: 700; }
 .tier.opinion { color: var(--opinion); background: var(--opinion-soft); }
@@ -430,7 +430,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   font-size: 10px;
 }
 .transcript-path span:last-child { border-right: 0; }
-.transcript-path span:not(:last-child)::after { content: "鈫?; position: absolute; right: 8px; color: var(--opinion); }
+.transcript-path span:not(:last-child)::after { content: "→"; position: absolute; right: 8px; color: var(--opinion); }
 .viewpoint-list { display: grid; gap: 0; margin-top: 19px; border-top: 1px solid #dcd5e8; }
 .viewpoint {
   display: grid;
@@ -546,297 +546,2220 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   .channel-panel.is-entering { animation: none; }
 }
 
-/* Institutional morning desk 鈥?cold finance art …20207 tokens truncated…iv class="integrity-strip">stock_st updates around 09:20; prior-trade-date pool is used for the 08:10 report.</div>
+/* Institutional morning desk — cold finance art direction */
+:root {
+  --ink: #101820;
+  --ink-soft: #566473;
+  --paper: #090e13;
+  --surface: #f1f4f6;
+  --line: #cbd3da;
+  --line-strong: #8e9aa6;
+  --signal: #3f73c9;
+  --signal-soft: #e4ebf6;
+  --up: #d24e4e;
+  --down: #238b68;
+  --attention: #996b2f;
+  --attention-soft: #eee7dc;
+  --opinion: #666d9f;
+  --opinion-soft: #e8eaf1;
+  --risk: #b04747;
+  --nav-width: 206px;
+}
+html { background: #090e13; }
+body {
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(132,151,171,.035) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(132,151,171,.025) 1px, transparent 1px) 0 0 / 48px 48px,
+    #090e13;
+  font-family: "Segoe UI Variable", "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #315f9f; }
+:focus-visible { outline: 2px solid #7da7eb; outline-offset: 3px; }
+.page {
+  width: min(1280px, calc(100% - 48px));
+  margin: 24px auto 72px;
+  border: 1px solid #25303b;
+  box-shadow: 0 22px 70px rgba(0,0,0,.28);
+}
+.report-header {
+  padding: 0;
+  color: #e9eef3;
+  background: #0d141c;
+  border: 0;
+  border-bottom: 2px solid #4c78bd;
+}
+.report-header::after { display: none; }
+.header-top {
+  min-height: 108px;
+  padding: 21px 28px 19px;
+  align-items: center;
+  border-bottom: 1px solid #27333f;
+}
+.brand small {
+  color: #7d8ea0;
+  font: 600 10px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .19em;
+}
+.brand h1 {
+  margin: 9px 0 6px;
+  color: #f3f6f8;
+  font: 620 clamp(28px, 3vw, 35px)/1.08 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .055em;
+}
+.brand p {
+  color: #8f9eac;
+  font-size: 12px;
+  letter-spacing: .015em;
+}
+.cutoff {
+  min-width: 194px;
+  padding: 5px 0 5px 25px;
+  color: #8998a7;
+  border: 0;
+  border-left: 1px solid #344351;
+  font: 500 10px/1.7 "Cascadia Mono", Consolas, monospace;
+  text-align: right;
+  text-transform: uppercase;
+}
+.cutoff span {
+  color: #79a9ef;
+  font-size: 23px;
+  letter-spacing: .04em;
+}
+.market-tape {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  background: #101923;
+  border: 0;
+}
+.tape-cell {
+  min-height: 60px;
+  padding: 11px 18px 10px;
+  background: transparent;
+  border-right: 1px solid #27333f;
+}
+.tape-cell:last-child { border-right: 0; }
+.tape-cell small {
+  color: #748596;
+  font: 500 9px/1.4 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .07em;
+}
+.tape-cell strong {
+  margin-top: 7px;
+  color: #e7edf2;
+  font: 650 15px/1.2 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .015em;
+}
+.report-shell {
+  display: block;
+  background: var(--surface);
+  border: 0;
+}
+.channel-nav {
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: stretch;
+  min-height: 50px;
+  padding: 0 17px;
+  color: #9aa8b5;
+  background: #111923;
+  border-right: 0;
+  border-bottom: 1px solid #29343f;
+}
+.evidence-gate {
+  display: flex;
+  grid-template-columns: none;
+  gap: 11px;
+  align-items: center;
+  margin: 0 19px 0 0;
+  padding-right: 19px;
+  color: #778797;
+  font: 500 9px/1.65 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  border-right: 1px solid #2d3945;
+}
+.evidence-gate::before {
+  width: 2px;
+  height: 20px;
+  background: #6b9de7;
+  box-shadow: none;
+}
+.evidence-gate strong {
+  color: #dce4eb;
+  font: 650 10px/1.25 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .06em;
+}
+.evidence-gate span { color: #82909d; }
+.evidence-gate b { color: #b3bfca; font-weight: 650; }
+.channel-links {
+  display: flex;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
+}
+.channel-link {
+  display: flex;
+  grid-template-columns: none;
+  flex: 0 1 auto;
+  justify-content: center;
+  min-height: 45px;
+  padding: 9px 15px 7px;
+  color: #a5b1bc;
+  border-left: 0;
+  border-bottom: 2px solid transparent;
+  font-size: 12px;
+  letter-spacing: .025em;
+}
+.channel-link:hover {
+  color: #edf2f6;
+  background: #17222e;
+}
+.channel-link[aria-selected="true"] {
+  color: #f0f4f7;
+  background: #17222e;
+  border-left-color: transparent;
+  border-bottom-color: #6b9de7;
+  font-weight: 600;
+}
+.channel-link small {
+  min-width: 21px;
+  height: 18px;
+  color: #7f8d99;
+  background: #202d39;
+  border: 1px solid #2b3946;
+  border-radius: 2px;
+  font-size: 9px;
+}
+.channel-link[aria-selected="true"] small {
+  color: #bcd4f7;
+  background: #253c57;
+}
+.show-all {
+  width: auto;
+  min-height: 32px;
+  align-self: center;
+  margin: 0 0 0 15px;
+  padding: 7px 12px;
+  color: #8493a1;
+  background: transparent;
+  border: 1px solid #35414d;
+  font: 500 10px/1 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .06em;
+}
+.show-all:hover {
+  color: #e7edf2;
+  background: #17222e;
+}
+.channel-stage {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: 37px clamp(28px, 5vw, 66px) 62px;
+  background: #f1f4f6;
+}
+.channel-panel.is-entering { animation: channel-in 120ms ease-out; }
+.channel-head {
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #8f9ba7;
+}
+.channel-kicker {
+  color: #5476a6;
+  font: 650 9px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .18em;
+}
+.channel-head h2 {
+  margin-top: 7px;
+  font: 640 clamp(25px, 3vw, 31px)/1.15 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .025em;
+}
+.channel-head p {
+  color: #687583;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.section-title {
+  margin: 34px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #aeb8c1;
+}
+.section-title h3 {
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: .02em;
+}
+.section-title small {
+  color: #7b8792;
+  font: 500 10px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.state-thesis {
+  grid-template-columns: 1.45fr .55fr;
+  gap: 28px;
+  margin-top: 24px;
+  padding: 24px 25px;
+  background: #f8fafb;
+  border: 1px solid #c4ccd4;
+}
+.state-thesis h3 {
+  font: 650 22px/1.42 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .012em;
+}
+.state-thesis p { color: #536170; font-size: 13px; }
+.breadth-mini {
+  padding-left: 23px;
+  border-left: 1px solid #c9d0d7;
+}
+.breadth-mini strong {
+  color: #162331;
+  font-size: 29px;
+}
+.breadth-mini span {
+  color: #6e7b87;
+  font: 500 10px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.breadth-bar { height: 3px; background: #dcc9c9; }
+.breadth-bar i { background: #3273a8; }
+.brief-list,
+.stock-list,
+.theme-list,
+.event-stack {
+  background: #f9fafb;
+  border: 1px solid #c8d0d7;
+  border-bottom: 0;
+}
+.brief-item {
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 13px;
+  min-height: 73px;
+  padding: 15px 18px;
+  border-bottom-color: #d4dbe1;
+}
+.brief-item:hover { background: #f2f6fa; }
+.brief-item:hover h3 { color: #315f9f; }
+.brief-number {
+  color: #6c7884;
+  font: 600 10px/1.55 "Cascadia Mono", Consolas, monospace;
+}
+.brief-copy h3 { font-size: 14px; font-weight: 650; }
+.brief-copy p { color: #62707e; font-size: 11.5px; }
+.brief-route { color: #456e9f; font-size: 10px; }
+.integrity-strip {
+  gap: 8px 22px;
+  padding: 11px 14px;
+  color: #5f6d7a;
+  background: #e6ebef;
+  border: 0;
+  border-top: 1px solid #c3ccd4;
+  border-bottom: 1px solid #c3ccd4;
+  font: 500 10px/1.55 "Cascadia Mono", Consolas, monospace;
+}
+.calendar-item {
+  grid-template-columns: 116px 1fr;
+  padding: 14px 12px;
+  background: #f8fafb;
+  border-bottom-color: #d1d8de;
+}
+.calendar-item time { color: #416f9f; font-size: 10px; }
+.calendar-item strong { font-size: 13px; font-weight: 650; }
+.calendar-item p { color: #65727e; font-size: 11px; }
+.status-pill {
+  padding: 5px 8px;
+  color: #697684;
+  background: #e6ebef;
+  border-color: #cad2d9;
+  border-radius: 2px;
+  font-size: 10px;
+}
+.stock-row,
+.theme-row,
+.event-disclosure { border-bottom-color: #d2d9df; }
+.stock-row > summary {
+  min-height: 62px;
+  padding: 10px 14px;
+}
+.stock-row > summary:hover,
+.theme-row > summary:hover,
+.event-disclosure > summary:hover { background: #f1f5f8; }
+.stock-row > summary::after,
+.theme-row > summary::after,
+.event-disclosure > summary::after {
+  color: #526b87;
+  font-family: "Cascadia Mono", Consolas, monospace;
+}
+.stock-name strong { font-size: 13px; font-weight: 650; }
+.stock-name small { color: #7c8792; font-size: 9px; }
+.stock-pct { font-size: 13px; }
+.stock-metric { color: #667380; font-size: 10px; }
+.stock-state {
+  color: #596671;
+  background: #e5e9ed;
+  border: 1px solid #d0d6dc;
+  border-radius: 2px;
+  font-size: 9px;
+}
+.stock-state.new {
+  color: #245f50;
+  background: #dfece8;
+  border-color: #c8ddd6;
+}
+.stock-state.background {
+  color: #795a2e;
+  background: #eee8df;
+  border-color: #ddd1c1;
+}
+.stock-detail { padding: 0 14px 15px; }
+.stock-detail div {
+  padding: 10px;
+  background: #e9edf1;
+  border-top: 1px solid #d1d8de;
+}
+.stock-detail small { color: #697683; }
+.theme-row > summary {
+  min-height: 65px;
+  padding: 11px 14px;
+}
+.theme-row h3 { font-size: 13px; font-weight: 650; }
+.theme-signal { color: #344d67; font-size: 11px; }
+.theme-summary { color: #66727e; font-size: 11.5px; }
+.theme-detail {
+  margin-right: 14px;
+  padding: 11px 13px;
+  color: #596674;
+  background: #e9edf1;
+  border-left: 2px solid #8aa0b8;
+}
+.commodity-grid,
+.st-snapshot,
+.three-lenses,
+.method-grid {
+  background: #c8d0d7;
+  border-color: #c8d0d7;
+}
+.commodity,
+.st-snapshot div,
+.lens,
+.method-card { background: #f9fafb; }
+.commodity small,
+.st-snapshot small { color: #72808c; font-size: 9px; }
+.commodity p { color: #64717d; }
+.event-disclosure > summary { padding: 17px 45px 16px 16px; }
+.event-disclosure > summary::after { right: 15px; }
+.event-meta {
+  color: #6e7b87;
+  font: 500 9px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.tier {
+  color: #315f9f;
+  background: #e2e9f2;
+  border: 1px solid #cbd7e6;
+  border-radius: 2px;
+}
+.tier.opinion {
+  color: #5d638f;
+  background: #e6e7ee;
+  border-color: #d0d2df;
+}
+.event-disclosure h3 { font-size: 14px; font-weight: 650; }
+.event-fact { color: #3e4e5d; font-size: 12.5px; }
+.event-relation { color: #697582; font-size: 11px; }
+.event-watch { color: #456e9f; font-size: 10px; }
+.evidence-body {
+  margin: 0 15px 16px;
+  padding: 14px 16px;
+  background: #e9edf1;
+  border: 0;
+  border-left: 2px solid #6686aa;
+}
+.evidence-row { border-top-color: #d0d7dd; }
+.evidence-row dt { color: #65727e; font-size: 10px; }
+.evidence-row dd { font-size: 12px; }
+.stage-line span {
+  color: #687581;
+  background: #e2e7eb;
+  border: 1px solid #ccd4db;
+  border-radius: 2px;
+}
+.stage-line .active { background: #3f6696; border-color: #3f6696; }
+.opinion-hero {
+  margin-top: 24px;
+  padding: 24px 25px;
+  color: #252b3c;
+  background: #e8eaf0;
+  border: 1px solid #c5cad6;
+  border-left: 3px solid #68709f;
+}
+.opinion-label { color: #626993; font-size: 9px; }
+.opinion-hero h3 {
+  font: 650 20px/1.4 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+}
+.opinion-meta { color: #697083; font-size: 10px; }
+.transcript-path {
+  border-color: #c6cad5;
+  background: #f1f2f6;
+}
+.transcript-path span {
+  color: #5d6479;
+  background: transparent;
+  border-color: #c6cad5;
+}
+.viewpoint-list { border-color: #c6cad5; }
+.viewpoint { border-color: #c6cad5; }
+.viewpoint time { color: #626993; font-size: 10px; }
+.viewpoint p { font-size: 12.5px; }
+.lens.opinion h4 { color: #626993; }
+.action-link {
+  color: #525c8a;
+  background: #f2f3f6;
+  border-color: #bfc4d2;
+}
+.action-link:hover { background: white; }
+.note-disclosure { border-color: #cbd3da; }
+.note-disclosure summary { font-size: 12px; }
+.source-index { color: #586674; }
+.footer-note {
+  color: #6f7b86;
+  border-color: #bfc8d0;
+  font-size: 10px;
+}
+.full-view .channel-link[aria-selected="true"] {
+  color: #a5b1bc;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 760px) {
+  html, body { background: #0d141c; }
+  .page {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .report-header { border-bottom-width: 2px; }
+  .header-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    min-height: 92px;
+    padding: 15px 16px 14px;
+  }
+  .brand small { font-size: 8px; letter-spacing: .12em; }
+  .brand h1 { margin: 7px 0 0; font-size: 25px; letter-spacing: .03em; }
+  .brand p { display: none; }
+  .cutoff {
+    display: block;
+    min-width: 98px;
+    margin: 0;
+    padding: 2px 0 2px 13px;
+    border-top: 0;
+    border-left: 1px solid #2a3641;
+    text-align: right;
+    font-size: 8px;
+  }
+  .cutoff span {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+  }
+  .market-tape {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .market-tape::-webkit-scrollbar { display: none; }
+  .tape-cell {
+    flex: 0 0 142px;
+    min-height: 58px;
+    padding: 10px 14px;
+    border-right: 1px solid #27333f;
+    border-bottom: 0;
+  }
+  .tape-cell:nth-child(even) { border-right: 1px solid #27333f; }
+  .tape-cell:nth-child(5) { grid-column: auto; }
+  .channel-nav {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: rgba(13,20,28,.97);
+    border-bottom: 1px solid #2c3742;
+    backdrop-filter: blur(14px);
+  }
+  .channel-links {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  .channel-link {
+    flex: 0 0 auto;
+    min-height: 47px;
+    color: #929fac;
+    border-bottom: 2px solid transparent;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .channel-link:hover { background: transparent; }
+  .channel-link[aria-selected="true"] {
+    color: #eef3f7;
+    background: transparent;
+    border-left: 0;
+    border-bottom-color: #6b9de7;
+  }
+  .channel-stage { padding: 27px 17px 48px; background: #f1f4f6; }
+  .channel-head { align-items: start; }
+  .channel-head h2 { font-size: 25px; }
+  .state-thesis {
+    gap: 20px;
+    padding: 20px 18px;
+  }
+  .breadth-mini {
+    padding: 17px 0 0;
+    border-left: 0;
+    border-top: 1px solid #c9d0d7;
+  }
+  .brief-item { grid-template-columns: 28px minmax(0,1fr); padding: 14px 13px; }
+  .calendar-item { padding-inline: 8px; }
+  .stock-row > summary,
+  .theme-row > summary { padding-inline: 11px; }
+  .event-disclosure > summary { padding-left: 12px; }
+  .opinion-hero { padding: 20px 18px; }
+}
+
+@media (max-width: 390px) {
+  .brand h1 { font-size: 27px; }
+  .channel-stage { padding-inline: 14px; }
+  .state-thesis h3 { font-size: 20px; }
+}
+
+/* A-share retail market language — red, white, high-contrast data */
+:root {
+  --ink: #222222;
+  --ink-soft: #6a6f75;
+  --paper: #f3f4f5;
+  --surface: #f5f6f7;
+  --line: #e1e3e6;
+  --line-strong: #c8ccd1;
+  --signal: #d72f35;
+  --signal-soft: #fff0f0;
+  --up: #e2383f;
+  --down: #009b72;
+  --attention: #b06a24;
+  --attention-soft: #fff5e9;
+  --opinion: #73727c;
+  --opinion-soft: #f1f1f3;
+  --risk: #c52d33;
+}
+html { background: #f3f4f5; }
+body {
+  color: #222;
+  background: #f3f4f5;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.62;
+  font-synthesis: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+}
+a { color: #c7282e; }
+:focus-visible { outline-color: #e45b60; }
+.page {
+  width: min(1260px, calc(100% - 32px));
+  margin: 16px auto 60px;
+  background: #f5f6f7;
+  border: 0;
+  box-shadow: 0 4px 24px rgba(34,34,34,.08);
+}
+.report-header {
+  color: white;
+  background: #d72f35;
+  border: 0;
+}
+.header-top {
+  min-height: 104px;
+  padding: 21px 28px 18px;
+  border: 0;
+}
+.brand small {
+  color: rgba(255,255,255,.72);
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.brand h1 {
+  margin: 8px 0 5px;
+  color: white;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: clamp(29px, 3vw, 35px);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.brand p {
+  color: rgba(255,255,255,.84);
+  font-size: 13px;
+}
+.cutoff {
+  color: rgba(255,255,255,.78);
+  border-left-color: rgba(255,255,255,.34);
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: none;
+}
+.cutoff span {
+  color: white;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+.market-tape {
+  background: white;
+  border-bottom: 1px solid #e4e5e7;
+}
+.tape-cell {
+  min-height: 64px;
+  background: white;
+  border-right-color: #ececee;
+}
+.tape-cell small {
+  color: #85898e;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.tape-cell strong {
+  color: #282828;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+.report-shell { background: #f5f6f7; }
+.channel-nav {
+  min-height: 52px;
+  color: #666;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #dedfe1;
+  box-shadow: 0 2px 8px rgba(30,30,30,.06);
+}
+.evidence-gate {
+  color: #85898e;
+  border-right-color: #e3e4e6;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 10px;
+}
+.evidence-gate::before { background: #d72f35; }
+.evidence-gate strong {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.evidence-gate span { color: #85898e; }
+.evidence-gate b { color: #555; font-weight: 700; }
+.channel-link {
+  min-height: 51px;
+  color: #555;
+  border-bottom-width: 3px;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.channel-link:hover {
+  color: #d72f35;
+  background: #fff7f7;
+}
+.channel-link[aria-selected="true"] {
+  color: #d72f35;
+  background: white;
+  border-bottom-color: #d72f35;
+  font-weight: 700;
+}
+.channel-link small {
+  color: #888;
+  background: #f0f1f2;
+  border-color: #e1e2e4;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+}
+.channel-link[aria-selected="true"] small {
+  color: #d72f35;
+  background: #fff0f0;
+  border-color: #f3c9cb;
+}
+.show-all {
+  color: #c92b31;
+  background: white;
+  border-color: #e4a7aa;
+  border-radius: 3px;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.show-all:hover {
+  color: white;
+  background: #d72f35;
+}
+.channel-stage {
+  width: min(1080px, 100%);
+  padding-top: 30px;
+  background: #f5f6f7;
+}
+.channel-head {
+  padding: 17px 20px 15px;
+  background: white;
+  border-bottom: 1px solid #e0e1e3;
+  border-radius: 5px 5px 0 0;
+}
+.channel-kicker {
+  color: #d72f35;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.channel-head h2 {
+  margin-top: 5px;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: clamp(25px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.channel-head p {
+  color: #777b80;
+  font-size: 12px;
+}
+.section-title {
+  margin-top: 27px;
+  border-bottom-color: #d7d9dc;
+}
+.section-title h3 {
+  color: #292929;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.section-title small {
+  color: #8a8e93;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.state-thesis {
+  padding: 22px 23px;
+  background: white;
+  border: 1px solid #e0e1e3;
+  border-top: 3px solid #d72f35;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 8px rgba(30,30,30,.035);
+}
+.state-thesis h3 {
+  color: #222;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+.state-thesis p { color: #60656a; font-size: 13px; }
+.breadth-mini { border-left-color: #e3e4e6; }
+.breadth-mini strong {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-weight: 700;
+}
+.breadth-mini span {
+  color: #777b80;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.breadth-bar { height: 4px; background: #e6ece9; }
+.breadth-bar i { background: #d72f35; }
+.brief-list,
+.stock-list,
+.theme-list,
+.event-stack {
+  background: white;
+  border-color: #dedfe1;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(30,30,30,.025);
+}
+.brief-item {
+  min-height: 76px;
+  border-bottom-color: #ebebec;
+}
+.brief-item:hover,
+.stock-row > summary:hover,
+.theme-row > summary:hover,
+.event-disclosure > summary:hover { background: #fff8f8; }
+.brief-item:hover h3 { color: #c7282e; }
+.brief-number {
+  color: #d72f35;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+.brief-copy h3,
+.calendar-item strong,
+.stock-name strong,
+.theme-row h3,
+.event-disclosure h3 {
+  color: #292929;
+  font-weight: 700;
+}
+.brief-copy p { color: #686d72; font-size: 12.5px; }
+.brief-route,
+.event-watch { color: #c7282e; font-size: 11px; }
+.integrity-strip {
+  color: #72767b;
+  background: white;
+  border-color: #dedfe1;
+  border-left: 3px solid #d72f35;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.calendar-item {
+  background: white;
+  border-bottom-color: #e5e6e8;
+}
+.calendar-item time {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+}
+.calendar-item strong { font-size: 14px; }
+.calendar-item p { color: #6a6f74; font-size: 12px; }
+.status-pill {
+  color: #696d72;
+  background: white;
+  border-color: #dedfe1;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.stock-row,
+.theme-row,
+.event-disclosure { border-bottom-color: #e6e7e8; }
+.stock-row > summary { min-height: 65px; }
+.stock-row > summary::after,
+.theme-row > summary::after,
+.event-disclosure > summary::after { color: #c62a30; }
+.stock-name strong { font-size: 14px; }
+.stock-name small {
+  color: #898d92;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+.stock-pct {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+.stock-metric { color: #777b80; font-size: 12px; }
+.stock-state {
+  color: #777b80;
+  background: #f3f3f4;
+  border-color: #e2e3e4;
+  border-radius: 3px;
+  font-size: 11px;
+}
+.stock-state.new {
+  color: #c3272d;
+  background: #fff0f0;
+  border-color: #f0c9cb;
+}
+.stock-state.background {
+  color: #946023;
+  background: #fff5e9;
+  border-color: #efdec8;
+}
+.stock-detail div,
+.theme-detail,
+.evidence-body {
+  background: #f7f7f8;
+  border-color: #e5e6e7;
+}
+.stock-detail small { color: #777b80; font-size: 11px; }
+.stock-detail strong { font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.theme-row > summary { min-height: 67px; }
+.theme-signal { color: #c72a30; font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.theme-summary { color: #686d72; font-size: 12.5px; }
+.theme-detail {
+  color: #62676c;
+  border-left-color: #d72f35;
+}
+.commodity-grid,
+.st-snapshot,
+.three-lenses,
+.method-grid {
+  background: #e0e1e3;
+  border-color: #e0e1e3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.commodity,
+.st-snapshot div,
+.lens,
+.method-card { background: white; }
+.commodity small,
+.st-snapshot small { color: #83878c; font-size: 11px; }
+.commodity strong,
+.st-snapshot strong { font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.event-meta {
+  color: #81858a;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+}
+.tier {
+  color: #666a70;
+  background: #f1f2f3;
+  border-color: #dfe1e3;
+  border-radius: 3px;
+}
+.tier.opinion {
+  color: #7a653f;
+  background: #fff5e6;
+  border-color: #eddcc1;
+}
+.event-disclosure h3 { font-size: 15px; }
+.event-fact { color: #474c51; font-size: 13.5px; }
+.fact-kind {
+  display: inline-block;
+  margin: 7px 0 5px;
+  padding: 2px 6px;
+  color: #8a2025;
+  background: #fff0f0;
+  border: 1px solid #f0c8ca;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.fact-kind.opinion {
+  color: #7a653f;
+  background: #fff5e6;
+  border-color: #eddcc1;
+}
+.event-relation { color: #71767b; font-size: 12px; }
+.evidence-body {
+  border-left: 3px solid #d72f35;
+  border-radius: 3px;
+}
+.evidence-row dt { color: #767a7f; font-size: 11px; }
+.evidence-row dd { font-size: 13px; }
+.stage-line span {
+  background: #f2f2f3;
+  border-color: #e0e1e2;
+}
+.stage-line .active {
+  color: white;
+  background: #d72f35;
+  border-color: #d72f35;
+}
+.opinion-hero {
+  color: #2d2d2f;
+  background: white;
+  border: 1px solid #dedfe1;
+  border-top: 3px solid #d72f35;
+  border-left: 1px solid #dedfe1;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(30,30,30,.035);
+}
+.opinion-label {
+  color: #a56724;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.opinion-hero h3 {
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.opinion-meta { color: #75797e; font-size: 11px; }
+.transcript-path {
+  background: #fafafa;
+  border-color: #e2e3e5;
+}
+.transcript-path span {
+  color: #666a6f;
+  border-color: #e2e3e5;
+  font-size: 11px;
+}
+.transcript-path span:not(:last-child)::after { color: #d72f35; }
+.viewpoint-list,
+.viewpoint { border-color: #e2e3e5; }
+.viewpoint time {
+  color: #c62a30;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+.viewpoint p { font-size: 13.5px; }
+.lens.opinion h4,
+.action-link { color: #c62a30; }
+.action-link {
+  background: white;
+  border-color: #e0a8aa;
+  border-radius: 3px;
+}
+.action-link:hover { background: #fff3f3; }
+.footer-note { color: #777b80; border-color: #d8dadd; font-size: 11px; }
+.source-health {
+  width: min(1080px, calc(100% - 56px));
+  margin: 20px auto 0;
+  padding: 13px 15px;
+  color: #6b4a20;
+  background: #fff8ed;
+  border: 1px solid #edcfaa;
+  border-left: 4px solid #d28a30;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.source-health.critical {
+  color: #81272b;
+  background: #fff1f1;
+  border-color: #edb9bc;
+  border-left-color: #d72f35;
+}
+.source-health.ok {
+  color: #426050;
+  background: #f2f8f5;
+  border-color: #cfe0d6;
+  border-left-color: #36916c;
+}
+.source-health strong { display: block; margin-bottom: 4px; font-size: 13px; }
+.source-health ul { margin: 5px 0 0; padding-left: 19px; }
+.source-health li + li { margin-top: 3px; }
+.source-health code {
+  padding: 1px 4px;
+  color: inherit;
+  background: rgba(255,255,255,.62);
+  font-family: Arial, sans-serif;
+}
+.source-status-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  background: white;
+  font-size: 12px;
+}
+.source-status-table th,
+.source-status-table td {
+  padding: 10px 11px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e5e6e8;
+}
+.source-status-table th {
+  color: #74787d;
+  background: #f7f7f8;
+  font-weight: 400;
+}
+.source-state {
+  display: inline-block;
+  min-width: 58px;
+  padding: 2px 6px;
+  text-align: center;
+  color: #666;
+  background: #f1f2f3;
+  border-radius: 3px;
+}
+.source-state.ok,
+.source-state.success,
+.source-state.healthy { color: #137856; background: #eaf6f0; }
+.source-state.failed,
+.source-state.error,
+.source-state.blocked,
+.source-state.timeout,
+.source-state.unavailable { color: #b4242a; background: #fff0f0; }
+.source-state.degraded,
+.source-state.partial,
+.source-state.stale,
+.source-state.fallback { color: #98601e; background: #fff5e7; }
+
+@media (max-width: 760px) {
+  html, body { background: #f3f4f5; }
+  body {
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 15px;
+    line-height: 1.58;
+  }
+  .page { background: #f5f6f7; }
+  .report-header { background: #d72f35; }
+  .header-top {
+    min-height: 88px;
+    padding: 14px 15px 13px;
+  }
+  .brand small { color: rgba(255,255,255,.72); font-size: 10px; }
+  .brand h1 { color: white; font-size: 25px; font-weight: 700; }
+  .cutoff {
+    color: rgba(255,255,255,.76);
+    border-left-color: rgba(255,255,255,.33);
+    font-size: 10px;
+  }
+  .cutoff span { color: white; font-size: 18px; }
+  .market-tape { background: white; }
+  .tape-cell {
+    flex-basis: 150px;
+    min-height: 61px;
+    border-right-color: #ececee;
+  }
+  .tape-cell small { font-size: 11px; }
+  .tape-cell strong { font-size: 16px; }
+  .channel-nav {
+    background: rgba(255,255,255,.98);
+    border-bottom-color: #dedfe1;
+    box-shadow: 0 2px 8px rgba(30,30,30,.08);
+    backdrop-filter: none;
+  }
+  .channel-panel.is-entering { animation: none; }
+  .evidence-gate {
+    min-height: 27px;
+    color: #898d92;
+    background: #fafafa;
+    border-bottom: 1px solid #ececee;
+    font-size: 10px;
+  }
+  .evidence-gate strong { color: #d72f35; font-size: 11px; }
+  .channel-link {
+    min-height: 47px;
+    padding-inline: 15px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .channel-link[aria-selected="true"] {
+    color: #d72f35;
+    border-bottom-color: #d72f35;
+    font-weight: 700;
+  }
+  .channel-stage { padding: 22px 13px 44px; background: #f5f6f7; }
+  .channel-panel { scroll-margin-top: 86px; }
+  .channel-head {
+    padding: 15px 16px 14px;
+    border-radius: 5px 5px 0 0;
+  }
+  .channel-kicker { font-size: 11px; }
+  .channel-head h2 { font-size: 25px; font-weight: 700; }
+  .channel-head p { color: #70757a; font-size: 13px; }
+  .state-thesis { padding: 18px 16px; }
+  .state-thesis h3 { font-size: 20px; font-weight: 700; }
+  .state-thesis p { font-size: 14px; }
+  .breadth-mini span { font-size: 12px; }
+  .section-title h3 { font-size: 16px; }
+  .section-title small { font-size: 11px; }
+  .brief-item {
+    grid-template-columns: 27px minmax(0, 1fr);
+    padding: 15px 13px;
+  }
+  .brief-number { font-size: 11px; }
+  .brief-copy h3 { font-size: 15px; line-height: 1.48; }
+  .brief-copy p { font-size: 13px; line-height: 1.55; }
+  .brief-route { font-size: 12px; }
+  .integrity-strip { font-size: 11px; }
+  .calendar-item strong { font-size: 14px; }
+  .calendar-item p { font-size: 12.5px; }
+  .stock-name strong { font-size: 15px; }
+  .stock-name small { font-size: 11px; }
+  .stock-state { font-size: 11px; }
+  .theme-row h3 { font-size: 14px; }
+  .theme-summary { font-size: 13px; }
+  .event-meta { font-size: 11px; }
+  .event-disclosure h3 { font-size: 15px; }
+  .event-fact { font-size: 14px; }
+  .event-relation { font-size: 12.5px; }
+  .viewpoint p { font-size: 14px; }
+  .source-health {
+    width: calc(100% - 26px);
+    margin-top: 14px;
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+  .source-health strong { font-size: 13px; }
+  .source-status-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+
+.report-identity {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  padding: 6px 10px; border: 1px solid #efb7ba; border-radius: 3px;
+  color: #b31f25; background: #fff7f7; font-size: 12px; font-weight: 800;
+  letter-spacing: .08em;
+}
+.report-identity::before { content: ""; width: 5px; height: 5px; background: #d72f35; border-radius: 50%; }
+.first-impact {
+  margin: 9px 0 0; padding: 9px 11px; border-left: 3px solid #d72f35;
+  background: #fff8f8; color: #353b40; font-size: 12.5px; line-height: 1.65;
+}
+.first-impact strong { color: #b31f25; }
+.continuation-badge {
+  display: inline-flex; margin-left: 7px; padding: 2px 7px; border: 1px solid #e4a3a7;
+  border-radius: 999px; color: #b31f25; background: #fff5f5; font-size: 10px; font-weight: 800;
+}
+.analysis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.analysis-cell { padding: 11px 12px; background: #fff; border: 1px solid #e3e6e8; min-width: 0; }
+.analysis-cell dt { color: #a52329; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.analysis-cell dd { margin: 5px 0 0; color: #42494f; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.scenario-list { display: grid; gap: 7px; margin: 0 0 12px; padding: 0; list-style: none; }
+.scenario-list li { padding: 9px 11px; border: 1px solid #e3e6e8; background: #fff; font-size: 12px; line-height: 1.6; }
+.scenario-list b { color: #a52329; }
+.global-grid, .close-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.context-card { padding: 15px; border: 1px solid #dfe3e5; background: #fff; min-width: 0; }
+.context-card h3 { margin: 0 0 7px; color: #20262b; font-size: 15px; }
+.context-card p { margin: 0; color: #555e65; font-size: 12.5px; line-height: 1.7; overflow-wrap: anywhere; }
+.context-card .context-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 9px 0; }
+.context-meta span { padding: 3px 6px; background: #f3f4f5; color: #606970; font-size: 10px; }
+.context-kind { color: #b31f25 !important; font-weight: 800; }
+.context-path { margin-top: 9px !important; padding-top: 9px; border-top: 1px solid #eceeef; color: #7b4548 !important; }
+.unavailable-card { border-style: dashed; background: #fafafa; }
+.review-verdict { display: inline-flex; margin: 8px 0 0; color: #a52329; font-size: 11px; font-weight: 800; }
+@media (max-width: 760px) {
+  .analysis-grid, .global-grid, .close-grid { grid-template-columns: 1fr; }
+  .first-impact { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="report-header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="report-identity">A股收盘晚报 · 20:30</span>
+          <small>A股研究台 · 个人版 / 2026-07-31</small>
+          <h1>A股收盘晚报</h1>
+          <p>全球背景、A股结构与九只自选股的证据分层</p>
+        </div>
+        <div class="cutoff"><span>20:10</span>证据截止<br>2026-07-31 · 北京</div>
+      </div>
+      <div class="market-tape" aria-label="昨日市场概览">
+        <div class="tape-cell"><small>上涨 / 下跌</small><strong>4,691 / 728</strong></div>
+        <div class="tape-cell"><small>全 A 成交额</small><strong>2.56万亿</strong></div>
+        <div class="tape-cell"><small>涨跌中位数</small><strong class="up">+2.03%</strong></div>
+        <div class="tape-cell"><small>涨停 / 跌停</small><strong>103 / 0</strong></div>
+        <div class="tape-cell"><small>本期材料</small><strong>11 事件 · 8 频道</strong></div>
+      </div>
+    </header>
+    <div class="report-shell">
+      
+        <aside class="source-health ok" aria-label="数据源状态">
+          <strong>人工正文核验完成 · 数据源状态正常</strong>
+          <span>run_id <code>20260731-2010-stabilized-reviewed-v2</code>；已记录 30 / 30 个来源状态。已完成入选事实的一手正文核验；当前页面仍是供用户校准的代表性样报。</span>
+        </aside>
+        
+      <nav class="channel-nav" aria-label="日报频道">
+        <div class="evidence-gate" aria-label="证据账本">
+          <strong>20:10</strong>
+          <span><b>A</b> 1</span>
+          <span><b>B</b> 0</span>
+          <span><b>C</b> 0</span>
+          <span><b>D</b> 1</span>
+        </div>
+        <div class="channel-links">
+            <a id="channel-link-overview" class="channel-link"
+               href="#channel-overview" data-channel-link="overview"
+               data-label="今日总览">
+              <span>今日总览</span><small>5</small>
+            </a>
+            
+            <a id="channel-link-close_review" class="channel-link"
+               href="#channel-close_review" data-channel-link="close_review"
+               data-label="收盘复盘">
+              <span>收盘复盘</span><small>8</small>
+            </a>
+            
+            <a id="channel-link-global" class="channel-link"
+               href="#channel-global" data-channel-link="global"
+               data-label="全球背景">
+              <span>全球背景</span><small>9</small>
+            </a>
+            
+            <a id="channel-link-watchlist" class="channel-link"
+               href="#channel-watchlist" data-channel-link="watchlist"
+               data-label="自选股">
+              <span>自选股</span><small>1</small>
+            </a>
+            
+            <a id="channel-link-themes" class="channel-link"
+               href="#channel-themes" data-channel-link="themes"
+               data-label="行业主题">
+              <span>行业主题</span><small>10</small>
+            </a>
+            
+            <a id="channel-link-st" class="channel-link"
+               href="#channel-st" data-channel-link="st"
+               data-label="ST 重组">
+              <span>ST 重组</span>
+            </a>
+            
+            <a id="channel-link-lixiao" class="channel-link"
+               href="#channel-lixiao" data-channel-link="lixiao"
+               data-label="李大霄">
+              <span>李大霄</span>
+            </a>
+            
+            <a id="channel-link-data" class="channel-link"
+               href="#channel-data" data-channel-link="data"
+               data-label="数据说明">
+              <span>数据说明</span>
+            </a>
+            </div>
+        <button id="show-all" class="show-all" type="button" aria-pressed="false">显示全文</button>
+      </nav>
+      <main class="channel-stage">
+    <section id="channel-overview" class="channel-panel" data-channel-panel="overview">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">3分钟收盘定位</div>
+        <h2>今日总览</h2>
+      </div>
+      <p>三分钟定位今天最值得看的变化。</p>
+    </div>
+    
+      <div class="state-thesis">
+        <div><h3>风险偏好修复，不等于所有主题同步转强</h3><p>市场宽度和成交额同步改善，但半导体、ST与九只自选股内部信号并不一致。今天应先区分经营事实、程序硬信号与纯交易热度。</p></div>
+        <div class="breadth-mini">
+          <strong>84.9%</strong><span>有成交证券上涨占比</span>
+          <div class="breadth-bar"><i style="width:84.9%"></i></div>
+        </div>
+      </div>
+      <div class="section-title"><h3>今天先看这五件事</h3><small>点击后自动切换到完整频道</small></div>
+      <div class="brief-list">
+            <a class="brief-item" href="#ann-72cc725579702f6357ef">
+              <span class="brief-number">01</span>
+              <span class="brief-copy"><h3>2026年7月30日投资者关系活动记录表</h3><p>顺络电子于2026年7月30日通过网络电话会议召开业绩说明会，公告列示214名参与人员，公司接待人为董事会秘书任怡和证券事务代表张易弛。；公司在交流中表示，2026年第二季度盈利能力较第一季度修复；金属类原材料采购价格仍显著高于上年同期，仅靠内部改善不能完全消化成本上涨影响。；公司在交流中表示，新型结构钽电容处于小批量出货阶段，AI电感已实现多种工艺量产出货，TLVR电感已实现批量供应。；公司表示短期内暂不考虑采用资本市场直接融资方案，后续将根据具体投资进度规划资金需求。</p></span>
+              <span class="brief-route">去自选股 →</span>
+            </a>
+            </div>
+      <div class="integrity-strip">
+        <span>证据截止 <strong>20:10</strong></span>
+        <span>来源状态 <strong>30 / 30</strong></span>
+        <span>自选股覆盖 <strong>9 / 9</strong></span>
+        <span>视频内容 <strong>未取得</strong></span>
+      </div>
+      <div class="section-title"><h3>最近三项日历</h3><small>未来 7 日观察</small></div>
+      <div class="calendar-list">
+            <div class="calendar-item">
+              <time>07-31<br>待公布</time>
+              <div><strong>采购经理指数月度报告</strong><p>发布机构：国家统计局。</p></div>
+            </div>
+            </div>
+      <div class="footer-note">本频道只做路线图；完整事实只在一个主频道出现，避免重复堆叠。</div>
+    </section>
+    
+    <section id="channel-close_review" class="channel-panel" data-channel-panel="close_review">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">A股完整收盘 / 晨报复核</div>
+        <h2>收盘复盘</h2>
+      </div>
+      <p>A股完整收盘结构、五个主题与晨报判断的证据复核。</p>
+    </div>
+    
+      <div class="state-thesis">
+        <div><h3>A股完整收盘可复盘，但部分结构指标仍降级</h3><p>本样本使用历史真实收盘；成交历史比较、炸板连板、主题扩散和行业相对强弱仍未取得。</p></div>
+      </div>
+      <div class="close-grid">
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>市场宽度与成交</h3>
+              <p>上涨4691家、下跌728家、平盘109家；成交额2559.898亿元。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>涨跌分布与成交→判断指数表象是否得到市场内部结构支持。</p>
+              <span class="review-verdict">成交额5日/20日比较缺失，不补算趋势结论。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">模型推断</p>
+              <h3>大小盘与成长代理</h3>
+              <p>沪深300减中证1000为None个百分点；创业板指减沪深300为None个百分点。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>晚报由生产就绪数据计算，晨报不把上一交易日冒充当日收盘。</p>
+              <span class="review-verdict">这里只是透明定义的指数代理，不等同于完整风格因子。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">样本边界</p>
+              <h3>晨报复盘：非同日代表样本</h3>
+              <p>本晚报与晨报不是同日连续窗口，因此不把相同事件伪标为“晨报延续”，也不伪造新增事实或市场反应。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>生产同日序列将沿用稳定event_id，再比较新增事实、市场反应、判断变化和观察项变化。</p>
+              <span class="review-verdict">当前配对：non_sequential_due_to_cutoff_safety</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>半导体</h3>
+              <p>存储芯片—%；芯片概念—%；汽车芯片—%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">基础采集仅提供热度代理；扩散度与成交贡献须由生产就绪采集补充。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>可控核聚变</h3>
+              <p>可控核聚变—%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">基础采集仅提供热度代理；扩散度与成交贡献须由生产就绪采集补充。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>电力</h3>
+              <p>绿色电力—%；智能电网—%；电力物联网—%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">基础采集仅提供热度代理；扩散度与成交贡献须由生产就绪采集补充。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>创新药</h3>
+              <p>创新药—%；医药电商—%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">基础采集仅提供热度代理；扩散度与成交贡献须由生产就绪采集补充。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>ST板块重组预期</h3>
+              <p>当前没有可用主题代理。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">基础采集仅提供热度代理；扩散度与成交贡献须由生产就绪采集补充。</span>
+            </article>
+            </div>
+      <div class="footer-note">供应商“资金流”字段仅作统计口径，不表述为真实机构买卖行为；单日涨跌也不直接判定晨报观点对错。</div>
+    </section>
+    
+    <section id="channel-global" class="channel-panel" data-channel-panel="global">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">宏观 / 美日韩 / 世界局势</div>
+        <h2>全球背景</h2>
+      </div>
+      <p>只保留与A股风险偏好、行业供需、成本、政策或估值相关的全球事实。</p>
+    </div>
+    
+      <div class="integrity-strip">
+        <span>窗口 <strong>2026-07-31T20:10:00+08:00</strong></span>
+        <span>行情状态 <strong>完整收盘、不可用项逐项标注</strong></span>
+        <span>可用项 <strong>9</strong></span>
+      </div>
+      <div class="global-grid">
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>美国 · 标普500</h3>
+              <p>标普500最近完整交易日20260730收于7437.633，涨跌幅1.6605%。</p>
+              <div class="context-meta"><span>20260730</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国大盘风险偏好与折现率预期→全球权益风险预算→A股宽基与成长价值风格观察</p>
+              <span class="review-verdict">指数变化只作为跨市场背景，不能单独推出A股或个股方向。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>美国 · 道琼斯工业指数</h3>
+              <p>道琼斯工业指数最近完整交易日20260730收于52208.0582，涨跌幅1.1899%。</p>
+              <div class="context-meta"><span>20260730</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国传统行业与大盘风险偏好→全球周期和价值风格→A股价值与电力主题风险预算观察</p>
+              <span class="review-verdict">指数变化不能替代A股行业、公司公告或经营数据。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>美国 · 纳斯达克综合指数</h3>
+              <p>纳斯达克综合指数最近完整交易日20260730收于25122.18，涨跌幅2.7789%。</p>
+              <div class="context-meta"><span>20260730</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国科技风险偏好→全球半导体估值与资本开支预期→A股半导体及电子链观察</p>
+              <span class="review-verdict">海外科技指数不能证明国内公司订单、利润或短期股价变化。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>日本 · 日经225</h3>
+              <p>日经225最近完整交易日20260731收于64362.02，涨跌幅4.0322%。</p>
+              <div class="context-meta"><span>20260731</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>日本制造业与股票风险偏好→亚洲设备和电子产业链预期→A股相关主题估值观察</p>
+              <span class="review-verdict">日经指数只能提供背景，不能替代产业链订单证据。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>韩国 · 韩国综合指数</h3>
+              <p>韩国综合指数最近完整交易日20260731收于6595.45，涨跌幅17.9115%。</p>
+              <div class="context-meta"><span>20260731</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>韩国电子权重市场表现→存储和电子产业链预期→A股半导体及被动元件观察</p>
+              <span class="review-verdict">韩国指数涨跌不能替代公司公告、价格或产能证据。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>GDP (Advance Estimate), 2nd Quarter 2026</h3>
+              <p>U.S. Bureau of Economic Analysis news于2026-07-30T20:30:00+08:00发布《GDP (Advance Estimate), 2nd Quarter 2026》。当前已核对官方发布记录，正文事实仍需复核。</p>
+              <div class="context-meta"><span>2026-07-30T20:30:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>传导路径：</strong>全球增长、通胀与政策预期→利率和汇率→A股估值、资金风险偏好与行业需求预期。</p>
+              <span class="review-verdict">官方发布记录不等于材料内全部判断已核实，未经正文复核不据此形成方向性宏观结论。；未核实/限制：该数据为初值，后续可能修订；不得据此单独推断A股当日方向。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>Global goods trade resilient in the first quarter of 2026 despite war in Middle East</h3>
+              <p>World Trade Organization latest news于2026-07-31T08:00:00+08:00发布《Global goods trade resilient in the first quarter of 2026 despite war in Middle East》。当前已核对官方发布记录，正文事实仍需复核。</p>
+              <div class="context-meta"><span>2026-07-31T08:00:00+08:00</span><span>Tier A official discovery</span></div>
+              <p class="context-path"><strong>传导路径：</strong>政策冲突与地缘风险→能源、贸易和供应链→A股相关行业成本、订单预期与风险偏好。</p>
+              <span class="review-verdict">官方表态、冲突归责和第三方主张必须保留归因；未经独立证据不得改写为客观事实。；未核实/限制：WTO正文中的部分地区和能源贸易数字为估算，且一季度数据未覆盖4月后的全部冲击。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>美国国债收益率曲线</h3>
+              <p>美国财政部2026-07-30日度曲线：2年期4.23%，10年期4.68%，30年期5.21%。</p>
+              <div class="context-meta"><span>2026-07-30</span><span>Tier A｜美国财政部</span><span>利率</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国无风险利率→全球权益折现率与美元流动性→A股成长估值和外资风险偏好。</p>
+              <span class="review-verdict">日度收益率曲线是背景变量，不能单独推导A股指数或个股次日方向。</span>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>主要汇率参考交叉盘</h3>
+              <p>ECB 2026-07-30欧元参考汇率复算：美元/人民币6.755054，美元/日元162.940049，美元/韩元1433.69641。</p>
+              <div class="context-meta"><span>2026-07-30</span><span>Tier A｜欧洲央行</span><span>汇率</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美元对人民币、日元和韩元的相对强弱→亚洲资金与出口定价预期→A股风险偏好和行业成本。</p>
+              <span class="review-verdict">ECB参考交叉盘不能冒充境内人民币中间价、离岸人民币收盘价或实时交易价格。</span>
+            </article>
+            </div>
+      <div class="footer-note">全球背景只解释风险偏好、供需、成本、政策或估值传导，不能替代个股公告与经营证据。</div>
+    </section>
+    
+    <section id="channel-watchlist" class="channel-panel" data-channel-panel="watchlist">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">9只标的 / 直接关联</div>
+        <h2>自选股</h2>
+      </div>
+      <p>九只股票的新增、热度与已检查状态。</p>
+    </div>
+    
+      <div class="status-summary">
+        <span class="status-pill"><strong>1</strong> 只 24小时新增</span>
+        <span class="status-pill"><strong>4</strong> 只需跟踪背景</span>
+        <span class="status-pill"><strong>4</strong> 只无重大经营新增</span>
+      </div>
+      <div class="section-title"><h3>九只股票收盘体检</h3><small>点击单只股票查看估值与资金热度</small></div>
+      <div class="stock-list">
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>海康威视</strong><small>002415</small></span>
+                <span class="stock-pct up">+5.70%</span>
+                <span class="stock-metric">换手 1.90%</span>
+                <span class="stock-state background">行情异动</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>37.65</strong></div>
+                <div><small>PE-TTM / PB</small><strong>21.00 / 4.09</strong></div>
+                <div><small>L2 净额代理</small><strong>+9.994 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>新亚制程</strong><small>002388</small></span>
+                <span class="stock-pct up">+4.49%</span>
+                <span class="stock-metric">换手 19.39%</span>
+                <span class="stock-state background">行情异动</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>4.65</strong></div>
+                <div><small>PE-TTM / PB</small><strong>— / 2.48</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.064 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST海王</strong><small>000078</small></span>
+                <span class="stock-pct up">+1.27%</span>
+                <span class="stock-metric">换手 2.49%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>1.60</strong></div>
+                <div><small>PE-TTM / PB</small><strong>— / 3.39</strong></div>
+                <div><small>L2 净额代理</small><strong>-0.105 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST金鸿</strong><small>000669</small></span>
+                <span class="stock-pct ">+0.00%</span>
+                <span class="stock-metric">换手 0.61%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>3.34</strong></div>
+                <div><small>PE-TTM / PB</small><strong>51.61 / 37.38</strong></div>
+                <div><small>L2 净额代理</small><strong>-0.015 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST京蓝</strong><small>000711</small></span>
+                <span class="stock-pct up">+7.08%</span>
+                <span class="stock-metric">换手 3.92%</span>
+                <span class="stock-state background">行情异动</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>4.84</strong></div>
+                <div><small>PE-TTM / PB</small><strong>— / 21.58</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.646 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>永泰能源</strong><small>600157</small></span>
+                <span class="stock-pct ">+0.00%</span>
+                <span class="stock-metric">换手 1.48%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>1.58</strong></div>
+                <div><small>PE-TTM / PB</small><strong>157.13 / 0.73</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.614 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>杉杉股份</strong><small>600884</small></span>
+                <span class="stock-pct down">-0.39%</span>
+                <span class="stock-metric">换手 3.24%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>12.73</strong></div>
+                <div><small>PE-TTM / PB</small><strong>37.82 / 1.27</strong></div>
+                <div><small>L2 净额代理</small><strong>-1.290 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>哈药股份</strong><small>600664</small></span>
+                <span class="stock-pct up">+5.94%</span>
+                <span class="stock-metric">换手 17.04%</span>
+                <span class="stock-state background">行情异动</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>5.89</strong></div>
+                <div><small>PE-TTM / PB</small><strong>47.88 / 2.53</strong></div>
+                <div><small>L2 净额代理</small><strong>+1.949 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>顺络电子</strong><small>002138</small></span>
+                <span class="stock-pct up">+6.73%</span>
+                <span class="stock-metric">换手 8.65%</span>
+                <span class="stock-state new">24小时新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>42.80</strong></div>
+                <div><small>PE-TTM / PB</small><strong>35.13 / 5.26</strong></div>
+                <div><small>L2 净额代理</small><strong>-6.738 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>—%</strong></div>
+                <div class="stock-note">发现1条公司级交接事件；请打开事件卡并核对公告正文。</div>
+              </div>
+            </details>
+            </div>
+      <div class="section-title"><h3>公司级事件</h3><small>1 条，按需展开证据</small></div>
+      <div class="event-stack">
+    <details id="ann-72cc725579702f6357ef" class="event-disclosure" open>
+      <summary>
+        <div class="event-meta">
+          <span class="tier">Tier A</span>
+          <span>07-31 12:01</span>
+          <span>002138.SZ · 顺络电子</span>
+        </div>
+        <h3>2026年7月30日投资者关系活动记录表</h3>
+        <span class="fact-kind">已确认事实</span>
+        <p class="event-fact">顺络电子于2026年7月30日通过网络电话会议召开业绩说明会，公告列示214名参与人员，公司接待人为董事会秘书任怡和证券事务代表张易弛。；公司在交流中表示，2026年第二季度盈利能力较第一季度修复；金属类原材料采购价格仍显著高于上年同期，仅靠内部改善不能完全消化成本上涨影响。；公司在交流中表示，新型结构钽电容处于小批量出货阶段，AI电感已实现多种工艺量产出货，TLVR电感已实现批量供应。；公司表示短期内暂不考虑采用资本市场直接融资方案，后续将根据具体投资进度规划资金需求。</p>
+        <p class="event-relation"><strong>与你的关系：</strong>公告直接提及固定自选股</p>
+        <span class="event-watch">下一观察：第三季度毛利率、经营现金流、AI电感和钽电容收入贡献及客户验证</span>
+        <p class="first-impact"><strong>第一层影响：</strong>模型推断：正文已核验后，仅按已记录的收入、成本、供需、现金流或监管路径评估002138.SZ、顺络电子。</p>
+      </summary>
+      <dl class="evidence-body">
+        <div class="evidence-row"><dt>模型推断 / 影响路径</dt><dd>（模型推断）交流记录强化了半年度报告中“收入增长、利润承压、二季度边际修复”的叙事，但后续仍需以第三季度毛利率、现金流和分业务收入验证。；AI电感和钽电容的量产或小批量出货提供了业务进展线索，但缺少客户、订单金额及收入占比，不能据此推断短期业绩贡献。</dd></div>
+        <div class="evidence-row"><dt>第二层传导</dt><dd>第二层传导必须经过订单、价格、产能、融资或监管证据验证，不能由标题直接推出。</dd></div><div class="evidence-row"><dt>市场是否定价</dt><dd>not_assessed（low）：缺少事件前后可审计的同行、成交和估值对照，不判断是否已定价。</dd></div>
+        <ul class="scenario-list"><li><b>基准</b> 仅维持已确认事实，不外推未披露的经营或交易结果。</li><li><b>强化</b> 后续官方公告、经营数据或市场结构提供同方向独立证据。</li><li><b>削弱</b> 关键程序延期、数据未兑现，或官方文件否定原先假设。</li></ul>
+        <div class="evidence-row"><dt>时间范围</dt><dd>待人工读取公告正文后判断</dd></div>
+        <div class="evidence-row"><dt>未核实信息 / 反向证据 / 局限</dt><dd>关键程序延期、数据未兑现，或官方文件否定原先假设。</dd></div>
+        <div class="evidence-row"><dt>评分依据</dt><dd>相关性 92；潜在影响 55；来源可信度 100；时效性 100；市场关注度 50</dd></div>
+        <div class="source-links">原始来源：<a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002138&amp;announcementId=1225449922&amp;orgId=9900003163&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">顺络电子</a></div>
+      </dl>
+    </details>
+    </div>
+      <div class="footer-note">资金净额与换手率只用于描述交易热度，不能替代订单、产品、公告或财务证据。</div>
+    </section>
+    
+    <section id="channel-themes" class="channel-panel" data-channel-panel="themes">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">行业 / 政策 / 上游</div>
+        <h2>行业主题</h2>
+      </div>
+      <p>半导体、核聚变、电力、创新药与原材料。</p>
+    </div>
+    
+      <div class="section-title"><h3>五条主题温度</h3><small>价格、资金与事实分开看</small></div>
+      <div class="theme-list">
+            <details class="theme-row">
+              <summary>
+                <h3>半导体</h3>
+                <span class="theme-signal up">+3.82%｜芯片概念</span>
+                <span class="theme-summary">匹配5个第三方概念口径；代表项为芯片概念。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>可控核聚变</h3>
+                <span class="theme-signal up">+2.44%｜可控核聚变</span>
+                <span class="theme-summary">匹配1个第三方概念口径；代表项为可控核聚变。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>电力</h3>
+                <span class="theme-signal up">+3.05%｜电力物联网</span>
+                <span class="theme-summary">匹配5个第三方概念口径；代表项为电力物联网。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>创新药</h3>
+                <span class="theme-signal up">+1.89%｜创新药</span>
+                <span class="theme-summary">匹配2个第三方概念口径；代表项为创新药。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>ST板块重组预期</h3>
+                <span class="theme-signal ">无匹配概念行</span>
+                <span class="theme-summary">本轮第三方概念表未匹配到同名口径。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            </div>
+      <div class="section-title"><h3>行业与政策事件</h3><small>0 条</small></div>
+      <div class="event-stack"></div>
+      <div class="section-title"><h3>跨主题原材料</h3><small>主力期货代理，不是企业采购价</small></div>
+      <div class="commodity-grid">
+            <div class="commodity">
+              <small>JM.DCE</small>
+              <strong class="">焦煤 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>J.DCE</small>
+              <strong class="">焦炭 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>I.DCE</small>
+              <strong class="">铁矿石 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>CU.SHF</small>
+              <strong class="">铜 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>AL.SHF</small>
+              <strong class="">铝 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>NI.SHF</small>
+              <strong class="">镍 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>LC.GFE</small>
+              <strong class="">碳酸锂 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>SI.GFE</small>
+              <strong class="">工业硅 —%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            </div>
+    </section>
+    
+    <section id="channel-st" class="channel-panel" data-channel-panel="st">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">司法程序 / 管理人 / 风险警示</div>
+        <h2>ST 重组</h2>
+      </div>
+      <p>全 A 硬信号与三只自选 ST 的程序状态。</p>
+    </div>
+    
+      <div class="st-snapshot">
+        <div><small>上一交易日 ST 池</small><strong>208</strong></div>
+        <div><small>上涨 / 下跌</small><strong>186 / 16</strong></div>
+        <div><small>涨跌中位数</small><strong class="up">+2.24%</strong></div>
+        <div><small>涨停 / 跌停</small><strong>— / —</strong></div>
+        <div><small>本报核心硬信号</small><strong>0</strong></div>
+      </div>
+      <div class="stage-line">
+        <span class="active">庭外重组</span><span>申请</span><span class="active">预重整</span>
+        <span>正式受理</span><span>投资人 / 方案</span><span class="active">执行与风险警示</span>
+      </div>
+      <div class="section-title"><h3>全 A 程序硬信号</h3><small>按法律与披露阶段区分</small></div>
+      <div class="event-stack"></div>
+      <div class="section-title"><h3>三只自选 ST</h3><small>未发现硬信号也明确显示</small></div>
+      <div class="calendar-list"><div class="calendar-item"><time>ST海王<br>000078</time><div><strong>无重大新增</strong><p>本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</p></div></div><div class="calendar-item"><time>ST金鸿<br>000669</time><div><strong>无重大新增</strong><p>本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。</p></div></div><div class="calendar-item"><time>ST京蓝<br>000711</time><div><strong>行情异动</strong><p>未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。</p></div></div></div>
+      <div class="integrity-strip">stock_st updates around 09:20; prior-trade-date pool is used for the 08:10 report.</div>
     </section>
     
     <section id="channel-lixiao" class="channel-panel" data-channel-panel="lixiao">
       
     <div class="channel-head">
       <div>
-        <div class="channel-kicker">D绾ц鐐?/ 瑙嗛杞啓</div>
-        <h2>鏉庡ぇ闇?/h2>
+        <div class="channel-kicker">D级观点 / 视频转写</div>
+        <h2>李大霄</h2>
       </div>
-      <p>鍩轰簬瀹為檯瑙嗛杞啓鐨?Tier D 瑙傜偣鎽樿銆?/p>
+      <p>基于实际视频转写的 Tier D 观点摘要。</p>
     </div>
     
       <div class="opinion-hero">
-        <div class="opinion-label">Tier D锝滃競鍦鸿鐐规簮涓嶅彲鐢?/div>
-        <h3>鏈湡鏈舰鎴愬彲鏍搁獙鐨勮棰戣鐐规憳瑕?/h3>
+        <div class="opinion-label">Tier D｜市场观点源不可用</div>
+        <h3>本期未形成可核验的视频观点摘要</h3>
         <div class="opinion-meta">
-          <span>鏉庡ぇ闇?/span><span>鏈湡鏈彇寰?/span>
-          <span>瑙嗛 --</span>
+          <span>李大霄</span><span>本期未取得</span>
+          <span>视频 --</span>
         </div>
         <div class="transcript-path">
-          <span>鍏紑 H5 瑙嗛</span><span>鏈湴鎻愬彇闊宠建</span><span>鏈哄櫒涓枃杞啓</span><span>鍒嗗眰鎽樿</span>
+          <span>公开 H5 视频</span><span>本地提取音轨</span><span>机器中文转写</span><span>分层摘要</span>
         </div>
-        <div class="viewpoint-list"><div class="viewpoint"><time>鏈湡</time><p>鏈湡浜ゆ帴鏂囦欢鏈彁渚涜棰戣鐐圭粨鏋勫寲缁撴灉銆?/p></div></div>
-        <p class="theme-detail" style="margin:16px 0 0">鏈湡浜ゆ帴鏂囦欢鏈彁渚涜棰戣鐐圭粨鏋勫寲缁撴灉銆?/p>
+        <div class="viewpoint-list"><div class="viewpoint"><time>本期</time><p>本期交接文件未提供视频观点结构化结果。</p></div></div>
+        <p class="theme-detail" style="margin:16px 0 0">本期交接文件未提供视频观点结构化结果。</p>
         <div class="action-links"></div>
       </div>
       <div class="three-lenses">
-        <div class="lens"><h4>宸茬‘璁や簨瀹?/h4><p>鏈湡娌℃湁鍙栧緱鍙叕寮€璁块棶骞跺彲瀹屾垚杞啓鐨勮棰戝唴瀹广€?/p></div>
-        <div class="lens attention"><h4>灏氬緟鐙珛鏍搁獙</h4><p>涓嶅緱渚濇嵁鏍囬銆佺浉浼兼枃绔犳垨杞堪琛ュ啓瑙嗛瑙傜偣銆?/p></div>
-        <div class="lens opinion"><h4>鏈姤鍛婃帹鏂?/h4><p>璇ヨ鐐规簮鏈湡涓嶈繘鍏ュ競鍦哄垽鏂€?/p></div>
+        <div class="lens"><h4>已确认事实</h4><p>本期没有取得可公开访问并可完成转写的视频内容。</p></div>
+        <div class="lens attention"><h4>尚待独立核验</h4><p>不得依据标题、相似文章或转述补写视频观点。</p></div>
+        <div class="lens opinion"><h4>本报告推断</h4><p>该观点源本期不进入市场判断。</p></div>
       </div>
-      <div class="footer-note">瑙傜偣婧愪笌鍏憡銆佺洃绠″拰琛屾儏浜嬪疄涓嶅悓绾э紱瑙嗛涓殑鏁板瓧涓嶄細鍥犱负鈥滃凡杞啓鈥濆氨鑷姩鍙樻垚宸茬‘璁や簨瀹炪€?/div>
+      <div class="footer-note">观点源与公告、监管和行情事实不同级；视频中的数字不会因为“已转写”就自动变成已确认事实。</div>
     </section>
     
     <section id="channel-data" class="channel-panel" data-channel-panel="data">
       
     <div class="channel-head">
       <div>
-        <div class="channel-kicker">鏉ユ簮 / 鎴 / 闄嶇骇璇存槑</div>
-        <h2>鏁版嵁璇存槑</h2>
+        <div class="channel-kicker">来源 / 截止 / 降级说明</div>
+        <h2>数据说明</h2>
       </div>
-      <p>鏉ユ簮灞傜骇銆佹埅姝㈠彛寰勩€佸け璐ヤ笌闄嶇骇瑙勫垯銆?/p>
+      <p>来源层级、截止口径、失败与降级规则。</p>
     </div>
     
       
         <details class="note-disclosure" open>
-          <summary>鏈湡鍏抽敭鏉ユ簮鐘舵€?/summary>
+          <summary>本期关键来源状态</summary>
           <table class="source-status-table">
-            <thead><tr><th>鏉ユ簮</th><th>鐘舵€?/th><th>鏈€鍚庢鏌?/th><th>澶辫触 / 闄嶇骇璇存槑</th></tr></thead>
+            <thead><tr><th>来源</th><th>状态</th><th>最后检查</th><th>失败 / 降级说明</th></tr></thead>
             <tbody>
             <tr>
               <td>li_daxiao_local_asr</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>li_daxiao_public_feed</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>li_daxiao_public_h5</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>li_daxiao_public_post</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>official_announcement_links</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_announcements</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_financial_indicators</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_futures</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_global_indices</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_indexes</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_macro_calendar</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_market</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_market_heat</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_news_leads</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_security_master</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_st_pool</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_theme_heat</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>tushare_trade_calendar</td>
-              <td><span class="source-state success">姝ｅ父</span></td>
+              <td><span class="source-state success">正常</span></td>
               <td>2026-07-31T20:12:15+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>official-macro-geopolitics</td>
               <td><span class="source-state unknown">available</span></td>
               <td>2026-07-31T22:16:12+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>global-rates-fx</td>
               <td><span class="source-state unknown">available</span></td>
               <td>2026-07-31T22:16:12+08:00</td>
-              <td>鈥?/td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:federal-reserve-press</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:us-bls-latest</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:us-bea-news</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:ecb-press</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:white-house-presidential-actions</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:eu-council-press</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:wto-latest-news</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:uk-fcdo-news</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:us-treasury-yield-curve</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             
             <tr>
               <td>probe:ecb-reference-rates</td>
               <td><span class="source-state unknown">available</span></td>
-              <td>鈥?/td>
-              <td>鈥?/td>
+              <td>—</td>
+              <td>—</td>
             </tr>
             </tbody>
           </table>
         </details>
         
-      <div class="method-grid"><div class="method-card"><strong>Tier A锝滀氦鏄撴墍銆佺洃绠°€佹斂搴溿€佷笂甯傚叕鍙稿叕鍛?/strong><p>閲嶈浜嬪疄浼樺厛閲囩敤銆?/p></div><div class="method-card"><strong>Tier B锝滃叕鍙稿畼缃戙€佷笟缁╂潗鏂欎笌鎶曡祫鑰呭叧绯昏祫鏂?/strong><p>鐢ㄤ簬浜у搧銆佽储鍔″拰缁忚惀纭銆?/p></div><div class="method-card"><strong>Tier C锝淭ushare涓庝笓涓氳储缁忓獟浣?/strong><p>缁撴瀯鍖栬鎯呬笌琛ュ厖鑳屾櫙銆?/p></div><div class="method-card"><strong>Tier D锝滃垎鏋愬笀銆侀噰璁裤€佽棰戝拰绀句氦瑙傜偣</strong><p>鍙綔涓鸿鐐癸紝涓嶅崌绾т负浜嬪疄銆?/p></div></div>
+      <div class="method-grid"><div class="method-card"><strong>Tier A｜交易所、监管、政府、上市公司公告</strong><p>重要事实优先采用。</p></div><div class="method-card"><strong>Tier B｜公司官网、业绩材料与投资者关系资料</strong><p>用于产品、财务和经营确认。</p></div><div class="method-card"><strong>Tier C｜Tushare与专业财经媒体</strong><p>结构化行情与补充背景。</p></div><div class="method-card"><strong>Tier D｜分析师、采访、视频和社交观点</strong><p>只作为观点，不升级为事实。</p></div></div>
       <details class="note-disclosure" open>
-        <summary>鏈湡鎴鍙ｅ緞涓庡眬闄?/summary>
-        <ul><li>鍏ラ€夊唴瀹瑰凡瀹屾垚鐢熶骇绾ф鏂囧鏍革紱鏈叆閫夊€欓€変粎淇濈暀鍦ㄥ璁℃潗鏂欎腑銆?/li><li>鏈〉鐢变笉鍙彉鐢熶骇run鐢熸垚锛涗笉鏋勬垚鎶曡祫寤鸿锛屼笉棰勬祴鐭湡鑲′环鏂瑰悜銆?/li></ul>
+        <summary>本期截止口径与局限</summary>
+        <ul><li>入选内容已完成生产级正文复核；未入选候选仅保留在审计材料中。</li><li>本页由不可变生产run生成；不构成投资建议，不预测短期股价方向。</li></ul>
       </details>
       <details class="note-disclosure">
-        <summary>璇勫垎涓庡幓閲嶈鍒?/summary>
+        <summary>评分与去重规则</summary>
         <ul>
-          <li>浼樺厛绾э紳鐩稿叧鎬?5%锛嬫綔鍦ㄥ奖鍝?0%锛嬫潵婧?0%锛嬫椂鏁?0%锛嬪競鍦虹儹搴?%銆?/li>
-          <li>鍚屼竴浜嬩欢鍙繚鐣欎竴涓富棰戦亾锛涘叾浠栭閬撶敤閾炬帴浜ゅ弶寮曠敤锛屼笉澶嶅埗瀹屾暣鍗＄墖銆?/li>
-          <li>姣忓紶浜嬩欢鍗″尯鍒嗗凡纭浜嬪疄銆佸奖鍝嶆満鍒躲€佸弽鍚戣瘉鎹拰涓嬩竴瑙傚療銆?/li>
-          <li>缂哄け鏁版嵁淇濈暀涓虹┖锛屼笉琛ラ浂锛涙潵婧愬け璐ュ繀椤诲湪鐩稿簲棰戦亾鏄庣‘鎻愮ず銆?/li>
+          <li>优先级＝相关性35%＋潜在影响30%＋来源20%＋时效10%＋市场热度5%。</li>
+          <li>同一事件只保留一个主频道；其他频道用链接交叉引用，不复制完整卡片。</li>
+          <li>每张事件卡区分已确认事实、影响机制、反向证据和下一观察。</li>
+          <li>缺失数据保留为空，不补零；来源失败必须在相应频道明确提示。</li>
         </ul>
       </details>
       <details class="note-disclosure">
-        <summary>Tushare 鎺ュ彛绱㈠紩</summary>
-        <ol class="source-index"><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002138&amp;announcementId=1225449922&amp;orgId=9900003163&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">椤虹粶鐢靛瓙</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301152&amp;announcementId=1225451495&amp;orgId=gfbj0833757&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">澶╁姏閿傝兘</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301120&amp;announcementId=1225451935&amp;orgId=9900023806&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">鏂扮壒鐢垫皵</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301235&amp;announcementId=1225451597&amp;orgId=nssc1000712&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">鍗庡悍娲佸噣</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&amp;announcementId=1225452160&amp;orgId=9900008390&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">鐖卞皵鐪肩</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300223&amp;announcementId=1225451271&amp;orgId=9900016187&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">鍖椾含鍚涙</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300765&amp;announcementId=1225450143&amp;orgId=9900036557&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">鐭宠嵂鍒涙柊</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300427&amp;announcementId=1225450804&amp;orgId=9900023902&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">绾㈢浉鑲′唤</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301638&amp;announcementId=1225450312&amp;orgId=GD204282&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">鍗楃綉鏁板瓧</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300197&amp;announcementId=1225450116&amp;orgId=9900016710&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">鑺傝兘閾佹眽</a></li></ol>
+        <summary>Tushare 接口索引</summary>
+        <ol class="source-index"><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002138&amp;announcementId=1225449922&amp;orgId=9900003163&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">顺络电子</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301152&amp;announcementId=1225451495&amp;orgId=gfbj0833757&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">天力锂能</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301120&amp;announcementId=1225451935&amp;orgId=9900023806&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">新特电气</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301235&amp;announcementId=1225451597&amp;orgId=nssc1000712&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">华康洁净</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&amp;announcementId=1225452160&amp;orgId=9900008390&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">爱尔眼科</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300223&amp;announcementId=1225451271&amp;orgId=9900016187&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">北京君正</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300765&amp;announcementId=1225450143&amp;orgId=9900036557&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">石药创新</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300427&amp;announcementId=1225450804&amp;orgId=9900023902&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">红相股份</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301638&amp;announcementId=1225450312&amp;orgId=GD204282&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">南网数字</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300197&amp;announcementId=1225450116&amp;orgId=9900016710&amp;announcementTime=2026-07-31" target="_blank" rel="noreferrer">节能铁汉</a></li></ol>
       </details>
       <details class="note-disclosure">
-        <summary>浜や粯涓庤棰戝鐞?/summary>
+        <summary>交付与视频处理</summary>
         <ul>
-          <li>浠庢湰鐗堝紑濮嬪彧鐢熸垚鍗曚釜 HTML锛屼笉鍐嶇敓鎴?Markdown 鎴?PDF銆?/li>
-          <li>鍏紑瑙嗛浠呭湪宸ヤ綔鍖轰复鏃朵繚瀛樼敤浜庢湰鍦拌浆鍐欙紝涓嶈繘鍏ヤ氦浠樼墿銆佷笉閲嶆柊鍒嗗彂銆?/li>
-          <li>鑻ヨ棰戞棤鍏紑娴併€佽姹傜櫥褰曟垨瀛樺湪璁块棶闄愬埗锛岄閬撴樉绀哄け璐ュ師鍥狅紝涓嶆牴鎹爣棰樼紪閫犳憳瑕併€?/li>
+          <li>从本版开始只生成单个 HTML，不再生成 Markdown 或 PDF。</li>
+          <li>公开视频仅在工作区临时保存用于本地转写，不进入交付物、不重新分发。</li>
+          <li>若视频无公开流、要求登录或存在访问限制，频道显示失败原因，不根据标题编造摘要。</li>
         </ul>
       </details>
-      <div class="footer-note">鏈姤鍛婄敤浜庝釜浜轰俊鎭暣鐞嗭紝涓嶆瀯鎴愭姇璧勫缓璁垨鐭湡娑ㄨ穼棰勬祴锛涜浠ュ師濮嬫姭闇蹭负鍑嗐€?/div>
+      <div class="footer-note">本报告用于个人信息整理，不构成投资建议或短期涨跌预测；请以原始披露为准。</div>
     </section>
     </main>
     </div>
@@ -886,7 +2809,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
     if (activeLink && window.innerWidth <= 760) {
       activeLink.scrollIntoView({block: 'nearest', inline: 'center'});
     }
-    if (live) live.textContent = '宸插垏鎹㈠埌' + (activeLink ? activeLink.dataset.label : id) + '棰戦亾';
+    if (live) live.textContent = '已切换到' + (activeLink ? activeLink.dataset.label : id) + '频道';
     if (opts.updateHash) history.pushState(null, '', '#channel-' + id);
     if (opts.focus && activeLink) activeLink.focus();
   }
@@ -929,7 +2852,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
     const full = !page.classList.contains('full-view');
     page.classList.toggle('full-view', full);
     panels.forEach((panel) => { panel.hidden = false; });
-    showAll.textContent = full ? '杩斿洖棰戦亾瑙嗗浘' : '鏄剧ず鍏ㄦ枃';
+    showAll.textContent = full ? '返回频道视图' : '显示全文';
     showAll.setAttribute('aria-pressed', full ? 'true' : 'false');
     if (!full) activate(panelForHash(location.hash), {});
   });
