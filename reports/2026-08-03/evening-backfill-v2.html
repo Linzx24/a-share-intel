@@ -1,0 +1,2878 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#d72f35">
+  <title>����ʷ�ز���A������������2026-08-03</title>
+  <style>
+:root {
+  --ink: #122a3a;
+  --ink-soft: #50636d;
+  --paper: #f3f6f5;
+  --surface: #ffffff;
+  --line: #d7e1df;
+  --line-strong: #aebfbc;
+  --signal: #0f796a;
+  --signal-soft: #e5f2ef;
+  --up: #b23b35;
+  --down: #0f796a;
+  --attention: #a86616;
+  --attention-soft: #f8eddc;
+  --opinion: #6e5b94;
+  --opinion-soft: #f0edf7;
+  --risk: #a7443e;
+  --nav-width: 194px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(18,42,58,.025) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--paper);
+  font-family: "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.62;
+}
+a { color: var(--signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+button, summary, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #e0a144; outline-offset: 3px; }
+.page { width: min(1160px, calc(100% - 32px)); margin: 22px auto 64px; }
+.report-header {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 30px 22px;
+  color: white;
+  background: var(--ink);
+  border-bottom: 4px solid #45baa5;
+}
+.report-header::after {
+  content: "";
+  position: absolute;
+  right: -52px;
+  top: -108px;
+  width: 250px;
+  height: 250px;
+  border: 28px solid rgba(69,186,165,.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.header-top { display: flex; justify-content: space-between; gap: 24px; align-items: start; }
+.brand small {
+  display: block;
+  color: #91ddce;
+  font: 700 11px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.brand h1 {
+  margin: 7px 0 4px;
+  font: 700 clamp(30px, 4vw, 48px)/1.08 "Source Han Serif SC", "Songti SC", STSong, serif;
+  letter-spacing: -.035em;
+}
+.brand p { margin: 0; color: #cad7dc; font-size: 14px; }
+.cutoff {
+  position: relative;
+  z-index: 1;
+  min-width: 170px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255,255,255,.28);
+  font: 600 12px/1.45 "Cascadia Mono", Consolas, monospace;
+}
+.cutoff span { display: block; color: #8fe0d0; font-size: 18px; }
+.market-tape {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 22px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.16);
+}
+.tape-cell { min-width: 0; padding: 11px 13px; background: rgba(12,31,44,.72); }
+.tape-cell small { display: block; color: #8fa7b3; font-size: 10px; }
+.tape-cell strong {
+  display: block;
+  margin-top: 2px;
+  font: 700 16px/1.25 "Cascadia Mono", Consolas, monospace;
+  white-space: nowrap;
+}
+.up { color: var(--up) !important; }
+.down { color: var(--down) !important; }
+.report-shell {
+  display: grid;
+  grid-template-columns: var(--nav-width) minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 0;
+}
+.channel-nav {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  min-height: 690px;
+  padding: 22px 15px 26px 22px;
+  border-right: 1px solid var(--line);
+  background: #edf2f1;
+}
+.evidence-gate {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  gap: 8px;
+  margin: 0 0 16px 4px;
+  color: var(--ink-soft);
+  font-size: 11px;
+}
+.evidence-gate::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(var(--signal) 0 58%, var(--attention) 58% 78%, var(--opinion) 78%);
+}
+.evidence-gate strong {
+  display: block;
+  color: var(--ink);
+  font: 700 14px/1.2 "Cascadia Mono", Consolas, monospace;
+}
+.channel-links { display: grid; gap: 5px; }
+.channel-link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  min-height: 46px;
+  align-items: center;
+  padding: 9px 10px;
+  color: var(--ink);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+.channel-link:hover { background: rgba(255,255,255,.66); }
+.channel-link[aria-selected="true"] {
+  color: var(--signal);
+  background: white;
+  border-left-color: var(--signal);
+  font-weight: 700;
+}
+.channel-link small {
+  display: inline-grid;
+  place-items: center;
+  min-width: 23px;
+  height: 20px;
+  color: var(--ink-soft);
+  background: #dce6e4;
+  border-radius: 999px;
+  font: 600 10px/1 "Cascadia Mono", Consolas, monospace;
+}
+.channel-link[aria-selected="true"] small { color: white; background: var(--signal); }
+.show-all {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 17px;
+  padding: 8px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  cursor: pointer;
+}
+.show-all:hover { background: white; }
+.channel-stage { min-width: 0; padding: 32px clamp(24px, 5vw, 62px) 54px; }
+.channel-panel { scroll-margin-top: 88px; }
+.tabs-ready .channel-panel[hidden] { display: none; }
+.channel-panel.is-entering { animation: channel-in 150ms ease-out; }
+@keyframes channel-in { from { opacity: .4; transform: translateY(4px); } }
+.channel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--ink);
+}
+.channel-kicker {
+  color: var(--signal);
+  font: 700 10px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.channel-head h2 {
+  margin: 4px 0 0;
+  font: 700 clamp(26px, 3vw, 34px)/1.2 "Source Han Serif SC", "Songti SC", STSong, serif;
+}
+.channel-head p { max-width: 420px; margin: 0; color: var(--ink-soft); font-size: 13px; text-align: right; }
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 31px 0 11px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+}
+.section-title h3 { margin: 0; font-size: 17px; }
+.section-title small { color: var(--ink-soft); }
+.state-thesis {
+  display: grid;
+  grid-template-columns: 1.4fr .6fr;
+  gap: 22px;
+  margin: 24px 0 0;
+  padding: 22px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+.state-thesis h3 {
+  margin: 0 0 7px;
+  font: 700 24px/1.35 "Source Han Serif SC", "Songti SC", serif;
+}
+.state-thesis p { margin: 0; color: var(--ink-soft); }
+.breadth-mini { align-self: center; }
+.breadth-mini strong { display: block; font: 700 30px/1 "Cascadia Mono", Consolas, monospace; }
+.breadth-mini span { color: var(--ink-soft); font-size: 12px; }
+.breadth-bar { height: 6px; margin-top: 11px; background: #e7cfd0; }
+.breadth-bar i { display: block; height: 100%; background: var(--signal); }
+.brief-list { border-top: 1px solid var(--line); }
+.brief-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 15px 0;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.brief-item:hover h3 { color: var(--signal); }
+.brief-number { color: var(--attention); font: 700 12px/1.5 "Cascadia Mono", Consolas, monospace; }
+.brief-copy h3 { margin: 0 0 4px; font-size: 15px; line-height: 1.45; }
+.brief-copy p { margin: 0; color: var(--ink-soft); font-size: 12.5px; }
+.brief-route { align-self: center; color: var(--signal); font-size: 11px; white-space: nowrap; }
+.integrity-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 22px;
+  padding: 12px 14px;
+  color: var(--ink-soft);
+  background: #edf4f2;
+  border-left: 3px solid var(--signal);
+  font-size: 12px;
+}
+.calendar-list { display: grid; gap: 0; }
+.calendar-item {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+.calendar-item time { color: var(--signal); font: 700 12px/1.45 "Cascadia Mono", Consolas, monospace; }
+.calendar-item strong { display: block; font-size: 14px; }
+.calendar-item p { margin: 2px 0 0; color: var(--ink-soft); font-size: 12px; }
+.status-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.status-pill {
+  padding: 6px 9px;
+  color: var(--ink-soft);
+  background: #eef3f2;
+  border: 1px solid var(--line);
+  font-size: 11px;
+}
+.status-pill strong { color: var(--ink); }
+.stock-list { border-top: 1px solid var(--line); }
+.stock-row { border-bottom: 1px solid var(--line); }
+.stock-row > summary {
+  display: grid;
+  grid-template-columns: minmax(145px, 1.25fr) minmax(90px, .65fr) minmax(86px, .6fr) 1.1fr 20px;
+  gap: 12px;
+  align-items: center;
+  min-height: 58px;
+  padding: 9px 3px;
+  cursor: pointer;
+  list-style: none;
+}
+.stock-row > summary::-webkit-details-marker { display: none; }
+.stock-row > summary::after { content: "��"; color: var(--signal); font-size: 17px; }
+.stock-row[open] > summary::after { content: "��"; }
+.stock-name strong { display: block; font-size: 14px; }
+.stock-name small { color: #7a8c94; font: 500 10px/1.2 "Cascadia Mono", Consolas, monospace; }
+.stock-pct { font: 700 14px/1 "Cascadia Mono", Consolas, monospace; }
+.stock-metric { color: var(--ink-soft); font-size: 11px; }
+.stock-state { justify-self: start; padding: 3px 7px; font-size: 10px; font-weight: 700; background: #e7ecec; }
+.stock-state.new { color: #075d50; background: #d8eee8; }
+.stock-state.background { color: #795015; background: var(--attention-soft); }
+.stock-detail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 3px 14px;
+}
+.stock-detail div { padding: 9px 10px; background: #f3f6f5; }
+.stock-detail small { display: block; color: var(--ink-soft); font-size: 10px; }
+.stock-detail strong { font: 700 12px/1.3 "Cascadia Mono", Consolas, monospace; }
+.stock-note { grid-column: 1 / -1; color: var(--ink-soft); font-size: 12px; }
+.theme-list { border-top: 1px solid var(--line); }
+.theme-row { border-bottom: 1px solid var(--line); }
+.theme-row > summary {
+  display: grid;
+  grid-template-columns: 115px 110px 1fr 20px;
+  gap: 13px;
+  align-items: center;
+  min-height: 62px;
+  padding: 10px 2px;
+  cursor: pointer;
+  list-style: none;
+}
+.theme-row > summary::-webkit-details-marker { display: none; }
+.theme-row > summary::after { content: "��"; color: var(--signal); }
+.theme-row[open] > summary::after { content: "��"; }
+.theme-row h3 { margin: 0; font-size: 14px; }
+.theme-signal { font: 700 12px/1.2 "Cascadia Mono", Consolas, monospace; }
+.theme-summary { color: var(--ink-soft); font-size: 12px; }
+.theme-detail { margin: 0 0 13px 228px; padding: 10px 12px; color: var(--ink-soft); background: #f4f6f5; font-size: 12px; }
+.commodity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.commodity { padding: 12px; background: white; }
+.commodity small { display: block; color: var(--ink-soft); }
+.commodity strong { font: 700 15px/1.3 "Cascadia Mono", Consolas, monospace; }
+.commodity p { margin: 5px 0 0; color: var(--ink-soft); font-size: 11px; }
+.event-stack { border-top: 1px solid var(--line); }
+.event-disclosure {
+  scroll-margin-top: 96px;
+  border-bottom: 1px solid var(--line);
+}
+.event-disclosure > summary {
+  position: relative;
+  padding: 17px 38px 16px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.event-disclosure > summary::-webkit-details-marker { display: none; }
+.event-disclosure > summary::after {
+  content: "��";
+  position: absolute;
+  top: 17px;
+  right: 4px;
+  color: var(--signal);
+  font-size: 20px;
+}
+.event-disclosure[open] > summary::after { content: "��"; }
+.event-meta { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; color: var(--ink-soft); font-size: 10px; }
+.tier { padding: 2px 6px; color: var(--signal); background: var(--signal-soft); font-weight: 700; }
+.tier.opinion { color: var(--opinion); background: var(--opinion-soft); }
+.event-disclosure h3 { margin: 7px 0 5px; font-size: 16px; line-height: 1.45; }
+.event-fact { margin: 0; color: #304753; font-size: 13px; }
+.event-relation { margin: 7px 0 0; color: var(--ink-soft); font-size: 11.5px; }
+.event-relation strong { color: var(--attention); }
+.event-watch { display: block; margin-top: 7px; color: var(--signal); font-size: 11px; }
+.evidence-body { margin: 0 0 18px; padding: 15px 17px; background: #f4f7f6; border-left: 3px solid var(--signal); }
+.evidence-row {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 14px;
+  padding: 9px 0;
+  border-top: 1px solid #dfe7e5;
+}
+.evidence-row:first-child { border-top: 0; padding-top: 0; }
+.evidence-row:last-child { padding-bottom: 0; }
+.evidence-row dt { color: var(--ink-soft); font-size: 11px; font-weight: 700; }
+.evidence-row dd { margin: 0; font-size: 12.5px; }
+.source-links { margin-top: 10px; font-size: 11px; }
+.st-snapshot {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 22px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.st-snapshot div { padding: 13px 11px; background: white; }
+.st-snapshot small { display: block; color: var(--ink-soft); font-size: 10px; }
+.st-snapshot strong { font: 700 17px/1.25 "Cascadia Mono", Consolas, monospace; }
+.stage-line { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; }
+.stage-line span { padding: 4px 7px; color: var(--ink-soft); background: #eff3f2; font-size: 10px; }
+.stage-line .active { color: white; background: var(--signal); }
+.opinion-hero {
+  margin-top: 22px;
+  padding: 22px;
+  color: #2b2740;
+  background: linear-gradient(135deg, #f2eff8, #faf9fc);
+  border-left: 5px solid var(--opinion);
+}
+.opinion-label {
+  color: var(--opinion);
+  font: 700 10px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .12em;
+}
+.opinion-hero h3 { margin: 8px 0 8px; font: 700 22px/1.35 "Source Han Serif SC", "Songti SC", serif; }
+.opinion-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: #675f77; font-size: 11px; }
+.transcript-path {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 20px 0 0;
+  border: 1px solid #dcd5e8;
+}
+.transcript-path span {
+  position: relative;
+  padding: 10px 24px 10px 10px;
+  color: #5d5570;
+  background: rgba(255,255,255,.65);
+  border-right: 1px solid #dcd5e8;
+  font-size: 10px;
+}
+.transcript-path span:last-child { border-right: 0; }
+.transcript-path span:not(:last-child)::after { content: "��"; position: absolute; right: 8px; color: var(--opinion); }
+.viewpoint-list { display: grid; gap: 0; margin-top: 19px; border-top: 1px solid #dcd5e8; }
+.viewpoint {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #dcd5e8;
+}
+.viewpoint time { color: var(--opinion); font: 700 11px/1.5 "Cascadia Mono", Consolas, monospace; }
+.viewpoint p { margin: 0; font-size: 13px; }
+.three-lenses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 22px; background: var(--line); border: 1px solid var(--line); }
+.lens { padding: 15px; background: white; }
+.lens h4 { margin: 0 0 7px; font-size: 12px; }
+.lens p { margin: 0; color: var(--ink-soft); font-size: 11.5px; }
+.lens.opinion h4 { color: var(--opinion); }
+.lens.attention h4 { color: var(--attention); }
+.action-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+.action-link { padding: 8px 11px; color: var(--opinion); border: 1px solid #cfc6dd; text-decoration: none; font-size: 11px; }
+.method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 22px; background: var(--line); border: 1px solid var(--line); }
+.method-card { padding: 15px; background: white; }
+.method-card strong { font-size: 13px; }
+.method-card p { margin: 5px 0 0; color: var(--ink-soft); font-size: 11.5px; }
+.note-disclosure { border-bottom: 1px solid var(--line); }
+.note-disclosure summary { min-height: 46px; padding: 11px 0; cursor: pointer; font-weight: 700; font-size: 13px; }
+.note-disclosure ul { margin: 0 0 16px; padding-left: 20px; color: var(--ink-soft); font-size: 12px; }
+.source-index { columns: 2; column-gap: 28px; margin: 0; padding-left: 18px; font-size: 11px; }
+.source-index li { break-inside: avoid; margin: 0 0 7px; }
+.footer-note { margin-top: 30px; padding-top: 15px; color: var(--ink-soft); border-top: 1px solid var(--line); font-size: 11px; }
+.live-region { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.full-view .channel-panel { display: block !important; margin-bottom: 80px; }
+.full-view .channel-panel[hidden] { display: block !important; }
+.full-view .channel-link[aria-selected="true"] { background: transparent; border-left-color: transparent; color: var(--ink); }
+@media (max-width: 760px) {
+  body { background: var(--surface); }
+  .page { width: 100%; margin: 0; }
+  .report-header { padding: 22px 17px 16px; }
+  .header-top { display: block; }
+  .brand h1 { font-size: 34px; }
+  .cutoff { display: inline-block; min-width: 0; margin-top: 14px; padding: 7px 9px; }
+  .cutoff span { display: inline; margin-right: 5px; font-size: 14px; }
+  .market-tape { grid-template-columns: repeat(2, 1fr); }
+  .tape-cell:nth-child(5) { grid-column: 1 / -1; }
+  .report-shell { display: block; border: 0; }
+  .channel-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: 0;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    background: rgba(243,246,245,.96);
+    backdrop-filter: blur(12px);
+  }
+  .evidence-gate, .show-all { display: none; }
+  .channel-links {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .channel-links::-webkit-scrollbar { display: none; }
+  .channel-link {
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 8px 13px;
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+  }
+  .channel-link[aria-selected="true"] { border-left: 0; border-bottom-color: var(--signal); }
+  .channel-link small { display: none; }
+  .channel-stage { padding: 24px 17px 46px; }
+  .channel-panel { scroll-margin-top: 62px; }
+  .channel-head { display: block; }
+  .channel-head p { margin-top: 6px; text-align: left; }
+  .state-thesis { grid-template-columns: 1fr; }
+  .brief-item { grid-template-columns: 27px 1fr; }
+  .brief-route { grid-column: 2; justify-self: start; }
+  .calendar-item { grid-template-columns: 1fr; gap: 3px; }
+  .stock-row > summary { grid-template-columns: minmax(125px, 1fr) 74px auto 20px; }
+  .stock-row .stock-metric { display: none; }
+  .stock-detail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .theme-row > summary { grid-template-columns: 94px 84px 1fr 18px; gap: 8px; }
+  .theme-detail { margin-left: 0; }
+  .commodity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .evidence-row { grid-template-columns: 1fr; gap: 3px; }
+  .st-snapshot { grid-template-columns: repeat(2, 1fr); }
+  .st-snapshot div:last-child { grid-column: 1 / -1; }
+  .transcript-path { grid-template-columns: 1fr 1fr; }
+  .transcript-path span:nth-child(2) { border-right: 0; }
+  .transcript-path span:nth-child(-n+2) { border-bottom: 1px solid #dcd5e8; }
+  .viewpoint { grid-template-columns: 1fr; gap: 3px; }
+  .three-lenses, .method-grid { grid-template-columns: 1fr; }
+  .source-index { columns: 1; }
+}
+@media (max-width: 390px) {
+  .market-tape { grid-template-columns: repeat(2, 1fr); }
+  .stock-row > summary { grid-template-columns: 1fr 68px 20px; }
+  .stock-state { grid-column: 1; grid-row: 2; }
+  .theme-row > summary { grid-template-columns: 1fr auto 18px; }
+  .theme-summary { grid-column: 1 / -1; }
+  .commodity-grid { grid-template-columns: 1fr; }
+}
+@media print {
+  .channel-nav { display: none; }
+  .report-shell { display: block; border: 0; }
+  .channel-stage { padding: 20px 0; }
+  .channel-panel, .channel-panel[hidden] { display: block !important; margin-bottom: 40px; }
+  .event-disclosure > .evidence-body { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .channel-panel.is-entering { animation: none; }
+}
+
+/* Institutional morning desk �� cold finance art direction */
+:root {
+  --ink: #101820;
+  --ink-soft: #566473;
+  --paper: #090e13;
+  --surface: #f1f4f6;
+  --line: #cbd3da;
+  --line-strong: #8e9aa6;
+  --signal: #3f73c9;
+  --signal-soft: #e4ebf6;
+  --up: #d24e4e;
+  --down: #238b68;
+  --attention: #996b2f;
+  --attention-soft: #eee7dc;
+  --opinion: #666d9f;
+  --opinion-soft: #e8eaf1;
+  --risk: #b04747;
+  --nav-width: 206px;
+}
+html { background: #090e13; }
+body {
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(132,151,171,.035) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(132,151,171,.025) 1px, transparent 1px) 0 0 / 48px 48px,
+    #090e13;
+  font-family: "Segoe UI Variable", "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #315f9f; }
+:focus-visible { outline: 2px solid #7da7eb; outline-offset: 3px; }
+.page {
+  width: min(1280px, calc(100% - 48px));
+  margin: 24px auto 72px;
+  border: 1px solid #25303b;
+  box-shadow: 0 22px 70px rgba(0,0,0,.28);
+}
+.report-header {
+  padding: 0;
+  color: #e9eef3;
+  background: #0d141c;
+  border: 0;
+  border-bottom: 2px solid #4c78bd;
+}
+.report-header::after { display: none; }
+.header-top {
+  min-height: 108px;
+  padding: 21px 28px 19px;
+  align-items: center;
+  border-bottom: 1px solid #27333f;
+}
+.brand small {
+  color: #7d8ea0;
+  font: 600 10px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .19em;
+}
+.brand h1 {
+  margin: 9px 0 6px;
+  color: #f3f6f8;
+  font: 620 clamp(28px, 3vw, 35px)/1.08 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .055em;
+}
+.brand p {
+  color: #8f9eac;
+  font-size: 12px;
+  letter-spacing: .015em;
+}
+.cutoff {
+  min-width: 194px;
+  padding: 5px 0 5px 25px;
+  color: #8998a7;
+  border: 0;
+  border-left: 1px solid #344351;
+  font: 500 10px/1.7 "Cascadia Mono", Consolas, monospace;
+  text-align: right;
+  text-transform: uppercase;
+}
+.cutoff span {
+  color: #79a9ef;
+  font-size: 23px;
+  letter-spacing: .04em;
+}
+.market-tape {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  background: #101923;
+  border: 0;
+}
+.tape-cell {
+  min-height: 60px;
+  padding: 11px 18px 10px;
+  background: transparent;
+  border-right: 1px solid #27333f;
+}
+.tape-cell:last-child { border-right: 0; }
+.tape-cell small {
+  color: #748596;
+  font: 500 9px/1.4 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .07em;
+}
+.tape-cell strong {
+  margin-top: 7px;
+  color: #e7edf2;
+  font: 650 15px/1.2 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .015em;
+}
+.report-shell {
+  display: block;
+  background: var(--surface);
+  border: 0;
+}
+.channel-nav {
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: stretch;
+  min-height: 50px;
+  padding: 0 17px;
+  color: #9aa8b5;
+  background: #111923;
+  border-right: 0;
+  border-bottom: 1px solid #29343f;
+}
+.evidence-gate {
+  display: flex;
+  grid-template-columns: none;
+  gap: 11px;
+  align-items: center;
+  margin: 0 19px 0 0;
+  padding-right: 19px;
+  color: #778797;
+  font: 500 9px/1.65 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  border-right: 1px solid #2d3945;
+}
+.evidence-gate::before {
+  width: 2px;
+  height: 20px;
+  background: #6b9de7;
+  box-shadow: none;
+}
+.evidence-gate strong {
+  color: #dce4eb;
+  font: 650 10px/1.25 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .06em;
+}
+.evidence-gate span { color: #82909d; }
+.evidence-gate b { color: #b3bfca; font-weight: 650; }
+.channel-links {
+  display: flex;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
+}
+.channel-link {
+  display: flex;
+  grid-template-columns: none;
+  flex: 0 1 auto;
+  justify-content: center;
+  min-height: 45px;
+  padding: 9px 15px 7px;
+  color: #a5b1bc;
+  border-left: 0;
+  border-bottom: 2px solid transparent;
+  font-size: 12px;
+  letter-spacing: .025em;
+}
+.channel-link:hover {
+  color: #edf2f6;
+  background: #17222e;
+}
+.channel-link[aria-selected="true"] {
+  color: #f0f4f7;
+  background: #17222e;
+  border-left-color: transparent;
+  border-bottom-color: #6b9de7;
+  font-weight: 600;
+}
+.channel-link small {
+  min-width: 21px;
+  height: 18px;
+  color: #7f8d99;
+  background: #202d39;
+  border: 1px solid #2b3946;
+  border-radius: 2px;
+  font-size: 9px;
+}
+.channel-link[aria-selected="true"] small {
+  color: #bcd4f7;
+  background: #253c57;
+}
+.show-all {
+  width: auto;
+  min-height: 32px;
+  align-self: center;
+  margin: 0 0 0 15px;
+  padding: 7px 12px;
+  color: #8493a1;
+  background: transparent;
+  border: 1px solid #35414d;
+  font: 500 10px/1 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .06em;
+}
+.show-all:hover {
+  color: #e7edf2;
+  background: #17222e;
+}
+.channel-stage {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: 37px clamp(28px, 5vw, 66px) 62px;
+  background: #f1f4f6;
+}
+.channel-panel.is-entering { animation: channel-in 120ms ease-out; }
+.channel-head {
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #8f9ba7;
+}
+.channel-kicker {
+  color: #5476a6;
+  font: 650 9px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .18em;
+}
+.channel-head h2 {
+  margin-top: 7px;
+  font: 640 clamp(25px, 3vw, 31px)/1.15 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .025em;
+}
+.channel-head p {
+  color: #687583;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.section-title {
+  margin: 34px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #aeb8c1;
+}
+.section-title h3 {
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: .02em;
+}
+.section-title small {
+  color: #7b8792;
+  font: 500 10px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.state-thesis {
+  grid-template-columns: 1.45fr .55fr;
+  gap: 28px;
+  margin-top: 24px;
+  padding: 24px 25px;
+  background: #f8fafb;
+  border: 1px solid #c4ccd4;
+}
+.state-thesis h3 {
+  font: 650 22px/1.42 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .012em;
+}
+.state-thesis p { color: #536170; font-size: 13px; }
+.breadth-mini {
+  padding-left: 23px;
+  border-left: 1px solid #c9d0d7;
+}
+.breadth-mini strong {
+  color: #162331;
+  font-size: 29px;
+}
+.breadth-mini span {
+  color: #6e7b87;
+  font: 500 10px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.breadth-bar { height: 3px; background: #dcc9c9; }
+.breadth-bar i { background: #3273a8; }
+.brief-list,
+.stock-list,
+.theme-list,
+.event-stack {
+  background: #f9fafb;
+  border: 1px solid #c8d0d7;
+  border-bottom: 0;
+}
+.brief-item {
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 13px;
+  min-height: 73px;
+  padding: 15px 18px;
+  border-bottom-color: #d4dbe1;
+}
+.brief-item:hover { background: #f2f6fa; }
+.brief-item:hover h3 { color: #315f9f; }
+.brief-number {
+  color: #6c7884;
+  font: 600 10px/1.55 "Cascadia Mono", Consolas, monospace;
+}
+.brief-copy h3 { font-size: 14px; font-weight: 650; }
+.brief-copy p { color: #62707e; font-size: 11.5px; }
+.brief-route { color: #456e9f; font-size: 10px; }
+.integrity-strip {
+  gap: 8px 22px;
+  padding: 11px 14px;
+  color: #5f6d7a;
+  background: #e6ebef;
+  border: 0;
+  border-top: 1px solid #c3ccd4;
+  border-bottom: 1px solid #c3ccd4;
+  font: 500 10px/1.55 "Cascadia Mono", Consolas, monospace;
+}
+.calendar-item {
+  grid-template-columns: 116px 1fr;
+  padding: 14px 12px;
+  background: #f8fafb;
+  border-bottom-color: #d1d8de;
+}
+.calendar-item time { color: #416f9f; font-size: 10px; }
+.calendar-item strong { font-size: 13px; font-weight: 650; }
+.calendar-item p { color: #65727e; font-size: 11px; }
+.status-pill {
+  padding: 5px 8px;
+  color: #697684;
+  background: #e6ebef;
+  border-color: #cad2d9;
+  border-radius: 2px;
+  font-size: 10px;
+}
+.stock-row,
+.theme-row,
+.event-disclosure { border-bottom-color: #d2d9df; }
+.stock-row > summary {
+  min-height: 62px;
+  padding: 10px 14px;
+}
+.stock-row > summary:hover,
+.theme-row > summary:hover,
+.event-disclosure > summary:hover { background: #f1f5f8; }
+.stock-row > summary::after,
+.theme-row > summary::after,
+.event-disclosure > summary::after {
+  color: #526b87;
+  font-family: "Cascadia Mono", Consolas, monospace;
+}
+.stock-name strong { font-size: 13px; font-weight: 650; }
+.stock-name small { color: #7c8792; font-size: 9px; }
+.stock-pct { font-size: 13px; }
+.stock-metric { color: #667380; font-size: 10px; }
+.stock-state {
+  color: #596671;
+  background: #e5e9ed;
+  border: 1px solid #d0d6dc;
+  border-radius: 2px;
+  font-size: 9px;
+}
+.stock-state.new {
+  color: #245f50;
+  background: #dfece8;
+  border-color: #c8ddd6;
+}
+.stock-state.background {
+  color: #795a2e;
+  background: #eee8df;
+  border-color: #ddd1c1;
+}
+.stock-detail { padding: 0 14px 15px; }
+.stock-detail div {
+  padding: 10px;
+  background: #e9edf1;
+  border-top: 1px solid #d1d8de;
+}
+.stock-detail small { color: #697683; }
+.theme-row > summary {
+  min-height: 65px;
+  padding: 11px 14px;
+}
+.theme-row h3 { font-size: 13px; font-weight: 650; }
+.theme-signal { color: #344d67; font-size: 11px; }
+.theme-summary { color: #66727e; font-size: 11.5px; }
+.theme-detail {
+  margin-right: 14px;
+  padding: 11px 13px;
+  color: #596674;
+  background: #e9edf1;
+  border-left: 2px solid #8aa0b8;
+}
+.commodity-grid,
+.st-snapshot,
+.three-lenses,
+.method-grid {
+  background: #c8d0d7;
+  border-color: #c8d0d7;
+}
+.commodity,
+.st-snapshot div,
+.lens,
+.method-card { background: #f9fafb; }
+.commodity small,
+.st-snapshot small { color: #72808c; font-size: 9px; }
+.commodity p { color: #64717d; }
+.event-disclosure > summary { padding: 17px 45px 16px 16px; }
+.event-disclosure > summary::after { right: 15px; }
+.event-meta {
+  color: #6e7b87;
+  font: 500 9px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.tier {
+  color: #315f9f;
+  background: #e2e9f2;
+  border: 1px solid #cbd7e6;
+  border-radius: 2px;
+}
+.tier.opinion {
+  color: #5d638f;
+  background: #e6e7ee;
+  border-color: #d0d2df;
+}
+.event-disclosure h3 { font-size: 14px; font-weight: 650; }
+.event-fact { color: #3e4e5d; font-size: 12.5px; }
+.event-relation { color: #697582; font-size: 11px; }
+.event-watch { color: #456e9f; font-size: 10px; }
+.evidence-body {
+  margin: 0 15px 16px;
+  padding: 14px 16px;
+  background: #e9edf1;
+  border: 0;
+  border-left: 2px solid #6686aa;
+}
+.evidence-row { border-top-color: #d0d7dd; }
+.evidence-row dt { color: #65727e; font-size: 10px; }
+.evidence-row dd { font-size: 12px; }
+.stage-line span {
+  color: #687581;
+  background: #e2e7eb;
+  border: 1px solid #ccd4db;
+  border-radius: 2px;
+}
+.stage-line .active { background: #3f6696; border-color: #3f6696; }
+.opinion-hero {
+  margin-top: 24px;
+  padding: 24px 25px;
+  color: #252b3c;
+  background: #e8eaf0;
+  border: 1px solid #c5cad6;
+  border-left: 3px solid #68709f;
+}
+.opinion-label { color: #626993; font-size: 9px; }
+.opinion-hero h3 {
+  font: 650 20px/1.4 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+}
+.opinion-meta { color: #697083; font-size: 10px; }
+.transcript-path {
+  border-color: #c6cad5;
+  background: #f1f2f6;
+}
+.transcript-path span {
+  color: #5d6479;
+  background: transparent;
+  border-color: #c6cad5;
+}
+.viewpoint-list { border-color: #c6cad5; }
+.viewpoint { border-color: #c6cad5; }
+.viewpoint time { color: #626993; font-size: 10px; }
+.viewpoint p { font-size: 12.5px; }
+.lens.opinion h4 { color: #626993; }
+.action-link {
+  color: #525c8a;
+  background: #f2f3f6;
+  border-color: #bfc4d2;
+}
+.action-link:hover { background: white; }
+.note-disclosure { border-color: #cbd3da; }
+.note-disclosure summary { font-size: 12px; }
+.source-index { color: #586674; }
+.footer-note {
+  color: #6f7b86;
+  border-color: #bfc8d0;
+  font-size: 10px;
+}
+.full-view .channel-link[aria-selected="true"] {
+  color: #a5b1bc;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 760px) {
+  html, body { background: #0d141c; }
+  .page {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .report-header { border-bottom-width: 2px; }
+  .header-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    min-height: 92px;
+    padding: 15px 16px 14px;
+  }
+  .brand small { font-size: 8px; letter-spacing: .12em; }
+  .brand h1 { margin: 7px 0 0; font-size: 25px; letter-spacing: .03em; }
+  .brand p { display: none; }
+  .cutoff {
+    display: block;
+    min-width: 98px;
+    margin: 0;
+    padding: 2px 0 2px 13px;
+    border-top: 0;
+    border-left: 1px solid #2a3641;
+    text-align: right;
+    font-size: 8px;
+  }
+  .cutoff span {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+  }
+  .market-tape {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .market-tape::-webkit-scrollbar { display: none; }
+  .tape-cell {
+    flex: 0 0 142px;
+    min-height: 58px;
+    padding: 10px 14px;
+    border-right: 1px solid #27333f;
+    border-bottom: 0;
+  }
+  .tape-cell:nth-child(even) { border-right: 1px solid #27333f; }
+  .tape-cell:nth-child(5) { grid-column: auto; }
+  .channel-nav {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: rgba(13,20,28,.97);
+    border-bottom: 1px solid #2c3742;
+    backdrop-filter: blur(14px);
+  }
+  .channel-links {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  .channel-link {
+    flex: 0 0 auto;
+    min-height: 47px;
+    color: #929fac;
+    border-bottom: 2px solid transparent;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .channel-link:hover { background: transparent; }
+  .channel-link[aria-selected="true"] {
+    color: #eef3f7;
+    background: transparent;
+    border-left: 0;
+    border-bottom-color: #6b9de7;
+  }
+  .channel-stage { padding: 27px 17px 48px; background: #f1f4f6; }
+  .channel-head { align-items: start; }
+  .channel-head h2 { font-size: 25px; }
+  .state-thesis {
+    gap: 20px;
+    padding: 20px 18px;
+  }
+  .breadth-mini {
+    padding: 17px 0 0;
+    border-left: 0;
+    border-top: 1px solid #c9d0d7;
+  }
+  .brief-item { grid-template-columns: 28px minmax(0,1fr); padding: 14px 13px; }
+  .calendar-item { padding-inline: 8px; }
+  .stock-row > summary,
+  .theme-row > summary { padding-inline: 11px; }
+  .event-disclosure > summary { padding-left: 12px; }
+  .opinion-hero { padding: 20px 18px; }
+}
+
+@media (max-width: 390px) {
+  .brand h1 { font-size: 27px; }
+  .channel-stage { padding-inline: 14px; }
+  .state-thesis h3 { font-size: 20px; }
+}
+
+/* A-share retail market language �� red, white, high-contrast data */
+:root {
+  --ink: #222222;
+  --ink-soft: #6a6f75;
+  --paper: #f3f4f5;
+  --surface: #f5f6f7;
+  --line: #e1e3e6;
+  --line-strong: #c8ccd1;
+  --signal: #d72f35;
+  --signal-soft: #fff0f0;
+  --up: #e2383f;
+  --down: #009b72;
+  --attention: #b06a24;
+  --attention-soft: #fff5e9;
+  --opinion: #73727c;
+  --opinion-soft: #f1f1f3;
+  --risk: #c52d33;
+}
+html { background: #f3f4f5; }
+body {
+  color: #222;
+  background: #f3f4f5;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.62;
+  font-synthesis: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+}
+a { color: #c7282e; }
+:focus-visible { outline-color: #e45b60; }
+.page {
+  width: min(1260px, calc(100% - 32px));
+  margin: 16px auto 60px;
+  background: #f5f6f7;
+  border: 0;
+  box-shadow: 0 4px 24px rgba(34,34,34,.08);
+}
+.report-header {
+  color: white;
+  background: #d72f35;
+  border: 0;
+}
+.header-top {
+  min-height: 104px;
+  padding: 21px 28px 18px;
+  border: 0;
+}
+.brand small {
+  color: rgba(255,255,255,.72);
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.brand h1 {
+  margin: 8px 0 5px;
+  color: white;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: clamp(29px, 3vw, 35px);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.brand p {
+  color: rgba(255,255,255,.84);
+  font-size: 13px;
+}
+.cutoff {
+  color: rgba(255,255,255,.78);
+  border-left-color: rgba(255,255,255,.34);
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: none;
+}
+.cutoff span {
+  color: white;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+.market-tape {
+  background: white;
+  border-bottom: 1px solid #e4e5e7;
+}
+.tape-cell {
+  min-height: 64px;
+  background: white;
+  border-right-color: #ececee;
+}
+.tape-cell small {
+  color: #85898e;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.tape-cell strong {
+  color: #282828;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+.report-shell { background: #f5f6f7; }
+.channel-nav {
+  min-height: 52px;
+  color: #666;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #dedfe1;
+  box-shadow: 0 2px 8px rgba(30,30,30,.06);
+}
+.evidence-gate {
+  color: #85898e;
+  border-right-color: #e3e4e6;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 10px;
+}
+.evidence-gate::before { background: #d72f35; }
+.evidence-gate strong {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.evidence-gate span { color: #85898e; }
+.evidence-gate b { color: #555; font-weight: 700; }
+.channel-link {
+  min-height: 51px;
+  color: #555;
+  border-bottom-width: 3px;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.channel-link:hover {
+  color: #d72f35;
+  background: #fff7f7;
+}
+.channel-link[aria-selected="true"] {
+  color: #d72f35;
+  background: white;
+  border-bottom-color: #d72f35;
+  font-weight: 700;
+}
+.channel-link small {
+  color: #888;
+  background: #f0f1f2;
+  border-color: #e1e2e4;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+}
+.channel-link[aria-selected="true"] small {
+  color: #d72f35;
+  background: #fff0f0;
+  border-color: #f3c9cb;
+}
+.show-all {
+  color: #c92b31;
+  background: white;
+  border-color: #e4a7aa;
+  border-radius: 3px;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.show-all:hover {
+  color: white;
+  background: #d72f35;
+}
+.channel-stage {
+  width: min(1080px, 100%);
+  padding-top: 30px;
+  background: #f5f6f7;
+}
+.channel-head {
+  padding: 17px 20px 15px;
+  background: white;
+  border-bottom: 1px solid #e0e1e3;
+  border-radius: 5px 5px 0 0;
+}
+.channel-kicker {
+  color: #d72f35;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.channel-head h2 {
+  margin-top: 5px;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: clamp(25px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.channel-head p {
+  color: #777b80;
+  font-size: 12px;
+}
+.section-title {
+  margin-top: 27px;
+  border-bottom-color: #d7d9dc;
+}
+.section-title h3 {
+  color: #292929;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.section-title small {
+  color: #8a8e93;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.state-thesis {
+  padding: 22px 23px;
+  background: white;
+  border: 1px solid #e0e1e3;
+  border-top: 3px solid #d72f35;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 8px rgba(30,30,30,.035);
+}
+.state-thesis h3 {
+  color: #222;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+.state-thesis p { color: #60656a; font-size: 13px; }
+.breadth-mini { border-left-color: #e3e4e6; }
+.breadth-mini strong {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-weight: 700;
+}
+.breadth-mini span {
+  color: #777b80;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.breadth-bar { height: 4px; background: #e6ece9; }
+.breadth-bar i { background: #d72f35; }
+.brief-list,
+.stock-list,
+.theme-list,
+.event-stack {
+  background: white;
+  border-color: #dedfe1;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(30,30,30,.025);
+}
+.brief-item {
+  min-height: 76px;
+  border-bottom-color: #ebebec;
+}
+.brief-item:hover,
+.stock-row > summary:hover,
+.theme-row > summary:hover,
+.event-disclosure > summary:hover { background: #fff8f8; }
+.brief-item:hover h3 { color: #c7282e; }
+.brief-number {
+  color: #d72f35;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+.brief-copy h3,
+.calendar-item strong,
+.stock-name strong,
+.theme-row h3,
+.event-disclosure h3 {
+  color: #292929;
+  font-weight: 700;
+}
+.brief-copy p { color: #686d72; font-size: 12.5px; }
+.brief-route,
+.event-watch { color: #c7282e; font-size: 11px; }
+.integrity-strip {
+  color: #72767b;
+  background: white;
+  border-color: #dedfe1;
+  border-left: 3px solid #d72f35;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.calendar-item {
+  background: white;
+  border-bottom-color: #e5e6e8;
+}
+.calendar-item time {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+}
+.calendar-item strong { font-size: 14px; }
+.calendar-item p { color: #6a6f74; font-size: 12px; }
+.status-pill {
+  color: #696d72;
+  background: white;
+  border-color: #dedfe1;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.stock-row,
+.theme-row,
+.event-disclosure { border-bottom-color: #e6e7e8; }
+.stock-row > summary { min-height: 65px; }
+.stock-row > summary::after,
+.theme-row > summary::after,
+.event-disclosure > summary::after { color: #c62a30; }
+.stock-name strong { font-size: 14px; }
+.stock-name small {
+  color: #898d92;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+.stock-pct {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+.stock-metric { color: #777b80; font-size: 12px; }
+.stock-state {
+  color: #777b80;
+  background: #f3f3f4;
+  border-color: #e2e3e4;
+  border-radius: 3px;
+  font-size: 11px;
+}
+.stock-state.new {
+  color: #c3272d;
+  background: #fff0f0;
+  border-color: #f0c9cb;
+}
+.stock-state.background {
+  color: #946023;
+  background: #fff5e9;
+  border-color: #efdec8;
+}
+.stock-detail div,
+.theme-detail,
+.evidence-body {
+  background: #f7f7f8;
+  border-color: #e5e6e7;
+}
+.stock-detail small { color: #777b80; font-size: 11px; }
+.stock-detail strong { font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.theme-row > summary { min-height: 67px; }
+.theme-signal { color: #c72a30; font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.theme-summary { color: #686d72; font-size: 12.5px; }
+.theme-detail {
+  color: #62676c;
+  border-left-color: #d72f35;
+}
+.commodity-grid,
+.st-snapshot,
+.three-lenses,
+.method-grid {
+  background: #e0e1e3;
+  border-color: #e0e1e3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.commodity,
+.st-snapshot div,
+.lens,
+.method-card { background: white; }
+.commodity small,
+.st-snapshot small { color: #83878c; font-size: 11px; }
+.commodity strong,
+.st-snapshot strong { font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.event-meta {
+  color: #81858a;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+}
+.tier {
+  color: #666a70;
+  background: #f1f2f3;
+  border-color: #dfe1e3;
+  border-radius: 3px;
+}
+.tier.opinion {
+  color: #7a653f;
+  background: #fff5e6;
+  border-color: #eddcc1;
+}
+.event-disclosure h3 { font-size: 15px; }
+.event-fact { color: #474c51; font-size: 13.5px; }
+.fact-kind {
+  display: inline-block;
+  margin: 7px 0 5px;
+  padding: 2px 6px;
+  color: #8a2025;
+  background: #fff0f0;
+  border: 1px solid #f0c8ca;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.fact-kind.opinion {
+  color: #7a653f;
+  background: #fff5e6;
+  border-color: #eddcc1;
+}
+.event-relation { color: #71767b; font-size: 12px; }
+.evidence-body {
+  border-left: 3px solid #d72f35;
+  border-radius: 3px;
+}
+.evidence-row dt { color: #767a7f; font-size: 11px; }
+.evidence-row dd { font-size: 13px; }
+.stage-line span {
+  background: #f2f2f3;
+  border-color: #e0e1e2;
+}
+.stage-line .active {
+  color: white;
+  background: #d72f35;
+  border-color: #d72f35;
+}
+.opinion-hero {
+  color: #2d2d2f;
+  background: white;
+  border: 1px solid #dedfe1;
+  border-top: 3px solid #d72f35;
+  border-left: 1px solid #dedfe1;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(30,30,30,.035);
+}
+.opinion-label {
+  color: #a56724;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.opinion-hero h3 {
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.opinion-meta { color: #75797e; font-size: 11px; }
+.transcript-path {
+  background: #fafafa;
+  border-color: #e2e3e5;
+}
+.transcript-path span {
+  color: #666a6f;
+  border-color: #e2e3e5;
+  font-size: 11px;
+}
+.transcript-path span:not(:last-child)::after { color: #d72f35; }
+.viewpoint-list,
+.viewpoint { border-color: #e2e3e5; }
+.viewpoint time {
+  color: #c62a30;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+.viewpoint p { font-size: 13.5px; }
+.lens.opinion h4,
+.action-link { color: #c62a30; }
+.action-link {
+  background: white;
+  border-color: #e0a8aa;
+  border-radius: 3px;
+}
+.action-link:hover { background: #fff3f3; }
+.footer-note { color: #777b80; border-color: #d8dadd; font-size: 11px; }
+.source-health {
+  width: min(1080px, calc(100% - 56px));
+  margin: 20px auto 0;
+  padding: 13px 15px;
+  color: #6b4a20;
+  background: #fff8ed;
+  border: 1px solid #edcfaa;
+  border-left: 4px solid #d28a30;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.source-health.critical {
+  color: #81272b;
+  background: #fff1f1;
+  border-color: #edb9bc;
+  border-left-color: #d72f35;
+}
+.source-health.ok {
+  color: #426050;
+  background: #f2f8f5;
+  border-color: #cfe0d6;
+  border-left-color: #36916c;
+}
+.source-health strong { display: block; margin-bottom: 4px; font-size: 13px; }
+.source-health ul { margin: 5px 0 0; padding-left: 19px; }
+.source-health li + li { margin-top: 3px; }
+.source-health code {
+  padding: 1px 4px;
+  color: inherit;
+  background: rgba(255,255,255,.62);
+  font-family: Arial, sans-serif;
+}
+.source-status-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  background: white;
+  font-size: 12px;
+}
+.source-status-table th,
+.source-status-table td {
+  padding: 10px 11px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e5e6e8;
+}
+.source-status-table th {
+  color: #74787d;
+  background: #f7f7f8;
+  font-weight: 400;
+}
+.source-state {
+  display: inline-block;
+  min-width: 58px;
+  padding: 2px 6px;
+  text-align: center;
+  color: #666;
+  background: #f1f2f3;
+  border-radius: 3px;
+}
+.source-state.ok,
+.source-state.success,
+.source-state.healthy { color: #137856; background: #eaf6f0; }
+.source-state.failed,
+.source-state.error,
+.source-state.blocked,
+.source-state.timeout,
+.source-state.unavailable { color: #b4242a; background: #fff0f0; }
+.source-state.degraded,
+.source-state.partial,
+.source-state.stale,
+.source-state.fallback { color: #98601e; background: #fff5e7; }
+
+@media (max-width: 760px) {
+  html, body { background: #f3f4f5; }
+  body {
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 15px;
+    line-height: 1.58;
+  }
+  .page { background: #f5f6f7; }
+  .report-header { background: #d72f35; }
+  .header-top {
+    min-height: 88px;
+    padding: 14px 15px 13px;
+  }
+  .brand small { color: rgba(255,255,255,.72); font-size: 10px; }
+  .brand h1 { color: white; font-size: 25px; font-weight: 700; }
+  .cutoff {
+    color: rgba(255,255,255,.76);
+    border-left-color: rgba(255,255,255,.33);
+    font-size: 10px;
+  }
+  .cutoff span { color: white; font-size: 18px; }
+  .market-tape { background: white; }
+  .tape-cell {
+    flex-basis: 150px;
+    min-height: 61px;
+    border-right-color: #ececee;
+  }
+  .tape-cell small { font-size: 11px; }
+  .tape-cell strong { font-size: 16px; }
+  .channel-nav {
+    background: rgba(255,255,255,.98);
+    border-bottom-color: #dedfe1;
+    box-shadow: 0 2px 8px rgba(30,30,30,.08);
+    backdrop-filter: none;
+  }
+  .channel-panel.is-entering { animation: none; }
+  .evidence-gate {
+    min-height: 27px;
+    color: #898d92;
+    background: #fafafa;
+    border-bottom: 1px solid #ececee;
+    font-size: 10px;
+  }
+  .evidence-gate strong { color: #d72f35; font-size: 11px; }
+  .channel-link {
+    min-height: 47px;
+    padding-inline: 15px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .channel-link[aria-selected="true"] {
+    color: #d72f35;
+    border-bottom-color: #d72f35;
+    font-weight: 700;
+  }
+  .channel-stage { padding: 22px 13px 44px; background: #f5f6f7; }
+  .channel-panel { scroll-margin-top: 86px; }
+  .channel-head {
+    padding: 15px 16px 14px;
+    border-radius: 5px 5px 0 0;
+  }
+  .channel-kicker { font-size: 11px; }
+  .channel-head h2 { font-size: 25px; font-weight: 700; }
+  .channel-head p { color: #70757a; font-size: 13px; }
+  .state-thesis { padding: 18px 16px; }
+  .state-thesis h3 { font-size: 20px; font-weight: 700; }
+  .state-thesis p { font-size: 14px; }
+  .breadth-mini span { font-size: 12px; }
+  .section-title h3 { font-size: 16px; }
+  .section-title small { font-size: 11px; }
+  .brief-item {
+    grid-template-columns: 27px minmax(0, 1fr);
+    padding: 15px 13px;
+  }
+  .brief-number { font-size: 11px; }
+  .brief-copy h3 { font-size: 15px; line-height: 1.48; }
+  .brief-copy p { font-size: 13px; line-height: 1.55; }
+  .brief-route { font-size: 12px; }
+  .integrity-strip { font-size: 11px; }
+  .calendar-item strong { font-size: 14px; }
+  .calendar-item p { font-size: 12.5px; }
+  .stock-name strong { font-size: 15px; }
+  .stock-name small { font-size: 11px; }
+  .stock-state { font-size: 11px; }
+  .theme-row h3 { font-size: 14px; }
+  .theme-summary { font-size: 13px; }
+  .event-meta { font-size: 11px; }
+  .event-disclosure h3 { font-size: 15px; }
+  .event-fact { font-size: 14px; }
+  .event-relation { font-size: 12.5px; }
+  .viewpoint p { font-size: 14px; }
+  .source-health {
+    width: calc(100% - 26px);
+    margin-top: 14px;
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+  .source-health strong { font-size: 13px; }
+  .source-status-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+
+.report-identity {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  padding: 6px 10px; border: 1px solid #efb7ba; border-radius: 3px;
+  color: #b31f25; background: #fff7f7; font-size: 12px; font-weight: 800;
+  letter-spacing: .08em;
+}
+.report-identity::before { content: ""; width: 5px; height: 5px; background: #d72f35; border-radius: 50%; }
+.first-impact {
+  margin: 9px 0 0; padding: 9px 11px; border-left: 3px solid #d72f35;
+  background: #fff8f8; color: #353b40; font-size: 12.5px; line-height: 1.65;
+}
+.first-impact strong { color: #b31f25; }
+.continuation-badge {
+  display: inline-flex; margin-left: 7px; padding: 2px 7px; border: 1px solid #e4a3a7;
+  border-radius: 999px; color: #b31f25; background: #fff5f5; font-size: 10px; font-weight: 800;
+}
+.analysis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.analysis-cell { padding: 11px 12px; background: #fff; border: 1px solid #e3e6e8; min-width: 0; }
+.analysis-cell dt { color: #a52329; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.analysis-cell dd { margin: 5px 0 0; color: #42494f; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.scenario-list { display: grid; gap: 7px; margin: 0 0 12px; padding: 0; list-style: none; }
+.scenario-list li { padding: 9px 11px; border: 1px solid #e3e6e8; background: #fff; font-size: 12px; line-height: 1.6; }
+.scenario-list b { color: #a52329; }
+.global-grid, .close-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.context-card { padding: 15px; border: 1px solid #dfe3e5; background: #fff; min-width: 0; }
+.context-card h3 { margin: 0 0 7px; color: #20262b; font-size: 15px; }
+.context-card p { margin: 0; color: #555e65; font-size: 12.5px; line-height: 1.7; overflow-wrap: anywhere; }
+.context-card .context-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 9px 0; }
+.context-meta span { padding: 3px 6px; background: #f3f4f5; color: #606970; font-size: 10px; }
+.context-kind { color: #b31f25 !important; font-weight: 800; }
+.context-path { margin-top: 9px !important; padding-top: 9px; border-top: 1px solid #eceeef; color: #7b4548 !important; }
+.unavailable-card { border-style: dashed; background: #fafafa; }
+.review-verdict { display: inline-flex; margin: 8px 0 0; color: #a52329; font-size: 11px; font-weight: 800; }
+@media (max-width: 760px) {
+  .analysis-grid, .global-grid, .close-grid { grid-template-columns: 1fr; }
+  .first-impact { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="report-header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="report-identity">A���������� �� 20:30</span>
+          <small>A���о�̨ �� ���˰� / 2026-08-03</small>
+          <h1>����ʷ�ز���A������������2026-08-03</h1>
+          <p>��ԭ���Զ���©�ܣ������ڽ�ֹ���ؽ��������ÿɻ�����2026-08-03 20:10ǰ�Ĳ��ϣ���ð�䵱ʱʵʱ������ա�</p>
+        </div>
+        <div class="cutoff"><span>20:10</span>֤�ݽ�ֹ<br>2026-08-03 �� ����</div>
+      </div>
+      <div class="market-tape" aria-label="����������г�����">
+        <div class="tape-cell"><small>2026-08-03 ���� / �µ�</small><strong>4,005 / 1,466</strong></div>
+        <div class="tape-cell"><small>2026-08-03 ȫ A �ɽ���</small><strong>2,011��</strong></div>
+        <div class="tape-cell"><small>2026-08-03 �ǵ���λ��</small><strong class="up">+1.35%</strong></div>
+        <div class="tape-cell"><small>2026-08-03 ��ͣ / ��ͣ</small><strong>83 / 9</strong></div>
+        <div class="tape-cell"><small>���ڲ���</small><strong>10 �¼� �� 8 Ƶ��</strong></div>
+      </div>
+    </header>
+    <div role="status" style="margin:14px 22px 0;padding:12px 14px;border-left:4px solid #d88a16;background:#fff8eb;color:#6d4308;font-weight:700">��ʷ�ز��棺ԭ���Զ���©�ܺ��ڽ�ֹʱ��֮���ؽ����������������ʱ�䲻����2026-08-03 20:10�Ĳ��ϣ���ð��20:10ʵʱ����棬Ҳ������ͬ�ճ��������ԡ�</div>
+    <div class="report-shell">
+      
+        <aside class="source-health ok" aria-label="����Դ״̬">
+          <strong>�˹����ĺ������ �� ����Դ״̬����</strong>
+          <span>run_id <code>20260803-2010-historical-backfill-corrected-v5</code>���Ѽ�¼ 19 / 19 ����Դ״̬���������ѡ��ʵ��һ�����ĺ��飻��ҳΪ������ע����ʷ�ز������档</span>
+        </aside>
+        
+      <nav class="channel-nav" aria-label="�ձ�Ƶ��">
+        <div class="evidence-gate" aria-label="֤���˱�">
+          <strong>20:10</strong>
+          <span><b>A</b> 0</span>
+          <span><b>B</b> 0</span>
+          <span><b>C</b> 0</span>
+          <span><b>D</b> 1</span>
+        </div>
+        <div class="channel-links">
+            <a id="channel-link-overview" class="channel-link"
+               href="#channel-overview" data-channel-link="overview"
+               data-label="��������">
+              <span>��������</span><small>5</small>
+            </a>
+            
+            <a id="channel-link-close_review" class="channel-link"
+               href="#channel-close_review" data-channel-link="close_review"
+               data-label="���̸���">
+              <span>���̸���</span><small>10</small>
+            </a>
+            
+            <a id="channel-link-global" class="channel-link"
+               href="#channel-global" data-channel-link="global"
+               data-label="ȫ�򱳾�">
+              <span>ȫ�򱳾�</span><small>10</small>
+            </a>
+            
+            <a id="channel-link-watchlist" class="channel-link"
+               href="#channel-watchlist" data-channel-link="watchlist"
+               data-label="��ѡ��">
+              <span>��ѡ��</span>
+            </a>
+            
+            <a id="channel-link-themes" class="channel-link"
+               href="#channel-themes" data-channel-link="themes"
+               data-label="��ҵ����">
+              <span>��ҵ����</span><small>10</small>
+            </a>
+            
+            <a id="channel-link-st" class="channel-link"
+               href="#channel-st" data-channel-link="st"
+               data-label="ST ����">
+              <span>ST ����</span>
+            </a>
+            
+            <a id="channel-link-lixiao" class="channel-link"
+               href="#channel-lixiao" data-channel-link="lixiao"
+               data-label="�����">
+              <span>�����</span>
+            </a>
+            
+            <a id="channel-link-data" class="channel-link"
+               href="#channel-data" data-channel-link="data"
+               data-label="����˵��">
+              <span>����˵��</span>
+            </a>
+            </div>
+        <button id="show-all" class="show-all" type="button" aria-pressed="false">��ʾȫ��</button>
+      </nav>
+      <main class="channel-stage">
+    <section id="channel-overview" class="channel-panel" data-channel-panel="overview">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">3�������̶�λ</div>
+        <h2>��������</h2>
+      </div>
+      <p>�����Ӷ�λ������ֵ�ÿ��ı仯��</p>
+    </div>
+    
+      <div class="state-thesis">
+        <div><h3>����ƫ���޸�����������������ͬ��תǿ</h3><p>�г����Ⱥͳɽ���ͬ�����ƣ����뵼�塢ST���ֻ��ѡ���ڲ��źŲ���һ�¡�����Ӧ�����־�Ӫ��ʵ������Ӳ�ź��봿�����ȶȡ�</p></div>
+        <div class="breadth-mini">
+          <strong>72.4%</strong><span>�гɽ�֤ȯ����ռ��</span>
+          <div class="breadth-bar"><i style="width:72.4%"></i></div>
+        </div>
+      </div>
+      <div class="section-title"><h3>�����ȿ��������</h3><small>������Զ��л�������Ƶ��</small></div>
+      <div class="brief-list"></div>
+      <div class="integrity-strip">
+        <span>֤�ݽ�ֹ <strong>20:10</strong></span>
+        <span>��Դ״̬ <strong>19 / 19</strong></span>
+        <span>��ѡ�ɸ��� <strong>9 / 9</strong></span>
+        <span>��Ƶ���� <strong>δȡ��</strong></span>
+      </div>
+      <div class="section-title"><h3>�����������</h3><small>δ�� 7 �չ۲�</small></div>
+      <div class="calendar-list">
+            <div class="calendar-item">
+              <time>08-04<br>������</time>
+              <div><strong>��ͨ������Ҫ���������г��۸�䶯���</strong><p>��������������ͳ�ƾ֡�</p></div>
+            </div>
+            
+            <div class="calendar-item">
+              <time>08-09<br>������</time>
+              <div><strong>�������Ѽ۸�ָ���¶ȱ���</strong><p>��������������ͳ�ƾ֡�</p></div>
+            </div>
+            
+            <div class="calendar-item">
+              <time>08-09<br>������</time>
+              <div><strong>��ҵ�����߼۸�ָ���¶ȱ���</strong><p>��������������ͳ�ƾ֡�</p></div>
+            </div>
+            </div>
+      <div class="footer-note">��Ƶ��ֻ��·��ͼ��������ʵֻ��һ����Ƶ�����֣������ظ��ѵ���</div>
+    </section>
+    
+    <section id="channel-close_review" class="channel-panel" data-channel-panel="close_review">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">A���������� / ��������</div>
+        <h2>���̸���</h2>
+      </div>
+      <p>A���������̽ṹ����������볿���жϵ�֤�ݸ��ˡ�</p>
+    </div>
+    
+      <div class="state-thesis">
+        <div><h3>A����������������г��ṹָ����ȡ��</h3><p>�ɽ���ʷ�Ƚϡ�ը�����塢���������ɢ����ֻ��ѡ����ҵ���ǿ�����ѽ��롣</p></div>
+      </div>
+      <div class="close-grid">
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ</p>
+              <h3>�г�������ɽ�</h3>
+              <p>����4005�ҡ��µ�1466�ҡ�ƽ��58�ң��ɽ���2011.059��Ԫ��</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>�ǵ��ֲ���ɽ����ж�ָ�������Ƿ�õ��г��ڲ��ṹ֧�֡�</p>
+              <span class="review-verdict">�ɽ����ǰһ������-21.44%����ǰ5�վ�ֵ-11.47%����ǰ20�վ�ֵ-22.27%��</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ / ��Ӧ��ͳ�ƿھ�</p>
+              <h3>�ǵ�ͣ��ը��������ṹ</h3>
+              <p>ȫA�ؽ��ھ���ͣ83�ҡ���ͣ9�ң���Ӧ�̷�ST�ھ�ը��16�ң�����17�ҡ�</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>�ǵ�ͣ������ֲ����۲���߷���ƫ�úͷ���ǿ�ȡ�</p>
+              <span class="review-verdict">�����ݶӣ�2��13�ҡ�3��1�ҡ�4��1�ҡ�5��1�ҡ�6��1�ң�ȫA�ؽ����ST��Ӧ�������ھ���ͬ������ϱȽϡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">ģ���ƶ�</p>
+              <h3>��С����ɳ�����</h3>
+              <p>����300����֤1000Ϊ-1.0415���ٷֵ㣻��ҵ��ָ������300Ϊ-0.2572���ٷֵ㡣</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>����300����֤1000��Ϊ��С�̴�������ҵ��ָ������300��Ϊ�ɳ���Լ�ֵ����������ͬ������������ӡ�</p>
+              <span class="review-verdict">����ֻ��͸�������ָ������������ͬ������������ӡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">�����߽�</p>
+              <h3>�������̣���ͬ�մ�������</h3>
+              <p>�������볿������ͬ���������ڣ���˲�����ͬ�¼�α��Ϊ��������������Ҳ��α��������ʵ���г���Ӧ��</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>����ͬ�����н������ȶ�event_id���ٱȽ�������ʵ���г���Ӧ���жϱ仯�͹۲���仯��</p>
+              <span class="review-verdict">��ǰ��ԣ�non_sequential_due_to_cutoff_safety</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ / ͳ�ƴ���</p>
+              <h3>�뵼��</h3>
+              <p>оƬ����-0.42%���洢оƬ-3.15%������оƬ-1.27%���ɷ�����ռ��54.72%����λ�ǵ�+0.33%���ɽ�����41.52%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>��������ǵ�����ɢ������Թ۲죻��ֱ�ӹ���Ϊ���ߡ�����������Ϊ��</p>
+              <span class="review-verdict">������ɢ����ɽ���������ͬ�ճɷֹ�������㣻�������Ե������������������ص��������ʲ�����ӡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ / ͳ�ƴ���</p>
+              <h3>�ɿغ˾۱�</h3>
+              <p>�ɿغ˾۱�2.88%���ɷ�����ռ��76.52%����λ�ǵ�+2.62%���ɽ�����3.47%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>��������ǵ�����ɢ������Թ۲죻��ֱ�ӹ���Ϊ���ߡ�����������Ϊ��</p>
+              <span class="review-verdict">������ɢ����ɽ���������ͬ�ճɷֹ�������㣻�������Ե������������������ص��������ʲ�����ӡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ / ͳ�ƴ���</p>
+              <h3>����</h3>
+              <p>�˵�2.68%������ˮ�����1.67%����ɫ����1.96%���ɷ�����ռ��83.64%����λ�ǵ�+2.03%���ɽ�����13.21%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>��������ǵ�����ɢ������Թ۲죻��ֱ�ӹ���Ϊ���ߡ�����������Ϊ��</p>
+              <span class="review-verdict">������ɢ����ɽ���������ͬ�ճɷֹ�������㣻�������Ե������������������ص��������ʲ�����ӡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ / ͳ�ƴ���</p>
+              <h3>����ҩ</h3>
+              <p>����ҩ0.14%��ҽҩ����0.74%���ɷ�����ռ��62.50%����λ�ǵ�+0.63%���ɽ�����3.43%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>��������ǵ�����ɢ������Թ۲죻��ֱ�ӹ���Ϊ���ߡ�����������Ϊ��</p>
+              <span class="review-verdict">������ɢ����ɽ���������ͬ�ճɷֹ�������㣻�������Ե������������������ص��������ʲ�����ӡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ / ͳ�ƴ���</p>
+              <h3>ST�������Ԥ��</h3>
+              <p>��ǰû�п��������ǵ����������ɷ�����ռ��78.37%����λ�ǵ�+2.00%���ɽ�����0.79%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>��������ǵ�����ɢ������Թ۲죻��ֱ�ӹ���Ϊ���ߡ�����������Ϊ��</p>
+              <span class="review-verdict">������ɢ����ɽ���������ͬ�ճɷֹ�������㣻�������Ե������������������ص��������ʲ�����ӡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ / ��ҵ����ͳ��</p>
+              <h3>��ֻ��ѡ���������һ����ҵ</h3>
+              <p>��������+0.31���ٷֵ㣻�����Ƴ�+5.26���ٷֵ㣻ST����+4.89���ٷֵ㣻ST���+1.77���ٷֵ㣻ST����-0.32���ٷֵ㣻��̩��Դ+3.57���ٷֵ㣻ɼɼ�ɷ�-1.98���ٷֵ㣻��ҩ�ɷ�+2.22���ٷֵ㣻˳�����+5.84���ٷֵ�</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>����·����</strong>�����ǵ���ͬ������һ����ҵ�ǵ������ָ�����Ϊ����ҵ��ͬ������</p>
+              <span class="review-verdict">��ҵ��Ա��ϵ����ҵ�������Թ�Ӧ�̽ṹ�����ݣ�����ͳ�ƿھ���</span>
+              
+            </article>
+            </div>
+      <div class="footer-note">��Ӧ�̡��ʽ������ֶν���ͳ�ƿھ���������Ϊ��ʵ����������Ϊ�������ǵ�Ҳ��ֱ���ж������۵�Դ���</div>
+    </section>
+    
+    <section id="channel-global" class="channel-panel" data-channel-panel="global">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">��� / ���պ� / �������</div>
+        <h2>ȫ�򱳾�</h2>
+      </div>
+      <p>ֻ������A�ɷ���ƫ�á���ҵ���衢�ɱ������߻��ֵ��ص�ȫ����ʵ��</p>
+    </div>
+    
+      <div class="integrity-strip">
+        <span>���� <strong>2026-08-03T20:10:00+08:00</strong></span>
+        <span>����״̬ <strong>�������̡��������������ע</strong></span>
+        <span>������ <strong>10</strong></span>
+      </div>
+      <div class="global-grid">
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ</p>
+              <h3>���� �� ����500</h3>
+              <p>����500�������������20260731����7489.7248���ǵ���0.7004%��</p>
+              <div class="context-meta"><span>20260731</span><span>Tier C��Tushare index_global</span><span>�����������</span></div>
+              <p class="context-path"><strong>����·����</strong>�������̷���ƫ����������Ԥ�ڡ�ȫ��Ȩ�����Ԥ���A�ɿ�����ɳ���ֵ���۲�</p>
+              <span class="review-verdict">ָ���仯ֻ��Ϊ���г����������ܵ����Ƴ�A�ɻ���ɷ���</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ</p>
+              <h3>���� �� ����˹��ҵָ��</h3>
+              <p>����˹��ҵָ���������������20260731����52485.03���ǵ���0.5305%��</p>
+              <div class="context-meta"><span>20260731</span><span>Tier C��Tushare index_global</span><span>�����������</span></div>
+              <p class="context-path"><strong>����·����</strong>������ͳ��ҵ����̷���ƫ�á�ȫ�����ںͼ�ֵ����A�ɼ�ֵ������������Ԥ��۲�</p>
+              <span class="review-verdict">ָ���仯�������A����ҵ����˾�����Ӫ���ݡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ</p>
+              <h3>���� �� ��˹����ۺ�ָ��</h3>
+              <p>��˹����ۺ�ָ���������������20260731����25373.85���ǵ���1.0018%��</p>
+              <div class="context-meta"><span>20260731</span><span>Tier C��Tushare index_global</span><span>�����������</span></div>
+              <p class="context-path"><strong>����·����</strong>�����Ƽ�����ƫ�á�ȫ��뵼���ֵ���ʱ���֧Ԥ�ڡ�A�ɰ뵼�弰�������۲�</p>
+              <span class="review-verdict">����Ƽ�ָ������֤�����ڹ�˾�������������ڹɼ۱仯��</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ</p>
+              <h3>�ձ� �� �վ�225</h3>
+              <p>�վ�225�������������20260803����63754.9���ǵ���-0.9433%��</p>
+              <div class="context-meta"><span>20260803</span><span>Tier C��Tushare index_global</span><span>�����������</span></div>
+              <p class="context-path"><strong>����·����</strong>�ձ�����ҵ���Ʊ����ƫ�á������豸�͵��Ӳ�ҵ��Ԥ�ڡ�A����������ֵ�۲�</p>
+              <span class="review-verdict">�վ�ָ��ֻ���ṩ���������������ҵ������֤�ݡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ��������ʵ</p>
+              <h3>���� �� �����ۺ�ָ��</h3>
+              <p>�����ۺ�ָ���������������20260803����6257.45���ǵ���-5.1247%��</p>
+              <div class="context-meta"><span>20260803</span><span>Tier C��Tushare index_global</span><span>�����������</span></div>
+              <p class="context-path"><strong>����·����</strong>��������Ȩ���г����֡��洢�͵��Ӳ�ҵ��Ԥ�ڡ�A�ɰ뵼�弰����Ԫ���۲�</p>
+              <span class="review-verdict">����ָ���ǵ����������˾���桢�۸�����֤�ݡ�</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ����ʵ</p>
+              <h3>Federal Reserve Board requests comment on a proposal to modernize its rule governing the extension of credit to bank &quot;insiders&quot;��bank executives, board members and major shareholders who could potentially influence a bank&#x27;s lending decisions</h3>
+              <p>�������¶�ȡ�������ٷ����ģ����»���2026��7��31�վ͸��������ڲ������Ź���Regulation O����������������᰸���������Ԫ�Ƽ۵��ż���ʹ�����澭������������ͬʱ������ֹ�Żݴ����ı��ϡ�����������᰸�����ڡ����������60���ֹ��</p>
+              <div class="context-meta"><span>2026-07-31T22:00:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>����·����</strong>ȫ��������ͨ��������Ԥ�ڡ����ʺͻ��ʡ�A�ɹ�ֵ���ʽ����ƫ������ҵ����Ԥ�ڡ�</p>
+              <span class="review-verdict">�ٷ�������¼�����ڲ�����ȫ���ж��Ѻ�ʵ��δ�����ĸ��˲��ݴ��γɷ����Ժ�۽��ۡ���δ��ʵ/���ƣ��᰸�Դ�����������׶Σ����ܱ���Ϊ����Ч���򣻲��ð�ǰһ�ձ����е���˼�¼ֱ�Ӹ���Ϊ������ˡ�</span>
+              <a class="action-link" href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260731b.htm" target="_blank" rel="noreferrer">�鿴�ٷ�ԭ��</a>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ����ʵ</p>
+              <h3>World Trade and Tech Day to explore policies to make AI work for inclusive trade</h3>
+              <p>���ֶ�ȡWTO�ٷ����ģ�WTO�����׽�World Trade and Tech Day����2026��9��14�����������ܲ����С�����������Ϊ��AI and Trade: Turning Potential into Progress������̸���AI���õ����ߡ���ܺ;������⣬�Լ�ó�ס���չ�͹��ʺ�������WTO���������⻹����AI����ó�׳ɱ�����չ�о��������AI��ֵ�������ַ���ó�ס�֪ʶ��Ȩ���ºͱ�׼��</p>
+              <div class="context-meta"><span>2026-08-03T08:00:00+08:00</span><span>Tier A official discovery</span></div>
+              <p class="context-path"><strong>����·����</strong>���߳�ͻ���Ե���ա���Դ��ó�׺͹�Ӧ����A�������ҵ�ɱ�������Ԥ�������ƫ�á�</p>
+              <span class="review-verdict">�ٷ���̬����ͻ����͵��������ű��뱣������δ������֤�ݲ��ø�дΪ�͹���ʵ����δ��ʵ/���ƣ����δ���У����շ��ԡ����߹�ʶ�ͳɹ���δ������WTO�龰���ֲ���Ϊȷ��Ԥ�⡣</span>
+              <a class="action-link" href="https://www.wto.org/english/news_e/news26_e/dtech_03aug26_471_e.htm" target="_blank" rel="noreferrer">�鿴�ٷ�ԭ��</a>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ����ʵ</p>
+              <h3>To Facilitate Positive Adjustment to Competition from Imports of Quartz Surface Products</h3>
+              <p>���ֶ�ȡ�׹��������ģ������������ض�ʯӢ�����Ʒ����ʵʩΪ��4��Ĺ�˰���ϴ�ʩ��������涨���HTSUS������2026��8��15����������ʱ��00:01�������ڽ��ڻ�Ӳֿ���ȡ�����ѵĻ�������������Ĵ����ǡ����ô󡢺�����ī���硢�¼��µ����ɾ��������ز�Ʒԭ�����ų��ڸô�ʩ֮�⣬�����÷�չ�о�����3%������9%�ϼƷݶ�������</p>
+              <div class="context-meta"><span>2026-08-01T05:00:00+08:00</span><span>Tier A</span></div>
+              <p class="context-path"><strong>����·����</strong>���߳�ͻ���Ե���ա���Դ��ó�׺͹�Ӧ����A�������ҵ�ɱ�������Ԥ�������ƫ�á�</p>
+              <span class="review-verdict">�ٷ���̬����ͻ����͵��������ű��뱣������δ������֤�ݲ��ø�дΪ�͹���ʵ����δ��ʵ/���ƣ�������ҵ��¶������ʵ�ʷݶ�ͺ�������仯δ�ڱ�����������飬���ƶ�A�ɹ�˾����������Ӱ�졣</span>
+              <a class="action-link" href="https://www.whitehouse.gov/presidential-actions/2026/07/to-facilitate-positive-adjustment-to-competition-from-imports-of-quartz-surface-products/" target="_blank" rel="noreferrer">�鿴�ٷ�ԭ��</a>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ����ʵ</p>
+              <h3>������ծ����������</h3>
+              <p>����������2026-07-31�ն����ߣ�2����4.28%��10����4.75%��30����5.27%��</p>
+              <div class="context-meta"><span>2026-07-31</span><span>Tier A������������</span><span>����</span></div>
+              <p class="context-path"><strong>����·����</strong>�����޷������ʡ�ȫ��Ȩ������������Ԫ�����ԡ�A�ɳɳ���ֵ�����ʷ���ƫ�á�</p>
+              <span class="review-verdict">�ն������������Ǳ������������ܵ����Ƶ�A��ָ������ɴ��շ���</span>
+              <a class="action-link" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&amp;field_tdr_date_value=2026" target="_blank" rel="noreferrer">�鿴�ٷ�ԭ��</a>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">��ȷ����ʵ</p>
+              <h3>��Ҫ���ʲο�������</h3>
+              <p>ECB 2026-07-31ŷԪ�ο����ʸ��㣺��Ԫ/�����6.751328����Ԫ/��Ԫ160.235089����Ԫ/��Ԫ1443.613409��</p>
+              <div class="context-meta"><span>2026-07-31</span><span>Tier A��ŷ������</span><span>����</span></div>
+              <p class="context-path"><strong>����·����</strong>��Ԫ������ҡ���Ԫ�ͺ�Ԫ�����ǿ���������ʽ�����ڶ���Ԥ�ڡ�A�ɷ���ƫ�ú���ҵ�ɱ���</p>
+              <span class="review-verdict">ECB�ο������̲���ð�侳��������м�ۡ��밶��������̼ۻ�ʵʱ���׼۸�</span>
+              <a class="action-link" href="https://data-api.ecb.europa.eu/service/data/EXR/D.USD+JPY+CNY+KRW.EUR.SP00.A?format=csvdata&amp;startPeriod=2026-07-20" target="_blank" rel="noreferrer">�鿴�ٷ�ԭ��</a>
+            </article>
+            </div>
+      <div class="footer-note">ȫ�򱳾�ֻ���ͷ���ƫ�á����衢�ɱ������߻��ֵ����������������ɹ����뾭Ӫ֤�ݡ�</div>
+    </section>
+    
+    <section id="channel-watchlist" class="channel-panel" data-channel-panel="watchlist">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">9ֻ��� / ֱ�ӹ���</div>
+        <h2>��ѡ��</h2>
+      </div>
+      <p>��ֻ��Ʊ���������ȶ����Ѽ��״̬��</p>
+    </div>
+    
+      <div class="status-summary">
+        <span class="status-pill"><strong>0</strong> ֻ 24Сʱ����</span>
+        <span class="status-pill"><strong>2</strong> ֻ����ٱ���</span>
+        <span class="status-pill"><strong>7</strong> ֻ���ش�Ӫ����</span>
+      </div>
+      <div class="section-title"><h3>��ֻ��Ʊ����������·��</h3><small>����鿴�۸���ܡ��нӡ����������ǿ��֤��</small></div>
+      <div class="stock-list">
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>��������</strong><small>002415</small></span>
+                <span class="stock-pct up">+0.80%</span>
+                <span class="stock-metric">���� 1.70%</span>
+                <span class="stock-state clear">���ش�����</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>37.95</strong></div>
+                <div><small>PE-TTM / PB</small><strong>21.16 / 4.12</strong></div>
+                <div><small>L2 �������</small><strong>+3.879 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>40.4%</strong></div>
+                <div><small>��Ի���300</small><strong>+1.78 ���ٷֵ�</strong></div>
+                <div><small>��Լ����</small><strong>+0.31 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="�������� 002415.SZ 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>�������� 002415.SZ 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="170.7" x2="626.0" y2="170.7" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,108.6 L55.1,92 L62.3,131.8 L69.4,129 L76.5,113.3 L83.7,119.7 L90.8,121.6 L98,125.3 L105.1,110.5 L112.2,37.3 L119.4,46.6 L126.5,73.4 L133.6,91 L140.8,121.6 L147.9,111.4 L155,107.7 L162.2,104.9 L169.3,117.9 L176.4,117.9 L183.6,112.3 L190.7,113.3 L197.9,89.2 L205,78.1 L212.1,92.9 L219.3,122.5 L226.4,104.9 L233.5,119.7 L240.7,122.5 L247.8,118.8 L254.9,144.7 L262.1,141 L269.2,144.7 L276.3,152.1 L283.5,149.4 L290.6,147.5 L297.8,143.8 L304.9,148.4 L312,139.2 L319.2,143.8 L326.3,140.1 L333.4,142 L340.6,142.9 L347.7,150.3 L354.8,152.1 L362,147.5 L369.1,143.8 L376.2,147.5 L383.4,132.7 L390.5,140.1 L397.7,138.3 L404.8,143.8 L411.9,151.2 L419.1,162.3 L426.2,168.8 L433.3,165.1 L440.5,158.6 L447.6,159.6 L454.7,154.9 L461.9,148.4 L469,140.1 L476.1,138.3 L483.3,129 L490.4,143.8 L497.6,143.8 L504.7,153.1 L511.8,142 L519,126.2 L526.1,135.5 L533.2,112.3 L540.4,101.2 L547.5,113.3 L554.6,110.5 L561.8,127.1 L568.9,129.9 L576,133.6 L583.2,139.2 L590.3,140.1 L597.5,129.9 L604.6,134.6 L611.7,135.5 L618.9,140.1 L626,142.9" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,139 L55.1,92.2 L62.3,95.5 L69.4,102.6 L76.5,104.8 L83.7,105.9 L90.8,106.3 L98,106.8 L105.1,107.2 L112.2,102.7 L119.4,94.9 L126.5,92.7 L133.6,92.3 L140.8,93 L147.9,94.2 L155,94.6 L162.2,94.9 L169.3,95.4 L176.4,95.8 L183.6,96 L190.7,96.2 L197.9,96.3 L205,96 L212.1,95.9 L219.3,96.1 L226.4,96.3 L233.5,96.7 L240.7,97 L247.8,97.2 L254.9,98 L262.1,98.6 L269.2,99.1 L276.3,99.9 L283.5,100.4 L290.6,100.6 L297.8,100.9 L304.9,101.3 L312,101.6 L319.2,101.8 L326.3,102 L333.4,102.2 L340.6,102.5 L347.7,102.7 L354.8,103.2 L362,103.4 L369.1,103.6 L376.2,103.8 L383.4,104 L390.5,104.2 L397.7,104.3 L404.8,104.5 L411.9,104.8 L419.1,105.5 L426.2,106.1 L433.3,106.6 L440.5,107 L447.6,107.3 L454.7,107.5 L461.9,107.7 L469,108 L476.1,108.2 L483.3,108.4 L490.4,108.6 L497.6,108.7 L504.7,108.9 L511.8,109.1 L519,109.2 L526.1,109.3 L533.2,109.4 L540.4,109.4 L547.5,109.4 L554.6,109.5 L561.8,109.6 L568.9,109.7 L576,109.8 L583.2,109.9 L590.3,110.1 L597.5,110.2 L604.6,110.3 L611.7,110.5 L618.9,110.7 L626,111.2" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="228.6" width="12.6" height="15.4" fill="#2a8c68" opacity=".58"/><rect x="69.9" y="236.5" width="12.6" height="7.5" fill="#cf2634" opacity=".58"/><rect x="84" y="240.8" width="12.6" height="3.2" fill="#2a8c68" opacity=".58"/><rect x="98.1" y="241.1" width="12.6" height="2.9" fill="#cf2634" opacity=".58"/><rect x="112.2" y="232.2" width="12.6" height="11.8" fill="#2a8c68" opacity=".58"/><rect x="126.3" y="237.9" width="12.6" height="6.1" fill="#2a8c68" opacity=".58"/><rect x="140.4" y="237.7" width="12.6" height="6.3" fill="#cf2634" opacity=".58"/><rect x="154.5" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="168.6" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="182.7" y="242.2" width="12.6" height="1.8" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="210.9" y="241.8" width="12.6" height="2.2" fill="#2a8c68" opacity=".58"/><rect x="225" y="237.6" width="12.6" height="6.4" fill="#cf2634" opacity=".58"/><rect x="239.1" y="242.9" width="12.6" height="1.1" fill="#2a8c68" opacity=".58"/><rect x="253.2" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="267.3" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="281.4" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="309.6" y="243.6" width="12.6" height="0.4" fill="#2a8c68" opacity=".58"/><rect x="323.7" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="337.8" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="351.9" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="366" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="380.1" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="394.2" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="241.7" width="12.6" height="2.3" fill="#2a8c68" opacity=".58"/><rect x="422.4" y="240.4" width="12.6" height="3.6" fill="#cf2634" opacity=".58"/><rect x="436.5" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="450.5" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="464.6" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="478.7" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="492.8" y="243.5" width="12.6" height="0.5" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="521" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="535.1" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="549.2" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="563.3" y="242.9" width="12.6" height="1.1" fill="#2a8c68" opacity=".58"/><rect x="577.4" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="591.5" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="605.6" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="619.7" y="236.9" width="12.6" height="7.1" fill="#cf2634" opacity=".58"/><circle cx="116.3" cy="29" r="3" fill="#cf2634"/><circle cx="48" cy="183.6" r="3" fill="#2a8c68"/><text x="116.3" y="22" text-anchor="middle" font-size="10" fill="#a51f2a">�� 39.2</text><text x="48" y="197.6" text-anchor="middle" font-size="10" fill="#267357">�� 37.5</text><text x="5" y="31" font-size="10" fill="#69737c">39.2</text><text x="5" y="184" font-size="10" fill="#69737c">37.5</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������+1.78%��ǰ30����+1.75%������09:31̽�����ڵ�λ������09:59������λ�����-0.13%�����30����-0.55%������λ��ȫ��۸�����26%λ�ã�Լ10%�ķ��������ۼƾ������Ϸ�����ģ�ͽ�����۸����ʱ�������ڳɽ����ۣ������ĳ������ܶ����ޣ����̱��������֤��ָǿ1.76���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>�����Ƴ�</strong><small>002388</small></span>
+                <span class="stock-pct up">+1.08%</span>
+                <span class="stock-metric">���� 11.38%</span>
+                <span class="stock-state background">�����춯</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>4.70</strong></div>
+                <div><small>PE-TTM / PB</small><strong>����/������ / 2.50</strong></div>
+                <div><small>L2 �������</small><strong>-0.164 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>97.5%</strong></div>
+                <div><small>��Ի���300</small><strong>+2.06 ���ٷֵ�</strong></div>
+                <div><small>��Ե���</small><strong>+5.26 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="�����Ƴ� 002388.SZ 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>�����Ƴ� 002388.SZ 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="117.3" x2="626.0" y2="117.3" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,170.7 L55.1,108.4 L62.3,81.8 L69.4,144 L76.5,99.6 L83.7,117.3 L90.8,108.4 L98,108.4 L105.1,117.3 L112.2,99.6 L119.4,81.8 L126.5,81.8 L133.6,55.1 L140.8,55.1 L147.9,55.1 L155,37.3 L162.2,64 L169.3,64 L176.4,90.7 L183.6,90.7 L190.7,108.4 L197.9,99.6 L205,81.8 L212.1,90.7 L219.3,99.6 L226.4,81.8 L233.5,81.8 L240.7,81.8 L247.8,81.8 L254.9,90.7 L262.1,72.9 L269.2,64 L276.3,81.8 L283.5,81.8 L290.6,81.8 L297.8,81.8 L304.9,72.9 L312,81.8 L319.2,81.8 L326.3,81.8 L333.4,81.8 L340.6,81.8 L347.7,81.8 L354.8,81.8 L362,99.6 L369.1,90.7 L376.2,81.8 L383.4,81.8 L390.5,81.8 L397.7,72.9 L404.8,90.7 L411.9,99.6 L419.1,81.8 L426.2,90.7 L433.3,90.7 L440.5,99.6 L447.6,81.8 L454.7,90.7 L461.9,81.8 L469,81.8 L476.1,90.7 L483.3,81.8 L490.4,90.7 L497.6,90.7 L504.7,99.6 L511.8,90.7 L519,90.7 L526.1,90.7 L533.2,81.8 L540.4,81.8 L547.5,90.7 L554.6,90.7 L561.8,81.8 L568.9,99.6 L576,90.7 L583.2,90.7 L590.3,81.8 L597.5,90.7 L604.6,81.8 L611.7,72.9 L618.9,64 L626,72.9" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,157.8 L55.1,156.6 L62.3,142.7 L69.4,138.7 L76.5,139.4 L83.7,137.2 L90.8,133.8 L98,132.6 L105.1,131.8 L112.2,130.3 L119.4,129.2 L126.5,127.4 L133.6,124.3 L140.8,122.7 L147.9,120.5 L155,118.1 L162.2,115.5 L169.3,113.8 L176.4,113 L183.6,112.7 L190.7,112.4 L197.9,112.1 L205,111.8 L212.1,111.5 L219.3,111.3 L226.4,111.1 L233.5,110.9 L240.7,110.5 L247.8,110.4 L254.9,110.2 L262.1,109.8 L269.2,109.2 L276.3,108.8 L283.5,108.6 L290.6,108.5 L297.8,108.4 L304.9,108.3 L312,107.9 L319.2,107.8 L326.3,107.7 L333.4,107.5 L340.6,107.2 L347.7,107 L354.8,106.8 L362,106.6 L369.1,106.6 L376.2,106.4 L383.4,106.3 L390.5,106.1 L397.7,105.8 L404.8,105.5 L411.9,105.5 L419.1,105.2 L426.2,105.2 L433.3,105.1 L440.5,105 L447.6,104.9 L454.7,104.8 L461.9,104.7 L469,104.6 L476.1,104.5 L483.3,104.3 L490.4,104.2 L497.6,104.2 L504.7,104.2 L511.8,104.1 L519,104 L526.1,103.9 L533.2,103.8 L540.4,103.7 L547.5,103.6 L554.6,103.6 L561.8,103.5 L568.9,103.3 L576,103.2 L583.2,103.2 L590.3,103 L597.5,102.6 L604.6,102.1 L611.7,101.5 L618.9,101 L626,100.1" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="234.1" width="12.6" height="9.9" fill="#cf2634" opacity=".58"/><rect x="69.9" y="238.1" width="12.6" height="5.9" fill="#cf2634" opacity=".58"/><rect x="84" y="231.1" width="12.6" height="12.9" fill="#cf2634" opacity=".58"/><rect x="98.1" y="241.5" width="12.6" height="2.5" fill="#2a8c68" opacity=".58"/><rect x="112.2" y="241.4" width="12.6" height="2.6" fill="#cf2634" opacity=".58"/><rect x="126.3" y="241.3" width="12.6" height="2.7" fill="#cf2634" opacity=".58"/><rect x="140.4" y="238.3" width="12.6" height="5.7" fill="#cf2634" opacity=".58"/><rect x="154.5" y="239.5" width="12.6" height="4.5" fill="#2a8c68" opacity=".58"/><rect x="168.6" y="241.5" width="12.6" height="2.5" fill="#2a8c68" opacity=".58"/><rect x="182.7" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="210.9" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="225" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="239.1" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="253.2" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="267.3" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="281.4" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="309.6" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="323.7" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="337.8" y="242.1" width="12.6" height="1.9" fill="#2a8c68" opacity=".58"/><rect x="351.9" y="243.9" width="12.6" height="0.1" fill="#2a8c68" opacity=".58"/><rect x="366" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="380.1" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="394.2" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="408.3" y="239.4" width="12.6" height="4.6" fill="#cf2634" opacity=".58"/><rect x="422.4" y="241.4" width="12.6" height="2.6" fill="#cf2634" opacity=".58"/><rect x="436.5" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="450.5" y="241" width="12.6" height="3" fill="#cf2634" opacity=".58"/><rect x="464.6" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="478.7" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="492.8" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="506.9" y="243.4" width="12.6" height="0.6" fill="#2a8c68" opacity=".58"/><rect x="521" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="535.1" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="549.2" y="243.6" width="12.6" height="0.4" fill="#2a8c68" opacity=".58"/><rect x="563.3" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="577.4" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="591.5" y="231.8" width="12.6" height="12.2" fill="#2a8c68" opacity=".58"/><rect x="605.6" y="237.3" width="12.6" height="6.7" fill="#cf2634" opacity=".58"/><rect x="619.7" y="231.9" width="12.6" height="12.1" fill="#cf2634" opacity=".58"/><circle cx="155.3" cy="37.3" r="3" fill="#cf2634"/><circle cx="48" cy="206.2" r="3" fill="#2a8c68"/><text x="155.3" y="30.3" text-anchor="middle" font-size="10" fill="#a51f2a">�� 4.7</text><text x="48" y="198" text-anchor="middle" font-size="10" fill="#267357">�� 4.5</text><text x="5" y="31" font-size="10" fill="#69737c">4.8</text><text x="5" y="184" font-size="10" fill="#69737c">4.6</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">δ���ִﵽ��ֵ�Ĺ�˾���������۸�����춯����Ϊ�����˲������� ������·���������������-1.29%��ǰ30����+2.18%������09:31̽�����ڵ�λ������10:15������λ�����+0.21%�����30����+0.43%������λ��ȫ��۸�����79%λ�ã�Լ98%�ķ��������ۼƾ������Ϸ�����ģ�ͽ������λ��ѹ������գ����޸����ֵ����̣��۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������֤��ָǿ2.04���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST����</strong><small>000078</small></span>
+                <span class="stock-pct up">+4.38%</span>
+                <span class="stock-metric">���� 3.36%</span>
+                <span class="stock-state clear">���ش�����</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>1.67</strong></div>
+                <div><small>PE-TTM / PB</small><strong>����/������ / 3.54</strong></div>
+                <div><small>L2 �������</small><strong>+0.307 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>70.9%</strong></div>
+                <div><small>��Ի���300</small><strong>+5.36 ���ٷֵ�</strong></div>
+                <div><small>���ҽҩ����</small><strong>+4.89 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="ST���� 000078.SZ 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>ST���� 000078.SZ 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="170.7" x2="626.0" y2="170.7" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,157.3 L55.1,157.3 L62.3,117.3 L69.4,130.7 L76.5,144 L83.7,144 L90.8,144 L98,157.3 L105.1,144 L112.2,157.3 L119.4,157.3 L126.5,144 L133.6,130.7 L140.8,144 L147.9,130.7 L155,144 L162.2,144 L169.3,144 L176.4,144 L183.6,157.3 L190.7,157.3 L197.9,157.3 L205,144 L212.1,157.3 L219.3,157.3 L226.4,144 L233.5,144 L240.7,157.3 L247.8,144 L254.9,130.7 L262.1,90.7 L269.2,77.3 L276.3,37.3 L283.5,64 L290.6,64 L297.8,77.3 L304.9,90.7 L312,77.3 L319.2,77.3 L326.3,64 L333.4,64 L340.6,64 L347.7,77.3 L354.8,77.3 L362,90.7 L369.1,90.7 L376.2,77.3 L383.4,90.7 L390.5,90.7 L397.7,77.3 L404.8,90.7 L411.9,90.7 L419.1,90.7 L426.2,90.7 L433.3,90.7 L440.5,77.3 L447.6,77.3 L454.7,90.7 L461.9,77.3 L469,90.7 L476.1,90.7 L483.3,90.7 L490.4,77.3 L497.6,77.3 L504.7,90.7 L511.8,90.7 L519,90.7 L526.1,77.3 L533.2,90.7 L540.4,77.3 L547.5,77.3 L554.6,77.3 L561.8,90.7 L568.9,77.3 L576,77.3 L583.2,90.7 L590.3,90.7 L597.5,90.7 L604.6,77.3 L611.7,90.7 L618.9,77.3 L626,77.3" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,162.8 L55.1,161.6 L62.3,150.3 L69.4,147 L76.5,145.8 L83.7,145.4 L90.8,145.2 L98,145.3 L105.1,145.5 L112.2,145.6 L119.4,145.7 L126.5,145.6 L133.6,145.6 L140.8,145.5 L147.9,145.4 L155,145.4 L162.2,145.3 L169.3,145.3 L176.4,145.4 L183.6,145.4 L190.7,145.6 L197.9,145.7 L205,145.7 L212.1,145.8 L219.3,145.9 L226.4,145.9 L233.5,146 L240.7,146 L247.8,146.1 L254.9,145.6 L262.1,133.2 L269.2,130.4 L276.3,119.9 L283.5,114.7 L290.6,114.1 L297.8,113.7 L304.9,112.6 L312,112.4 L319.2,111.7 L326.3,111.4 L333.4,111 L340.6,110.8 L347.7,110.1 L354.8,110 L362,109.9 L369.1,109.9 L376.2,109.8 L383.4,109.8 L390.5,109.7 L397.7,109.7 L404.8,109.6 L411.9,109.5 L419.1,109.4 L426.2,109.2 L433.3,109.2 L440.5,109.2 L447.6,109 L454.7,109 L461.9,109 L469,108.8 L476.1,108.7 L483.3,108.6 L490.4,108.6 L497.6,108.5 L504.7,108.4 L511.8,108.3 L519,108.3 L526.1,108.2 L533.2,108.2 L540.4,107.9 L547.5,107.8 L554.6,107.6 L561.8,107.5 L568.9,107.5 L576,107.4 L583.2,107.4 L590.3,107.1 L597.5,106.8 L604.6,106.8 L611.7,106.6 L618.9,106.4 L626,105.8" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="220.9" width="12.6" height="23.1" fill="#cf2634" opacity=".58"/><rect x="55.8" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="69.9" y="225.9" width="12.6" height="18.1" fill="#cf2634" opacity=".58"/><rect x="84" y="241" width="12.6" height="3" fill="#cf2634" opacity=".58"/><rect x="98.1" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="112.2" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="126.3" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="140.4" y="243" width="12.6" height="1" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="168.6" y="243.5" width="12.6" height="0.5" fill="#2a8c68" opacity=".58"/><rect x="182.7" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="196.8" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="210.9" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="225" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="239.1" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="253.2" y="207.2" width="12.6" height="36.8" fill="#cf2634" opacity=".58"/><rect x="267.3" y="236.6" width="12.6" height="7.4" fill="#cf2634" opacity=".58"/><rect x="281.4" y="238.8" width="12.6" height="5.2" fill="#cf2634" opacity=".58"/><rect x="295.5" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="309.6" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="323.7" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="337.8" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="351.9" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="366" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="380.1" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="394.2" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="408.3" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="422.4" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="436.5" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="450.5" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="464.6" y="243.7" width="12.6" height="0.3" fill="#2a8c68" opacity=".58"/><rect x="478.7" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="492.8" y="243.8" width="12.6" height="0.2" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="521" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="535.1" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="549.2" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="563.3" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="577.4" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="591.5" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="605.6" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="619.7" y="231" width="12.6" height="13" fill="#cf2634" opacity=".58"/><circle cx="279.7" cy="24" r="3" fill="#cf2634"/><circle cx="48" cy="170.7" r="3" fill="#2a8c68"/><text x="279.7" y="17" text-anchor="middle" font-size="10" fill="#a51f2a">�� 1.7</text><text x="48" y="184.7" text-anchor="middle" font-size="10" fill="#267357">�� 1.6</text><text x="5" y="31" font-size="10" fill="#69737c">1.7</text><text x="5" y="184" font-size="10" fill="#69737c">1.6</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������+0.62%��ǰ30����+0.00%������09:31̽�����ڵ�λ������11:06������λ�����-0.60%�����30����+0.60%������λ��ȫ��۸�����64%λ�ã�Լ89%�ķ��������ۼƾ������Ϸ�����ģ�ͽ�����۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������֤��ָǿ5.34���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST���</strong><small>000669</small></span>
+                <span class="stock-pct up">+2.99%</span>
+                <span class="stock-metric">���� 0.72%</span>
+                <span class="stock-state clear">���ش�����</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>3.44</strong></div>
+                <div><small>PE-TTM / PB</small><strong>53.15 / 38.49</strong></div>
+                <div><small>L2 �������</small><strong>+0.083 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>9.4%</strong></div>
+                <div><small>��Ի���300</small><strong>+3.98 ���ٷֵ�</strong></div>
+                <div><small>��Թ�����ҵ</small><strong>+1.77 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="ST��� 000669.SZ 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>ST��� 000669.SZ 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="158.4" x2="626.0" y2="158.4" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,168.5 L55.1,158.4 L62.3,158.4 L69.4,158.4 L76.5,158.4 L83.7,148.3 L90.8,148.3 L98,128.1 L105.1,128.1 L112.2,118.1 L119.4,128.1 L126.5,118.1 L133.6,118.1 L140.8,128.1 L147.9,128.1 L155,118.1 L162.2,118.1 L169.3,118.1 L176.4,108 L183.6,128.1 L190.7,118.1 L197.9,128.1 L205,118.1 L212.1,118.1 L219.3,128.1 L226.4,128.1 L233.5,128.1 L240.7,128.1 L247.8,128.1 L254.9,138.2 L262.1,128.1 L269.2,128.1 L276.3,128.1 L283.5,118.1 L290.6,128.1 L297.8,118.1 L304.9,118.1 L312,128.1 L319.2,108 L326.3,118.1 L333.4,118.1 L340.6,118.1 L347.7,108 L354.8,108 L362,118.1 L369.1,118.1 L376.2,118.1 L383.4,108 L390.5,108 L397.7,108 L404.8,87.8 L411.9,77.7 L419.1,37.3 L426.2,77.7 L433.3,57.5 L440.5,67.6 L447.6,67.6 L454.7,77.7 L461.9,57.5 L469,57.5 L476.1,57.5 L483.3,67.6 L490.4,67.6 L497.6,67.6 L504.7,77.7 L511.8,77.7 L519,87.8 L526.1,77.7 L533.2,87.8 L540.4,77.7 L547.5,87.8 L554.6,77.7 L561.8,67.6 L568.9,67.6 L576,67.6 L583.2,67.6 L590.3,67.6 L597.5,67.6 L604.6,77.7 L611.7,77.7 L618.9,57.5 L626,57.5" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,170.7 L55.1,165.2 L62.3,160.9 L69.4,158.7 L76.5,158.6 L83.7,158.6 L90.8,158.1 L98,149.2 L105.1,148.5 L112.2,147.5 L119.4,145.9 L126.5,144.4 L133.6,144.1 L140.8,143.5 L147.9,143.4 L155,140.8 L162.2,140.7 L169.3,139.7 L176.4,139.4 L183.6,138.4 L190.7,138 L197.9,137.7 L205,137.7 L212.1,137.5 L219.3,137.5 L226.4,137.4 L233.5,137.4 L240.7,136 L247.8,136 L254.9,135.8 L262.1,135.8 L269.2,135.6 L276.3,135.6 L283.5,134.9 L290.6,134.7 L297.8,134.2 L304.9,133.9 L312,133.5 L319.2,133.5 L326.3,133.2 L333.4,133 L340.6,132.6 L347.7,132.5 L354.8,131.2 L362,131 L369.1,130.9 L376.2,130.8 L383.4,130.7 L390.5,130.6 L397.7,130.2 L404.8,127.3 L411.9,124.8 L419.1,121.6 L426.2,117.4 L433.3,116.9 L440.5,116.3 L447.6,116 L454.7,115.8 L461.9,115.1 L469,114.5 L476.1,114.4 L483.3,114.1 L490.4,114 L497.6,113.7 L504.7,113.3 L511.8,113.3 L519,112.9 L526.1,112.8 L533.2,112.8 L540.4,112.8 L547.5,112.4 L554.6,112.3 L561.8,111.5 L568.9,111.3 L576,111.1 L583.2,110.8 L590.3,110.6 L597.5,110.5 L604.6,110.4 L611.7,109.8 L618.9,108.3 L626,107.3" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="239.1" width="12.6" height="4.9" fill="#cf2634" opacity=".58"/><rect x="55.8" y="229.1" width="12.6" height="14.9" fill="#cf2634" opacity=".58"/><rect x="69.9" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="84" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="98.1" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="112.2" y="234.3" width="12.6" height="9.7" fill="#2a8c68" opacity=".58"/><rect x="126.3" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="140.4" y="242.9" width="12.6" height="1.1" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="168.6" y="240.8" width="12.6" height="3.2" fill="#cf2634" opacity=".58"/><rect x="182.7" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="210.9" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="225" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="239.1" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="253.2" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="267.3" y="244" width="12.6" height="0" fill="#cf2634" opacity=".58"/><rect x="281.4" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="309.6" y="243" width="12.6" height="1" fill="#2a8c68" opacity=".58"/><rect x="323.7" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="337.8" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="351.9" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="366" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="380.1" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="394.2" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="408.3" y="220.1" width="12.6" height="23.9" fill="#cf2634" opacity=".58"/><rect x="422.4" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="436.5" y="241.1" width="12.6" height="2.9" fill="#cf2634" opacity=".58"/><rect x="450.5" y="235.8" width="12.6" height="8.2" fill="#cf2634" opacity=".58"/><rect x="464.6" y="241.3" width="12.6" height="2.7" fill="#cf2634" opacity=".58"/><rect x="478.7" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="492.8" y="241" width="12.6" height="3" fill="#cf2634" opacity=".58"/><rect x="506.9" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="521" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="535.1" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="549.2" y="244" width="12.6" height="0" fill="#cf2634" opacity=".58"/><rect x="563.3" y="241.3" width="12.6" height="2.7" fill="#cf2634" opacity=".58"/><rect x="577.4" y="239.9" width="12.6" height="4.1" fill="#cf2634" opacity=".58"/><rect x="591.5" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="605.6" y="233.9" width="12.6" height="10.1" fill="#cf2634" opacity=".58"/><rect x="619.7" y="233.8" width="12.6" height="10.2" fill="#cf2634" opacity=".58"/><circle cx="419.6" cy="37.3" r="3" fill="#cf2634"/><circle cx="48" cy="178.6" r="3" fill="#2a8c68"/><text x="419.6" y="30.3" text-anchor="middle" font-size="10" fill="#a51f2a">�� 3.5</text><text x="48" y="192.6" text-anchor="middle" font-size="10" fill="#267357">�� 3.3</text><text x="5" y="31" font-size="10" fill="#69737c">3.5</text><text x="5" y="184" font-size="10" fill="#69737c">3.3</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������-0.30%��ǰ30����+1.50%������09:31̽�����ڵ�λ������13:31������λ�����+1.47%�����30����+0.88%������λ��ȫ��۸�����86%λ�ã�Լ99%�ķ��������ۼƾ������Ϸ�����ģ�ͽ������λ��ѹ������գ����޸����ֵ����̣��۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������֤��ָǿ3.96���ٷֵ㣻��Ҫ�仯������β�̵��ɽ�ռ�Ȳ��ߣ�Ӧ�ȴ���һ������ȷ�϶����Ƿ������� �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST����</strong><small>000711</small></span>
+                <span class="stock-pct up">+2.07%</span>
+                <span class="stock-metric">���� 2.68%</span>
+                <span class="stock-state clear">���ش�����</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>4.94</strong></div>
+                <div><small>PE-TTM / PB</small><strong>����/������ / 22.03</strong></div>
+                <div><small>L2 �������</small><strong>-0.067 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>61.7%</strong></div>
+                <div><small>��Ի���300</small><strong>+3.05 ���ٷֵ�</strong></div>
+                <div><small>��Ի���</small><strong>-0.32 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="ST���� 000711.SZ 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>ST���� 000711.SZ 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="170.7" x2="626.0" y2="170.7" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,170.7 L55.1,142.1 L62.3,151.6 L69.4,104 L76.5,123 L83.7,123 L90.8,132.6 L98,113.5 L105.1,94.5 L112.2,56.4 L119.4,37.3 L126.5,65.9 L133.6,46.9 L140.8,56.4 L147.9,85 L155,75.4 L162.2,65.9 L169.3,85 L176.4,85 L183.6,85 L190.7,75.4 L197.9,94.5 L205,75.4 L212.1,75.4 L219.3,85 L226.4,85 L233.5,85 L240.7,94.5 L247.8,123 L254.9,113.5 L262.1,113.5 L269.2,123 L276.3,113.5 L283.5,113.5 L290.6,113.5 L297.8,123 L304.9,123 L312,142.1 L319.2,142.1 L326.3,151.6 L333.4,113.5 L340.6,104 L347.7,94.5 L354.8,113.5 L362,113.5 L369.1,113.5 L376.2,113.5 L383.4,85 L390.5,75.4 L397.7,85 L404.8,85 L411.9,75.4 L419.1,75.4 L426.2,75.4 L433.3,75.4 L440.5,56.4 L447.6,65.9 L454.7,65.9 L461.9,65.9 L469,65.9 L476.1,75.4 L483.3,94.5 L490.4,75.4 L497.6,75.4 L504.7,75.4 L511.8,75.4 L519,65.9 L526.1,75.4 L533.2,75.4 L540.4,65.9 L547.5,65.9 L554.6,46.9 L561.8,56.4 L568.9,65.9 L576,65.9 L583.2,75.4 L590.3,75.4 L597.5,85 L604.6,85 L611.7,85 L618.9,75.4 L626,75.4" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,168.4 L55.1,154 L62.3,155.7 L69.4,154.5 L76.5,143.2 L83.7,138.5 L90.8,138.1 L98,137.6 L105.1,135.2 L112.2,128.9 L119.4,118.1 L126.5,115.1 L133.6,113.4 L140.8,112.1 L147.9,110.9 L155,109.8 L162.2,109.1 L169.3,108.5 L176.4,108 L183.6,107.7 L190.7,107.3 L197.9,106.9 L205,106.8 L212.1,106.5 L219.3,106.3 L226.4,106 L233.5,105.9 L240.7,105.5 L247.8,105.6 L254.9,106.3 L262.1,106.7 L269.2,106.8 L276.3,106.9 L283.5,106.9 L290.6,106.9 L297.8,107 L304.9,107.1 L312,107.8 L319.2,108.1 L326.3,108.4 L333.4,108.8 L340.6,108.9 L347.7,108.8 L354.8,108.8 L362,108.8 L369.1,108.8 L376.2,108.8 L383.4,108.8 L390.5,108.2 L397.7,108 L404.8,107.9 L411.9,107.8 L419.1,107.5 L426.2,107.4 L433.3,107.2 L440.5,105.2 L447.6,104.8 L454.7,104.5 L461.9,104.4 L469,104.3 L476.1,103.9 L483.3,103.8 L490.4,103.7 L497.6,103.7 L504.7,103.5 L511.8,103.4 L519,103.2 L526.1,103.1 L533.2,103.1 L540.4,102.9 L547.5,102.8 L554.6,101.2 L561.8,100.9 L568.9,100.7 L576,100.6 L583.2,100.2 L590.3,100 L597.5,99.9 L604.6,99.7 L611.7,99.6 L618.9,99.4 L626,99.1" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="237.9" width="12.6" height="6.1" fill="#cf2634" opacity=".58"/><rect x="69.9" y="238.8" width="12.6" height="5.2" fill="#cf2634" opacity=".58"/><rect x="84" y="237.7" width="12.6" height="6.3" fill="#cf2634" opacity=".58"/><rect x="98.1" y="238.7" width="12.6" height="5.3" fill="#cf2634" opacity=".58"/><rect x="112.2" y="234.2" width="12.6" height="9.8" fill="#cf2634" opacity=".58"/><rect x="126.3" y="241.7" width="12.6" height="2.3" fill="#cf2634" opacity=".58"/><rect x="140.4" y="240.1" width="12.6" height="3.9" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="168.6" y="242.1" width="12.6" height="1.9" fill="#2a8c68" opacity=".58"/><rect x="182.7" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="196.8" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="210.9" y="242.2" width="12.6" height="1.8" fill="#2a8c68" opacity=".58"/><rect x="225" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="239.1" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="253.2" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="267.3" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="281.4" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="309.6" y="243.4" width="12.6" height="0.6" fill="#2a8c68" opacity=".58"/><rect x="323.7" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="337.8" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="351.9" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="366" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="380.1" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="394.2" y="243.4" width="12.6" height="0.6" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="241" width="12.6" height="3" fill="#cf2634" opacity=".58"/><rect x="422.4" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="436.5" y="241.5" width="12.6" height="2.5" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="464.6" y="243.6" width="12.6" height="0.4" fill="#2a8c68" opacity=".58"/><rect x="478.7" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="492.8" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="506.9" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="521" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="535.1" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="549.2" y="242.2" width="12.6" height="1.8" fill="#2a8c68" opacity=".58"/><rect x="563.3" y="242.7" width="12.6" height="1.3" fill="#2a8c68" opacity=".58"/><rect x="577.4" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="591.5" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="605.6" y="238.9" width="12.6" height="5.1" fill="#cf2634" opacity=".58"/><rect x="619.7" y="238.3" width="12.6" height="5.7" fill="#cf2634" opacity=".58"/><circle cx="118.7" cy="27.8" r="3" fill="#cf2634"/><circle cx="48" cy="208.8" r="3" fill="#2a8c68"/><text x="118.7" y="20.8" text-anchor="middle" font-size="10" fill="#a51f2a">�� 5</text><text x="48" y="198" text-anchor="middle" font-size="10" fill="#267357">�� 4.8</text><text x="5" y="31" font-size="10" fill="#69737c">5</text><text x="5" y="184" font-size="10" fill="#69737c">4.8</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������+0.00%��ǰ30����+2.89%������09:31̽�����ڵ�λ������10:00������λ�����+0.82%�����30����-0.60%������λ��ȫ��۸�����74%λ�ã�Լ79%�ķ��������ۼƾ������Ϸ�����ģ�ͽ������λ��ѹ������գ����޸����ֵ����̣��۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������֤��ָǿ3.03���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>��̩��Դ</strong><small>600157</small></span>
+                <span class="stock-pct up">+1.27%</span>
+                <span class="stock-metric">���� 1.80%</span>
+                <span class="stock-state clear">���ش�����</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>1.60</strong></div>
+                <div><small>PE-TTM / PB</small><strong>159.11 / 0.74</strong></div>
+                <div><small>L2 �������</small><strong>+0.723 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>43.3%</strong></div>
+                <div><small>��Ի���300</small><strong>+2.25 ���ٷֵ�</strong></div>
+                <div><small>���ú̿</small><strong>+3.57 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="��̩��Դ 600157.SH 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>��̩��Դ 600157.SH 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="169.9" x2="626.0" y2="169.9" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,126 L55.1,126 L62.3,82 L69.4,126 L76.5,126 L83.7,82 L90.8,126 L98,126 L105.1,126 L112.2,82 L119.4,126 L126.5,38.1 L133.6,82 L140.8,82 L147.9,82 L155,82 L162.2,38.1 L169.3,82 L176.4,38.1 L183.6,82 L190.7,38.1 L197.9,82 L205,82 L212.1,82 L219.3,82 L226.4,82 L233.5,82 L240.7,82 L247.8,82 L254.9,82 L262.1,38.1 L269.2,82 L276.3,82 L283.5,82 L290.6,82 L297.8,82 L304.9,82 L312,126 L319.2,82 L326.3,38.1 L333.4,82 L340.6,126 L347.7,82 L354.8,82 L362,82 L369.1,38.1 L376.2,82 L383.4,82 L390.5,82 L397.7,82 L404.8,82 L411.9,82 L419.1,82 L426.2,82 L433.3,82 L440.5,82 L447.6,82 L454.7,82 L461.9,38.1 L469,82 L476.1,82 L483.3,38.1 L490.4,82 L497.6,82 L504.7,82 L511.8,82 L519,82 L526.1,82 L533.2,82 L540.4,82 L547.5,82 L554.6,38.1 L561.8,38.1 L568.9,82 L576,38.1 L583.2,38.1 L590.3,38.1 L597.5,82 L604.6,82 L611.7,82 L618.9,82 L626,82" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,129 L55.1,127 L62.3,125.5 L69.4,124.4 L76.5,122.8 L83.7,121.9 L90.8,121.8 L98,121.1 L105.1,120.6 L112.2,119.8 L119.4,102.8 L126.5,97.8 L133.6,96.8 L140.8,96.3 L147.9,95.7 L155,94.7 L162.2,94.5 L169.3,94.2 L176.4,94 L183.6,93.2 L190.7,92.8 L197.9,92.6 L205,92.4 L212.1,92.3 L219.3,92 L226.4,91.9 L233.5,91.8 L240.7,91.7 L247.8,91.6 L254.9,91.5 L262.1,91.2 L269.2,91.1 L276.3,91 L283.5,91 L290.6,90.9 L297.8,90.8 L304.9,90.7 L312,90.6 L319.2,90.1 L326.3,90 L333.4,89.8 L340.6,89.7 L347.7,89.7 L354.8,89.7 L362,89.6 L369.1,89.5 L376.2,89.4 L383.4,89.4 L390.5,89.1 L397.7,89 L404.8,88.9 L411.9,88.7 L419.1,88.7 L426.2,88.6 L433.3,88.6 L440.5,88.6 L447.6,88.6 L454.7,88.6 L461.9,88.5 L469,88.5 L476.1,88.4 L483.3,88.4 L490.4,88.2 L497.6,88 L504.7,87.9 L511.8,87.9 L519,87.8 L526.1,87.8 L533.2,87.7 L540.4,87.6 L547.5,87.6 L554.6,87.5 L561.8,87.4 L568.9,87.3 L576,87.2 L583.2,87.2 L590.3,87 L597.5,86.7 L604.6,86.5 L611.7,86.3 L618.9,85.9 L626,85.6" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="241.2" width="12.6" height="2.8" fill="#cf2634" opacity=".58"/><rect x="69.9" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="84" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="98.1" y="242.3" width="12.6" height="1.7" fill="#2a8c68" opacity=".58"/><rect x="112.2" y="235.2" width="12.6" height="8.8" fill="#cf2634" opacity=".58"/><rect x="126.3" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="140.4" y="237.1" width="12.6" height="6.9" fill="#cf2634" opacity=".58"/><rect x="154.5" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="168.6" y="242.9" width="12.6" height="1.1" fill="#2a8c68" opacity=".58"/><rect x="182.7" y="240.8" width="12.6" height="3.2" fill="#cf2634" opacity=".58"/><rect x="196.8" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="210.9" y="240" width="12.6" height="4" fill="#cf2634" opacity=".58"/><rect x="225" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="239.1" y="243.5" width="12.6" height="0.5" fill="#2a8c68" opacity=".58"/><rect x="253.2" y="230.1" width="12.6" height="13.9" fill="#cf2634" opacity=".58"/><rect x="267.3" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="281.4" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="309.6" y="242.2" width="12.6" height="1.8" fill="#2a8c68" opacity=".58"/><rect x="323.7" y="243" width="12.6" height="1" fill="#2a8c68" opacity=".58"/><rect x="337.8" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="351.9" y="242.5" width="12.6" height="1.5" fill="#2a8c68" opacity=".58"/><rect x="366" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="380.1" y="241.2" width="12.6" height="2.8" fill="#2a8c68" opacity=".58"/><rect x="394.2" y="237.7" width="12.6" height="6.3" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="422.4" y="240.8" width="12.6" height="3.2" fill="#cf2634" opacity=".58"/><rect x="436.5" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="450.5" y="239.5" width="12.6" height="4.5" fill="#cf2634" opacity=".58"/><rect x="464.6" y="243.5" width="12.6" height="0.5" fill="#2a8c68" opacity=".58"/><rect x="478.7" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="492.8" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="506.9" y="243.5" width="12.6" height="0.5" fill="#2a8c68" opacity=".58"/><rect x="521" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="535.1" y="243.7" width="12.6" height="0.3" fill="#2a8c68" opacity=".58"/><rect x="549.2" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="563.3" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="577.4" y="240.9" width="12.6" height="3.1" fill="#cf2634" opacity=".58"/><rect x="591.5" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="605.6" y="241.4" width="12.6" height="2.6" fill="#cf2634" opacity=".58"/><rect x="619.7" y="226.6" width="12.6" height="17.4" fill="#cf2634" opacity=".58"/><circle cx="123.6" cy="38.1" r="3" fill="#cf2634"/><circle cx="48" cy="169.9" r="3" fill="#2a8c68"/><text x="123.6" y="31.1" text-anchor="middle" font-size="10" fill="#a51f2a">�� 1.6</text><text x="48" y="183.9" text-anchor="middle" font-size="10" fill="#267357">�� 1.6</text><text x="5" y="31" font-size="10" fill="#69737c">1.6</text><text x="5" y="184" font-size="10" fill="#69737c">1.6</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������+0.63%��ǰ30����+0.00%������09:31̽�����ڵ�λ������10:02������λ�����+0.00%�����30����+0.00%������λ��ȫ��۸�����67%λ�ã�Լ90%�ķ��������ۼƾ������Ϸ�����ģ�ͽ������λ��ѹ������գ����޸����ֵ����̣��۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������ָ֤��ǿ1.86���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ɼɼ�ɷ�</strong><small>600884</small></span>
+                <span class="stock-pct down">-0.86%</span>
+                <span class="stock-metric">���� 2.21%</span>
+                <span class="stock-state clear">���ش�����</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>12.62</strong></div>
+                <div><small>PE-TTM / PB</small><strong>37.50 / 1.26</strong></div>
+                <div><small>L2 �������</small><strong>-0.611 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>52.8%</strong></div>
+                <div><small>��Ի���300</small><strong>+0.12 ���ٷֵ�</strong></div>
+                <div><small>��Ե����豸</small><strong>-1.98 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="ɼɼ�ɷ� 600884.SH 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>ɼɼ�ɷ� 600884.SH 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="38.5" x2="626.0" y2="38.5" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,169.5 L55.1,89.8 L62.3,78.4 L69.4,135.3 L76.5,158.1 L83.7,158.1 L90.8,152.4 L98,158.1 L105.1,152.4 L112.2,123.9 L119.4,118.2 L126.5,89.8 L133.6,89.8 L140.8,101.2 L147.9,78.4 L155,49.9 L162.2,84.1 L169.3,61.3 L176.4,61.3 L183.6,89.8 L190.7,101.2 L197.9,106.8 L205,67 L212.1,78.4 L219.3,78.4 L226.4,67 L233.5,67 L240.7,67 L247.8,78.4 L254.9,89.8 L262.1,61.3 L269.2,72.7 L276.3,78.4 L283.5,89.8 L290.6,89.8 L297.8,89.8 L304.9,95.5 L312,89.8 L319.2,95.5 L326.3,95.5 L333.4,84.1 L340.6,89.8 L347.7,112.5 L354.8,118.2 L362,112.5 L369.1,112.5 L376.2,106.8 L383.4,118.2 L390.5,123.9 L397.7,118.2 L404.8,118.2 L411.9,112.5 L419.1,118.2 L426.2,112.5 L433.3,118.2 L440.5,112.5 L447.6,112.5 L454.7,112.5 L461.9,112.5 L469,101.2 L476.1,106.8 L483.3,112.5 L490.4,106.8 L497.6,112.5 L504.7,118.2 L511.8,118.2 L519,101.2 L526.1,101.2 L533.2,106.8 L540.4,101.2 L547.5,95.5 L554.6,89.8 L561.8,101.2 L568.9,106.8 L576,106.8 L583.2,106.8 L590.3,106.8 L597.5,101.2 L604.6,106.8 L611.7,112.5 L618.9,112.5 L626,101.2" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,126.1 L55.1,141.2 L62.3,130.5 L69.4,127.1 L76.5,130.5 L83.7,134.6 L90.8,142.1 L98,142.6 L105.1,143.5 L112.2,143.6 L119.4,143 L126.5,141.1 L133.6,139.3 L140.8,138.2 L147.9,136 L155,132.9 L162.2,131.5 L169.3,130.2 L176.4,128.7 L183.6,127.8 L190.7,127.3 L197.9,126.9 L205,126.3 L212.1,125.5 L219.3,125 L226.4,123.6 L233.5,123.1 L240.7,122.1 L247.8,121.7 L254.9,121.3 L262.1,120.5 L269.2,120.2 L276.3,119.8 L283.5,119.5 L290.6,119.5 L297.8,119.3 L304.9,119.2 L312,119 L319.2,118.9 L326.3,118.7 L333.4,118.5 L340.6,118.2 L347.7,118.1 L354.8,118.1 L362,118.1 L369.1,118 L376.2,118 L383.4,118 L390.5,118 L397.7,118 L404.8,118 L411.9,118 L419.1,118 L426.2,117.9 L433.3,118 L440.5,118 L447.6,117.9 L454.7,117.9 L461.9,117.8 L469,117.7 L476.1,117.7 L483.3,117.6 L490.4,117.6 L497.6,117.6 L504.7,117.5 L511.8,117.5 L519,117.4 L526.1,117.3 L533.2,117.2 L540.4,117.2 L547.5,117 L554.6,116.8 L561.8,116.6 L568.9,116.4 L576,116.3 L583.2,116.2 L590.3,116.2 L597.5,116.1 L604.6,116 L611.7,115.9 L618.9,115.8 L626,115.5" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#2a8c68" opacity=".58"/><rect x="55.8" y="228" width="12.6" height="16" fill="#cf2634" opacity=".58"/><rect x="69.9" y="218.7" width="12.6" height="25.3" fill="#cf2634" opacity=".58"/><rect x="84" y="213.4" width="12.6" height="30.6" fill="#cf2634" opacity=".58"/><rect x="98.1" y="219.5" width="12.6" height="24.5" fill="#cf2634" opacity=".58"/><rect x="112.2" y="234.9" width="12.6" height="9.1" fill="#cf2634" opacity=".58"/><rect x="126.3" y="234.5" width="12.6" height="9.5" fill="#cf2634" opacity=".58"/><rect x="140.4" y="235.5" width="12.6" height="8.5" fill="#cf2634" opacity=".58"/><rect x="154.5" y="239.4" width="12.6" height="4.6" fill="#2a8c68" opacity=".58"/><rect x="168.6" y="235.5" width="12.6" height="8.5" fill="#cf2634" opacity=".58"/><rect x="182.7" y="238.9" width="12.6" height="5.1" fill="#cf2634" opacity=".58"/><rect x="196.8" y="240.3" width="12.6" height="3.7" fill="#cf2634" opacity=".58"/><rect x="210.9" y="241.1" width="12.6" height="2.9" fill="#cf2634" opacity=".58"/><rect x="225" y="241.7" width="12.6" height="2.3" fill="#cf2634" opacity=".58"/><rect x="239.1" y="243" width="12.6" height="1" fill="#2a8c68" opacity=".58"/><rect x="253.2" y="233.4" width="12.6" height="10.6" fill="#cf2634" opacity=".58"/><rect x="267.3" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="281.4" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="295.5" y="241.2" width="12.6" height="2.8" fill="#2a8c68" opacity=".58"/><rect x="309.6" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="323.7" y="240.3" width="12.6" height="3.7" fill="#2a8c68" opacity=".58"/><rect x="337.8" y="240.8" width="12.6" height="3.2" fill="#2a8c68" opacity=".58"/><rect x="351.9" y="240.4" width="12.6" height="3.6" fill="#cf2634" opacity=".58"/><rect x="366" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="380.1" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="394.2" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="408.3" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="422.4" y="237.5" width="12.6" height="6.5" fill="#2a8c68" opacity=".58"/><rect x="436.5" y="243.5" width="12.6" height="0.5" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="239.2" width="12.6" height="4.8" fill="#cf2634" opacity=".58"/><rect x="464.6" y="242" width="12.6" height="2" fill="#2a8c68" opacity=".58"/><rect x="478.7" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="492.8" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="506.9" y="237.8" width="12.6" height="6.2" fill="#cf2634" opacity=".58"/><rect x="521" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="535.1" y="241.5" width="12.6" height="2.5" fill="#cf2634" opacity=".58"/><rect x="549.2" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="563.3" y="235.8" width="12.6" height="8.2" fill="#cf2634" opacity=".58"/><rect x="577.4" y="236.8" width="12.6" height="7.2" fill="#2a8c68" opacity=".58"/><rect x="591.5" y="236.5" width="12.6" height="7.5" fill="#cf2634" opacity=".58"/><rect x="605.6" y="239.3" width="12.6" height="4.7" fill="#2a8c68" opacity=".58"/><rect x="619.7" y="226.2" width="12.6" height="17.8" fill="#cf2634" opacity=".58"/><circle cx="155.3" cy="44.2" r="3" fill="#cf2634"/><circle cx="87" cy="192.3" r="3" fill="#2a8c68"/><text x="155.3" y="37.2" text-anchor="middle" font-size="10" fill="#a51f2a">�� 12.7</text><text x="87" y="198" text-anchor="middle" font-size="10" fill="#267357">�� 12.5</text><text x="5" y="31" font-size="10" fill="#69737c">12.8</text><text x="5" y="184" font-size="10" fill="#69737c">12.5</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������-1.81%��ǰ30����+0.72%������09:47̽�����ڵ�λ������10:15������λ�����-0.24%�����30����-0.08%������λ��ȫ��۸�����62%λ�ã�Լ81%�ķ��������ۼƾ������Ϸ�����ģ�ͽ�����۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������ָ֤����0.27���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>��ҩ�ɷ�</strong><small>600664</small></span>
+                <span class="stock-pct up">+1.70%</span>
+                <span class="stock-metric">���� 15.83%</span>
+                <span class="stock-state background">�����춯</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>5.99</strong></div>
+                <div><small>PE-TTM / PB</small><strong>48.70 / 2.57</strong></div>
+                <div><small>L2 �������</small><strong>-0.242 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>98.8%</strong></div>
+                <div><small>��Ի���300</small><strong>+2.68 ���ٷֵ�</strong></div>
+                <div><small>���ҽҩ����</small><strong>+2.22 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="��ҩ�ɷ� 600664.SH 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>��ҩ�ɷ� 600664.SH 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="111.4" x2="626.0" y2="111.4" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,129.9 L55.1,92.9 L62.3,137.3 L69.4,137.3 L76.5,159.6 L83.7,144.7 L90.8,129.9 L98,144.7 L105.1,170.7 L112.2,167 L119.4,148.4 L126.5,137.3 L133.6,126.2 L140.8,144.7 L147.9,144.7 L155,141 L162.2,137.3 L169.3,141 L176.4,144.7 L183.6,141 L190.7,144.7 L197.9,141 L205,115.1 L212.1,137.3 L219.3,144.7 L226.4,137.3 L233.5,144.7 L240.7,137.3 L247.8,141 L254.9,141 L262.1,155.9 L269.2,148.4 L276.3,148.4 L283.5,155.9 L290.6,144.7 L297.8,152.1 L304.9,155.9 L312,148.4 L319.2,148.4 L326.3,137.3 L333.4,148.4 L340.6,148.4 L347.7,129.9 L354.8,118.8 L362,104 L369.1,89.2 L376.2,96.6 L383.4,37.3 L390.5,44.7 L397.7,70.7 L404.8,59.6 L411.9,48.4 L419.1,70.7 L426.2,74.4 L433.3,70.7 L440.5,81.8 L447.6,92.9 L454.7,92.9 L461.9,89.2 L469,96.6 L476.1,96.6 L483.3,107.7 L490.4,107.7 L497.6,92.9 L504.7,85.5 L511.8,96.6 L519,92.9 L526.1,92.9 L533.2,92.9 L540.4,70.7 L547.5,78.1 L554.6,74.4 L561.8,81.8 L568.9,70.7 L576,67 L583.2,74.4 L590.3,70.7 L597.5,70.7 L604.6,63.3 L611.7,59.6 L618.9,67 L626,74.4" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,126.3 L55.1,100.5 L62.3,103.8 L69.4,112.4 L76.5,118.1 L83.7,119.7 L90.8,120.7 L98,121.4 L105.1,124.6 L112.2,126.7 L119.4,127.5 L126.5,127.5 L133.6,127.3 L140.8,127.4 L147.9,127.8 L155,128.1 L162.2,128.2 L169.3,128.4 L176.4,128.6 L183.6,128.8 L190.7,128.9 L197.9,129 L205,128.9 L212.1,128.9 L219.3,129 L226.4,129.2 L233.5,129.3 L240.7,129.8 L247.8,129.9 L254.9,130 L262.1,130.2 L269.2,130.4 L276.3,130.5 L283.5,130.8 L290.6,131 L297.8,131.1 L304.9,131.2 L312,131.4 L319.2,131.4 L326.3,131.5 L333.4,131.6 L340.6,131.7 L347.7,131.8 L354.8,131.6 L362,130.5 L369.1,129.3 L376.2,128.6 L383.4,124.4 L390.5,119.2 L397.7,116.6 L404.8,115.5 L411.9,114.9 L419.1,114 L426.2,113.6 L433.3,113.3 L440.5,113 L447.6,112.8 L454.7,112.5 L461.9,112.4 L469,112.3 L476.1,112.1 L483.3,112 L490.4,112 L497.6,112 L504.7,111.8 L511.8,111.7 L519,111.6 L526.1,111.5 L533.2,111.4 L540.4,111.1 L547.5,110.8 L554.6,110.5 L561.8,110.2 L568.9,110 L576,109.5 L583.2,109.2 L590.3,109 L597.5,108.6 L604.6,107.9 L611.7,106.9 L618.9,105.9 L626,104.3" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#2a8c68" opacity=".58"/><rect x="55.8" y="232.5" width="12.6" height="11.5" fill="#2a8c68" opacity=".58"/><rect x="69.9" y="234.9" width="12.6" height="9.1" fill="#cf2634" opacity=".58"/><rect x="84" y="239.8" width="12.6" height="4.2" fill="#cf2634" opacity=".58"/><rect x="98.1" y="233.7" width="12.6" height="10.3" fill="#cf2634" opacity=".58"/><rect x="112.2" y="241.2" width="12.6" height="2.8" fill="#cf2634" opacity=".58"/><rect x="126.3" y="241.4" width="12.6" height="2.6" fill="#2a8c68" opacity=".58"/><rect x="140.4" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="168.6" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="182.7" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="241.5" width="12.6" height="2.5" fill="#cf2634" opacity=".58"/><rect x="210.9" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="225" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="239.1" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="253.2" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="267.3" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="281.4" y="242.7" width="12.6" height="1.3" fill="#2a8c68" opacity=".58"/><rect x="295.5" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="309.6" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="323.7" y="243.7" width="12.6" height="0.3" fill="#2a8c68" opacity=".58"/><rect x="337.8" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="351.9" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="366" y="238.6" width="12.6" height="5.4" fill="#2a8c68" opacity=".58"/><rect x="380.1" y="223.8" width="12.6" height="20.2" fill="#cf2634" opacity=".58"/><rect x="394.2" y="240" width="12.6" height="4" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="240.3" width="12.6" height="3.7" fill="#2a8c68" opacity=".58"/><rect x="422.4" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="436.5" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="450.5" y="240.1" width="12.6" height="3.9" fill="#2a8c68" opacity=".58"/><rect x="464.6" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="478.7" y="240.5" width="12.6" height="3.5" fill="#2a8c68" opacity=".58"/><rect x="492.8" y="241.3" width="12.6" height="2.7" fill="#cf2634" opacity=".58"/><rect x="506.9" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="521" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="535.1" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="549.2" y="242" width="12.6" height="2" fill="#2a8c68" opacity=".58"/><rect x="563.3" y="241.7" width="12.6" height="2.3" fill="#cf2634" opacity=".58"/><rect x="577.4" y="241.6" width="12.6" height="2.4" fill="#2a8c68" opacity=".58"/><rect x="591.5" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="605.6" y="238.8" width="12.6" height="5.2" fill="#cf2634" opacity=".58"/><rect x="619.7" y="222.6" width="12.6" height="21.4" fill="#cf2634" opacity=".58"/><circle cx="387" cy="15.1" r="3" fill="#cf2634"/><circle cx="69.9" cy="178.1" r="3" fill="#2a8c68"/><text x="387" y="13" text-anchor="middle" font-size="10" fill="#a51f2a">�� 6.2</text><text x="69.9" y="192.1" text-anchor="middle" font-size="10" fill="#267357">�� 5.7</text><text x="5" y="31" font-size="10" fill="#69737c">6.1</text><text x="5" y="184" font-size="10" fill="#69737c">5.7</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">δ���ִﵽ��ֵ�Ĺ�˾���������۸�����춯����Ϊ�����˲������� ������·���������������-0.85%��ǰ30����-0.86%������09:40̽�����ڵ�λ������13:20������λ�����+3.10%�����30����+0.00%������λ��ȫ��۸�����64%λ�ã�Լ53%�ķ��������ۼƾ������Ϸ�����ģ�ͽ�������̱��������ָ֤��ǿ2.29���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>˳�����</strong><small>002138</small></span>
+                <span class="stock-pct up">+1.66%</span>
+                <span class="stock-metric">���� 6.40%</span>
+                <span class="stock-state clear">���ش�����</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>����</small><strong>43.51</strong></div>
+                <div><small>PE-TTM / PB</small><strong>35.72 / 5.34</strong></div>
+                <div><small>L2 �������</small><strong>-0.377 ��</strong></div>
+                <div><small>����ȫ A ��λ</small><strong>89.8%</strong></div>
+                <div><small>��Ի���300</small><strong>+2.64 ���ٷֵ�</strong></div>
+                <div><small>��Ե���</small><strong>+5.84 ���ٷֵ�</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-03 ��ʱ �� ���߼۸� / �����ۼƾ���</small>
+                  <svg class="intraday-chart" role="img" aria-label="˳����� 002138.SZ 2026-08-03 ��ʱͼ" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>˳����� 002138.SZ 2026-08-03 ��ʱͼ</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="150.9" x2="626.0" y2="150.9" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,74 L55.1,58.6 L62.3,37.3 L69.4,74.7 L76.5,42.5 L83.7,66.6 L90.8,70.3 L98,76.9 L105.1,76.9 L112.2,75.4 L119.4,90.1 L126.5,93.7 L133.6,71 L140.8,116.5 L147.9,137.7 L155,101.8 L162.2,125.2 L169.3,97.4 L176.4,127.4 L183.6,135.5 L190.7,146.5 L197.9,144.3 L205,123.8 L212.1,95.2 L219.3,108.4 L226.4,92.3 L233.5,106.2 L240.7,131.1 L247.8,128.2 L254.9,135.5 L262.1,106.2 L269.2,101.8 L276.3,134.8 L283.5,154.5 L290.6,163.3 L297.8,170.7 L304.9,165.5 L312,156.7 L319.2,156.7 L326.3,134.8 L333.4,121.6 L340.6,126.7 L347.7,95.9 L354.8,94.5 L362,109.1 L369.1,104 L376.2,120.8 L383.4,128.2 L390.5,133.3 L397.7,112.1 L404.8,120.1 L411.9,123.8 L419.1,135.5 L426.2,135.5 L433.3,134.8 L440.5,141.4 L447.6,137.7 L454.7,136.2 L461.9,131.1 L469,138.4 L476.1,141.4 L483.3,145.8 L490.4,150.2 L497.6,152.4 L504.7,161.9 L511.8,159.7 L519,151.6 L526.1,153.8 L533.2,149.4 L540.4,131.1 L547.5,127.4 L554.6,120.1 L561.8,126 L568.9,130.4 L576,128.9 L583.2,131.8 L590.3,132.6 L597.5,124.5 L604.6,128.2 L611.7,124.5 L618.9,115 L626,98.9" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,101.2 L55.1,76 L62.3,71.5 L69.4,68.7 L76.5,68.4 L83.7,68.8 L90.8,69 L98,68.8 L105.1,68.4 L112.2,68.4 L119.4,69.2 L126.5,70.3 L133.6,70.7 L140.8,71.4 L147.9,73.6 L155,75 L162.2,75.7 L169.3,76.4 L176.4,77.1 L183.6,78.2 L190.7,79.6 L197.9,80.2 L205,81.2 L212.1,81.6 L219.3,81.8 L226.4,82 L233.5,82.2 L240.7,82.9 L247.8,83.8 L254.9,84.2 L262.1,84.6 L269.2,84.9 L276.3,85.3 L283.5,86.9 L290.6,87.6 L297.8,88.5 L304.9,89.5 L312,90.3 L319.2,90.9 L326.3,91.3 L333.4,91.8 L340.6,92.1 L347.7,92.3 L354.8,92.3 L362,92.5 L369.1,92.7 L376.2,92.9 L383.4,93.2 L390.5,93.5 L397.7,93.8 L404.8,93.9 L411.9,94 L419.1,94.4 L426.2,94.7 L433.3,95 L440.5,95.3 L447.6,95.6 L454.7,96.1 L461.9,96.4 L469,96.7 L476.1,97 L483.3,97.3 L490.4,97.8 L497.6,98.1 L504.7,98.7 L511.8,99.6 L519,100.1 L526.1,100.4 L533.2,100.8 L540.4,101.2 L547.5,101.4 L554.6,101.6 L561.8,101.8 L568.9,102.1 L576,102.3 L583.2,102.4 L590.3,102.6 L597.5,102.9 L604.6,103.1 L611.7,103.4 L618.9,103.5 L626,103.6" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="226.5" width="12.6" height="17.5" fill="#cf2634" opacity=".58"/><rect x="69.9" y="229.7" width="12.6" height="14.3" fill="#cf2634" opacity=".58"/><rect x="84" y="237.4" width="12.6" height="6.6" fill="#2a8c68" opacity=".58"/><rect x="98.1" y="239.2" width="12.6" height="4.8" fill="#2a8c68" opacity=".58"/><rect x="112.2" y="241.1" width="12.6" height="2.9" fill="#cf2634" opacity=".58"/><rect x="126.3" y="241.3" width="12.6" height="2.7" fill="#cf2634" opacity=".58"/><rect x="140.4" y="238.8" width="12.6" height="5.2" fill="#cf2634" opacity=".58"/><rect x="154.5" y="240.6" width="12.6" height="3.4" fill="#2a8c68" opacity=".58"/><rect x="168.6" y="240.1" width="12.6" height="3.9" fill="#2a8c68" opacity=".58"/><rect x="182.7" y="241.3" width="12.6" height="2.7" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="210.9" y="241.4" width="12.6" height="2.6" fill="#2a8c68" opacity=".58"/><rect x="225" y="240.8" width="12.6" height="3.2" fill="#2a8c68" opacity=".58"/><rect x="239.1" y="242.1" width="12.6" height="1.9" fill="#2a8c68" opacity=".58"/><rect x="253.2" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="267.3" y="241.7" width="12.6" height="2.3" fill="#2a8c68" opacity=".58"/><rect x="281.4" y="241.2" width="12.6" height="2.8" fill="#2a8c68" opacity=".58"/><rect x="295.5" y="241.8" width="12.6" height="2.2" fill="#2a8c68" opacity=".58"/><rect x="309.6" y="241.3" width="12.6" height="2.7" fill="#2a8c68" opacity=".58"/><rect x="323.7" y="240.9" width="12.6" height="3.1" fill="#2a8c68" opacity=".58"/><rect x="337.8" y="240" width="12.6" height="4" fill="#cf2634" opacity=".58"/><rect x="351.9" y="242.3" width="12.6" height="1.7" fill="#2a8c68" opacity=".58"/><rect x="366" y="241.5" width="12.6" height="2.5" fill="#2a8c68" opacity=".58"/><rect x="380.1" y="242.3" width="12.6" height="1.7" fill="#2a8c68" opacity=".58"/><rect x="394.2" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="242" width="12.6" height="2" fill="#2a8c68" opacity=".58"/><rect x="422.4" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="436.5" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="450.5" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="464.6" y="241.7" width="12.6" height="2.3" fill="#2a8c68" opacity=".58"/><rect x="478.7" y="242.2" width="12.6" height="1.8" fill="#2a8c68" opacity=".58"/><rect x="492.8" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="506.9" y="242.2" width="12.6" height="1.8" fill="#2a8c68" opacity=".58"/><rect x="521" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="535.1" y="241.5" width="12.6" height="2.5" fill="#cf2634" opacity=".58"/><rect x="549.2" y="240.6" width="12.6" height="3.4" fill="#cf2634" opacity=".58"/><rect x="563.3" y="242.7" width="12.6" height="1.3" fill="#2a8c68" opacity=".58"/><rect x="577.4" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="591.5" y="241.4" width="12.6" height="2.6" fill="#cf2634" opacity=".58"/><rect x="605.6" y="241" width="12.6" height="3" fill="#cf2634" opacity=".58"/><rect x="619.7" y="236.2" width="12.6" height="7.8" fill="#cf2634" opacity=".58"/><circle cx="65.1" cy="32.9" r="3" fill="#cf2634"/><circle cx="506.5" cy="172.9" r="3" fill="#2a8c68"/><text x="65.1" y="25.9" text-anchor="middle" font-size="10" fill="#a51f2a">�� 44.4</text><text x="506.5" y="186.9" text-anchor="middle" font-size="10" fill="#267357">�� 42.5</text><text x="5" y="31" font-size="10" fill="#69737c">44.5</text><text x="5" y="184" font-size="10" fill="#69737c">42.3</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">�۸�</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">�ۼƾ���</text></svg>
+                </div>
+                <div class="stock-note">����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������+2.45%��ǰ30����-0.50%������09:38�������ڸ�λ�������14:09��������λ�����+0.88%�����30����+0.76%������λ��ȫ��۸�����53%λ�ã�Լ9%�ķ��������ۼƾ������Ϸ�����ģ�ͽ�����۸����ʱ�������ڳɽ����ۣ������ĳ������ܶ����ޣ����̱��������֤��ָǿ2.62���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</div>
+              </div>
+            </details>
+            </div>
+      <div class="section-title"><h3>��˾���¼�</h3><small>0 ��������չ��֤��</small></div>
+      <div class="event-stack"></div>
+      <div class="footer-note">�ʽ𾻶��뻻����ֻ�������������ȶȣ����������������Ʒ����������֤�ݡ�</div>
+    </section>
+    
+    <section id="channel-themes" class="channel-panel" data-channel-panel="themes">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">��ҵ / ���� / ����</div>
+        <h2>��ҵ����</h2>
+      </div>
+      <p>�뵼�塢�˾۱䡢����������ҩ��ԭ���ϡ�</p>
+    </div>
+    
+      <div class="section-title"><h3>���������¶�</h3><small>�۸��ʽ�����ʵ�ֿ���</small></div>
+      <div class="theme-list">
+            <details class="theme-row">
+              <summary>
+                <h3>�뵼��</h3>
+                <span class="theme-signal ">-3.15%���洢оƬ</span>
+                <span class="theme-summary">ƥ��5������������ھ���������Ϊ�洢оƬ�� �ɷ�����ռ��54.72%����λ�ǵ�+0.33%���ɽ�����41.52%��</span>
+              </summary>
+              <p class="theme-detail"><strong>�߽磺</strong>�������������ʽ�ͳ�ƽ����г��ȶ��źţ���֤����˾����������������</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>�ɿغ˾۱�</h3>
+                <span class="theme-signal up">+2.88%���ɿغ˾۱�</span>
+                <span class="theme-summary">ƥ��1������������ھ���������Ϊ�ɿغ˾۱䡣 �ɷ�����ռ��76.52%����λ�ǵ�+2.62%���ɽ�����3.47%��</span>
+              </summary>
+              <p class="theme-detail"><strong>�߽磺</strong>�������������ʽ�ͳ�ƽ����г��ȶ��źţ���֤����˾����������������</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>����</h3>
+                <span class="theme-signal up">+2.68%���˵�</span>
+                <span class="theme-summary">ƥ��5������������ھ���������Ϊ�˵硣 �ɷ�����ռ��83.64%����λ�ǵ�+2.03%���ɽ�����13.21%��</span>
+              </summary>
+              <p class="theme-detail"><strong>�߽磺</strong>�������������ʽ�ͳ�ƽ����г��ȶ��źţ���֤����˾����������������</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>����ҩ</h3>
+                <span class="theme-signal up">+0.74%��ҽҩ����</span>
+                <span class="theme-summary">ƥ��2������������ھ���������Ϊҽҩ���̡� �ɷ�����ռ��62.50%����λ�ǵ�+0.63%���ɽ�����3.43%��</span>
+              </summary>
+              <p class="theme-detail"><strong>�߽磺</strong>�������������ʽ�ͳ�ƽ����г��ȶ��źţ���֤����˾����������������</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>ST�������Ԥ��</h3>
+                <span class="theme-signal ">��ƥ�������</span>
+                <span class="theme-summary">���ֵ����������δƥ�䵽ͬ���ھ��� �ɷ�����ռ��78.37%����λ�ǵ�+2.00%���ɽ�����0.79%��</span>
+              </summary>
+              <p class="theme-detail"><strong>�߽磺</strong>�������������ʽ�ͳ�ƽ����г��ȶ��źţ���֤����˾����������������</p>
+            </details>
+            </div>
+      <div class="section-title"><h3>��ҵ�������¼�</h3><small>0 ��</small></div>
+      <div class="event-stack"></div>
+      <div class="section-title"><h3>������ԭ����</h3><small>�����ڻ�������������ҵ�ɹ���</small></div>
+      <div class="commodity-grid">
+            <div class="commodity">
+              <small>JM.DCE</small>
+              <strong class="down">��ú -1.21%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            
+            <div class="commodity">
+              <small>J.DCE</small>
+              <strong class="down">��̿ -1.74%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            
+            <div class="commodity">
+              <small>I.DCE</small>
+              <strong class="down">����ʯ -2.85%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            
+            <div class="commodity">
+              <small>CU.SHF</small>
+              <strong class="up">ͭ +0.54%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            
+            <div class="commodity">
+              <small>AL.SHF</small>
+              <strong class="down">�� -0.11%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            
+            <div class="commodity">
+              <small>NI.SHF</small>
+              <strong class="down">�� -1.98%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            
+            <div class="commodity">
+              <small>LC.GFE</small>
+              <strong class="down">̼��� -1.15%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            
+            <div class="commodity">
+              <small>SI.GFE</small>
+              <strong class="up">��ҵ�� +1.89%</strong>
+              <p>������Լ����������ͬ����ҵʵ�ʲɹ������ۼ۸�</p>
+            </div>
+            </div>
+    </section>
+    
+    <section id="channel-st" class="channel-panel" data-channel-panel="st">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">˾������ / ������ / ���վ�ʾ</div>
+        <h2>ST ����</h2>
+      </div>
+      <p>ȫ A Ӳ�ź�����ֻ��ѡ ST �ĳ���״̬��</p>
+    </div>
+    
+      <div class="st-snapshot">
+        <div><small>���� ST ���վ�ʾ��</small><strong>209</strong></div>
+        <div><small>���� / �µ�</small><strong>164 / 37</strong></div>
+        <div><small>�ǵ���λ��</small><strong class="up">+2.00%</strong></div>
+        <div><small>��ͣ / ��ͣ</small><strong>8 / 1</strong></div>
+        <div><small>��������Ӳ�ź�</small><strong>0</strong></div>
+      </div>
+      <div class="stage-line">
+        <span class="active">ͥ������</span><span>����</span><span class="active">Ԥ����</span>
+        <span>��ʽ����</span><span>Ͷ���� / ����</span><span class="active">ִ������վ�ʾ</span>
+      </div>
+      <div class="section-title"><h3>ȫ A ����Ӳ�ź�</h3><small>����������¶�׶�����</small></div>
+      <div class="event-stack"></div>
+      <div class="section-title"><h3>��ֻ��ѡ ST</h3><small>δ����Ӳ�ź�Ҳ��ȷ��ʾ</small></div>
+      <div class="calendar-list"><div class="calendar-item"><time>ST����<br>000078</time><div><strong>���ش�����</strong><p>����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������+0.62%��ǰ30����+0.00%������09:31̽�����ڵ�λ������11:06������λ�����-0.60%�����30����+0.60%������λ��ȫ��۸�����64%λ�ã�Լ89%�ķ��������ۼƾ������Ϸ�����ģ�ͽ�����۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������֤��ָǿ5.34���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</p></div></div><div class="calendar-item"><time>ST���<br>000669</time><div><strong>���ش�����</strong><p>����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������-0.30%��ǰ30����+1.50%������09:31̽�����ڵ�λ������13:31������λ�����+1.47%�����30����+0.88%������λ��ȫ��۸�����86%λ�ã�Լ99%�ķ��������ۼƾ������Ϸ�����ģ�ͽ������λ��ѹ������գ����޸����ֵ����̣��۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������֤��ָǿ3.96���ٷֵ㣻��Ҫ�仯������β�̵��ɽ�ռ�Ȳ��ߣ�Ӧ�ȴ���һ������ȷ�϶����Ƿ������� �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</p></div></div><div class="calendar-item"><time>ST����<br>000711</time><div><strong>���ش�����</strong><p>����δ���ִﵽ��ֵ�Ĺ�˾����������������ֻ��������״̬�� ������·���������������+0.00%��ǰ30����+2.89%������09:31̽�����ڵ�λ������10:00������λ�����+0.82%�����30����-0.60%������λ��ȫ��۸�����74%λ�ã�Լ79%�ķ��������ۼƾ������Ϸ�����ģ�ͽ������λ��ѹ������գ����޸����ֵ����̣��۸����ʱ��ά���ڵ��ճɽ�����֮�ϣ��нӲ���ֻ������β�̣����̱��������֤��ָǿ3.03���ٷֵ㡣 �߽磺����·�����ڹ۲�۸���ܡ��н�����磬��֤�������ʽ����ݣ�Ҳ�����ɴ��շ���Ԥ�⡣���̼���Tushare���߽�����顣</p></div></div></div>
+      <div class="integrity-strip">����ST���վ�ʾ�ء��������̺��ǵ�ͣ�۾���Ӧ���潻���գ����վ�ʾ�������������Թ�Ӧ�̽ṹ���ھ���</div>
+    </section>
+    
+    <section id="channel-lixiao" class="channel-panel" data-channel-panel="lixiao">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">D���۵� / ��Ƶתд</div>
+        <h2>�����</h2>
+      </div>
+      <p>����ʵ����Ƶתд�� Tier D �۵�ժҪ��</p>
+    </div>
+    
+      <div class="opinion-hero">
+        <div class="opinion-label">Tier D���г��۵�Դ������</div>
+        <h3>����δ�γɿɺ������Ƶ�۵�ժҪ</h3>
+        <div class="opinion-meta">
+          <span>�����</span><span>����δȡ��</span>
+          <span>��Ƶ --</span>
+        </div>
+        <div class="transcript-path">
+          <span>���� H5 ��Ƶ</span><span>������ȡ����</span><span>��������תд</span><span>�ֲ�ժҪ</span>
+        </div>
+        <div class="viewpoint-list"><div class="viewpoint"><time>����</time><p>���ڽ����ļ�δ�ṩ��Ƶ�۵�ṹ�������</p></div></div>
+        <p class="theme-detail" style="margin:16px 0 0">���ڽ����ļ�δ�ṩ��Ƶ�۵�ṹ�������</p>
+        <div class="action-links"></div>
+      </div>
+      <div class="three-lenses">
+        <div class="lens"><h4>��ȷ����ʵ</h4><p>����û��ȡ�ÿɹ������ʲ������תд����Ƶ���ݡ�</p></div>
+        <div class="lens attention"><h4>�д���������</h4><p>�������ݱ��⡢�������»�ת����д��Ƶ�۵㡣</p></div>
+        <div class="lens opinion"><h4>�������ƶ�</h4><p>�ù۵�Դ���ڲ������г��жϡ�</p></div>
+      </div>
+      <div class="footer-note">�۵�Դ�빫�桢��ܺ�������ʵ��ͬ������Ƶ�е����ֲ�����Ϊ����תд�����Զ������ȷ����ʵ��</div>
+    </section>
+    
+    <section id="channel-data" class="channel-panel" data-channel-panel="data">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">��Դ / ��ֹ / ����˵��</div>
+        <h2>����˵��</h2>
+      </div>
+      <p>��Դ�㼶����ֹ�ھ���ʧ���뽵������</p>
+    </div>
+    
+      
+        <details class="note-disclosure" open>
+          <summary>���ڹؼ���Դ״̬</summary>
+          <table class="source-status-table">
+            <thead><tr><th>��Դ</th><th>״̬</th><th>�����</th><th>ʧ�� / ����˵��</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>li_daxiao_local_asr</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>li_daxiao_public_feed</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>li_daxiao_public_h5</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>li_daxiao_public_post</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>official_announcement_links</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>sina_intraday_chart</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_announcements</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_financial_indicators</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_futures</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_global_indices</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_indexes</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_macro_calendar</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_market</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_market_heat</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_news_leads</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_security_master</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_st_pool</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_theme_heat</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_trade_calendar</td>
+              <td><span class="source-state success">����</span></td>
+              <td>2026-08-03T23:22:35+08:00</td>
+              <td>��</td>
+            </tr>
+            </tbody>
+          </table>
+        </details>
+        
+      <div class="method-grid"><div class="method-card"><strong>Tier A������������ܡ����������й�˾����</strong><p>��Ҫ��ʵ���Ȳ��á�</p></div><div class="method-card"><strong>Tier B����˾������ҵ��������Ͷ���߹�ϵ����</strong><p>���ڲ�Ʒ������;�Ӫȷ�ϡ�</p></div><div class="method-card"><strong>Tier C��Tushare��רҵ�ƾ�ý��</strong><p>�ṹ�������벹�䱳����</p></div><div class="method-card"><strong>Tier D������ʦ���ɷá���Ƶ���罻�۵�</strong><p>ֻ��Ϊ�۵㣬������Ϊ��ʵ��</p></div></div>
+      <details class="note-disclosure" open>
+        <summary>���ڽ�ֹ�ھ������</summary>
+        <ul><li>����û��ͬ�ճ�����ԣ������������Ƴ��������ԣ��ز�ʱ������20:10��</li><li>��ѡ������������������ĸ��ˣ�δ��ѡ��ѡ����������Ʋ����С�</li><li>��ҳ�ɲ��ɱ���ʷ�ز�run���ɣ�������Ͷ�ʽ��飬��Ԥ����ڹɼ۷���</li></ul>
+      </details>
+      <details class="note-disclosure">
+        <summary>������ȥ�ع���</summary>
+        <ul>
+          <li>���ȼ��������35%��Ǳ��Ӱ��30%����Դ20%��ʱЧ10%���г��ȶ�5%��</li>
+          <li>ͬһ�¼�ֻ����һ����Ƶ��������Ƶ�������ӽ������ã�������������Ƭ��</li>
+          <li>ÿ���¼���������ȷ����ʵ��Ӱ����ơ�����֤�ݺ���һ�۲졣</li>
+          <li>ȱʧ���ݱ���Ϊ�գ������㣻��Դʧ�ܱ�������ӦƵ����ȷ��ʾ��</li>
+        </ul>
+      </details>
+      <details class="note-disclosure">
+        <summary>Tushare �ӿ�����</summary>
+        <ol class="source-index"><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301121&amp;announcementId=1225455153&amp;orgId=9900046816&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">�Ͻ�����</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300423&amp;announcementId=1225455555&amp;orgId=9900028812&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">�N�ԿƼ�</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300560&amp;announcementId=1225455003&amp;orgId=9900029016&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">�и�ͨ</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300347&amp;announcementId=1225454395&amp;orgId=9900022262&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">̩��ҽҩ</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300998&amp;announcementId=1225453742&amp;orgId=9900041658&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">��������</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300233&amp;announcementId=1225453834&amp;orgId=9900019392&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">���ҽҩ</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=920017&amp;announcementId=1225454849&amp;orgId=9900003482&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">���ҽҩ</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301085&amp;announcementId=1225454932&amp;orgId=nssc1000370&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">�ǿ��ɷ�</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300765&amp;announcementId=1225453500&amp;orgId=9900036557&amp;announcementTime=2026-08-03" target="_blank" rel="noreferrer">ʯҩ����</a></li></ol>
+      </details>
+      <details class="note-disclosure">
+        <summary>��������Ƶ����</summary>
+        <ul>
+          <li>�ӱ��濪ʼֻ���ɵ��� HTML���������� Markdown �� PDF��</li>
+          <li>������Ƶ���ڹ�������ʱ�������ڱ���תд�������뽻��������·ַ���</li>
+          <li>����Ƶ�޹�������Ҫ���¼����ڷ������ƣ�Ƶ����ʾʧ��ԭ�򣬲����ݱ������ժҪ��</li>
+        </ul>
+      </details>
+      <div class="footer-note">���������ڸ�����Ϣ������������Ͷ�ʽ��������ǵ�Ԥ�⣻����ԭʼ��¶Ϊ׼��</div>
+    </section>
+    </main>
+    </div>
+    <div id="channel-live" class="live-region" aria-live="polite"></div>
+  </div>
+  <script>
+(function () {
+  const root = document.documentElement;
+  const page = document.querySelector('.page');
+  const links = Array.from(document.querySelectorAll('[data-channel-link]'));
+  const panels = Array.from(document.querySelectorAll('[data-channel-panel]'));
+  const showAll = document.getElementById('show-all');
+  const live = document.getElementById('channel-live');
+  if (!links.length || !panels.length) return;
+
+  root.classList.add('tabs-ready');
+  document.querySelector('.channel-links').setAttribute('role', 'tablist');
+  links.forEach((link) => {
+    link.setAttribute('role', 'tab');
+    link.setAttribute('aria-controls', 'channel-' + link.dataset.channelLink);
+  });
+  panels.forEach((panel) => {
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', 'channel-link-' + panel.dataset.channelPanel);
+  });
+
+  function panelForHash(hash) {
+    if (!hash) return panels[0];
+    const target = document.getElementById(hash.replace(/^#/, ''));
+    if (!target) return panels[0];
+    return target.matches('[data-channel-panel]') ? target : target.closest('[data-channel-panel]') || panels[0];
+  }
+
+  function activate(panel, options) {
+    const opts = options || {};
+    const id = panel.dataset.channelPanel;
+    page.classList.remove('full-view');
+    panels.forEach((item) => { item.hidden = item !== panel; item.classList.remove('is-entering'); });
+    links.forEach((link) => {
+      const active = link.dataset.channelLink === id;
+      link.setAttribute('aria-selected', active ? 'true' : 'false');
+      link.tabIndex = active ? 0 : -1;
+    });
+    panel.classList.add('is-entering');
+    window.setTimeout(() => panel.classList.remove('is-entering'), 180);
+    const activeLink = links.find((link) => link.dataset.channelLink === id);
+    if (activeLink && window.innerWidth <= 760) {
+      activeLink.scrollIntoView({block: 'nearest', inline: 'center'});
+    }
+    if (live) live.textContent = '���л���' + (activeLink ? activeLink.dataset.label : id) + 'Ƶ��';
+    if (opts.updateHash) history.pushState(null, '', '#channel-' + id);
+    if (opts.focus && activeLink) activeLink.focus();
+  }
+
+  links.forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const panel = document.getElementById('channel-' + link.dataset.channelLink);
+      activate(panel, {updateHash: true});
+      window.setTimeout(() => panel.scrollIntoView({block: 'start'}), 10);
+    });
+    link.addEventListener('keydown', (event) => {
+      const vertical = window.innerWidth > 760;
+      let next = null;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = links.length - 1;
+      if (event.key === 'ArrowRight' || (vertical && event.key === 'ArrowDown')) next = (index + 1) % links.length;
+      if (event.key === 'ArrowLeft' || (vertical && event.key === 'ArrowUp')) next = (index - 1 + links.length) % links.length;
+      if (next !== null) {
+        event.preventDefault();
+        activate(document.getElementById('channel-' + links[next].dataset.channelLink), {updateHash: true, focus: true});
+      }
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    const anchor = event.target.closest('a[href^="#event-"]');
+    if (!anchor) return;
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    const panel = target.closest('[data-channel-panel]');
+    activate(panel, {});
+    if (target.tagName === 'DETAILS') target.open = true;
+    history.pushState(null, '', anchor.getAttribute('href'));
+    window.setTimeout(() => target.scrollIntoView({block: 'start'}), 10);
+  });
+
+  showAll.addEventListener('click', () => {
+    const full = !page.classList.contains('full-view');
+    page.classList.toggle('full-view', full);
+    panels.forEach((panel) => { panel.hidden = false; });
+    showAll.textContent = full ? '����Ƶ����ͼ' : '��ʾȫ��';
+    showAll.setAttribute('aria-pressed', full ? 'true' : 'false');
+    if (!full) activate(panelForHash(location.hash), {});
+  });
+
+  window.addEventListener('hashchange', () => {
+    const panel = panelForHash(location.hash);
+    activate(panel, {});
+    const target = document.getElementById(location.hash.replace(/^#/, ''));
+    if (target && target.tagName === 'DETAILS') target.open = true;
+  });
+
+  const initialPanel = panelForHash(location.hash);
+  activate(initialPanel, {});
+  const initialTarget = document.getElementById(location.hash.replace(/^#/, ''));
+  if (initialTarget && initialTarget.tagName === 'DETAILS') initialTarget.open = true;
+})();
+</script>
+</body>
+</html>
