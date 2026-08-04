@@ -1,0 +1,2868 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#d72f35">
+  <title>【历史回补】A股收盘晚报｜2026-08-04</title>
+  <style>
+:root {
+  --ink: #122a3a;
+  --ink-soft: #50636d;
+  --paper: #f3f6f5;
+  --surface: #ffffff;
+  --line: #d7e1df;
+  --line-strong: #aebfbc;
+  --signal: #0f796a;
+  --signal-soft: #e5f2ef;
+  --up: #b23b35;
+  --down: #0f796a;
+  --attention: #a86616;
+  --attention-soft: #f8eddc;
+  --opinion: #6e5b94;
+  --opinion-soft: #f0edf7;
+  --risk: #a7443e;
+  --nav-width: 194px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(18,42,58,.025) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--paper);
+  font-family: "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.62;
+}
+a { color: var(--signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+button, summary, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #e0a144; outline-offset: 3px; }
+.page { width: min(1160px, calc(100% - 32px)); margin: 22px auto 64px; }
+.report-header {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 30px 22px;
+  color: white;
+  background: var(--ink);
+  border-bottom: 4px solid #45baa5;
+}
+.report-header::after {
+  content: "";
+  position: absolute;
+  right: -52px;
+  top: -108px;
+  width: 250px;
+  height: 250px;
+  border: 28px solid rgba(69,186,165,.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.header-top { display: flex; justify-content: space-between; gap: 24px; align-items: start; }
+.brand small {
+  display: block;
+  color: #91ddce;
+  font: 700 11px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.brand h1 {
+  margin: 7px 0 4px;
+  font: 700 clamp(30px, 4vw, 48px)/1.08 "Source Han Serif SC", "Songti SC", STSong, serif;
+  letter-spacing: -.035em;
+}
+.brand p { margin: 0; color: #cad7dc; font-size: 14px; }
+.cutoff {
+  position: relative;
+  z-index: 1;
+  min-width: 170px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255,255,255,.28);
+  font: 600 12px/1.45 "Cascadia Mono", Consolas, monospace;
+}
+.cutoff span { display: block; color: #8fe0d0; font-size: 18px; }
+.market-tape {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 22px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.16);
+}
+.tape-cell { min-width: 0; padding: 11px 13px; background: rgba(12,31,44,.72); }
+.tape-cell small { display: block; color: #8fa7b3; font-size: 10px; }
+.tape-cell strong {
+  display: block;
+  margin-top: 2px;
+  font: 700 16px/1.25 "Cascadia Mono", Consolas, monospace;
+  white-space: nowrap;
+}
+.up { color: var(--up) !important; }
+.down { color: var(--down) !important; }
+.report-shell {
+  display: grid;
+  grid-template-columns: var(--nav-width) minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 0;
+}
+.channel-nav {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  min-height: 690px;
+  padding: 22px 15px 26px 22px;
+  border-right: 1px solid var(--line);
+  background: #edf2f1;
+}
+.evidence-gate {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  gap: 8px;
+  margin: 0 0 16px 4px;
+  color: var(--ink-soft);
+  font-size: 11px;
+}
+.evidence-gate::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(var(--signal) 0 58%, var(--attention) 58% 78%, var(--opinion) 78%);
+}
+.evidence-gate strong {
+  display: block;
+  color: var(--ink);
+  font: 700 14px/1.2 "Cascadia Mono", Consolas, monospace;
+}
+.channel-links { display: grid; gap: 5px; }
+.channel-link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  min-height: 46px;
+  align-items: center;
+  padding: 9px 10px;
+  color: var(--ink);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+.channel-link:hover { background: rgba(255,255,255,.66); }
+.channel-link[aria-selected="true"] {
+  color: var(--signal);
+  background: white;
+  border-left-color: var(--signal);
+  font-weight: 700;
+}
+.channel-link small {
+  display: inline-grid;
+  place-items: center;
+  min-width: 23px;
+  height: 20px;
+  color: var(--ink-soft);
+  background: #dce6e4;
+  border-radius: 999px;
+  font: 600 10px/1 "Cascadia Mono", Consolas, monospace;
+}
+.channel-link[aria-selected="true"] small { color: white; background: var(--signal); }
+.show-all {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 17px;
+  padding: 8px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  cursor: pointer;
+}
+.show-all:hover { background: white; }
+.channel-stage { min-width: 0; padding: 32px clamp(24px, 5vw, 62px) 54px; }
+.channel-panel { scroll-margin-top: 88px; }
+.tabs-ready .channel-panel[hidden] { display: none; }
+.channel-panel.is-entering { animation: channel-in 150ms ease-out; }
+@keyframes channel-in { from { opacity: .4; transform: translateY(4px); } }
+.channel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--ink);
+}
+.channel-kicker {
+  color: var(--signal);
+  font: 700 10px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.channel-head h2 {
+  margin: 4px 0 0;
+  font: 700 clamp(26px, 3vw, 34px)/1.2 "Source Han Serif SC", "Songti SC", STSong, serif;
+}
+.channel-head p { max-width: 420px; margin: 0; color: var(--ink-soft); font-size: 13px; text-align: right; }
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 31px 0 11px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+}
+.section-title h3 { margin: 0; font-size: 17px; }
+.section-title small { color: var(--ink-soft); }
+.state-thesis {
+  display: grid;
+  grid-template-columns: 1.4fr .6fr;
+  gap: 22px;
+  margin: 24px 0 0;
+  padding: 22px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+.state-thesis h3 {
+  margin: 0 0 7px;
+  font: 700 24px/1.35 "Source Han Serif SC", "Songti SC", serif;
+}
+.state-thesis p { margin: 0; color: var(--ink-soft); }
+.breadth-mini { align-self: center; }
+.breadth-mini strong { display: block; font: 700 30px/1 "Cascadia Mono", Consolas, monospace; }
+.breadth-mini span { color: var(--ink-soft); font-size: 12px; }
+.breadth-bar { height: 6px; margin-top: 11px; background: #e7cfd0; }
+.breadth-bar i { display: block; height: 100%; background: var(--signal); }
+.brief-list { border-top: 1px solid var(--line); }
+.brief-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 15px 0;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.brief-item:hover h3 { color: var(--signal); }
+.brief-number { color: var(--attention); font: 700 12px/1.5 "Cascadia Mono", Consolas, monospace; }
+.brief-copy h3 { margin: 0 0 4px; font-size: 15px; line-height: 1.45; }
+.brief-copy p { margin: 0; color: var(--ink-soft); font-size: 12.5px; }
+.brief-route { align-self: center; color: var(--signal); font-size: 11px; white-space: nowrap; }
+.integrity-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 22px;
+  padding: 12px 14px;
+  color: var(--ink-soft);
+  background: #edf4f2;
+  border-left: 3px solid var(--signal);
+  font-size: 12px;
+}
+.calendar-list { display: grid; gap: 0; }
+.calendar-item {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+.calendar-item time { color: var(--signal); font: 700 12px/1.45 "Cascadia Mono", Consolas, monospace; }
+.calendar-item strong { display: block; font-size: 14px; }
+.calendar-item p { margin: 2px 0 0; color: var(--ink-soft); font-size: 12px; }
+.status-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.status-pill {
+  padding: 6px 9px;
+  color: var(--ink-soft);
+  background: #eef3f2;
+  border: 1px solid var(--line);
+  font-size: 11px;
+}
+.status-pill strong { color: var(--ink); }
+.stock-list { border-top: 1px solid var(--line); }
+.stock-row { border-bottom: 1px solid var(--line); }
+.stock-row > summary {
+  display: grid;
+  grid-template-columns: minmax(145px, 1.25fr) minmax(90px, .65fr) minmax(86px, .6fr) 1.1fr 20px;
+  gap: 12px;
+  align-items: center;
+  min-height: 58px;
+  padding: 9px 3px;
+  cursor: pointer;
+  list-style: none;
+}
+.stock-row > summary::-webkit-details-marker { display: none; }
+.stock-row > summary::after { content: "＋"; color: var(--signal); font-size: 17px; }
+.stock-row[open] > summary::after { content: "－"; }
+.stock-name strong { display: block; font-size: 14px; }
+.stock-name small { color: #7a8c94; font: 500 10px/1.2 "Cascadia Mono", Consolas, monospace; }
+.stock-pct { font: 700 14px/1 "Cascadia Mono", Consolas, monospace; }
+.stock-metric { color: var(--ink-soft); font-size: 11px; }
+.stock-state { justify-self: start; padding: 3px 7px; font-size: 10px; font-weight: 700; background: #e7ecec; }
+.stock-state.new { color: #075d50; background: #d8eee8; }
+.stock-state.background { color: #795015; background: var(--attention-soft); }
+.stock-detail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 3px 14px;
+}
+.stock-detail div { padding: 9px 10px; background: #f3f6f5; }
+.stock-detail small { display: block; color: var(--ink-soft); font-size: 10px; }
+.stock-detail strong { font: 700 12px/1.3 "Cascadia Mono", Consolas, monospace; }
+.stock-note { grid-column: 1 / -1; color: var(--ink-soft); font-size: 12px; }
+.theme-list { border-top: 1px solid var(--line); }
+.theme-row { border-bottom: 1px solid var(--line); }
+.theme-row > summary {
+  display: grid;
+  grid-template-columns: 115px 110px 1fr 20px;
+  gap: 13px;
+  align-items: center;
+  min-height: 62px;
+  padding: 10px 2px;
+  cursor: pointer;
+  list-style: none;
+}
+.theme-row > summary::-webkit-details-marker { display: none; }
+.theme-row > summary::after { content: "＋"; color: var(--signal); }
+.theme-row[open] > summary::after { content: "－"; }
+.theme-row h3 { margin: 0; font-size: 14px; }
+.theme-signal { font: 700 12px/1.2 "Cascadia Mono", Consolas, monospace; }
+.theme-summary { color: var(--ink-soft); font-size: 12px; }
+.theme-detail { margin: 0 0 13px 228px; padding: 10px 12px; color: var(--ink-soft); background: #f4f6f5; font-size: 12px; }
+.commodity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.commodity { padding: 12px; background: white; }
+.commodity small { display: block; color: var(--ink-soft); }
+.commodity strong { font: 700 15px/1.3 "Cascadia Mono", Consolas, monospace; }
+.commodity p { margin: 5px 0 0; color: var(--ink-soft); font-size: 11px; }
+.event-stack { border-top: 1px solid var(--line); }
+.event-disclosure {
+  scroll-margin-top: 96px;
+  border-bottom: 1px solid var(--line);
+}
+.event-disclosure > summary {
+  position: relative;
+  padding: 17px 38px 16px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.event-disclosure > summary::-webkit-details-marker { display: none; }
+.event-disclosure > summary::after {
+  content: "＋";
+  position: absolute;
+  top: 17px;
+  right: 4px;
+  color: var(--signal);
+  font-size: 20px;
+}
+.event-disclosure[open] > summary::after { content: "－"; }
+.event-meta { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; color: var(--ink-soft); font-size: 10px; }
+.tier { padding: 2px 6px; color: var(--signal); background: var(--signal-soft); font-weight: 700; }
+.tier.opinion { color: var(--opinion); background: var(--opinion-soft); }
+.event-disclosure h3 { margin: 7px 0 5px; font-size: 16px; line-height: 1.45; }
+.event-fact { margin: 0; color: #304753; font-size: 13px; }
+.event-relation { margin: 7px 0 0; color: var(--ink-soft); font-size: 11.5px; }
+.event-relation strong { color: var(--attention); }
+.event-watch { display: block; margin-top: 7px; color: var(--signal); font-size: 11px; }
+.evidence-body { margin: 0 0 18px; padding: 15px 17px; background: #f4f7f6; border-left: 3px solid var(--signal); }
+.evidence-row {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 14px;
+  padding: 9px 0;
+  border-top: 1px solid #dfe7e5;
+}
+.evidence-row:first-child { border-top: 0; padding-top: 0; }
+.evidence-row:last-child { padding-bottom: 0; }
+.evidence-row dt { color: var(--ink-soft); font-size: 11px; font-weight: 700; }
+.evidence-row dd { margin: 0; font-size: 12.5px; }
+.source-links { margin-top: 10px; font-size: 11px; }
+.st-snapshot {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 22px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.st-snapshot div { padding: 13px 11px; background: white; }
+.st-snapshot small { display: block; color: var(--ink-soft); font-size: 10px; }
+.st-snapshot strong { font: 700 17px/1.25 "Cascadia Mono", Consolas, monospace; }
+.stage-line { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; }
+.stage-line span { padding: 4px 7px; color: var(--ink-soft); background: #eff3f2; font-size: 10px; }
+.stage-line .active { color: white; background: var(--signal); }
+.opinion-hero {
+  margin-top: 22px;
+  padding: 22px;
+  color: #2b2740;
+  background: linear-gradient(135deg, #f2eff8, #faf9fc);
+  border-left: 5px solid var(--opinion);
+}
+.opinion-label {
+  color: var(--opinion);
+  font: 700 10px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .12em;
+}
+.opinion-hero h3 { margin: 8px 0 8px; font: 700 22px/1.35 "Source Han Serif SC", "Songti SC", serif; }
+.opinion-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: #675f77; font-size: 11px; }
+.transcript-path {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 20px 0 0;
+  border: 1px solid #dcd5e8;
+}
+.transcript-path span {
+  position: relative;
+  padding: 10px 24px 10px 10px;
+  color: #5d5570;
+  background: rgba(255,255,255,.65);
+  border-right: 1px solid #dcd5e8;
+  font-size: 10px;
+}
+.transcript-path span:last-child { border-right: 0; }
+.transcript-path span:not(:last-child)::after { content: "→"; position: absolute; right: 8px; color: var(--opinion); }
+.viewpoint-list { display: grid; gap: 0; margin-top: 19px; border-top: 1px solid #dcd5e8; }
+.viewpoint {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #dcd5e8;
+}
+.viewpoint time { color: var(--opinion); font: 700 11px/1.5 "Cascadia Mono", Consolas, monospace; }
+.viewpoint p { margin: 0; font-size: 13px; }
+.three-lenses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 22px; background: var(--line); border: 1px solid var(--line); }
+.lens { padding: 15px; background: white; }
+.lens h4 { margin: 0 0 7px; font-size: 12px; }
+.lens p { margin: 0; color: var(--ink-soft); font-size: 11.5px; }
+.lens.opinion h4 { color: var(--opinion); }
+.lens.attention h4 { color: var(--attention); }
+.action-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+.action-link { padding: 8px 11px; color: var(--opinion); border: 1px solid #cfc6dd; text-decoration: none; font-size: 11px; }
+.method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 22px; background: var(--line); border: 1px solid var(--line); }
+.method-card { padding: 15px; background: white; }
+.method-card strong { font-size: 13px; }
+.method-card p { margin: 5px 0 0; color: var(--ink-soft); font-size: 11.5px; }
+.note-disclosure { border-bottom: 1px solid var(--line); }
+.note-disclosure summary { min-height: 46px; padding: 11px 0; cursor: pointer; font-weight: 700; font-size: 13px; }
+.note-disclosure ul { margin: 0 0 16px; padding-left: 20px; color: var(--ink-soft); font-size: 12px; }
+.source-index { columns: 2; column-gap: 28px; margin: 0; padding-left: 18px; font-size: 11px; }
+.source-index li { break-inside: avoid; margin: 0 0 7px; }
+.footer-note { margin-top: 30px; padding-top: 15px; color: var(--ink-soft); border-top: 1px solid var(--line); font-size: 11px; }
+.live-region { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.full-view .channel-panel { display: block !important; margin-bottom: 80px; }
+.full-view .channel-panel[hidden] { display: block !important; }
+.full-view .channel-link[aria-selected="true"] { background: transparent; border-left-color: transparent; color: var(--ink); }
+@media (max-width: 760px) {
+  body { background: var(--surface); }
+  .page { width: 100%; margin: 0; }
+  .report-header { padding: 22px 17px 16px; }
+  .header-top { display: block; }
+  .brand h1 { font-size: 34px; }
+  .cutoff { display: inline-block; min-width: 0; margin-top: 14px; padding: 7px 9px; }
+  .cutoff span { display: inline; margin-right: 5px; font-size: 14px; }
+  .market-tape { grid-template-columns: repeat(2, 1fr); }
+  .tape-cell:nth-child(5) { grid-column: 1 / -1; }
+  .report-shell { display: block; border: 0; }
+  .channel-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: 0;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    background: rgba(243,246,245,.96);
+    backdrop-filter: blur(12px);
+  }
+  .evidence-gate, .show-all { display: none; }
+  .channel-links {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .channel-links::-webkit-scrollbar { display: none; }
+  .channel-link {
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 8px 13px;
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+  }
+  .channel-link[aria-selected="true"] { border-left: 0; border-bottom-color: var(--signal); }
+  .channel-link small { display: none; }
+  .channel-stage { padding: 24px 17px 46px; }
+  .channel-panel { scroll-margin-top: 62px; }
+  .channel-head { display: block; }
+  .channel-head p { margin-top: 6px; text-align: left; }
+  .state-thesis { grid-template-columns: 1fr; }
+  .brief-item { grid-template-columns: 27px 1fr; }
+  .brief-route { grid-column: 2; justify-self: start; }
+  .calendar-item { grid-template-columns: 1fr; gap: 3px; }
+  .stock-row > summary { grid-template-columns: minmax(125px, 1fr) 74px auto 20px; }
+  .stock-row .stock-metric { display: none; }
+  .stock-detail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .theme-row > summary { grid-template-columns: 94px 84px 1fr 18px; gap: 8px; }
+  .theme-detail { margin-left: 0; }
+  .commodity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .evidence-row { grid-template-columns: 1fr; gap: 3px; }
+  .st-snapshot { grid-template-columns: repeat(2, 1fr); }
+  .st-snapshot div:last-child { grid-column: 1 / -1; }
+  .transcript-path { grid-template-columns: 1fr 1fr; }
+  .transcript-path span:nth-child(2) { border-right: 0; }
+  .transcript-path span:nth-child(-n+2) { border-bottom: 1px solid #dcd5e8; }
+  .viewpoint { grid-template-columns: 1fr; gap: 3px; }
+  .three-lenses, .method-grid { grid-template-columns: 1fr; }
+  .source-index { columns: 1; }
+}
+@media (max-width: 390px) {
+  .market-tape { grid-template-columns: repeat(2, 1fr); }
+  .stock-row > summary { grid-template-columns: 1fr 68px 20px; }
+  .stock-state { grid-column: 1; grid-row: 2; }
+  .theme-row > summary { grid-template-columns: 1fr auto 18px; }
+  .theme-summary { grid-column: 1 / -1; }
+  .commodity-grid { grid-template-columns: 1fr; }
+}
+@media print {
+  .channel-nav { display: none; }
+  .report-shell { display: block; border: 0; }
+  .channel-stage { padding: 20px 0; }
+  .channel-panel, .channel-panel[hidden] { display: block !important; margin-bottom: 40px; }
+  .event-disclosure > .evidence-body { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .channel-panel.is-entering { animation: none; }
+}
+
+/* Institutional morning desk — cold finance art direction */
+:root {
+  --ink: #101820;
+  --ink-soft: #566473;
+  --paper: #090e13;
+  --surface: #f1f4f6;
+  --line: #cbd3da;
+  --line-strong: #8e9aa6;
+  --signal: #3f73c9;
+  --signal-soft: #e4ebf6;
+  --up: #d24e4e;
+  --down: #238b68;
+  --attention: #996b2f;
+  --attention-soft: #eee7dc;
+  --opinion: #666d9f;
+  --opinion-soft: #e8eaf1;
+  --risk: #b04747;
+  --nav-width: 206px;
+}
+html { background: #090e13; }
+body {
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(132,151,171,.035) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(132,151,171,.025) 1px, transparent 1px) 0 0 / 48px 48px,
+    #090e13;
+  font-family: "Segoe UI Variable", "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #315f9f; }
+:focus-visible { outline: 2px solid #7da7eb; outline-offset: 3px; }
+.page {
+  width: min(1280px, calc(100% - 48px));
+  margin: 24px auto 72px;
+  border: 1px solid #25303b;
+  box-shadow: 0 22px 70px rgba(0,0,0,.28);
+}
+.report-header {
+  padding: 0;
+  color: #e9eef3;
+  background: #0d141c;
+  border: 0;
+  border-bottom: 2px solid #4c78bd;
+}
+.report-header::after { display: none; }
+.header-top {
+  min-height: 108px;
+  padding: 21px 28px 19px;
+  align-items: center;
+  border-bottom: 1px solid #27333f;
+}
+.brand small {
+  color: #7d8ea0;
+  font: 600 10px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .19em;
+}
+.brand h1 {
+  margin: 9px 0 6px;
+  color: #f3f6f8;
+  font: 620 clamp(28px, 3vw, 35px)/1.08 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .055em;
+}
+.brand p {
+  color: #8f9eac;
+  font-size: 12px;
+  letter-spacing: .015em;
+}
+.cutoff {
+  min-width: 194px;
+  padding: 5px 0 5px 25px;
+  color: #8998a7;
+  border: 0;
+  border-left: 1px solid #344351;
+  font: 500 10px/1.7 "Cascadia Mono", Consolas, monospace;
+  text-align: right;
+  text-transform: uppercase;
+}
+.cutoff span {
+  color: #79a9ef;
+  font-size: 23px;
+  letter-spacing: .04em;
+}
+.market-tape {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  background: #101923;
+  border: 0;
+}
+.tape-cell {
+  min-height: 60px;
+  padding: 11px 18px 10px;
+  background: transparent;
+  border-right: 1px solid #27333f;
+}
+.tape-cell:last-child { border-right: 0; }
+.tape-cell small {
+  color: #748596;
+  font: 500 9px/1.4 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .07em;
+}
+.tape-cell strong {
+  margin-top: 7px;
+  color: #e7edf2;
+  font: 650 15px/1.2 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .015em;
+}
+.report-shell {
+  display: block;
+  background: var(--surface);
+  border: 0;
+}
+.channel-nav {
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: stretch;
+  min-height: 50px;
+  padding: 0 17px;
+  color: #9aa8b5;
+  background: #111923;
+  border-right: 0;
+  border-bottom: 1px solid #29343f;
+}
+.evidence-gate {
+  display: flex;
+  grid-template-columns: none;
+  gap: 11px;
+  align-items: center;
+  margin: 0 19px 0 0;
+  padding-right: 19px;
+  color: #778797;
+  font: 500 9px/1.65 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  border-right: 1px solid #2d3945;
+}
+.evidence-gate::before {
+  width: 2px;
+  height: 20px;
+  background: #6b9de7;
+  box-shadow: none;
+}
+.evidence-gate strong {
+  color: #dce4eb;
+  font: 650 10px/1.25 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .06em;
+}
+.evidence-gate span { color: #82909d; }
+.evidence-gate b { color: #b3bfca; font-weight: 650; }
+.channel-links {
+  display: flex;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
+}
+.channel-link {
+  display: flex;
+  grid-template-columns: none;
+  flex: 0 1 auto;
+  justify-content: center;
+  min-height: 45px;
+  padding: 9px 15px 7px;
+  color: #a5b1bc;
+  border-left: 0;
+  border-bottom: 2px solid transparent;
+  font-size: 12px;
+  letter-spacing: .025em;
+}
+.channel-link:hover {
+  color: #edf2f6;
+  background: #17222e;
+}
+.channel-link[aria-selected="true"] {
+  color: #f0f4f7;
+  background: #17222e;
+  border-left-color: transparent;
+  border-bottom-color: #6b9de7;
+  font-weight: 600;
+}
+.channel-link small {
+  min-width: 21px;
+  height: 18px;
+  color: #7f8d99;
+  background: #202d39;
+  border: 1px solid #2b3946;
+  border-radius: 2px;
+  font-size: 9px;
+}
+.channel-link[aria-selected="true"] small {
+  color: #bcd4f7;
+  background: #253c57;
+}
+.show-all {
+  width: auto;
+  min-height: 32px;
+  align-self: center;
+  margin: 0 0 0 15px;
+  padding: 7px 12px;
+  color: #8493a1;
+  background: transparent;
+  border: 1px solid #35414d;
+  font: 500 10px/1 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .06em;
+}
+.show-all:hover {
+  color: #e7edf2;
+  background: #17222e;
+}
+.channel-stage {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: 37px clamp(28px, 5vw, 66px) 62px;
+  background: #f1f4f6;
+}
+.channel-panel.is-entering { animation: channel-in 120ms ease-out; }
+.channel-head {
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #8f9ba7;
+}
+.channel-kicker {
+  color: #5476a6;
+  font: 650 9px/1.3 "Cascadia Mono", Consolas, monospace;
+  letter-spacing: .18em;
+}
+.channel-head h2 {
+  margin-top: 7px;
+  font: 640 clamp(25px, 3vw, 31px)/1.15 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .025em;
+}
+.channel-head p {
+  color: #687583;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.section-title {
+  margin: 34px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #aeb8c1;
+}
+.section-title h3 {
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: .02em;
+}
+.section-title small {
+  color: #7b8792;
+  font: 500 10px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.state-thesis {
+  grid-template-columns: 1.45fr .55fr;
+  gap: 28px;
+  margin-top: 24px;
+  padding: 24px 25px;
+  background: #f8fafb;
+  border: 1px solid #c4ccd4;
+}
+.state-thesis h3 {
+  font: 650 22px/1.42 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+  letter-spacing: .012em;
+}
+.state-thesis p { color: #536170; font-size: 13px; }
+.breadth-mini {
+  padding-left: 23px;
+  border-left: 1px solid #c9d0d7;
+}
+.breadth-mini strong {
+  color: #162331;
+  font-size: 29px;
+}
+.breadth-mini span {
+  color: #6e7b87;
+  font: 500 10px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.breadth-bar { height: 3px; background: #dcc9c9; }
+.breadth-bar i { background: #3273a8; }
+.brief-list,
+.stock-list,
+.theme-list,
+.event-stack {
+  background: #f9fafb;
+  border: 1px solid #c8d0d7;
+  border-bottom: 0;
+}
+.brief-item {
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 13px;
+  min-height: 73px;
+  padding: 15px 18px;
+  border-bottom-color: #d4dbe1;
+}
+.brief-item:hover { background: #f2f6fa; }
+.brief-item:hover h3 { color: #315f9f; }
+.brief-number {
+  color: #6c7884;
+  font: 600 10px/1.55 "Cascadia Mono", Consolas, monospace;
+}
+.brief-copy h3 { font-size: 14px; font-weight: 650; }
+.brief-copy p { color: #62707e; font-size: 11.5px; }
+.brief-route { color: #456e9f; font-size: 10px; }
+.integrity-strip {
+  gap: 8px 22px;
+  padding: 11px 14px;
+  color: #5f6d7a;
+  background: #e6ebef;
+  border: 0;
+  border-top: 1px solid #c3ccd4;
+  border-bottom: 1px solid #c3ccd4;
+  font: 500 10px/1.55 "Cascadia Mono", Consolas, monospace;
+}
+.calendar-item {
+  grid-template-columns: 116px 1fr;
+  padding: 14px 12px;
+  background: #f8fafb;
+  border-bottom-color: #d1d8de;
+}
+.calendar-item time { color: #416f9f; font-size: 10px; }
+.calendar-item strong { font-size: 13px; font-weight: 650; }
+.calendar-item p { color: #65727e; font-size: 11px; }
+.status-pill {
+  padding: 5px 8px;
+  color: #697684;
+  background: #e6ebef;
+  border-color: #cad2d9;
+  border-radius: 2px;
+  font-size: 10px;
+}
+.stock-row,
+.theme-row,
+.event-disclosure { border-bottom-color: #d2d9df; }
+.stock-row > summary {
+  min-height: 62px;
+  padding: 10px 14px;
+}
+.stock-row > summary:hover,
+.theme-row > summary:hover,
+.event-disclosure > summary:hover { background: #f1f5f8; }
+.stock-row > summary::after,
+.theme-row > summary::after,
+.event-disclosure > summary::after {
+  color: #526b87;
+  font-family: "Cascadia Mono", Consolas, monospace;
+}
+.stock-name strong { font-size: 13px; font-weight: 650; }
+.stock-name small { color: #7c8792; font-size: 9px; }
+.stock-pct { font-size: 13px; }
+.stock-metric { color: #667380; font-size: 10px; }
+.stock-state {
+  color: #596671;
+  background: #e5e9ed;
+  border: 1px solid #d0d6dc;
+  border-radius: 2px;
+  font-size: 9px;
+}
+.stock-state.new {
+  color: #245f50;
+  background: #dfece8;
+  border-color: #c8ddd6;
+}
+.stock-state.background {
+  color: #795a2e;
+  background: #eee8df;
+  border-color: #ddd1c1;
+}
+.stock-detail { padding: 0 14px 15px; }
+.stock-detail div {
+  padding: 10px;
+  background: #e9edf1;
+  border-top: 1px solid #d1d8de;
+}
+.stock-detail small { color: #697683; }
+.theme-row > summary {
+  min-height: 65px;
+  padding: 11px 14px;
+}
+.theme-row h3 { font-size: 13px; font-weight: 650; }
+.theme-signal { color: #344d67; font-size: 11px; }
+.theme-summary { color: #66727e; font-size: 11.5px; }
+.theme-detail {
+  margin-right: 14px;
+  padding: 11px 13px;
+  color: #596674;
+  background: #e9edf1;
+  border-left: 2px solid #8aa0b8;
+}
+.commodity-grid,
+.st-snapshot,
+.three-lenses,
+.method-grid {
+  background: #c8d0d7;
+  border-color: #c8d0d7;
+}
+.commodity,
+.st-snapshot div,
+.lens,
+.method-card { background: #f9fafb; }
+.commodity small,
+.st-snapshot small { color: #72808c; font-size: 9px; }
+.commodity p { color: #64717d; }
+.event-disclosure > summary { padding: 17px 45px 16px 16px; }
+.event-disclosure > summary::after { right: 15px; }
+.event-meta {
+  color: #6e7b87;
+  font: 500 9px/1.4 "Cascadia Mono", Consolas, monospace;
+}
+.tier {
+  color: #315f9f;
+  background: #e2e9f2;
+  border: 1px solid #cbd7e6;
+  border-radius: 2px;
+}
+.tier.opinion {
+  color: #5d638f;
+  background: #e6e7ee;
+  border-color: #d0d2df;
+}
+.event-disclosure h3 { font-size: 14px; font-weight: 650; }
+.event-fact { color: #3e4e5d; font-size: 12.5px; }
+.event-relation { color: #697582; font-size: 11px; }
+.event-watch { color: #456e9f; font-size: 10px; }
+.evidence-body {
+  margin: 0 15px 16px;
+  padding: 14px 16px;
+  background: #e9edf1;
+  border: 0;
+  border-left: 2px solid #6686aa;
+}
+.evidence-row { border-top-color: #d0d7dd; }
+.evidence-row dt { color: #65727e; font-size: 10px; }
+.evidence-row dd { font-size: 12px; }
+.stage-line span {
+  color: #687581;
+  background: #e2e7eb;
+  border: 1px solid #ccd4db;
+  border-radius: 2px;
+}
+.stage-line .active { background: #3f6696; border-color: #3f6696; }
+.opinion-hero {
+  margin-top: 24px;
+  padding: 24px 25px;
+  color: #252b3c;
+  background: #e8eaf0;
+  border: 1px solid #c5cad6;
+  border-left: 3px solid #68709f;
+}
+.opinion-label { color: #626993; font-size: 9px; }
+.opinion-hero h3 {
+  font: 650 20px/1.4 "Segoe UI Variable", "Microsoft YaHei UI", sans-serif;
+}
+.opinion-meta { color: #697083; font-size: 10px; }
+.transcript-path {
+  border-color: #c6cad5;
+  background: #f1f2f6;
+}
+.transcript-path span {
+  color: #5d6479;
+  background: transparent;
+  border-color: #c6cad5;
+}
+.viewpoint-list { border-color: #c6cad5; }
+.viewpoint { border-color: #c6cad5; }
+.viewpoint time { color: #626993; font-size: 10px; }
+.viewpoint p { font-size: 12.5px; }
+.lens.opinion h4 { color: #626993; }
+.action-link {
+  color: #525c8a;
+  background: #f2f3f6;
+  border-color: #bfc4d2;
+}
+.action-link:hover { background: white; }
+.note-disclosure { border-color: #cbd3da; }
+.note-disclosure summary { font-size: 12px; }
+.source-index { color: #586674; }
+.footer-note {
+  color: #6f7b86;
+  border-color: #bfc8d0;
+  font-size: 10px;
+}
+.full-view .channel-link[aria-selected="true"] {
+  color: #a5b1bc;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 760px) {
+  html, body { background: #0d141c; }
+  .page {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .report-header { border-bottom-width: 2px; }
+  .header-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    min-height: 92px;
+    padding: 15px 16px 14px;
+  }
+  .brand small { font-size: 8px; letter-spacing: .12em; }
+  .brand h1 { margin: 7px 0 0; font-size: 25px; letter-spacing: .03em; }
+  .brand p { display: none; }
+  .cutoff {
+    display: block;
+    min-width: 98px;
+    margin: 0;
+    padding: 2px 0 2px 13px;
+    border-top: 0;
+    border-left: 1px solid #2a3641;
+    text-align: right;
+    font-size: 8px;
+  }
+  .cutoff span {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+  }
+  .market-tape {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .market-tape::-webkit-scrollbar { display: none; }
+  .tape-cell {
+    flex: 0 0 142px;
+    min-height: 58px;
+    padding: 10px 14px;
+    border-right: 1px solid #27333f;
+    border-bottom: 0;
+  }
+  .tape-cell:nth-child(even) { border-right: 1px solid #27333f; }
+  .tape-cell:nth-child(5) { grid-column: auto; }
+  .channel-nav {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: rgba(13,20,28,.97);
+    border-bottom: 1px solid #2c3742;
+    backdrop-filter: blur(14px);
+  }
+  .channel-links {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  .channel-link {
+    flex: 0 0 auto;
+    min-height: 47px;
+    color: #929fac;
+    border-bottom: 2px solid transparent;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .channel-link:hover { background: transparent; }
+  .channel-link[aria-selected="true"] {
+    color: #eef3f7;
+    background: transparent;
+    border-left: 0;
+    border-bottom-color: #6b9de7;
+  }
+  .channel-stage { padding: 27px 17px 48px; background: #f1f4f6; }
+  .channel-head { align-items: start; }
+  .channel-head h2 { font-size: 25px; }
+  .state-thesis {
+    gap: 20px;
+    padding: 20px 18px;
+  }
+  .breadth-mini {
+    padding: 17px 0 0;
+    border-left: 0;
+    border-top: 1px solid #c9d0d7;
+  }
+  .brief-item { grid-template-columns: 28px minmax(0,1fr); padding: 14px 13px; }
+  .calendar-item { padding-inline: 8px; }
+  .stock-row > summary,
+  .theme-row > summary { padding-inline: 11px; }
+  .event-disclosure > summary { padding-left: 12px; }
+  .opinion-hero { padding: 20px 18px; }
+}
+
+@media (max-width: 390px) {
+  .brand h1 { font-size: 27px; }
+  .channel-stage { padding-inline: 14px; }
+  .state-thesis h3 { font-size: 20px; }
+}
+
+/* A-share retail market language — red, white, high-contrast data */
+:root {
+  --ink: #222222;
+  --ink-soft: #6a6f75;
+  --paper: #f3f4f5;
+  --surface: #f5f6f7;
+  --line: #e1e3e6;
+  --line-strong: #c8ccd1;
+  --signal: #d72f35;
+  --signal-soft: #fff0f0;
+  --up: #e2383f;
+  --down: #009b72;
+  --attention: #b06a24;
+  --attention-soft: #fff5e9;
+  --opinion: #73727c;
+  --opinion-soft: #f1f1f3;
+  --risk: #c52d33;
+}
+html { background: #f3f4f5; }
+body {
+  color: #222;
+  background: #f3f4f5;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.62;
+  font-synthesis: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+}
+a { color: #c7282e; }
+:focus-visible { outline-color: #e45b60; }
+.page {
+  width: min(1260px, calc(100% - 32px));
+  margin: 16px auto 60px;
+  background: #f5f6f7;
+  border: 0;
+  box-shadow: 0 4px 24px rgba(34,34,34,.08);
+}
+.report-header {
+  color: white;
+  background: #d72f35;
+  border: 0;
+}
+.header-top {
+  min-height: 104px;
+  padding: 21px 28px 18px;
+  border: 0;
+}
+.brand small {
+  color: rgba(255,255,255,.72);
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.brand h1 {
+  margin: 8px 0 5px;
+  color: white;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: clamp(29px, 3vw, 35px);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.brand p {
+  color: rgba(255,255,255,.84);
+  font-size: 13px;
+}
+.cutoff {
+  color: rgba(255,255,255,.78);
+  border-left-color: rgba(255,255,255,.34);
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: none;
+}
+.cutoff span {
+  color: white;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+.market-tape {
+  background: white;
+  border-bottom: 1px solid #e4e5e7;
+}
+.tape-cell {
+  min-height: 64px;
+  background: white;
+  border-right-color: #ececee;
+}
+.tape-cell small {
+  color: #85898e;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.tape-cell strong {
+  color: #282828;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+.report-shell { background: #f5f6f7; }
+.channel-nav {
+  min-height: 52px;
+  color: #666;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #dedfe1;
+  box-shadow: 0 2px 8px rgba(30,30,30,.06);
+}
+.evidence-gate {
+  color: #85898e;
+  border-right-color: #e3e4e6;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 10px;
+}
+.evidence-gate::before { background: #d72f35; }
+.evidence-gate strong {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.evidence-gate span { color: #85898e; }
+.evidence-gate b { color: #555; font-weight: 700; }
+.channel-link {
+  min-height: 51px;
+  color: #555;
+  border-bottom-width: 3px;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.channel-link:hover {
+  color: #d72f35;
+  background: #fff7f7;
+}
+.channel-link[aria-selected="true"] {
+  color: #d72f35;
+  background: white;
+  border-bottom-color: #d72f35;
+  font-weight: 700;
+}
+.channel-link small {
+  color: #888;
+  background: #f0f1f2;
+  border-color: #e1e2e4;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+}
+.channel-link[aria-selected="true"] small {
+  color: #d72f35;
+  background: #fff0f0;
+  border-color: #f3c9cb;
+}
+.show-all {
+  color: #c92b31;
+  background: white;
+  border-color: #e4a7aa;
+  border-radius: 3px;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.show-all:hover {
+  color: white;
+  background: #d72f35;
+}
+.channel-stage {
+  width: min(1080px, 100%);
+  padding-top: 30px;
+  background: #f5f6f7;
+}
+.channel-head {
+  padding: 17px 20px 15px;
+  background: white;
+  border-bottom: 1px solid #e0e1e3;
+  border-radius: 5px 5px 0 0;
+}
+.channel-kicker {
+  color: #d72f35;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.channel-head h2 {
+  margin-top: 5px;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: clamp(25px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.channel-head p {
+  color: #777b80;
+  font-size: 12px;
+}
+.section-title {
+  margin-top: 27px;
+  border-bottom-color: #d7d9dc;
+}
+.section-title h3 {
+  color: #292929;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.section-title small {
+  color: #8a8e93;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.state-thesis {
+  padding: 22px 23px;
+  background: white;
+  border: 1px solid #e0e1e3;
+  border-top: 3px solid #d72f35;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 8px rgba(30,30,30,.035);
+}
+.state-thesis h3 {
+  color: #222;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+.state-thesis p { color: #60656a; font-size: 13px; }
+.breadth-mini { border-left-color: #e3e4e6; }
+.breadth-mini strong {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-weight: 700;
+}
+.breadth-mini span {
+  color: #777b80;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.breadth-bar { height: 4px; background: #e6ece9; }
+.breadth-bar i { background: #d72f35; }
+.brief-list,
+.stock-list,
+.theme-list,
+.event-stack {
+  background: white;
+  border-color: #dedfe1;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(30,30,30,.025);
+}
+.brief-item {
+  min-height: 76px;
+  border-bottom-color: #ebebec;
+}
+.brief-item:hover,
+.stock-row > summary:hover,
+.theme-row > summary:hover,
+.event-disclosure > summary:hover { background: #fff8f8; }
+.brief-item:hover h3 { color: #c7282e; }
+.brief-number {
+  color: #d72f35;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+.brief-copy h3,
+.calendar-item strong,
+.stock-name strong,
+.theme-row h3,
+.event-disclosure h3 {
+  color: #292929;
+  font-weight: 700;
+}
+.brief-copy p { color: #686d72; font-size: 12.5px; }
+.brief-route,
+.event-watch { color: #c7282e; font-size: 11px; }
+.integrity-strip {
+  color: #72767b;
+  background: white;
+  border-color: #dedfe1;
+  border-left: 3px solid #d72f35;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+.calendar-item {
+  background: white;
+  border-bottom-color: #e5e6e8;
+}
+.calendar-item time {
+  color: #d72f35;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+}
+.calendar-item strong { font-size: 14px; }
+.calendar-item p { color: #6a6f74; font-size: 12px; }
+.status-pill {
+  color: #696d72;
+  background: white;
+  border-color: #dedfe1;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.stock-row,
+.theme-row,
+.event-disclosure { border-bottom-color: #e6e7e8; }
+.stock-row > summary { min-height: 65px; }
+.stock-row > summary::after,
+.theme-row > summary::after,
+.event-disclosure > summary::after { color: #c62a30; }
+.stock-name strong { font-size: 14px; }
+.stock-name small {
+  color: #898d92;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+.stock-pct {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+.stock-metric { color: #777b80; font-size: 12px; }
+.stock-state {
+  color: #777b80;
+  background: #f3f3f4;
+  border-color: #e2e3e4;
+  border-radius: 3px;
+  font-size: 11px;
+}
+.stock-state.new {
+  color: #c3272d;
+  background: #fff0f0;
+  border-color: #f0c9cb;
+}
+.stock-state.background {
+  color: #946023;
+  background: #fff5e9;
+  border-color: #efdec8;
+}
+.stock-detail div,
+.theme-detail,
+.evidence-body {
+  background: #f7f7f8;
+  border-color: #e5e6e7;
+}
+.stock-detail small { color: #777b80; font-size: 11px; }
+.stock-detail strong { font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.theme-row > summary { min-height: 67px; }
+.theme-signal { color: #c72a30; font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.theme-summary { color: #686d72; font-size: 12.5px; }
+.theme-detail {
+  color: #62676c;
+  border-left-color: #d72f35;
+}
+.commodity-grid,
+.st-snapshot,
+.three-lenses,
+.method-grid {
+  background: #e0e1e3;
+  border-color: #e0e1e3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.commodity,
+.st-snapshot div,
+.lens,
+.method-card { background: white; }
+.commodity small,
+.st-snapshot small { color: #83878c; font-size: 11px; }
+.commodity strong,
+.st-snapshot strong { font-family: Arial, "Microsoft YaHei UI", sans-serif; }
+.event-meta {
+  color: #81858a;
+  font-family: Arial, "Microsoft YaHei UI", sans-serif;
+  font-size: 11px;
+}
+.tier {
+  color: #666a70;
+  background: #f1f2f3;
+  border-color: #dfe1e3;
+  border-radius: 3px;
+}
+.tier.opinion {
+  color: #7a653f;
+  background: #fff5e6;
+  border-color: #eddcc1;
+}
+.event-disclosure h3 { font-size: 15px; }
+.event-fact { color: #474c51; font-size: 13.5px; }
+.fact-kind {
+  display: inline-block;
+  margin: 7px 0 5px;
+  padding: 2px 6px;
+  color: #8a2025;
+  background: #fff0f0;
+  border: 1px solid #f0c8ca;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.fact-kind.opinion {
+  color: #7a653f;
+  background: #fff5e6;
+  border-color: #eddcc1;
+}
+.event-relation { color: #71767b; font-size: 12px; }
+.evidence-body {
+  border-left: 3px solid #d72f35;
+  border-radius: 3px;
+}
+.evidence-row dt { color: #767a7f; font-size: 11px; }
+.evidence-row dd { font-size: 13px; }
+.stage-line span {
+  background: #f2f2f3;
+  border-color: #e0e1e2;
+}
+.stage-line .active {
+  color: white;
+  background: #d72f35;
+  border-color: #d72f35;
+}
+.opinion-hero {
+  color: #2d2d2f;
+  background: white;
+  border: 1px solid #dedfe1;
+  border-top: 3px solid #d72f35;
+  border-left: 1px solid #dedfe1;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(30,30,30,.035);
+}
+.opinion-label {
+  color: #a56724;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.opinion-hero h3 {
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.opinion-meta { color: #75797e; font-size: 11px; }
+.transcript-path {
+  background: #fafafa;
+  border-color: #e2e3e5;
+}
+.transcript-path span {
+  color: #666a6f;
+  border-color: #e2e3e5;
+  font-size: 11px;
+}
+.transcript-path span:not(:last-child)::after { color: #d72f35; }
+.viewpoint-list,
+.viewpoint { border-color: #e2e3e5; }
+.viewpoint time {
+  color: #c62a30;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+.viewpoint p { font-size: 13.5px; }
+.lens.opinion h4,
+.action-link { color: #c62a30; }
+.action-link {
+  background: white;
+  border-color: #e0a8aa;
+  border-radius: 3px;
+}
+.action-link:hover { background: #fff3f3; }
+.footer-note { color: #777b80; border-color: #d8dadd; font-size: 11px; }
+.source-health {
+  width: min(1080px, calc(100% - 56px));
+  margin: 20px auto 0;
+  padding: 13px 15px;
+  color: #6b4a20;
+  background: #fff8ed;
+  border: 1px solid #edcfaa;
+  border-left: 4px solid #d28a30;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.source-health.critical {
+  color: #81272b;
+  background: #fff1f1;
+  border-color: #edb9bc;
+  border-left-color: #d72f35;
+}
+.source-health.ok {
+  color: #426050;
+  background: #f2f8f5;
+  border-color: #cfe0d6;
+  border-left-color: #36916c;
+}
+.source-health strong { display: block; margin-bottom: 4px; font-size: 13px; }
+.source-health ul { margin: 5px 0 0; padding-left: 19px; }
+.source-health li + li { margin-top: 3px; }
+.source-health code {
+  padding: 1px 4px;
+  color: inherit;
+  background: rgba(255,255,255,.62);
+  font-family: Arial, sans-serif;
+}
+.source-status-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  background: white;
+  font-size: 12px;
+}
+.source-status-table th,
+.source-status-table td {
+  padding: 10px 11px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e5e6e8;
+}
+.source-status-table th {
+  color: #74787d;
+  background: #f7f7f8;
+  font-weight: 400;
+}
+.source-state {
+  display: inline-block;
+  min-width: 58px;
+  padding: 2px 6px;
+  text-align: center;
+  color: #666;
+  background: #f1f2f3;
+  border-radius: 3px;
+}
+.source-state.ok,
+.source-state.success,
+.source-state.healthy { color: #137856; background: #eaf6f0; }
+.source-state.failed,
+.source-state.error,
+.source-state.blocked,
+.source-state.timeout,
+.source-state.unavailable { color: #b4242a; background: #fff0f0; }
+.source-state.degraded,
+.source-state.partial,
+.source-state.stale,
+.source-state.fallback { color: #98601e; background: #fff5e7; }
+
+@media (max-width: 760px) {
+  html, body { background: #f3f4f5; }
+  body {
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 15px;
+    line-height: 1.58;
+  }
+  .page { background: #f5f6f7; }
+  .report-header { background: #d72f35; }
+  .header-top {
+    min-height: 88px;
+    padding: 14px 15px 13px;
+  }
+  .brand small { color: rgba(255,255,255,.72); font-size: 10px; }
+  .brand h1 { color: white; font-size: 25px; font-weight: 700; }
+  .cutoff {
+    color: rgba(255,255,255,.76);
+    border-left-color: rgba(255,255,255,.33);
+    font-size: 10px;
+  }
+  .cutoff span { color: white; font-size: 18px; }
+  .market-tape { background: white; }
+  .tape-cell {
+    flex-basis: 150px;
+    min-height: 61px;
+    border-right-color: #ececee;
+  }
+  .tape-cell small { font-size: 11px; }
+  .tape-cell strong { font-size: 16px; }
+  .channel-nav {
+    background: rgba(255,255,255,.98);
+    border-bottom-color: #dedfe1;
+    box-shadow: 0 2px 8px rgba(30,30,30,.08);
+    backdrop-filter: none;
+  }
+  .channel-panel.is-entering { animation: none; }
+  .evidence-gate {
+    min-height: 27px;
+    color: #898d92;
+    background: #fafafa;
+    border-bottom: 1px solid #ececee;
+    font-size: 10px;
+  }
+  .evidence-gate strong { color: #d72f35; font-size: 11px; }
+  .channel-link {
+    min-height: 47px;
+    padding-inline: 15px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .channel-link[aria-selected="true"] {
+    color: #d72f35;
+    border-bottom-color: #d72f35;
+    font-weight: 700;
+  }
+  .channel-stage { padding: 22px 13px 44px; background: #f5f6f7; }
+  .channel-panel { scroll-margin-top: 86px; }
+  .channel-head {
+    padding: 15px 16px 14px;
+    border-radius: 5px 5px 0 0;
+  }
+  .channel-kicker { font-size: 11px; }
+  .channel-head h2 { font-size: 25px; font-weight: 700; }
+  .channel-head p { color: #70757a; font-size: 13px; }
+  .state-thesis { padding: 18px 16px; }
+  .state-thesis h3 { font-size: 20px; font-weight: 700; }
+  .state-thesis p { font-size: 14px; }
+  .breadth-mini span { font-size: 12px; }
+  .section-title h3 { font-size: 16px; }
+  .section-title small { font-size: 11px; }
+  .brief-item {
+    grid-template-columns: 27px minmax(0, 1fr);
+    padding: 15px 13px;
+  }
+  .brief-number { font-size: 11px; }
+  .brief-copy h3 { font-size: 15px; line-height: 1.48; }
+  .brief-copy p { font-size: 13px; line-height: 1.55; }
+  .brief-route { font-size: 12px; }
+  .integrity-strip { font-size: 11px; }
+  .calendar-item strong { font-size: 14px; }
+  .calendar-item p { font-size: 12.5px; }
+  .stock-name strong { font-size: 15px; }
+  .stock-name small { font-size: 11px; }
+  .stock-state { font-size: 11px; }
+  .theme-row h3 { font-size: 14px; }
+  .theme-summary { font-size: 13px; }
+  .event-meta { font-size: 11px; }
+  .event-disclosure h3 { font-size: 15px; }
+  .event-fact { font-size: 14px; }
+  .event-relation { font-size: 12.5px; }
+  .viewpoint p { font-size: 14px; }
+  .source-health {
+    width: calc(100% - 26px);
+    margin-top: 14px;
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+  .source-health strong { font-size: 13px; }
+  .source-status-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+
+.report-identity {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  padding: 6px 10px; border: 1px solid #efb7ba; border-radius: 3px;
+  color: #b31f25; background: #fff7f7; font-size: 12px; font-weight: 800;
+  letter-spacing: .08em;
+}
+.report-identity::before { content: ""; width: 5px; height: 5px; background: #d72f35; border-radius: 50%; }
+.first-impact {
+  margin: 9px 0 0; padding: 9px 11px; border-left: 3px solid #d72f35;
+  background: #fff8f8; color: #353b40; font-size: 12.5px; line-height: 1.65;
+}
+.first-impact strong { color: #b31f25; }
+.continuation-badge {
+  display: inline-flex; margin-left: 7px; padding: 2px 7px; border: 1px solid #e4a3a7;
+  border-radius: 999px; color: #b31f25; background: #fff5f5; font-size: 10px; font-weight: 800;
+}
+.analysis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.analysis-cell { padding: 11px 12px; background: #fff; border: 1px solid #e3e6e8; min-width: 0; }
+.analysis-cell dt { color: #a52329; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.analysis-cell dd { margin: 5px 0 0; color: #42494f; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.scenario-list { display: grid; gap: 7px; margin: 0 0 12px; padding: 0; list-style: none; }
+.scenario-list li { padding: 9px 11px; border: 1px solid #e3e6e8; background: #fff; font-size: 12px; line-height: 1.6; }
+.scenario-list b { color: #a52329; }
+.global-grid, .close-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.context-card { padding: 15px; border: 1px solid #dfe3e5; background: #fff; min-width: 0; }
+.context-card h3 { margin: 0 0 7px; color: #20262b; font-size: 15px; }
+.context-card p { margin: 0; color: #555e65; font-size: 12.5px; line-height: 1.7; overflow-wrap: anywhere; }
+.context-card .context-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 9px 0; }
+.context-meta span { padding: 3px 6px; background: #f3f4f5; color: #606970; font-size: 10px; }
+.context-kind { color: #b31f25 !important; font-weight: 800; }
+.context-path { margin-top: 9px !important; padding-top: 9px; border-top: 1px solid #eceeef; color: #7b4548 !important; }
+.unavailable-card { border-style: dashed; background: #fafafa; }
+.review-verdict { display: inline-flex; margin: 8px 0 0; color: #a52329; font-size: 11px; font-weight: 800; }
+@media (max-width: 760px) {
+  .analysis-grid, .global-grid, .close-grid { grid-template-columns: 1fr; }
+  .first-impact { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="report-header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="report-identity">A股收盘晚报 · 20:30</span>
+          <small>A股研究台 · 个人版 / 2026-08-04</small>
+          <h1>【历史回补】A股收盘晚报｜2026-08-04</h1>
+          <p>因原定自动化漏跑，本版于截止后重建；仅采用可回溯至2026-08-03 20:10前的材料，不冒充当时实时冻结快照。</p>
+        </div>
+        <div class="cutoff"><span>20:10</span>证据截止<br>2026-08-04 · 北京</div>
+      </div>
+      <div class="market-tape" aria-label="最近交易日市场概览">
+        <div class="tape-cell"><small>2026-08-04 上涨 / 下跌</small><strong>3,642 / 1,747</strong></div>
+        <div class="tape-cell"><small>2026-08-04 全 A 成交额</small><strong>2,228亿</strong></div>
+        <div class="tape-cell"><small>2026-08-04 涨跌中位数</small><strong class="up">+0.97%</strong></div>
+        <div class="tape-cell"><small>2026-08-04 涨停 / 跌停</small><strong>141 / 1</strong></div>
+        <div class="tape-cell"><small>本期材料</small><strong>11 事件 · 8 频道</strong></div>
+      </div>
+    </header>
+    <div role="status" style="margin:14px 22px 0;padding:12px 14px;border-left:4px solid #d88a16;background:#fff8eb;color:#6d4308;font-weight:700">历史回补版：原定自动化漏跑后于截止时间之外重建；仅保留可审计且时间不晚于2026-08-03 20:10的材料，不冒充20:10实时冻结版，也不声称同日晨晚连续性。</div>
+    <div class="report-shell">
+      
+        <aside class="source-health ok" aria-label="数据源状态">
+          <strong>人工正文核验完成 · 数据源状态正常</strong>
+          <span>run_id <code>20260804-2010-historical-backfill-reviewed-v1</code>；已记录 19 / 19 个来源状态。已完成入选事实的一手正文核验；本页为显著标注的历史回补修正版。</span>
+        </aside>
+        
+      <nav class="channel-nav" aria-label="日报频道">
+        <div class="evidence-gate" aria-label="证据账本">
+          <strong>20:10</strong>
+          <span><b>A</b> 0</span>
+          <span><b>B</b> 0</span>
+          <span><b>C</b> 0</span>
+          <span><b>D</b> 1</span>
+        </div>
+        <div class="channel-links">
+            <a id="channel-link-overview" class="channel-link"
+               href="#channel-overview" data-channel-link="overview"
+               data-label="今日总览">
+              <span>今日总览</span><small>5</small>
+            </a>
+            
+            <a id="channel-link-close_review" class="channel-link"
+               href="#channel-close_review" data-channel-link="close_review"
+               data-label="收盘复盘">
+              <span>收盘复盘</span><small>10</small>
+            </a>
+            
+            <a id="channel-link-global" class="channel-link"
+               href="#channel-global" data-channel-link="global"
+               data-label="全球背景">
+              <span>全球背景</span><small>9</small>
+            </a>
+            
+            <a id="channel-link-watchlist" class="channel-link"
+               href="#channel-watchlist" data-channel-link="watchlist"
+               data-label="自选股">
+              <span>自选股</span>
+            </a>
+            
+            <a id="channel-link-themes" class="channel-link"
+               href="#channel-themes" data-channel-link="themes"
+               data-label="行业主题">
+              <span>行业主题</span><small>10</small>
+            </a>
+            
+            <a id="channel-link-st" class="channel-link"
+               href="#channel-st" data-channel-link="st"
+               data-label="ST 重组">
+              <span>ST 重组</span><small>1</small>
+            </a>
+            
+            <a id="channel-link-lixiao" class="channel-link"
+               href="#channel-lixiao" data-channel-link="lixiao"
+               data-label="李大霄">
+              <span>李大霄</span>
+            </a>
+            
+            <a id="channel-link-data" class="channel-link"
+               href="#channel-data" data-channel-link="data"
+               data-label="数据说明">
+              <span>数据说明</span>
+            </a>
+            </div>
+        <button id="show-all" class="show-all" type="button" aria-pressed="false">显示全文</button>
+      </nav>
+      <main class="channel-stage">
+    <section id="channel-overview" class="channel-panel" data-channel-panel="overview">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">3分钟收盘定位</div>
+        <h2>今日总览</h2>
+      </div>
+      <p>三分钟定位今天最值得看的变化。</p>
+    </div>
+    
+      <div class="state-thesis">
+        <div><h3>风险偏好修复，不等于所有主题同步转强</h3><p>市场宽度和成交额同步改善，但半导体、ST与九只自选股内部信号并不一致。今天应先区分经营事实、程序硬信号与纯交易热度。</p></div>
+        <div class="breadth-mini">
+          <strong>65.9%</strong><span>有成交证券上涨占比</span>
+          <div class="breadth-bar"><i style="width:65.9%"></i></div>
+        </div>
+      </div>
+      <div class="section-title"><h3>今天先看这五件事</h3><small>点击后自动切换到完整频道</small></div>
+      <div class="brief-list"></div>
+      <div class="integrity-strip">
+        <span>证据截止 <strong>20:10</strong></span>
+        <span>来源状态 <strong>19 / 19</strong></span>
+        <span>自选股覆盖 <strong>9 / 9</strong></span>
+        <span>视频内容 <strong>未取得</strong></span>
+      </div>
+      <div class="section-title"><h3>最近三项日历</h3><small>未来 7 日观察</small></div>
+      <div class="calendar-list">
+            <div class="calendar-item">
+              <time>08-04<br>待公布</time>
+              <div><strong>流通领域重要生产资料市场价格变动情况</strong><p>发布机构：国家统计局。</p></div>
+            </div>
+            
+            <div class="calendar-item">
+              <time>08-09<br>待公布</time>
+              <div><strong>居民消费价格指数月度报告</strong><p>发布机构：国家统计局。</p></div>
+            </div>
+            
+            <div class="calendar-item">
+              <time>08-09<br>待公布</time>
+              <div><strong>工业生产者价格指数月度报告</strong><p>发布机构：国家统计局。</p></div>
+            </div>
+            </div>
+      <div class="footer-note">本频道只做路线图；完整事实只在一个主频道出现，避免重复堆叠。</div>
+    </section>
+    
+    <section id="channel-close_review" class="channel-panel" data-channel-panel="close_review">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">A股完整收盘 / 晨报复核</div>
+        <h2>收盘复盘</h2>
+      </div>
+      <p>A股完整收盘结构、五个主题与晨报判断的证据复核。</p>
+    </div>
+    
+      <div class="state-thesis">
+        <div><h3>A股完整收盘与核心市场结构指标已取得</h3><p>成交历史比较、炸板连板、五个主题扩散及九只自选股行业相对强弱均已接入。</p></div>
+      </div>
+      <div class="close-grid">
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>市场宽度与成交</h3>
+              <p>上涨3642家、下跌1747家、平盘140家；成交额2228.441亿元。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>涨跌分布与成交→判断指数表象是否得到市场内部结构支持。</p>
+              <span class="review-verdict">成交额较前一交易日+10.81%，较前5日均值-1.22%，较前20日均值-11.99%。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 供应商统计口径</p>
+              <h3>涨跌停、炸板与连板结构</h3>
+              <p>全A重建口径涨停141家、跌停1家；供应商非ST口径炸板15家，连板19家。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>涨跌停与连板分布→观察短线风险偏好和分歧强度。</p>
+              <span class="review-verdict">连板梯队：2板11家、3板6家、4板1家、7板1家；全A重建与非ST供应商名单口径不同，不混合比较。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">模型推断</p>
+              <h3>大小盘与成长代理</h3>
+              <p>沪深300减中证1000为-1.5455个百分点；创业板指减沪深300为4.3733个百分点。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>沪深300减中证1000作为大小盘代理；创业板指减沪深300作为成长相对价值代理，不等同于完整风格因子。</p>
+              <span class="review-verdict">这里只是透明定义的指数代理，不等同于完整风格因子。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">样本边界</p>
+              <h3>晨报复盘：非同日代表样本</h3>
+              <p>本晚报与晨报不是同日连续窗口，因此不把相同事件伪标为“晨报延续”，也不伪造新增事实或市场反应。</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>生产同日序列将沿用稳定event_id，再比较新增事实、市场反应、判断变化和观察项变化。</p>
+              <span class="review-verdict">当前配对：non_sequential_due_to_cutoff_safety</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>半导体</h3>
+              <p>芯片概念4.43%；存储芯片6.0%；第三代半导体5.22%；成分上涨占比90.14%，中位涨跌+3.85%，成交贡献43.01%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">主题扩散度与成交贡献已由同日成分股行情计算；分类来自第三方概念，主题间允许重叠，贡献率不可相加。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>可控核聚变</h3>
+              <p>可控核聚变2.65%；成分上涨占比71.55%，中位涨跌+1.44%，成交贡献3.93%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">主题扩散度与成交贡献已由同日成分股行情计算；分类来自第三方概念，主题间允许重叠，贡献率不可相加。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>电力</h3>
+              <p>智能电网2.42%；绿色电力0.59%；核电1.83%；成分上涨占比59.55%，中位涨跌+0.77%，成交贡献12.93%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">主题扩散度与成交贡献已由同日成分股行情计算；分类来自第三方概念，主题间允许重叠，贡献率不可相加。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>创新药</h3>
+              <p>医药电商0.96%；创新药2.23%；成分上涨占比71.79%，中位涨跌+1.47%，成交贡献4.00%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">主题扩散度与成交贡献已由同日成分股行情计算；分类来自第三方概念，主题间允许重叠，贡献率不可相加。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 统计代理</p>
+              <h3>ST板块重组预期</h3>
+              <p>当前没有可用主题涨跌代理。；成分上涨占比58.85%，中位涨跌+0.51%，成交贡献0.79%</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>主题代理涨跌→扩散与持续性观察；不直接归因为政策、公告或机构行为。</p>
+              <span class="review-verdict">主题扩散度与成交贡献已由同日成分股行情计算；分类来自第三方概念，主题间允许重叠，贡献率不可相加。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实 / 行业分类统计</p>
+              <h3>九只自选股相对申万一级行业</h3>
+              <p>海康威视-1.10个百分点；新亚制程-3.18个百分点；ST海王-2.21个百分点；ST金鸿+5.09个百分点；ST京蓝+3.44个百分点；永泰能源+0.73个百分点；杉杉股份-0.88个百分点；哈药股份+5.47个百分点；顺络电子+2.82个百分点</p>
+              <div class="context-meta"></div>
+              <p class="context-path"><strong>传导路径：</strong>个股涨跌减同日申万一级行业涨跌→区分个股行为与行业共同波动。</p>
+              <span class="review-verdict">行业成员关系与行业收益来自供应商结构化数据，属于统计口径。</span>
+              
+            </article>
+            </div>
+      <div class="footer-note">供应商“资金流”字段仅作统计口径，不表述为真实机构买卖行为；单日涨跌也不直接判定晨报观点对错。</div>
+    </section>
+    
+    <section id="channel-global" class="channel-panel" data-channel-panel="global">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">宏观 / 美日韩 / 世界局势</div>
+        <h2>全球背景</h2>
+      </div>
+      <p>只保留与A股风险偏好、行业供需、成本、政策或估值相关的全球事实。</p>
+    </div>
+    
+      <div class="integrity-strip">
+        <span>窗口 <strong>2026-08-04T20:10:00+08:00</strong></span>
+        <span>行情状态 <strong>完整收盘、不可用项逐项标注</strong></span>
+        <span>可用项 <strong>8</strong></span>
+      </div>
+      <div class="global-grid">
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>美国 · 标普500</h3>
+              <p>标普500最近完整交易日20260803收于7600.5044，涨跌幅1.4791%。</p>
+              <div class="context-meta"><span>20260803</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国大盘风险偏好与折现率预期→全球权益风险预算→A股宽基与成长价值风格观察</p>
+              <span class="review-verdict">指数变化只作为跨市场背景，不能单独推出A股或个股方向。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>美国 · 道琼斯工业指数</h3>
+              <p>道琼斯工业指数最近完整交易日20260803收于53178.4105，涨跌幅1.3211%。</p>
+              <div class="context-meta"><span>20260803</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国传统行业与大盘风险偏好→全球周期和价值风格→A股价值与电力主题风险预算观察</p>
+              <span class="review-verdict">指数变化不能替代A股行业、公司公告或经营数据。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>美国 · 纳斯达克综合指数</h3>
+              <p>纳斯达克综合指数最近完整交易日20260803收于25913.9，涨跌幅2.1284%。</p>
+              <div class="context-meta"><span>20260803</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国科技风险偏好→全球半导体估值与资本开支预期→A股半导体及电子链观察</p>
+              <span class="review-verdict">海外科技指数不能证明国内公司订单、利润或短期股价变化。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>日本 · 日经225</h3>
+              <p>日经225最近完整交易日20260804收于63957.53，涨跌幅0.3178%。</p>
+              <div class="context-meta"><span>20260804</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>日本制造业与股票风险偏好→亚洲设备和电子产业链预期→A股相关主题估值观察</p>
+              <span class="review-verdict">日经指数只能提供背景，不能替代产业链订单证据。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认行情事实</p>
+              <h3>韩国 · 韩国综合指数</h3>
+              <p>韩国综合指数最近完整交易日20260804收于6358.95，涨跌幅1.6221%。</p>
+              <div class="context-meta"><span>20260804</span><span>Tier C｜Tushare index_global</span><span>最近完整收盘</span></div>
+              <p class="context-path"><strong>传导路径：</strong>韩国电子权重市场表现→存储和电子产业链预期→A股半导体及被动元件观察</p>
+              <span class="review-verdict">韩国指数涨跌不能替代公司公告、价格或产能证据。</span>
+              
+            </article>
+            
+            <article class="context-card unavailable-card">
+              <p class="context-kind">未核实信息</p>
+              <h3>世界经济与政策</h3>
+              <p>来源可用、窗口内无入选事项。</p>
+              <div class="context-meta"><span>2026-08-04T20:10:00+08:00</span></div>
+              <p class="context-path"><strong>传导路径：</strong>全球增长、通胀与政策预期→利率和汇率→A股估值、资金风险偏好与行业需求预期。</p>
+              <span class="review-verdict">官方发布记录不等于材料内全部判断已核实，未经正文复核不据此形成方向性宏观结论。</span>
+              
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>Israel violates Lebanese airspace, kills over two dozen in Gaza in weekend strikes</h3>
+              <p>本轮读取联合国新闻正文：联合国人道协调厅（OCHA）称，以军空袭、炮击和射击在周末继续发生；正文将死亡人数表述为“据新闻报道超过25人”，因此本报告保留该归因而不作独立确认。；联合国驻黎巴嫩临时部队（UNIFIL）称，其在周四至周日期间记录到125次侵犯黎巴嫩领空的行为，合计飞越时间超过418小时。；世界粮食计划署（WFP）调查称，市场价格使四成受访家庭难以负担基本食品，近半数受访家庭表示家中食物已经耗尽；这些数字属于联合国机构调查结果。</p>
+              <div class="context-meta"><span>2026-08-03T20:00:00+08:00</span><span>Tier B official discovery</span></div>
+              <p class="context-path"><strong>传导路径：</strong>政策冲突与地缘风险→能源、贸易和供应链→A股相关行业成本、订单预期与风险偏好。</p>
+              <span class="review-verdict">官方表态、冲突归责和第三方主张必须保留归因；未经独立证据不得改写为客观事实。；未核实/限制：联合国官方页面可确认联合国机构的发布和表述，但不能自动成为对交战各方行为、伤亡数字及各国当局说法的独立事实确认。；本报告未独立核验相关军事行动、伤亡统计、停火方案执行情况或任何A股公司的直接业务暴露。</span>
+              <a class="action-link" href="https://news.un.org/feed/view/en/story/2026/08/1168067" target="_blank" rel="noreferrer">查看官方原文</a>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>美国国债收益率曲线</h3>
+              <p>美国财政部2026-08-03日度曲线：2年期4.25%，10年期4.7%，30年期5.23%。</p>
+              <div class="context-meta"><span>2026-08-03</span><span>Tier A｜美国财政部</span><span>利率</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美国无风险利率→全球权益折现率与美元流动性→A股成长估值和外资风险偏好。</p>
+              <span class="review-verdict">日度收益率曲线是背景变量，不能单独推导A股指数或个股次日方向。</span>
+              <a class="action-link" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&amp;field_tdr_date_value=2026" target="_blank" rel="noreferrer">查看官方原文</a>
+            </article>
+            
+            <article class="context-card">
+              <p class="context-kind">已确认事实</p>
+              <h3>主要汇率参考交叉盘</h3>
+              <p>ECB 2026-08-03欧元参考汇率复算：美元/人民币6.752579，美元/日元156.679671，美元/韩元1427.048114。</p>
+              <div class="context-meta"><span>2026-08-03</span><span>Tier A｜欧洲央行</span><span>汇率</span></div>
+              <p class="context-path"><strong>传导路径：</strong>美元对人民币、日元和韩元的相对强弱→亚洲资金与出口定价预期→A股风险偏好和行业成本。</p>
+              <span class="review-verdict">ECB参考交叉盘不能冒充境内人民币中间价、离岸人民币收盘价或实时交易价格。</span>
+              <a class="action-link" href="https://data-api.ecb.europa.eu/service/data/EXR/D.USD+JPY+CNY+KRW.EUR.SP00.A?format=csvdata&amp;startPeriod=2026-07-21" target="_blank" rel="noreferrer">查看官方原文</a>
+            </article>
+            </div>
+      <div class="footer-note">全球背景只解释风险偏好、供需、成本、政策或估值传导，不能替代个股公告与经营证据。</div>
+    </section>
+    
+    <section id="channel-watchlist" class="channel-panel" data-channel-panel="watchlist">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">9只标的 / 直接关联</div>
+        <h2>自选股</h2>
+      </div>
+      <p>九只股票的新增、热度与已检查状态。</p>
+    </div>
+    
+      <div class="status-summary">
+        <span class="status-pill"><strong>0</strong> 只 24小时新增</span>
+        <span class="status-pill"><strong>2</strong> 只需跟踪背景</span>
+        <span class="status-pill"><strong>7</strong> 只无重大经营新增</span>
+      </div>
+      <div class="section-title"><h3>九只股票收盘与盘中路径</h3><small>点击查看价格接受、承接、分歧与相对强弱证据</small></div>
+      <div class="stock-list">
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>海康威视</strong><small>002415</small></span>
+                <span class="stock-pct up">+1.79%</span>
+                <span class="stock-metric">换手 1.27%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>38.63</strong></div>
+                <div><small>PE-TTM / PB</small><strong>21.54 / 4.20</strong></div>
+                <div><small>L2 净额代理</small><strong>+2.021 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>27.6%</strong></div>
+                <div><small>相对沪深300</small><strong>+0.52 个百分点</strong></div>
+                <div><small>相对计算机</small><strong>-1.10 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="海康威视 002415.SZ 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>海康威视 002415.SZ 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="127.4" x2="626.0" y2="127.4" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,113 L55.1,129.8 L62.3,157.5 L69.4,156.3 L76.5,170.7 L83.7,149 L90.8,170.7 L98,158.7 L105.1,153.8 L112.2,132.2 L119.4,123.8 L126.5,108.2 L133.6,81.8 L140.8,77 L147.9,90.2 L155,69.8 L162.2,114.2 L169.3,111.8 L176.4,90.2 L183.6,95 L190.7,102.2 L197.9,107 L205,113 L212.1,101 L219.3,102.2 L226.4,89 L233.5,91.4 L240.7,65 L247.8,63.8 L254.9,52.9 L262.1,60.2 L269.2,71 L276.3,83 L283.5,79.4 L290.6,75.8 L297.8,78.2 L304.9,77 L312,83 L319.2,83 L326.3,81.8 L333.4,75.8 L340.6,87.8 L347.7,85.4 L354.8,77 L362,67.4 L369.1,66.2 L376.2,51.7 L383.4,40.9 L390.5,42.1 L397.7,37.3 L404.8,50.5 L411.9,50.5 L419.1,51.7 L426.2,52.9 L433.3,55.4 L440.5,50.5 L447.6,57.8 L454.7,52.9 L461.9,59 L469,54.2 L476.1,61.4 L483.3,61.4 L490.4,51.7 L497.6,43.3 L504.7,52.9 L511.8,57.8 L519,61.4 L526.1,66.2 L533.2,69.8 L540.4,71 L547.5,52.9 L554.6,43.3 L561.8,46.9 L568.9,45.7 L576,38.5 L583.2,50.5 L590.3,56.6 L597.5,52.9 L604.6,51.7 L611.7,48.1 L618.9,52.9 L626,45.7" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,90.1 L55.1,107 L62.3,121.3 L69.4,130.6 L76.5,137.5 L83.7,139.1 L90.8,140.3 L98,141.3 L105.1,141.9 L112.2,142.1 L119.4,141 L126.5,138.4 L133.6,135.3 L140.8,130.9 L147.9,129.1 L155,124.7 L162.2,123.2 L169.3,122.8 L176.4,122.3 L183.6,121.9 L190.7,121.7 L197.9,121.5 L205,121.3 L212.1,121.2 L219.3,121 L226.4,120.8 L233.5,120.5 L240.7,119.3 L247.8,118.3 L254.9,116.1 L262.1,114.7 L269.2,114.1 L276.3,113.7 L283.5,113.5 L290.6,113.3 L297.8,113.1 L304.9,112.8 L312,112.5 L319.2,112.4 L326.3,112.1 L333.4,111.9 L340.6,111.4 L347.7,111.1 L354.8,110.5 L362,110.2 L369.1,109.6 L376.2,108.9 L383.4,106.8 L390.5,105.1 L397.7,104.1 L404.8,103.5 L411.9,103 L419.1,102.4 L426.2,102 L433.3,101.5 L440.5,101.2 L447.6,100.9 L454.7,100.5 L461.9,100.2 L469,99.9 L476.1,99.5 L483.3,99.4 L490.4,99.1 L497.6,98.6 L504.7,98.2 L511.8,97.9 L519,97.6 L526.1,97.3 L533.2,96.8 L540.4,96.6 L547.5,96.4 L554.6,95.4 L561.8,94.1 L568.9,93.6 L576,92.9 L583.2,92.6 L590.3,92.2 L597.5,91.9 L604.6,91.4 L611.7,90.6 L618.9,90.2 L626,89.2" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#2a8c68" opacity=".58"/><rect x="55.8" y="223.7" width="12.6" height="20.3" fill="#2a8c68" opacity=".58"/><rect x="69.9" y="231.6" width="12.6" height="12.4" fill="#2a8c68" opacity=".58"/><rect x="84" y="237.3" width="12.6" height="6.7" fill="#cf2634" opacity=".58"/><rect x="98.1" y="241" width="12.6" height="3" fill="#2a8c68" opacity=".58"/><rect x="112.2" y="240.3" width="12.6" height="3.7" fill="#cf2634" opacity=".58"/><rect x="126.3" y="235.4" width="12.6" height="8.6" fill="#cf2634" opacity=".58"/><rect x="140.4" y="239.6" width="12.6" height="4.4" fill="#cf2634" opacity=".58"/><rect x="154.5" y="236.1" width="12.6" height="7.9" fill="#2a8c68" opacity=".58"/><rect x="168.6" y="239.9" width="12.6" height="4.1" fill="#cf2634" opacity=".58"/><rect x="182.7" y="242.5" width="12.6" height="1.5" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="240.3" width="12.6" height="3.7" fill="#cf2634" opacity=".58"/><rect x="210.9" y="242.1" width="12.6" height="1.9" fill="#2a8c68" opacity=".58"/><rect x="225" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="239.1" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="253.2" y="239" width="12.6" height="5" fill="#cf2634" opacity=".58"/><rect x="267.3" y="240.6" width="12.6" height="3.4" fill="#2a8c68" opacity=".58"/><rect x="281.4" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="309.6" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="323.7" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="337.8" y="240.9" width="12.6" height="3.1" fill="#2a8c68" opacity=".58"/><rect x="351.9" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="366" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="380.1" y="233.9" width="12.6" height="10.1" fill="#cf2634" opacity=".58"/><rect x="394.2" y="240.9" width="12.6" height="3.1" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="239.7" width="12.6" height="4.3" fill="#2a8c68" opacity=".58"/><rect x="422.4" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="436.5" y="241.5" width="12.6" height="2.5" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="464.6" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="478.7" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="492.8" y="240.4" width="12.6" height="3.6" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="521" y="240.4" width="12.6" height="3.6" fill="#2a8c68" opacity=".58"/><rect x="535.1" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="549.2" y="236.4" width="12.6" height="7.6" fill="#cf2634" opacity=".58"/><rect x="563.3" y="239.4" width="12.6" height="4.6" fill="#cf2634" opacity=".58"/><rect x="577.4" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="591.5" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="605.6" y="240.6" width="12.6" height="3.4" fill="#cf2634" opacity=".58"/><rect x="619.7" y="234.2" width="12.6" height="9.8" fill="#cf2634" opacity=".58"/><circle cx="387" cy="25.3" r="3" fill="#cf2634"/><circle cx="72.4" cy="176.7" r="3" fill="#2a8c68"/><text x="387" y="18.3" text-anchor="middle" font-size="10" fill="#a51f2a">高 38.8</text><text x="72.4" y="190.7" text-anchor="middle" font-size="10" fill="#267357">低 37.5</text><text x="5" y="31" font-size="10" fill="#69737c">38.8</text><text x="5" y="184" font-size="10" fill="#69737c">37.5</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+0.32%，前30分钟-0.24%；先在09:41探至日内低位，再于13:20触及高位。午后+0.73%，最后30分钟-0.36%；收盘位于全天价格区间87%位置，约90%的分钟收在累计均价线上方。【模型解读】低位抛压随后被吸收，且修复保持到收盘；价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对深证成指弱1.46个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>新亚制程</strong><small>002388</small></span>
+                <span class="stock-pct up">+2.55%</span>
+                <span class="stock-metric">换手 9.19%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>4.82</strong></div>
+                <div><small>PE-TTM / PB</small><strong>亏损/不适用 / 2.57</strong></div>
+                <div><small>L2 净额代理</small><strong>-0.086 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>94.3%</strong></div>
+                <div><small>相对沪深300</small><strong>+1.28 个百分点</strong></div>
+                <div><small>相对电子</small><strong>-3.18 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="新亚制程 002388.SZ 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>新亚制程 002388.SZ 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="161.1" x2="626.0" y2="161.1" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,113.5 L55.1,170.7 L62.3,151.6 L69.4,142.1 L76.5,94.5 L83.7,123 L90.8,132.6 L98,123 L105.1,123 L112.2,104 L119.4,113.5 L126.5,123 L133.6,104 L140.8,94.5 L147.9,104 L155,75.4 L162.2,65.9 L169.3,46.9 L176.4,65.9 L183.6,56.4 L190.7,56.4 L197.9,56.4 L205,46.9 L212.1,56.4 L219.3,37.3 L226.4,46.9 L233.5,37.3 L240.7,46.9 L247.8,56.4 L254.9,56.4 L262.1,65.9 L269.2,56.4 L276.3,65.9 L283.5,46.9 L290.6,56.4 L297.8,65.9 L304.9,65.9 L312,56.4 L319.2,65.9 L326.3,56.4 L333.4,56.4 L340.6,56.4 L347.7,85 L354.8,94.5 L362,94.5 L369.1,94.5 L376.2,94.5 L383.4,104 L390.5,85 L397.7,85 L404.8,75.4 L411.9,75.4 L419.1,65.9 L426.2,65.9 L433.3,65.9 L440.5,65.9 L447.6,75.4 L454.7,65.9 L461.9,65.9 L469,65.9 L476.1,65.9 L483.3,75.4 L490.4,46.9 L497.6,46.9 L504.7,56.4 L511.8,56.4 L519,65.9 L526.1,85 L533.2,75.4 L540.4,75.4 L547.5,75.4 L554.6,65.9 L561.8,75.4 L568.9,85 L576,75.4 L583.2,65.9 L590.3,65.9 L597.5,65.9 L604.6,75.4 L611.7,65.9 L618.9,65.9 L626,46.9" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,139.7 L55.1,128.3 L62.3,133.6 L69.4,136 L76.5,131.3 L83.7,128.1 L90.8,127.8 L98,128.2 L105.1,127.7 L112.2,127.1 L119.4,126.3 L126.5,125.7 L133.6,124.5 L140.8,122.5 L147.9,122 L155,120.7 L162.2,117.7 L169.3,111 L176.4,110 L183.6,109.5 L190.7,109 L197.9,107.3 L205,106.5 L212.1,106.2 L219.3,105.5 L226.4,104.7 L233.5,103.5 L240.7,102.7 L247.8,102.1 L254.9,101.7 L262.1,101.4 L269.2,100.9 L276.3,100.4 L283.5,100 L290.6,99.6 L297.8,99.4 L304.9,99.1 L312,99 L319.2,98.9 L326.3,98.7 L333.4,98 L340.6,97.4 L347.7,97 L354.8,96.9 L362,96.9 L369.1,96.9 L376.2,96.9 L383.4,96.9 L390.5,96.9 L397.7,96.8 L404.8,96.7 L411.9,96.4 L419.1,96.2 L426.2,96 L433.3,95.7 L440.5,95.5 L447.6,95.4 L454.7,95.2 L461.9,94.7 L469,94.5 L476.1,94.3 L483.3,94.1 L490.4,93.6 L497.6,93.1 L504.7,92.8 L511.8,92.5 L519,92.1 L526.1,91.9 L533.2,91.8 L540.4,91.7 L547.5,91.6 L554.6,91.5 L561.8,91.2 L568.9,91.1 L576,90.9 L583.2,90.8 L590.3,90.6 L597.5,90.4 L604.6,89.9 L611.7,89.7 L618.9,89.1 L626,87.8" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="237.9" width="12.6" height="6.1" fill="#cf2634" opacity=".58"/><rect x="69.9" y="233.9" width="12.6" height="10.1" fill="#cf2634" opacity=".58"/><rect x="84" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="98.1" y="241.8" width="12.6" height="2.2" fill="#2a8c68" opacity=".58"/><rect x="112.2" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="126.3" y="235.6" width="12.6" height="8.4" fill="#cf2634" opacity=".58"/><rect x="140.4" y="240.9" width="12.6" height="3.1" fill="#cf2634" opacity=".58"/><rect x="154.5" y="240.8" width="12.6" height="3.2" fill="#cf2634" opacity=".58"/><rect x="168.6" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="182.7" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="196.8" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="210.9" y="242.4" width="12.6" height="1.6" fill="#2a8c68" opacity=".58"/><rect x="225" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="239.1" y="243.4" width="12.6" height="0.6" fill="#2a8c68" opacity=".58"/><rect x="253.2" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="267.3" y="240.5" width="12.6" height="3.5" fill="#cf2634" opacity=".58"/><rect x="281.4" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="309.6" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="323.7" y="240.1" width="12.6" height="3.9" fill="#2a8c68" opacity=".58"/><rect x="337.8" y="240.6" width="12.6" height="3.4" fill="#2a8c68" opacity=".58"/><rect x="351.9" y="235.9" width="12.6" height="8.1" fill="#2a8c68" opacity=".58"/><rect x="366" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="380.1" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="394.2" y="241.7" width="12.6" height="2.3" fill="#cf2634" opacity=".58"/><rect x="408.3" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="422.4" y="241" width="12.6" height="3" fill="#cf2634" opacity=".58"/><rect x="436.5" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="239.1" width="12.6" height="4.9" fill="#cf2634" opacity=".58"/><rect x="464.6" y="239.9" width="12.6" height="4.1" fill="#cf2634" opacity=".58"/><rect x="478.7" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="492.8" y="239.4" width="12.6" height="4.6" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="521" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="535.1" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="549.2" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="563.3" y="234.7" width="12.6" height="9.3" fill="#2a8c68" opacity=".58"/><rect x="577.4" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="591.5" y="241" width="12.6" height="3" fill="#cf2634" opacity=".58"/><rect x="605.6" y="240.3" width="12.6" height="3.7" fill="#cf2634" opacity=".58"/><rect x="619.7" y="233.6" width="12.6" height="10.4" fill="#cf2634" opacity=".58"/><circle cx="165.1" cy="18.3" r="3" fill="#cf2634"/><circle cx="48" cy="208.8" r="3" fill="#2a8c68"/><text x="165.1" y="13" text-anchor="middle" font-size="10" fill="#a51f2a">高 4.8</text><text x="48" y="198" text-anchor="middle" font-size="10" fill="#267357">低 4.7</text><text x="5" y="31" font-size="10" fill="#69737c">4.8</text><text x="5" y="184" font-size="10" fill="#69737c">4.7</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+1.06%，前30分钟+0.00%；先在09:31探至日内低位，再于10:19触及高位。午后+0.42%，最后30分钟+0.42%；收盘位于全天价格区间85%位置，约92%的分钟收在累计均价线上方。【模型解读】低位抛压随后被吸收，且修复保持到收盘；价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对深证成指弱0.70个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST海王</strong><small>000078</small></span>
+                <span class="stock-pct ">+0.00%</span>
+                <span class="stock-metric">换手 3.20%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>1.67</strong></div>
+                <div><small>PE-TTM / PB</small><strong>亏损/不适用 / 3.54</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.021 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>68.1%</strong></div>
+                <div><small>相对沪深300</small><strong>-1.27 个百分点</strong></div>
+                <div><small>相对医药生物</small><strong>-2.21 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="ST海王 000078.SZ 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>ST海王 000078.SZ 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="126.2" x2="626.0" y2="126.2" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,104 L55.1,170.7 L62.3,126.2 L69.4,37.3 L76.5,81.8 L83.7,81.8 L90.8,81.8 L98,59.6 L105.1,104 L112.2,104 L119.4,148.4 L126.5,126.2 L133.6,126.2 L140.8,148.4 L147.9,148.4 L155,148.4 L162.2,148.4 L169.3,148.4 L176.4,148.4 L183.6,126.2 L190.7,104 L197.9,126.2 L205,104 L212.1,104 L219.3,126.2 L226.4,104 L233.5,148.4 L240.7,126.2 L247.8,126.2 L254.9,126.2 L262.1,126.2 L269.2,148.4 L276.3,148.4 L283.5,126.2 L290.6,148.4 L297.8,126.2 L304.9,148.4 L312,148.4 L319.2,104 L326.3,104 L333.4,126.2 L340.6,126.2 L347.7,126.2 L354.8,148.4 L362,148.4 L369.1,126.2 L376.2,126.2 L383.4,126.2 L390.5,126.2 L397.7,126.2 L404.8,126.2 L411.9,126.2 L419.1,148.4 L426.2,148.4 L433.3,126.2 L440.5,126.2 L447.6,126.2 L454.7,148.4 L461.9,148.4 L469,148.4 L476.1,126.2 L483.3,126.2 L490.4,148.4 L497.6,126.2 L504.7,126.2 L511.8,148.4 L519,148.4 L526.1,148.4 L533.2,126.2 L540.4,148.4 L547.5,148.4 L554.6,148.4 L561.8,148.4 L568.9,148.4 L576,126.2 L583.2,148.4 L590.3,148.4 L597.5,126.2 L604.6,148.4 L611.7,126.2 L618.9,126.2 L626,126.2" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,88.7 L55.1,119.5 L62.3,119.9 L69.4,97.3 L76.5,91.1 L83.7,90.9 L90.8,90.3 L98,90 L105.1,90.9 L112.2,91.8 L119.4,93.6 L126.5,95 L133.6,96 L140.8,96.9 L147.9,97.3 L155,98 L162.2,98.9 L169.3,99.3 L176.4,99.7 L183.6,100.6 L190.7,101.3 L197.9,101.3 L205,101.4 L212.1,101.4 L219.3,101.8 L226.4,101.9 L233.5,102.5 L240.7,102.8 L247.8,102.9 L254.9,103.2 L262.1,103.3 L269.2,103.4 L276.3,103.5 L283.5,103.6 L290.6,103.7 L297.8,103.9 L304.9,103.9 L312,104 L319.2,104.3 L326.3,104.4 L333.4,104.5 L340.6,104.8 L347.7,104.9 L354.8,105.2 L362,105.3 L369.1,105.4 L376.2,105.5 L383.4,105.7 L390.5,105.8 L397.7,105.9 L404.8,106 L411.9,106.2 L419.1,106.4 L426.2,106.6 L433.3,106.8 L440.5,107.2 L447.6,107.3 L454.7,107.8 L461.9,107.9 L469,108 L476.1,108.2 L483.3,108.2 L490.4,108.5 L497.6,108.8 L504.7,108.9 L511.8,109 L519,109.2 L526.1,109.3 L533.2,109.4 L540.4,109.5 L547.5,109.6 L554.6,109.7 L561.8,109.8 L568.9,109.9 L576,110 L583.2,110.1 L590.3,110.2 L597.5,110.5 L604.6,110.7 L611.7,111.4 L618.9,112 L626,112.4" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#2a8c68" opacity=".58"/><rect x="55.8" y="229.2" width="12.6" height="14.8" fill="#2a8c68" opacity=".58"/><rect x="69.9" y="238.3" width="12.6" height="5.7" fill="#cf2634" opacity=".58"/><rect x="84" y="235.5" width="12.6" height="8.5" fill="#cf2634" opacity=".58"/><rect x="98.1" y="234.8" width="12.6" height="9.2" fill="#cf2634" opacity=".58"/><rect x="112.2" y="233.5" width="12.6" height="10.5" fill="#2a8c68" opacity=".58"/><rect x="126.3" y="241.7" width="12.6" height="2.3" fill="#2a8c68" opacity=".58"/><rect x="140.4" y="242.9" width="12.6" height="1.1" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="168.6" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="182.7" y="236.1" width="12.6" height="7.9" fill="#cf2634" opacity=".58"/><rect x="196.8" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="210.9" y="238.6" width="12.6" height="5.4" fill="#cf2634" opacity=".58"/><rect x="225" y="237.8" width="12.6" height="6.2" fill="#cf2634" opacity=".58"/><rect x="239.1" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="253.2" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="267.3" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="281.4" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="309.6" y="239.3" width="12.6" height="4.7" fill="#cf2634" opacity=".58"/><rect x="323.7" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="337.8" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="351.9" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="366" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="380.1" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="394.2" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="408.3" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="422.4" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="436.5" y="243.7" width="12.6" height="0.3" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="241.9" width="12.6" height="2.1" fill="#cf2634" opacity=".58"/><rect x="464.6" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="478.7" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="492.8" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="521" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="535.1" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="549.2" y="243.6" width="12.6" height="0.4" fill="#cf2634" opacity=".58"/><rect x="563.3" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="577.4" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="591.5" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="605.6" y="237.5" width="12.6" height="6.5" fill="#cf2634" opacity=".58"/><rect x="619.7" y="233.9" width="12.6" height="10.1" fill="#cf2634" opacity=".58"/><circle cx="67.5" cy="15.1" r="3" fill="#cf2634"/><circle cx="52.9" cy="170.7" r="3" fill="#2a8c68"/><text x="67.5" y="13" text-anchor="middle" font-size="10" fill="#a51f2a">高 1.7</text><text x="52.9" y="184.7" text-anchor="middle" font-size="10" fill="#267357">低 1.6</text><text x="5" y="31" font-size="10" fill="#69737c">1.7</text><text x="5" y="184" font-size="10" fill="#69737c">1.6</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+0.60%，前30分钟-1.19%；先在09:33探至日内低位，再于09:39触及高位。午后-0.60%，最后30分钟+0.00%；收盘位于全天价格区间29%位置，约10%的分钟收在累计均价线上方。【模型解读】价格多数时间受制于成交均价，反弹的持续接受度有限；收盘表现相对深证成指弱3.25个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST金鸿</strong><small>000669</small></span>
+                <span class="stock-pct up">+4.36%</span>
+                <span class="stock-metric">换手 0.90%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>3.59</strong></div>
+                <div><small>PE-TTM / PB</small><strong>55.47 / 40.17</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.081 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>15.3%</strong></div>
+                <div><small>相对沪深300</small><strong>+3.09 个百分点</strong></div>
+                <div><small>相对公用事业</small><strong>+5.09 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="ST金鸿 000669.SZ 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>ST金鸿 000669.SZ 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="170.7" x2="626.0" y2="170.7" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,148.4 L55.1,133.6 L62.3,148.4 L69.4,126.2 L76.5,111.4 L83.7,118.8 L90.8,118.8 L98,126.2 L105.1,118.8 L112.2,126.2 L119.4,133.6 L126.5,133.6 L133.6,126.2 L140.8,126.2 L147.9,126.2 L155,141 L162.2,141 L169.3,141 L176.4,141 L183.6,126.2 L190.7,126.2 L197.9,118.8 L205,118.8 L212.1,118.8 L219.3,126.2 L226.4,118.8 L233.5,111.4 L240.7,118.8 L247.8,118.8 L254.9,118.8 L262.1,104 L269.2,104 L276.3,96.6 L283.5,104 L290.6,104 L297.8,96.6 L304.9,96.6 L312,96.6 L319.2,104 L326.3,104 L333.4,104 L340.6,96.6 L347.7,104 L354.8,104 L362,104 L369.1,96.6 L376.2,104 L383.4,96.6 L390.5,104 L397.7,104 L404.8,104 L411.9,89.2 L419.1,96.6 L426.2,89.2 L433.3,81.8 L440.5,81.8 L447.6,59.6 L454.7,52.1 L461.9,67 L469,81.8 L476.1,67 L483.3,59.6 L490.4,67 L497.6,59.6 L504.7,67 L511.8,67 L519,67 L526.1,67 L533.2,67 L540.4,52.1 L547.5,44.7 L554.6,37.3 L561.8,52.1 L568.9,52.1 L576,52.1 L583.2,59.6 L590.3,59.6 L597.5,59.6 L604.6,59.6 L611.7,59.6 L618.9,67 L626,59.6" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,139.8 L55.1,131.4 L62.3,133 L69.4,133.8 L76.5,131.4 L83.7,128.7 L90.8,128.6 L98,128.4 L105.1,128.3 L112.2,128.2 L119.4,128.5 L126.5,128.5 L133.6,128.5 L140.8,128.4 L147.9,128.4 L155,128.5 L162.2,128.6 L169.3,128.6 L176.4,128.6 L183.6,128.6 L190.7,128.6 L197.9,128.1 L205,128.1 L212.1,128 L219.3,127.9 L226.4,127.7 L233.5,126.8 L240.7,126.7 L247.8,126.6 L254.9,126.6 L262.1,125.8 L269.2,125.5 L276.3,125.2 L283.5,125.2 L290.6,125.1 L297.8,124.6 L304.9,124.5 L312,124.4 L319.2,124.4 L326.3,124.2 L333.4,123.8 L340.6,123.7 L347.7,123.6 L354.8,123.6 L362,123.6 L369.1,123.4 L376.2,123.4 L383.4,123.3 L390.5,123.3 L397.7,123.2 L404.8,123.2 L411.9,122.5 L419.1,122.4 L426.2,122.1 L433.3,121.2 L440.5,119.7 L447.6,115.6 L454.7,110.1 L461.9,108.1 L469,107.9 L476.1,106.8 L483.3,105.4 L490.4,105.2 L497.6,105 L504.7,104.9 L511.8,104.9 L519,104.8 L526.1,103.9 L533.2,103.5 L540.4,102.2 L547.5,101.4 L554.6,100.5 L561.8,99.1 L568.9,98.6 L576,98.2 L583.2,98 L590.3,97.8 L597.5,97.6 L604.6,97.4 L611.7,97.1 L618.9,97 L626,96.6" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="227.4" width="12.6" height="16.6" fill="#2a8c68" opacity=".58"/><rect x="55.8" y="237.5" width="12.6" height="6.5" fill="#cf2634" opacity=".58"/><rect x="69.9" y="235.8" width="12.6" height="8.2" fill="#cf2634" opacity=".58"/><rect x="84" y="238.2" width="12.6" height="5.8" fill="#cf2634" opacity=".58"/><rect x="98.1" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="112.2" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="126.3" y="235.1" width="12.6" height="8.9" fill="#cf2634" opacity=".58"/><rect x="140.4" y="231" width="12.6" height="13" fill="#cf2634" opacity=".58"/><rect x="154.5" y="242.3" width="12.6" height="1.7" fill="#2a8c68" opacity=".58"/><rect x="168.6" y="237.9" width="12.6" height="6.1" fill="#2a8c68" opacity=".58"/><rect x="182.7" y="224" width="12.6" height="20" fill="#cf2634" opacity=".58"/><rect x="196.8" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="210.9" y="240.9" width="12.6" height="3.1" fill="#2a8c68" opacity=".58"/><rect x="225" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="239.1" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="253.2" y="241.4" width="12.6" height="2.6" fill="#cf2634" opacity=".58"/><rect x="267.3" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="281.4" y="244" width="12.6" height="0" fill="#cf2634" opacity=".58"/><rect x="295.5" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="309.6" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="323.7" y="232.6" width="12.6" height="11.4" fill="#cf2634" opacity=".58"/><rect x="337.8" y="241.4" width="12.6" height="2.6" fill="#2a8c68" opacity=".58"/><rect x="351.9" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="366" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="380.1" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="394.2" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="408.3" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="422.4" y="218.4" width="12.6" height="25.6" fill="#cf2634" opacity=".58"/><rect x="436.5" y="241.1" width="12.6" height="2.9" fill="#cf2634" opacity=".58"/><rect x="450.5" y="201.2" width="12.6" height="42.8" fill="#2a8c68" opacity=".58"/><rect x="464.6" y="232.8" width="12.6" height="11.2" fill="#cf2634" opacity=".58"/><rect x="478.7" y="237.3" width="12.6" height="6.7" fill="#cf2634" opacity=".58"/><rect x="492.8" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="506.9" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="521" y="241.5" width="12.6" height="2.5" fill="#cf2634" opacity=".58"/><rect x="535.1" y="225.8" width="12.6" height="18.2" fill="#cf2634" opacity=".58"/><rect x="549.2" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="563.3" y="227.9" width="12.6" height="16.1" fill="#cf2634" opacity=".58"/><rect x="577.4" y="240.4" width="12.6" height="3.6" fill="#cf2634" opacity=".58"/><rect x="591.5" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="605.6" y="241.2" width="12.6" height="2.8" fill="#cf2634" opacity=".58"/><rect x="619.7" y="231.7" width="12.6" height="12.3" fill="#cf2634" opacity=".58"/><circle cx="549.1" cy="29.9" r="3" fill="#cf2634"/><circle cx="48" cy="170.7" r="3" fill="#2a8c68"/><text x="549.1" y="22.9" text-anchor="middle" font-size="10" fill="#a51f2a">高 3.6</text><text x="48" y="184.7" text-anchor="middle" font-size="10" fill="#267357">低 3.4</text><text x="5" y="31" font-size="10" fill="#69737c">3.6</text><text x="5" y="184" font-size="10" fill="#69737c">3.4</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+0.87%，前30分钟+0.58%；先在09:31探至日内低位，再于14:28触及高位。午后+1.70%，最后30分钟-0.83%；收盘位于全天价格区间79%位置，约90%的分钟收在累计均价线上方。【模型解读】低位抛压随后被吸收，且修复保持到收盘；价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对深证成指强1.11个百分点；主要变化集中在尾盘但成交占比不高，应等待下一交易日确认定价是否延续。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>ST京蓝</strong><small>000711</small></span>
+                <span class="stock-pct up">+4.45%</span>
+                <span class="stock-metric">换手 3.54%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>5.16</strong></div>
+                <div><small>PE-TTM / PB</small><strong>亏损/不适用 / 23.01</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.395 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>71.4%</strong></div>
+                <div><small>相对沪深300</small><strong>+3.18 个百分点</strong></div>
+                <div><small>相对环保</small><strong>+3.44 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="ST京蓝 000711.SZ 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>ST京蓝 000711.SZ 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="170.7" x2="626.0" y2="170.7" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,135.4 L55.1,151.1 L62.3,135.4 L69.4,135.4 L76.5,119.7 L83.7,115.8 L90.8,115.8 L98,119.7 L105.1,111.8 L112.2,119.7 L119.4,123.6 L126.5,123.6 L133.6,119.7 L140.8,115.8 L147.9,123.6 L155,123.6 L162.2,115.8 L169.3,115.8 L176.4,119.7 L183.6,115.8 L190.7,100.1 L197.9,92.2 L205,72.6 L212.1,84.4 L219.3,84.4 L226.4,84.4 L233.5,84.4 L240.7,80.5 L247.8,72.6 L254.9,72.6 L262.1,53 L269.2,37.3 L276.3,53 L283.5,53 L290.6,60.9 L297.8,64.8 L304.9,56.9 L312,64.8 L319.2,60.9 L326.3,60.9 L333.4,64.8 L340.6,60.9 L347.7,60.9 L354.8,60.9 L362,60.9 L369.1,56.9 L376.2,68.7 L383.4,68.7 L390.5,64.8 L397.7,76.5 L404.8,80.5 L411.9,76.5 L419.1,84.4 L426.2,92.2 L433.3,80.5 L440.5,84.4 L447.6,88.3 L454.7,84.4 L461.9,84.4 L469,84.4 L476.1,80.5 L483.3,80.5 L490.4,84.4 L497.6,72.6 L504.7,64.8 L511.8,68.7 L519,72.6 L526.1,76.5 L533.2,76.5 L540.4,76.5 L547.5,72.6 L554.6,72.6 L561.8,68.7 L568.9,72.6 L576,60.9 L583.2,68.7 L590.3,64.8 L597.5,76.5 L604.6,76.5 L611.7,80.5 L618.9,80.5 L626,84.4" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,143.6 L55.1,141.2 L62.3,141.6 L69.4,139.2 L76.5,137.4 L83.7,132.2 L90.8,130.4 L98,129.6 L105.1,128.5 L112.2,128.1 L119.4,127.9 L126.5,127.9 L133.6,127.6 L140.8,127.5 L147.9,127.4 L155,127.3 L162.2,127.1 L169.3,127 L176.4,127 L183.6,126.9 L190.7,124.2 L197.9,123.4 L205,118 L212.1,116.2 L219.3,115.4 L226.4,114.9 L233.5,114.7 L240.7,114.3 L247.8,113.3 L254.9,112.7 L262.1,110 L269.2,106.6 L276.3,105.1 L283.5,104.6 L290.6,103.8 L297.8,103.3 L304.9,102.8 L312,102.6 L319.2,102.3 L326.3,102.1 L333.4,101.6 L340.6,101.3 L347.7,101 L354.8,100.6 L362,100.3 L369.1,100.2 L376.2,99.7 L383.4,99.2 L390.5,99.1 L397.7,98.6 L404.8,98.4 L411.9,98.3 L419.1,98.2 L426.2,98 L433.3,97.9 L440.5,97.8 L447.6,97.6 L454.7,97.6 L461.9,97.5 L469,97.5 L476.1,97.4 L483.3,97.4 L490.4,97.4 L497.6,97.3 L504.7,96.6 L511.8,96.3 L519,96.2 L526.1,96.1 L533.2,96 L540.4,95.9 L547.5,95.9 L554.6,95.7 L561.8,95.6 L568.9,95.5 L576,95.2 L583.2,95.2 L590.3,95.1 L597.5,94.9 L604.6,94.8 L611.7,94.7 L618.9,94.5 L626,94.2" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="237.3" width="12.6" height="6.7" fill="#cf2634" opacity=".58"/><rect x="69.9" y="234.7" width="12.6" height="9.3" fill="#cf2634" opacity=".58"/><rect x="84" y="236.2" width="12.6" height="7.8" fill="#cf2634" opacity=".58"/><rect x="98.1" y="240.8" width="12.6" height="3.2" fill="#cf2634" opacity=".58"/><rect x="112.2" y="241.8" width="12.6" height="2.2" fill="#2a8c68" opacity=".58"/><rect x="126.3" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="140.4" y="243.6" width="12.6" height="0.4" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="239.1" width="12.6" height="4.9" fill="#cf2634" opacity=".58"/><rect x="168.6" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="182.7" y="214.6" width="12.6" height="29.4" fill="#cf2634" opacity=".58"/><rect x="196.8" y="217.3" width="12.6" height="26.7" fill="#cf2634" opacity=".58"/><rect x="210.9" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="225" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="239.1" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="253.2" y="222" width="12.6" height="22" fill="#cf2634" opacity=".58"/><rect x="267.3" y="238.8" width="12.6" height="5.2" fill="#2a8c68" opacity=".58"/><rect x="281.4" y="235.3" width="12.6" height="8.7" fill="#2a8c68" opacity=".58"/><rect x="295.5" y="240" width="12.6" height="4" fill="#cf2634" opacity=".58"/><rect x="309.6" y="240.6" width="12.6" height="3.4" fill="#cf2634" opacity=".58"/><rect x="323.7" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="337.8" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="351.9" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="366" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="380.1" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="394.2" y="242.7" width="12.6" height="1.3" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="422.4" y="237.3" width="12.6" height="6.7" fill="#cf2634" opacity=".58"/><rect x="436.5" y="242.3" width="12.6" height="1.7" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="464.6" y="241.5" width="12.6" height="2.5" fill="#2a8c68" opacity=".58"/><rect x="478.7" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="492.8" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="506.9" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="521" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="535.1" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="549.2" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="563.3" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="577.4" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="591.5" y="240.4" width="12.6" height="3.6" fill="#2a8c68" opacity=".58"/><rect x="605.6" y="241.7" width="12.6" height="2.3" fill="#cf2634" opacity=".58"/><rect x="619.7" y="234.3" width="12.6" height="9.7" fill="#cf2634" opacity=".58"/><circle cx="265.1" cy="37.3" r="3" fill="#cf2634"/><circle cx="48" cy="162.8" r="3" fill="#2a8c68"/><text x="265.1" y="30.3" text-anchor="middle" font-size="10" fill="#a51f2a">高 5.3</text><text x="48" y="176.8" text-anchor="middle" font-size="10" fill="#267357">低 5</text><text x="5" y="31" font-size="10" fill="#69737c">5.3</text><text x="5" y="184" font-size="10" fill="#69737c">4.9</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+1.82%，前30分钟+0.60%；先在09:31探至日内低位，再于11:00触及高位。午后-1.15%，最后30分钟-0.58%；收盘位于全天价格区间62%位置，约98%的分钟收在累计均价线上方。【模型解读】价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对深证成指强1.20个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>永泰能源</strong><small>600157</small></span>
+                <span class="stock-pct ">+0.00%</span>
+                <span class="stock-metric">换手 1.53%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>1.60</strong></div>
+                <div><small>PE-TTM / PB</small><strong>159.11 / 0.74</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.964 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>36.0%</strong></div>
+                <div><small>相对沪深300</small><strong>-1.27 个百分点</strong></div>
+                <div><small>相对公用事业</small><strong>+0.73 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="永泰能源 600157.SH 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>永泰能源 600157.SH 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="104" x2="626.0" y2="104" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,43.5 L55.1,104 L62.3,43.5 L69.4,43.5 L76.5,104 L83.7,104 L90.8,164.5 L98,104 L105.1,104 L112.2,164.5 L119.4,104 L126.5,104 L133.6,104 L140.8,104 L147.9,104 L155,104 L162.2,104 L169.3,104 L176.4,164.5 L183.6,104 L190.7,104 L197.9,104 L205,104 L212.1,164.5 L219.3,164.5 L226.4,104 L233.5,164.5 L240.7,104 L247.8,164.5 L254.9,104 L262.1,104 L269.2,164.5 L276.3,164.5 L283.5,104 L290.6,104 L297.8,164.5 L304.9,104 L312,164.5 L319.2,164.5 L326.3,104 L333.4,164.5 L340.6,104 L347.7,104 L354.8,164.5 L362,104 L369.1,164.5 L376.2,164.5 L383.4,104 L390.5,104 L397.7,164.5 L404.8,164.5 L411.9,104 L419.1,164.5 L426.2,104 L433.3,164.5 L440.5,104 L447.6,104 L454.7,104 L461.9,164.5 L469,104 L476.1,104 L483.3,104 L490.4,104 L497.6,104 L504.7,104 L511.8,104 L519,104 L526.1,164.5 L533.2,104 L540.4,104 L547.5,164.5 L554.6,104 L561.8,104 L568.9,104 L576,104 L583.2,104 L590.3,164.5 L597.5,104 L604.6,104 L611.7,164.5 L618.9,164.5 L626,104" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,44.4 L55.1,45.5 L62.3,46.2 L69.4,47.1 L76.5,73.5 L83.7,74.8 L90.8,77.8 L98,81.9 L105.1,83 L112.2,83.5 L119.4,84.3 L126.5,84.8 L133.6,85.6 L140.8,86.4 L147.9,86.8 L155,88.7 L162.2,88.9 L169.3,89.3 L176.4,89.4 L183.6,89.6 L190.7,90.5 L197.9,90.5 L205,90.9 L212.1,91 L219.3,91.3 L226.4,91.5 L233.5,91.7 L240.7,92 L247.8,92.3 L254.9,92.4 L262.1,92.6 L269.2,93.4 L276.3,93.6 L283.5,93.7 L290.6,93.8 L297.8,93.8 L304.9,94 L312,94.2 L319.2,94.3 L326.3,94.5 L333.4,94.8 L340.6,95.2 L347.7,95.5 L354.8,95.6 L362,95.7 L369.1,95.9 L376.2,96.1 L383.4,96.3 L390.5,96.6 L397.7,97 L404.8,97.6 L411.9,98.1 L419.1,98.5 L426.2,98.8 L433.3,99 L440.5,99.4 L447.6,99.5 L454.7,99.6 L461.9,99.7 L469,100 L476.1,100.2 L483.3,100.3 L490.4,100.5 L497.6,100.6 L504.7,100.7 L511.8,100.8 L519,100.9 L526.1,101.2 L533.2,101.2 L540.4,101.4 L547.5,101.6 L554.6,101.7 L561.8,101.9 L568.9,102 L576,102.1 L583.2,102.3 L590.3,102.5 L597.5,102.8 L604.6,103.1 L611.7,103.7 L618.9,104.4 L626,104.8" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="69.9" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="84" y="226.3" width="12.6" height="17.7" fill="#2a8c68" opacity=".58"/><rect x="98.1" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="112.2" y="241.7" width="12.6" height="2.3" fill="#cf2634" opacity=".58"/><rect x="126.3" y="242.8" width="12.6" height="1.2" fill="#cf2634" opacity=".58"/><rect x="140.4" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="154.5" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="168.6" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="182.7" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="196.8" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="210.9" y="242.9" width="12.6" height="1.1" fill="#2a8c68" opacity=".58"/><rect x="225" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="239.1" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="253.2" y="243.4" width="12.6" height="0.6" fill="#cf2634" opacity=".58"/><rect x="267.3" y="243.8" width="12.6" height="0.2" fill="#cf2634" opacity=".58"/><rect x="281.4" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="309.6" y="243.9" width="12.6" height="0.1" fill="#cf2634" opacity=".58"/><rect x="323.7" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="337.8" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="351.9" y="243.7" width="12.6" height="0.3" fill="#cf2634" opacity=".58"/><rect x="366" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="380.1" y="243.5" width="12.6" height="0.5" fill="#cf2634" opacity=".58"/><rect x="394.2" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="408.3" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="422.4" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="436.5" y="243" width="12.6" height="1" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="464.6" y="235.2" width="12.6" height="8.8" fill="#cf2634" opacity=".58"/><rect x="478.7" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="492.8" y="242.7" width="12.6" height="1.3" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="521" y="243.3" width="12.6" height="0.7" fill="#2a8c68" opacity=".58"/><rect x="535.1" y="239.9" width="12.6" height="4.1" fill="#cf2634" opacity=".58"/><rect x="549.2" y="242.5" width="12.6" height="1.5" fill="#cf2634" opacity=".58"/><rect x="563.3" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="577.4" y="242.3" width="12.6" height="1.7" fill="#2a8c68" opacity=".58"/><rect x="591.5" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="605.6" y="239.7" width="12.6" height="4.3" fill="#2a8c68" opacity=".58"/><rect x="619.7" y="211.4" width="12.6" height="32.6" fill="#cf2634" opacity=".58"/><circle cx="48" cy="-17" r="3" fill="#cf2634"/><circle cx="74.8" cy="164.5" r="3" fill="#2a8c68"/><text x="48" y="13" text-anchor="middle" font-size="10" fill="#a51f2a">高 1.6</text><text x="74.8" y="178.5" text-anchor="middle" font-size="10" fill="#267357">低 1.6</text><text x="5" y="31" font-size="10" fill="#69737c">1.6</text><text x="5" y="184" font-size="10" fill="#69737c">1.6</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+0.62%，前30分钟-0.62%；先在09:31触及日内高位，随后于09:42回落至低位。午后+0.00%，最后30分钟+0.63%；收盘位于全天价格区间33%位置，约4%的分钟收在累计均价线上方。【模型解读】早段上冲未被市场持续接受，卖压在后续时段占优；价格多数时间受制于成交均价，反弹的持续接受度有限；收盘表现相对上证指数弱0.33个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>杉杉股份</strong><small>600884</small></span>
+                <span class="stock-pct up">+0.48%</span>
+                <span class="stock-metric">换手 2.43%</span>
+                <span class="stock-state clear">无重大新增</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>12.68</strong></div>
+                <div><small>PE-TTM / PB</small><strong>37.67 / 1.26</strong></div>
+                <div><small>L2 净额代理</small><strong>-0.085 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>56.0%</strong></div>
+                <div><small>相对沪深300</small><strong>-0.80 个百分点</strong></div>
+                <div><small>相对电力设备</small><strong>-0.88 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="杉杉股份 600884.SH 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>杉杉股份 600884.SH 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="147.8" x2="626.0" y2="147.8" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,147.8 L55.1,163.7 L62.3,115.9 L69.4,92.1 L76.5,123.9 L83.7,139.8 L90.8,115.9 L98,100 L105.1,100 L112.2,131.9 L119.4,155.7 L126.5,147.8 L133.6,115.9 L140.8,123.9 L147.9,139.8 L155,131.9 L162.2,139.8 L169.3,139.8 L176.4,123.9 L183.6,131.9 L190.7,131.9 L197.9,147.8 L205,147.8 L212.1,139.8 L219.3,147.8 L226.4,163.7 L233.5,163.7 L240.7,147.8 L247.8,163.7 L254.9,155.7 L262.1,155.7 L269.2,155.7 L276.3,155.7 L283.5,163.7 L290.6,147.8 L297.8,147.8 L304.9,147.8 L312,139.8 L319.2,139.8 L326.3,147.8 L333.4,147.8 L340.6,139.8 L347.7,131.9 L354.8,131.9 L362,139.8 L369.1,147.8 L376.2,139.8 L383.4,155.7 L390.5,147.8 L397.7,155.7 L404.8,155.7 L411.9,139.8 L419.1,131.9 L426.2,139.8 L433.3,131.9 L440.5,139.8 L447.6,139.8 L454.7,139.8 L461.9,139.8 L469,123.9 L476.1,60.2 L483.3,52.3 L490.4,44.3 L497.6,52.3 L504.7,60.2 L511.8,76.1 L519,76.1 L526.1,100 L533.2,108 L540.4,100 L547.5,84.1 L554.6,100 L561.8,115.9 L568.9,108 L576,108 L583.2,115.9 L590.3,131.9 L597.5,131.9 L604.6,131.9 L611.7,131.9 L618.9,131.9 L626,100" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,128.6 L55.1,148 L62.3,145.4 L69.4,134.4 L76.5,132.3 L83.7,133.6 L90.8,132.7 L98,130.9 L105.1,130.1 L112.2,129.7 L119.4,130.6 L126.5,131.6 L133.6,131.3 L140.8,131.2 L147.9,131.2 L155,131.5 L162.2,132 L169.3,132.1 L176.4,132 L183.6,132.1 L190.7,132.3 L197.9,132.9 L205,133.3 L212.1,133.6 L219.3,133.7 L226.4,135.5 L233.5,136.1 L240.7,136.4 L247.8,136.9 L254.9,137.2 L262.1,137.5 L269.2,137.7 L276.3,138 L283.5,138.2 L290.6,138.8 L297.8,138.8 L304.9,138.8 L312,138.9 L319.2,138.9 L326.3,139 L333.4,139.2 L340.6,139.3 L347.7,139.4 L354.8,139.4 L362,139.3 L369.1,139.4 L376.2,139.5 L383.4,139.6 L390.5,139.7 L397.7,139.8 L404.8,140.1 L411.9,140.2 L419.1,140.2 L426.2,140.1 L433.3,140.1 L440.5,140.1 L447.6,140 L454.7,140 L461.9,140 L469,139.8 L476.1,127 L483.3,125.3 L490.4,121.5 L497.6,120.3 L504.7,119 L511.8,118.3 L519,118.1 L526.1,117.3 L533.2,117.1 L540.4,117 L547.5,116.7 L554.6,116.6 L561.8,116.5 L568.9,116.4 L576,116.4 L583.2,116.3 L590.3,116.4 L597.5,116.6 L604.6,116.8 L611.7,117.1 L618.9,117.4 L626,117.3" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201.8" width="12.6" height="42.2" fill="#cf2634" opacity=".58"/><rect x="55.8" y="215" width="12.6" height="29" fill="#cf2634" opacity=".58"/><rect x="69.9" y="226.3" width="12.6" height="17.7" fill="#cf2634" opacity=".58"/><rect x="84" y="224.3" width="12.6" height="19.7" fill="#cf2634" opacity=".58"/><rect x="98.1" y="230.9" width="12.6" height="13.1" fill="#cf2634" opacity=".58"/><rect x="112.2" y="227.9" width="12.6" height="16.1" fill="#2a8c68" opacity=".58"/><rect x="126.3" y="229.7" width="12.6" height="14.3" fill="#cf2634" opacity=".58"/><rect x="140.4" y="229.1" width="12.6" height="14.9" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="237.1" width="12.6" height="6.9" fill="#2a8c68" opacity=".58"/><rect x="168.6" y="239.9" width="12.6" height="4.1" fill="#cf2634" opacity=".58"/><rect x="182.7" y="232.8" width="12.6" height="11.2" fill="#cf2634" opacity=".58"/><rect x="196.8" y="239" width="12.6" height="5" fill="#cf2634" opacity=".58"/><rect x="210.9" y="241.3" width="12.6" height="2.7" fill="#cf2634" opacity=".58"/><rect x="225" y="240.5" width="12.6" height="3.5" fill="#cf2634" opacity=".58"/><rect x="239.1" y="239" width="12.6" height="5" fill="#cf2634" opacity=".58"/><rect x="253.2" y="237.6" width="12.6" height="6.4" fill="#2a8c68" opacity=".58"/><rect x="267.3" y="238.6" width="12.6" height="5.4" fill="#2a8c68" opacity=".58"/><rect x="281.4" y="207.7" width="12.6" height="36.3" fill="#cf2634" opacity=".58"/><rect x="295.5" y="237.4" width="12.6" height="6.6" fill="#cf2634" opacity=".58"/><rect x="309.6" y="239.8" width="12.6" height="4.2" fill="#cf2634" opacity=".58"/><rect x="323.7" y="235.4" width="12.6" height="8.6" fill="#cf2634" opacity=".58"/><rect x="337.8" y="234.7" width="12.6" height="9.3" fill="#cf2634" opacity=".58"/><rect x="351.9" y="237.6" width="12.6" height="6.4" fill="#2a8c68" opacity=".58"/><rect x="366" y="239.3" width="12.6" height="4.7" fill="#cf2634" opacity=".58"/><rect x="380.1" y="242.3" width="12.6" height="1.7" fill="#2a8c68" opacity=".58"/><rect x="394.2" y="239.9" width="12.6" height="4.1" fill="#cf2634" opacity=".58"/><rect x="408.3" y="238.6" width="12.6" height="5.4" fill="#cf2634" opacity=".58"/><rect x="422.4" y="235.7" width="12.6" height="8.3" fill="#2a8c68" opacity=".58"/><rect x="436.5" y="236.7" width="12.6" height="7.3" fill="#cf2634" opacity=".58"/><rect x="450.5" y="236" width="12.6" height="8" fill="#cf2634" opacity=".58"/><rect x="464.6" y="229.1" width="12.6" height="14.9" fill="#cf2634" opacity=".58"/><rect x="478.7" y="201" width="12.6" height="43" fill="#2a8c68" opacity=".58"/><rect x="492.8" y="206.7" width="12.6" height="37.3" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="240" width="12.6" height="4" fill="#cf2634" opacity=".58"/><rect x="521" y="228.2" width="12.6" height="15.8" fill="#cf2634" opacity=".58"/><rect x="535.1" y="239.6" width="12.6" height="4.4" fill="#cf2634" opacity=".58"/><rect x="549.2" y="240.1" width="12.6" height="3.9" fill="#cf2634" opacity=".58"/><rect x="563.3" y="238.7" width="12.6" height="5.3" fill="#cf2634" opacity=".58"/><rect x="577.4" y="222.1" width="12.6" height="21.9" fill="#cf2634" opacity=".58"/><rect x="591.5" y="227.4" width="12.6" height="16.6" fill="#2a8c68" opacity=".58"/><rect x="605.6" y="230" width="12.6" height="14" fill="#cf2634" opacity=".58"/><rect x="619.7" y="203" width="12.6" height="41" fill="#cf2634" opacity=".58"/><circle cx="472.4" cy="12.5" r="3" fill="#cf2634"/><circle cx="50.4" cy="179.6" r="3" fill="#2a8c68"/><text x="472.4" y="13" text-anchor="middle" font-size="10" fill="#a51f2a">高 12.8</text><text x="50.4" y="193.6" text-anchor="middle" font-size="10" fill="#267357">低 12.6</text><text x="5" y="31" font-size="10" fill="#69737c">12.8</text><text x="5" y="184" font-size="10" fill="#69737c">12.6</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+0.00%，前30分钟-0.08%；先在09:32探至日内低位，再于13:55触及高位。午后+0.48%，最后30分钟+0.00%；收盘位于全天价格区间48%位置，约45%的分钟收在累计均价线上方。【模型解读】收盘表现相对上证指数强0.14个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>哈药股份</strong><small>600664</small></span>
+                <span class="stock-pct up">+7.68%</span>
+                <span class="stock-metric">换手 19.42%</span>
+                <span class="stock-state background">行情异动</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>6.45</strong></div>
+                <div><small>PE-TTM / PB</small><strong>52.43 / 2.77</strong></div>
+                <div><small>L2 净额代理</small><strong>+1.498 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>99.2%</strong></div>
+                <div><small>相对沪深300</small><strong>+6.41 个百分点</strong></div>
+                <div><small>相对医药生物</small><strong>+5.47 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="哈药股份 600664.SH 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>哈药股份 600664.SH 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="170.7" x2="626.0" y2="170.7" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,159.2 L55.1,124.7 L62.3,129.3 L69.4,136.2 L76.5,150 L83.7,145.4 L90.8,133.9 L98,129.3 L105.1,143.1 L112.2,138.5 L119.4,145.4 L126.5,129.3 L133.6,129.3 L140.8,131.6 L147.9,133.9 L155,140.8 L162.2,122.4 L169.3,124.7 L176.4,122.4 L183.6,106.3 L190.7,104 L197.9,106.3 L205,97.1 L212.1,110.9 L219.3,117.8 L226.4,108.6 L233.5,117.8 L240.7,117.8 L247.8,115.5 L254.9,113.2 L262.1,122.4 L269.2,117.8 L276.3,120.1 L283.5,129.3 L290.6,122.4 L297.8,122.4 L304.9,127 L312,122.4 L319.2,127 L326.3,136.2 L333.4,133.9 L340.6,115.5 L347.7,127 L354.8,131.6 L362,122.4 L369.1,113.2 L376.2,120.1 L383.4,117.8 L390.5,108.6 L397.7,108.6 L404.8,115.5 L411.9,113.2 L419.1,115.5 L426.2,115.5 L433.3,122.4 L440.5,122.4 L447.6,115.5 L454.7,120.1 L461.9,117.8 L469,120.1 L476.1,120.1 L483.3,117.8 L490.4,120.1 L497.6,113.2 L504.7,115.5 L511.8,115.5 L519,115.5 L526.1,104 L533.2,60.3 L540.4,78.7 L547.5,81 L554.6,87.9 L561.8,90.2 L568.9,81 L576,51.1 L583.2,37.3 L590.3,48.8 L597.5,58 L604.6,58 L611.7,64.9 L618.9,60.3 L626,64.9" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,161.8 L55.1,147.8 L62.3,138.3 L69.4,137.1 L76.5,139.1 L83.7,140.1 L90.8,140.4 L98,140.3 L105.1,140.3 L112.2,140.1 L119.4,140.2 L126.5,140 L133.6,139.4 L140.8,139.2 L147.9,139.2 L155,139.2 L162.2,138.8 L169.3,138.3 L176.4,138.1 L183.6,136.7 L190.7,135.9 L197.9,134.6 L205,133.3 L212.1,132.5 L219.3,132.1 L226.4,131.9 L233.5,131.8 L240.7,131.7 L247.8,131.5 L254.9,131.4 L262.1,131.4 L269.2,131.3 L276.3,131.2 L283.5,131.1 L290.6,131.1 L297.8,131.1 L304.9,131 L312,131 L319.2,131 L326.3,131 L333.4,131 L340.6,131 L347.7,130.9 L354.8,130.9 L362,130.8 L369.1,130.6 L376.2,130.6 L383.4,130.5 L390.5,130.3 L397.7,130.2 L404.8,130.1 L411.9,130 L419.1,129.9 L426.2,129.9 L433.3,129.8 L440.5,129.8 L447.6,129.7 L454.7,129.7 L461.9,129.6 L469,129.6 L476.1,129.5 L483.3,129.5 L490.4,129.4 L497.6,129.4 L504.7,129.3 L511.8,129.3 L519,129.2 L526.1,128.5 L533.2,125.6 L540.4,123.5 L547.5,122.8 L554.6,122.4 L561.8,122 L568.9,121.4 L576,120.3 L583.2,117.4 L590.3,115.7 L597.5,114.7 L604.6,113.9 L611.7,113.4 L618.9,112.6 L626,111" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#cf2634" opacity=".58"/><rect x="55.8" y="224.1" width="12.6" height="19.9" fill="#2a8c68" opacity=".58"/><rect x="69.9" y="230" width="12.6" height="14" fill="#2a8c68" opacity=".58"/><rect x="84" y="237.8" width="12.6" height="6.2" fill="#cf2634" opacity=".58"/><rect x="98.1" y="239.7" width="12.6" height="4.3" fill="#cf2634" opacity=".58"/><rect x="112.2" y="239.2" width="12.6" height="4.8" fill="#cf2634" opacity=".58"/><rect x="126.3" y="238.4" width="12.6" height="5.6" fill="#2a8c68" opacity=".58"/><rect x="140.4" y="241" width="12.6" height="3" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="238" width="12.6" height="6" fill="#cf2634" opacity=".58"/><rect x="168.6" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="182.7" y="240.1" width="12.6" height="3.9" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="234.2" width="12.6" height="9.8" fill="#2a8c68" opacity=".58"/><rect x="210.9" y="241.2" width="12.6" height="2.8" fill="#2a8c68" opacity=".58"/><rect x="225" y="242.6" width="12.6" height="1.4" fill="#2a8c68" opacity=".58"/><rect x="239.1" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="253.2" y="242.7" width="12.6" height="1.3" fill="#cf2634" opacity=".58"/><rect x="267.3" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="281.4" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="295.5" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="309.6" y="242.8" width="12.6" height="1.2" fill="#2a8c68" opacity=".58"/><rect x="323.7" y="242.2" width="12.6" height="1.8" fill="#cf2634" opacity=".58"/><rect x="337.8" y="241.8" width="12.6" height="2.2" fill="#2a8c68" opacity=".58"/><rect x="351.9" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="366" y="243.1" width="12.6" height="0.9" fill="#cf2634" opacity=".58"/><rect x="380.1" y="240.8" width="12.6" height="3.2" fill="#cf2634" opacity=".58"/><rect x="394.2" y="243.1" width="12.6" height="0.9" fill="#2a8c68" opacity=".58"/><rect x="408.3" y="243" width="12.6" height="1" fill="#2a8c68" opacity=".58"/><rect x="422.4" y="243.4" width="12.6" height="0.6" fill="#2a8c68" opacity=".58"/><rect x="436.5" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="450.5" y="243.2" width="12.6" height="0.8" fill="#cf2634" opacity=".58"/><rect x="464.6" y="242.3" width="12.6" height="1.7" fill="#cf2634" opacity=".58"/><rect x="478.7" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="492.8" y="241.7" width="12.6" height="2.3" fill="#cf2634" opacity=".58"/><rect x="506.9" y="243.2" width="12.6" height="0.8" fill="#2a8c68" opacity=".58"/><rect x="521" y="239.1" width="12.6" height="4.9" fill="#cf2634" opacity=".58"/><rect x="535.1" y="235" width="12.6" height="9" fill="#2a8c68" opacity=".58"/><rect x="549.2" y="240.5" width="12.6" height="3.5" fill="#cf2634" opacity=".58"/><rect x="563.3" y="239.3" width="12.6" height="4.7" fill="#2a8c68" opacity=".58"/><rect x="577.4" y="233.1" width="12.6" height="10.9" fill="#2a8c68" opacity=".58"/><rect x="591.5" y="236" width="12.6" height="8" fill="#2a8c68" opacity=".58"/><rect x="605.6" y="240.2" width="12.6" height="3.8" fill="#cf2634" opacity=".58"/><rect x="619.7" y="230.4" width="12.6" height="13.6" fill="#cf2634" opacity=".58"/><circle cx="579.7" cy="35" r="3" fill="#cf2634"/><circle cx="50.4" cy="184.5" r="3" fill="#2a8c68"/><text x="579.7" y="28" text-anchor="middle" font-size="10" fill="#a51f2a">高 6.6</text><text x="50.4" y="198" text-anchor="middle" font-size="10" fill="#267357">低 5.9</text><text x="5" y="31" font-size="10" fill="#69737c">6.6</text><text x="5" y="184" font-size="10" fill="#69737c">5.9</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。 【行情路径】开盘相对昨收+0.83%，前30分钟+0.99%；先在09:32探至日内低位，再于14:39触及高位。午后+4.03%，最后30分钟+1.42%；收盘位于全天价格区间80%位置，约91%的分钟收在累计均价线上方。【模型解读】低位抛压随后被吸收，且修复保持到收盘；价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对上证指数强7.35个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            
+            <details class="stock-row">
+              <summary>
+                <span class="stock-name"><strong>顺络电子</strong><small>002138</small></span>
+                <span class="stock-pct up">+8.55%</span>
+                <span class="stock-metric">换手 6.87%</span>
+                <span class="stock-state background">行情异动</span>
+              </summary>
+              <div class="stock-detail">
+                <div><small>收盘</small><strong>47.23</strong></div>
+                <div><small>PE-TTM / PB</small><strong>38.77 / 5.80</strong></div>
+                <div><small>L2 净额代理</small><strong>+0.486 亿</strong></div>
+                <div><small>换手全 A 分位</small><strong>89.6%</strong></div>
+                <div><small>相对沪深300</small><strong>+7.28 个百分点</strong></div>
+                <div><small>相对电子</small><strong>+2.82 个百分点</strong></div>
+                <div style="grid-column:1/-1;background:#fff;padding:10px 0">
+                  <small style="margin:0 0 6px">2026-08-04 分时 · 蓝线价格 / 黄线累计均价</small>
+                  <svg class="intraday-chart" role="img" aria-label="顺络电子 002138.SZ 2026-08-04 分时图" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;background:#fbfcfd;border:1px solid #e3e7ea;border-radius:8px"><title>顺络电子 002138.SZ 2026-08-04 分时图</title><rect width="640" height="270" fill="#fbfcfd" rx="8"/><line x1="48" y1="24" x2="626" y2="24" stroke="#e7eaed"/><line x1="48" y1="104" x2="626" y2="104" stroke="#e7eaed"/><line x1="48" y1="184" x2="626" y2="184" stroke="#e7eaed"/><line x1="337" y1="24" x2="337" y2="244" stroke="#d7dce0" stroke-dasharray="3 4"/><line x1="48.0" y1="155.7" x2="626.0" y2="155.7" stroke="#9199a1" stroke-width="1" stroke-dasharray="5 4"/><path d="M48,164.6 L55.1,170.7 L62.3,155.4 L69.4,141.7 L76.5,125.2 L83.7,127.4 L90.8,111.8 L98,109.6 L105.1,112.4 L112.2,108.3 L119.4,114 L126.5,128.3 L133.6,132.2 L140.8,117.8 L147.9,129.9 L155,127.7 L162.2,116.9 L169.3,106.7 L176.4,115 L183.6,113.7 L190.7,109.9 L197.9,100 L205,107.3 L212.1,92.4 L219.3,91.7 L226.4,97.8 L233.5,92.4 L240.7,92.7 L247.8,97.5 L254.9,95.6 L262.1,97.8 L269.2,100 L276.3,102.6 L283.5,90.5 L290.6,86.7 L297.8,89.8 L304.9,88.6 L312,93.3 L319.2,86.7 L326.3,87.9 L333.4,81.2 L340.6,79.3 L347.7,70.1 L354.8,68.5 L362,69.5 L369.1,66.3 L376.2,59.9 L383.4,66.3 L390.5,66.6 L397.7,60.6 L404.8,61.2 L411.9,61.5 L419.1,52 L426.2,47.8 L433.3,45.3 L440.5,45.3 L447.6,51.3 L454.7,53.6 L461.9,57.7 L469,57.4 L476.1,57.4 L483.3,59.3 L490.4,54.8 L497.6,54.5 L504.7,54.8 L511.8,53.9 L519,53.6 L526.1,60.6 L533.2,56.7 L540.4,57.4 L547.5,53.6 L554.6,52 L561.8,57.4 L568.9,57.7 L576,54.5 L583.2,54.8 L590.3,53.2 L597.5,53.2 L604.6,53.6 L611.7,47.8 L618.9,42.7 L626,37.3" fill="none" stroke="#2671b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48,147.8 L55.1,155.5 L62.3,156.5 L69.4,153.9 L76.5,150.7 L83.7,146.8 L90.8,143.8 L98,142.6 L105.1,141.3 L112.2,139.2 L119.4,136.8 L126.5,136 L133.6,135.8 L140.8,135.4 L147.9,135.2 L155,135.1 L162.2,134.7 L169.3,133.9 L176.4,133.4 L183.6,133.2 L190.7,132.8 L197.9,131.8 L205,131.1 L212.1,129.5 L219.3,128.6 L226.4,128.1 L233.5,127.7 L240.7,126.9 L247.8,126 L254.9,125.6 L262.1,125.2 L269.2,124.6 L276.3,124.2 L283.5,124 L290.6,123.2 L297.8,122.7 L304.9,122.4 L312,122.1 L319.2,121.8 L326.3,121.5 L333.4,121 L340.6,119.6 L347.7,118.5 L354.8,117.5 L362,116.7 L369.1,115.2 L376.2,114.6 L383.4,113.8 L390.5,113.4 L397.7,112.9 L404.8,112.4 L411.9,112.1 L419.1,111.1 L426.2,110.2 L433.3,109.4 L440.5,107.7 L447.6,107.2 L454.7,106.8 L461.9,106.4 L469,106.1 L476.1,105.6 L483.3,105.4 L490.4,105.1 L497.6,104.8 L504.7,104.4 L511.8,104.1 L519,103.8 L526.1,103.1 L533.2,102.7 L540.4,102.3 L547.5,102 L554.6,101.7 L561.8,101 L568.9,100.7 L576,100.5 L583.2,100.2 L590.3,99.9 L597.5,99.5 L604.6,99.1 L611.7,98.4 L618.9,97.5 L626,95.8" fill="none" stroke="#d39b24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="41.7" y="201" width="12.6" height="43" fill="#2a8c68" opacity=".58"/><rect x="55.8" y="234.5" width="12.6" height="9.5" fill="#cf2634" opacity=".58"/><rect x="69.9" y="233.2" width="12.6" height="10.8" fill="#cf2634" opacity=".58"/><rect x="84" y="238.4" width="12.6" height="5.6" fill="#cf2634" opacity=".58"/><rect x="98.1" y="240.7" width="12.6" height="3.3" fill="#cf2634" opacity=".58"/><rect x="112.2" y="239.4" width="12.6" height="4.6" fill="#2a8c68" opacity=".58"/><rect x="126.3" y="240.3" width="12.6" height="3.7" fill="#2a8c68" opacity=".58"/><rect x="140.4" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="154.5" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="168.6" y="240.3" width="12.6" height="3.7" fill="#cf2634" opacity=".58"/><rect x="182.7" y="241.8" width="12.6" height="2.2" fill="#2a8c68" opacity=".58"/><rect x="196.8" y="240.9" width="12.6" height="3.1" fill="#cf2634" opacity=".58"/><rect x="210.9" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="225" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="239.1" y="240.8" width="12.6" height="3.2" fill="#2a8c68" opacity=".58"/><rect x="253.2" y="242.4" width="12.6" height="1.6" fill="#2a8c68" opacity=".58"/><rect x="267.3" y="239.1" width="12.6" height="4.9" fill="#2a8c68" opacity=".58"/><rect x="281.4" y="238.3" width="12.6" height="5.7" fill="#cf2634" opacity=".58"/><rect x="295.5" y="243.3" width="12.6" height="0.7" fill="#cf2634" opacity=".58"/><rect x="309.6" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="323.7" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="337.8" y="241.2" width="12.6" height="2.8" fill="#cf2634" opacity=".58"/><rect x="351.9" y="241.4" width="12.6" height="2.6" fill="#2a8c68" opacity=".58"/><rect x="366" y="241.6" width="12.6" height="2.4" fill="#2a8c68" opacity=".58"/><rect x="380.1" y="240.8" width="12.6" height="3.2" fill="#2a8c68" opacity=".58"/><rect x="394.2" y="242.4" width="12.6" height="1.6" fill="#cf2634" opacity=".58"/><rect x="408.3" y="239.6" width="12.6" height="4.4" fill="#cf2634" opacity=".58"/><rect x="422.4" y="240.6" width="12.6" height="3.4" fill="#cf2634" opacity=".58"/><rect x="436.5" y="241.9" width="12.6" height="2.1" fill="#2a8c68" opacity=".58"/><rect x="450.5" y="242.1" width="12.6" height="1.9" fill="#cf2634" opacity=".58"/><rect x="464.6" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="478.7" y="242.9" width="12.6" height="1.1" fill="#cf2634" opacity=".58"/><rect x="492.8" y="242.4" width="12.6" height="1.6" fill="#2a8c68" opacity=".58"/><rect x="506.9" y="242.6" width="12.6" height="1.4" fill="#cf2634" opacity=".58"/><rect x="521" y="241.3" width="12.6" height="2.7" fill="#cf2634" opacity=".58"/><rect x="535.1" y="241.6" width="12.6" height="2.4" fill="#cf2634" opacity=".58"/><rect x="549.2" y="243" width="12.6" height="1" fill="#cf2634" opacity=".58"/><rect x="563.3" y="241.8" width="12.6" height="2.2" fill="#cf2634" opacity=".58"/><rect x="577.4" y="242" width="12.6" height="2" fill="#2a8c68" opacity=".58"/><rect x="591.5" y="242" width="12.6" height="2" fill="#cf2634" opacity=".58"/><rect x="605.6" y="240.3" width="12.6" height="3.7" fill="#cf2634" opacity=".58"/><rect x="619.7" y="234.2" width="12.6" height="9.8" fill="#cf2634" opacity=".58"/><circle cx="623.6" cy="36.7" r="3" fill="#cf2634"/><circle cx="55.3" cy="174.2" r="3" fill="#2a8c68"/><text x="623.6" y="29.7" text-anchor="middle" font-size="10" fill="#a51f2a">高 47.2</text><text x="55.3" y="188.2" text-anchor="middle" font-size="10" fill="#267357">低 42.9</text><text x="5" y="31" font-size="10" fill="#69737c">47.6</text><text x="5" y="184" font-size="10" fill="#69737c">42.6</text><text x="48" y="261" font-size="10" fill="#69737c">09:30</text><text x="337" y="261" text-anchor="middle" font-size="10" fill="#69737c">11:30 / 13:00</text><text x="626" y="261" text-anchor="end" font-size="10" fill="#69737c">15:00</text><line x1="443" y1="13" x2="463" y2="13" stroke="#2671b8" stroke-width="2.5"/><text x="468" y="16" font-size="10" fill="#59636c">价格</text><line x1="512" y1="13" x2="532" y2="13" stroke="#d39b24" stroke-width="2"/><text x="537" y="16" font-size="10" fill="#59636c">累计均价</text></svg>
+                </div>
+                <div class="stock-note">未发现达到阈值的公司级新增；价格或换手异动仅作为后续核查线索。 【行情路径】开盘相对昨收-0.64%，前30分钟+3.68%；先在09:34探至日内低位，再于14:57触及高位。午后+2.83%，最后30分钟+0.98%；收盘位于全天价格区间100%位置，约97%的分钟收在累计均价线上方。【模型解读】低位抛压随后被吸收，且修复保持到收盘；价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对深证成指强5.30个百分点；主要变化集中在尾盘但成交占比不高，应等待下一交易日确认定价是否延续。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</div>
+              </div>
+            </details>
+            </div>
+      <div class="section-title"><h3>公司级事件</h3><small>0 条，按需展开证据</small></div>
+      <div class="event-stack"></div>
+      <div class="footer-note">资金净额与换手率只用于描述交易热度，不能替代订单、产品、公告或财务证据。</div>
+    </section>
+    
+    <section id="channel-themes" class="channel-panel" data-channel-panel="themes">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">行业 / 政策 / 上游</div>
+        <h2>行业主题</h2>
+      </div>
+      <p>半导体、核聚变、电力、创新药与原材料。</p>
+    </div>
+    
+      <div class="section-title"><h3>五条主题温度</h3><small>价格、资金与事实分开看</small></div>
+      <div class="theme-list">
+            <details class="theme-row">
+              <summary>
+                <h3>半导体</h3>
+                <span class="theme-signal up">+6.00%｜存储芯片</span>
+                <span class="theme-summary">匹配5个第三方概念口径；代表项为存储芯片。 成分上涨占比90.14%，中位涨跌+3.85%，成交贡献43.01%。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>可控核聚变</h3>
+                <span class="theme-signal up">+2.65%｜可控核聚变</span>
+                <span class="theme-summary">匹配1个第三方概念口径；代表项为可控核聚变。 成分上涨占比71.55%，中位涨跌+1.44%，成交贡献3.93%。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>电力</h3>
+                <span class="theme-signal up">+2.42%｜智能电网</span>
+                <span class="theme-summary">匹配5个第三方概念口径；代表项为智能电网。 成分上涨占比59.55%，中位涨跌+0.77%，成交贡献12.93%。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>创新药</h3>
+                <span class="theme-signal up">+2.23%｜创新药</span>
+                <span class="theme-summary">匹配2个第三方概念口径；代表项为创新药。 成分上涨占比71.79%，中位涨跌+1.47%，成交贡献4.00%。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            
+            <details class="theme-row">
+              <summary>
+                <h3>ST板块重组预期</h3>
+                <span class="theme-signal ">无匹配概念行</span>
+                <span class="theme-summary">本轮第三方概念表未匹配到同名口径。 成分上涨占比58.85%，中位涨跌+0.51%，成交贡献0.79%。</span>
+              </summary>
+              <p class="theme-detail"><strong>边界：</strong>第三方概念与资金统计仅作市场热度信号，不证明公司基本面或主题归属。</p>
+            </details>
+            </div>
+      <div class="section-title"><h3>行业与政策事件</h3><small>0 条</small></div>
+      <div class="event-stack"></div>
+      <div class="section-title"><h3>跨主题原材料</h3><small>主力期货代理，不是企业采购价</small></div>
+      <div class="commodity-grid">
+            <div class="commodity">
+              <small>JM.DCE</small>
+              <strong class="up">焦煤 +1.36%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>J.DCE</small>
+              <strong class="up">焦炭 +0.11%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>I.DCE</small>
+              <strong class="down">铁矿石 -0.43%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>CU.SHF</small>
+              <strong class="up">铜 +0.86%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>AL.SHF</small>
+              <strong class="up">铝 +0.95%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>NI.SHF</small>
+              <strong class="up">镍 +1.41%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>LC.GFE</small>
+              <strong class="up">碳酸锂 +0.84%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            
+            <div class="commodity">
+              <small>SI.GFE</small>
+              <strong class="up">工业硅 +0.18%</strong>
+              <p>主力合约代理；不等同于企业实际采购或销售价格。</p>
+            </div>
+            </div>
+    </section>
+    
+    <section id="channel-st" class="channel-panel" data-channel-panel="st">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">司法程序 / 管理人 / 风险警示</div>
+        <h2>ST 重组</h2>
+      </div>
+      <p>全 A 硬信号与三只自选 ST 的程序状态。</p>
+    </div>
+    
+      <div class="st-snapshot">
+        <div><small>当日 ST 风险警示池</small><strong>210</strong></div>
+        <div><small>上涨 / 下跌</small><strong>110 / 78</strong></div>
+        <div><small>涨跌中位数</small><strong class="up">+0.28%</strong></div>
+        <div><small>涨停 / 跌停</small><strong>2 / 1</strong></div>
+        <div><small>本报核心硬信号</small><strong>0</strong></div>
+      </div>
+      <div class="stage-line">
+        <span class="active">庭外重组</span><span>申请</span><span class="active">预重整</span>
+        <span>正式受理</span><span>投资人 / 方案</span><span class="active">执行与风险警示</span>
+      </div>
+      <div class="section-title"><h3>全 A 程序硬信号</h3><small>按法律与披露阶段区分</small></div>
+      <div class="event-stack"></div>
+      <div class="section-title"><h3>三只自选 ST</h3><small>未发现硬信号也明确显示</small></div>
+      <div class="calendar-list"><div class="calendar-item"><time>ST海王<br>000078</time><div><strong>无重大新增</strong><p>本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+0.60%，前30分钟-1.19%；先在09:33探至日内低位，再于09:39触及高位。午后-0.60%，最后30分钟+0.00%；收盘位于全天价格区间29%位置，约10%的分钟收在累计均价线上方。【模型解读】价格多数时间受制于成交均价，反弹的持续接受度有限；收盘表现相对深证成指弱3.25个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</p></div></div><div class="calendar-item"><time>ST金鸿<br>000669</time><div><strong>无重大新增</strong><p>本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+0.87%，前30分钟+0.58%；先在09:31探至日内低位，再于14:28触及高位。午后+1.70%，最后30分钟-0.83%；收盘位于全天价格区间79%位置，约90%的分钟收在累计均价线上方。【模型解读】低位抛压随后被吸收，且修复保持到收盘；价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对深证成指强1.11个百分点；主要变化集中在尾盘但成交占比不高，应等待下一交易日确认定价是否延续。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</p></div></div><div class="calendar-item"><time>ST京蓝<br>000711</time><div><strong>无重大新增</strong><p>本轮未发现达到阈值的公司级新增；行情数据只描述交易状态。 【行情路径】开盘相对昨收+1.82%，前30分钟+0.60%；先在09:31探至日内低位，再于11:00触及高位。午后-1.15%，最后30分钟-0.58%；收盘位于全天价格区间62%位置，约98%的分钟收在累计均价线上方。【模型解读】价格多数时间维持在当日成交均价之上，承接不是只发生在尾盘；收盘表现相对深证成指强1.20个百分点。 边界：盘中路径用于观察价格接受、承接与分歧，不证明具体资金身份，也不构成次日方向预测。收盘价与Tushare日线交叉核验。</p></div></div></div>
+      <div class="integrity-strip">当日ST风险警示池、日线收盘和涨跌停价均对应报告交易日；风险警示名单与行情来自供应商结构化口径。</div>
+    </section>
+    
+    <section id="channel-lixiao" class="channel-panel" data-channel-panel="lixiao">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">D级观点 / 视频转写</div>
+        <h2>李大霄</h2>
+      </div>
+      <p>基于实际视频转写的 Tier D 观点摘要。</p>
+    </div>
+    
+      <div class="opinion-hero">
+        <div class="opinion-label">Tier D｜市场观点源不可用</div>
+        <h3>本期未形成可核验的视频观点摘要</h3>
+        <div class="opinion-meta">
+          <span>李大霄</span><span>本期未取得</span>
+          <span>视频 --</span>
+        </div>
+        <div class="transcript-path">
+          <span>公开 H5 视频</span><span>本地提取音轨</span><span>机器中文转写</span><span>分层摘要</span>
+        </div>
+        <div class="viewpoint-list"><div class="viewpoint"><time>本期</time><p>本期交接文件未提供视频观点结构化结果。</p></div></div>
+        <p class="theme-detail" style="margin:16px 0 0">本期交接文件未提供视频观点结构化结果。</p>
+        <div class="action-links"></div>
+      </div>
+      <div class="three-lenses">
+        <div class="lens"><h4>已确认事实</h4><p>本期没有取得可公开访问并可完成转写的视频内容。</p></div>
+        <div class="lens attention"><h4>尚待独立核验</h4><p>不得依据标题、相似文章或转述补写视频观点。</p></div>
+        <div class="lens opinion"><h4>本报告推断</h4><p>该观点源本期不进入市场判断。</p></div>
+      </div>
+      <div class="footer-note">观点源与公告、监管和行情事实不同级；视频中的数字不会因为“已转写”就自动变成已确认事实。</div>
+    </section>
+    
+    <section id="channel-data" class="channel-panel" data-channel-panel="data">
+      
+    <div class="channel-head">
+      <div>
+        <div class="channel-kicker">来源 / 截止 / 降级说明</div>
+        <h2>数据说明</h2>
+      </div>
+      <p>来源层级、截止口径、失败与降级规则。</p>
+    </div>
+    
+      
+        <details class="note-disclosure" open>
+          <summary>本期关键来源状态</summary>
+          <table class="source-status-table">
+            <thead><tr><th>来源</th><th>状态</th><th>最后检查</th><th>失败 / 降级说明</th></tr></thead>
+            <tbody>
+            <tr>
+              <td>li_daxiao_local_asr</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>li_daxiao_public_feed</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>li_daxiao_public_h5</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>li_daxiao_public_post</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>official_announcement_links</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>sina_intraday_chart</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_announcements</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_financial_indicators</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_futures</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_global_indices</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_indexes</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_macro_calendar</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_market</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_market_heat</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_news_leads</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_security_master</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_st_pool</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_theme_heat</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            
+            <tr>
+              <td>tushare_trade_calendar</td>
+              <td><span class="source-state success">正常</span></td>
+              <td>2026-08-04T22:32:21+08:00</td>
+              <td>—</td>
+            </tr>
+            </tbody>
+          </table>
+        </details>
+        
+      <div class="method-grid"><div class="method-card"><strong>Tier A｜交易所、监管、政府、上市公司公告</strong><p>重要事实优先采用。</p></div><div class="method-card"><strong>Tier B｜公司官网、业绩材料与投资者关系资料</strong><p>用于产品、财务和经营确认。</p></div><div class="method-card"><strong>Tier C｜Tushare与专业财经媒体</strong><p>结构化行情与补充背景。</p></div><div class="method-card"><strong>Tier D｜分析师、采访、视频和社交观点</strong><p>只作为观点，不升级为事实。</p></div></div>
+      <details class="note-disclosure" open>
+        <summary>本期截止口径与局限</summary>
+        <ul><li>本版没有同日晨报配对，不能用于声称晨晚连续性；回补时间晚于20:10。</li><li>入选内容已完成生产级正文复核；未入选候选仅保留在审计材料中。</li><li>本页由不可变历史回补run生成；不构成投资建议，不预测短期股价方向。</li></ul>
+      </details>
+      <details class="note-disclosure">
+        <summary>评分与去重规则</summary>
+        <ul>
+          <li>优先级＝相关性35%＋潜在影响30%＋来源20%＋时效10%＋市场热度5%。</li>
+          <li>同一事件只保留一个主频道；其他频道用链接交叉引用，不复制完整卡片。</li>
+          <li>每张事件卡区分已确认事实、影响机制、反向证据和下一观察。</li>
+          <li>缺失数据保留为空，不补零；来源失败必须在相应频道明确提示。</li>
+        </ul>
+      </details>
+      <details class="note-disclosure">
+        <summary>Tushare 接口索引</summary>
+        <ol class="source-index"><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300472&amp;announcementId=1225458079&amp;orgId=9900024679&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">*ST新元</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300940&amp;announcementId=1225457925&amp;orgId=9900041751&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">南极光</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300996&amp;announcementId=1225458176&amp;orgId=9900030872&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">普联软件</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300492&amp;announcementId=1225457869&amp;orgId=9900023365&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">华图山鼎</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301448&amp;announcementId=1225456817&amp;orgId=9900046496&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">开创电气</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=301273&amp;announcementId=1225456978&amp;orgId=9900047325&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">瑞晨环保</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=920873&amp;announcementId=1225457684&amp;orgId=gqtg0900033&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">中设咨询</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300324&amp;announcementId=1225457599&amp;orgId=9900021727&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">旋极信息</a></li><li><a href="http://www.cninfo.com.cn/new/disclosure/detail?stockCode=300683&amp;announcementId=1225456659&amp;orgId=9900032998&amp;announcementTime=2026-08-04" target="_blank" rel="noreferrer">海特生物</a></li></ol>
+      </details>
+      <details class="note-disclosure">
+        <summary>交付与视频处理</summary>
+        <ul>
+          <li>从本版开始只生成单个 HTML，不再生成 Markdown 或 PDF。</li>
+          <li>公开视频仅在工作区临时保存用于本地转写，不进入交付物、不重新分发。</li>
+          <li>若视频无公开流、要求登录或存在访问限制，频道显示失败原因，不根据标题编造摘要。</li>
+        </ul>
+      </details>
+      <div class="footer-note">本报告用于个人信息整理，不构成投资建议或短期涨跌预测；请以原始披露为准。</div>
+    </section>
+    </main>
+    </div>
+    <div id="channel-live" class="live-region" aria-live="polite"></div>
+  </div>
+  <script>
+(function () {
+  const root = document.documentElement;
+  const page = document.querySelector('.page');
+  const links = Array.from(document.querySelectorAll('[data-channel-link]'));
+  const panels = Array.from(document.querySelectorAll('[data-channel-panel]'));
+  const showAll = document.getElementById('show-all');
+  const live = document.getElementById('channel-live');
+  if (!links.length || !panels.length) return;
+
+  root.classList.add('tabs-ready');
+  document.querySelector('.channel-links').setAttribute('role', 'tablist');
+  links.forEach((link) => {
+    link.setAttribute('role', 'tab');
+    link.setAttribute('aria-controls', 'channel-' + link.dataset.channelLink);
+  });
+  panels.forEach((panel) => {
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', 'channel-link-' + panel.dataset.channelPanel);
+  });
+
+  function panelForHash(hash) {
+    if (!hash) return panels[0];
+    const target = document.getElementById(hash.replace(/^#/, ''));
+    if (!target) return panels[0];
+    return target.matches('[data-channel-panel]') ? target : target.closest('[data-channel-panel]') || panels[0];
+  }
+
+  function activate(panel, options) {
+    const opts = options || {};
+    const id = panel.dataset.channelPanel;
+    page.classList.remove('full-view');
+    panels.forEach((item) => { item.hidden = item !== panel; item.classList.remove('is-entering'); });
+    links.forEach((link) => {
+      const active = link.dataset.channelLink === id;
+      link.setAttribute('aria-selected', active ? 'true' : 'false');
+      link.tabIndex = active ? 0 : -1;
+    });
+    panel.classList.add('is-entering');
+    window.setTimeout(() => panel.classList.remove('is-entering'), 180);
+    const activeLink = links.find((link) => link.dataset.channelLink === id);
+    if (activeLink && window.innerWidth <= 760) {
+      activeLink.scrollIntoView({block: 'nearest', inline: 'center'});
+    }
+    if (live) live.textContent = '已切换到' + (activeLink ? activeLink.dataset.label : id) + '频道';
+    if (opts.updateHash) history.pushState(null, '', '#channel-' + id);
+    if (opts.focus && activeLink) activeLink.focus();
+  }
+
+  links.forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const panel = document.getElementById('channel-' + link.dataset.channelLink);
+      activate(panel, {updateHash: true});
+      window.setTimeout(() => panel.scrollIntoView({block: 'start'}), 10);
+    });
+    link.addEventListener('keydown', (event) => {
+      const vertical = window.innerWidth > 760;
+      let next = null;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = links.length - 1;
+      if (event.key === 'ArrowRight' || (vertical && event.key === 'ArrowDown')) next = (index + 1) % links.length;
+      if (event.key === 'ArrowLeft' || (vertical && event.key === 'ArrowUp')) next = (index - 1 + links.length) % links.length;
+      if (next !== null) {
+        event.preventDefault();
+        activate(document.getElementById('channel-' + links[next].dataset.channelLink), {updateHash: true, focus: true});
+      }
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    const anchor = event.target.closest('a[href^="#event-"]');
+    if (!anchor) return;
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    const panel = target.closest('[data-channel-panel]');
+    activate(panel, {});
+    if (target.tagName === 'DETAILS') target.open = true;
+    history.pushState(null, '', anchor.getAttribute('href'));
+    window.setTimeout(() => target.scrollIntoView({block: 'start'}), 10);
+  });
+
+  showAll.addEventListener('click', () => {
+    const full = !page.classList.contains('full-view');
+    page.classList.toggle('full-view', full);
+    panels.forEach((panel) => { panel.hidden = false; });
+    showAll.textContent = full ? '返回频道视图' : '显示全文';
+    showAll.setAttribute('aria-pressed', full ? 'true' : 'false');
+    if (!full) activate(panelForHash(location.hash), {});
+  });
+
+  window.addEventListener('hashchange', () => {
+    const panel = panelForHash(location.hash);
+    activate(panel, {});
+    const target = document.getElementById(location.hash.replace(/^#/, ''));
+    if (target && target.tagName === 'DETAILS') target.open = true;
+  });
+
+  const initialPanel = panelForHash(location.hash);
+  activate(initialPanel, {});
+  const initialTarget = document.getElementById(location.hash.replace(/^#/, ''));
+  if (initialTarget && initialTarget.tagName === 'DETAILS') initialTarget.open = true;
+})();
+</script>
+</body>
+</html>
